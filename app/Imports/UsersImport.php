@@ -42,8 +42,8 @@ class UsersImport implements ToModel,
     public function onError(Throwable $e){}
     public function rules(): array{
         return [
-            '*.user_student_id' =>['studentid','unique:oe_users,user_student_id'],
-            '*.user_email' =>['email','unique:oe_users,user_email']
+            '*.0' =>['user_student_id','unique:oe_users,user_student_id'],
+            '*.3' =>['user_email','unique:oe_users,user_email']
         ];
     }
     public function onFailure(Failure ...$failure){

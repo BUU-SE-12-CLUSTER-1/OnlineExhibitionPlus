@@ -17,11 +17,13 @@ class UserController extends Controller
         return view('import_excel');
     }
     public function saveImportedExcel(Request $request){
-        $file = $request->file('file');
+        $file = $request->file('file')->store('import');
         //dd($file);
         //Excel::import(new UsersImport, $request->file);
-        (new UsersImport)->import($file);
+        $import = new UsersImport;
+        $import->import($file);
         return redirect('/user-list');
+        //return back()->withStatus('successfully');
     }
     public function insertUser(Request $request){
         $user = new UserModel();
