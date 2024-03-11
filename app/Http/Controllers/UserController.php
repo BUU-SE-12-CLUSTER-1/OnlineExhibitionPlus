@@ -84,4 +84,7 @@ class UserController extends Controller
         $major_data = MajorModel::all();
         return view('user_list',['oe_users'=>$user_data, 'oe_majors'=>$major_data]);
     }
+    public function showUserProfile(){
+        return view('user_profile');
+    }
 }
