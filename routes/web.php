@@ -10,6 +10,7 @@ use App\Http\Controllers\CompanyController;
 use App\Models\MajorModel;
 use App\Http\Controllers\AdvisorsController;
 use App\Http\Controllers\TagController;
+use App\Models\RoleModel;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,7 +32,8 @@ Route::get('/dashboard', function () {
 
 Route::get('/insert-user',function(){
     $major_data = MajorModel::all();
-    return view('insert_user',['oe_majors'=>$major_data]);
+    $role_data = RoleModel::all();
+    return view('insert_user',['oe_majors'=>$major_data,'oe_roles'=>$role_data]);
 });
 Route::post('/insert-user',[UserController::class, 'insertUser']);
 Route::get('/user-list',[UserController::class, 'showUserList']);

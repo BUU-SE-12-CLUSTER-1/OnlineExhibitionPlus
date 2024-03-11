@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Imports\UsersImport;
+use App\Models\RoleModel;
 
 class UserController extends Controller
 {
@@ -32,7 +33,7 @@ class UserController extends Controller
         $user->user_lname = request('user_lname');
         $user->user_email = request('user_email');
         $user->user_password = Hash::make(request('user_password'));
-        $user->user_role_id = (int)$request->input('user_role');
+        $user->user_role_id = (int)$request->input('user_role_id');
         $user->user_profile_image = "test";
         $user->user_major_id = (int)$request->input('user_major_id');
         $user->save();
@@ -51,7 +52,8 @@ class UserController extends Controller
     public function editUser($user_id){
         $user_data = UserModel::find($user_id);
         $major_data = MajorModel::all();
-        return view('edit_user',['oe_users'=>$user_data, 'oe_majors'=>$major_data]);
+        $role_data = RoleModel::all();
+        return view('edit_user',['oe_users'=>$user_data, 'oe_majors'=>$major_data, 'oe_roles'=>$role_data]);
     }
     public function updateUser(Request $request){
         $user = UserModel::find(request('user_id'));
@@ -63,7 +65,7 @@ class UserController extends Controller
         if($password!= null){
             $user->user_password = Hash::make(request('user_password'));
         }
-        $user->user_role_id = (int)$request->input('user_role');
+        $user->user_role_id = (int)$request->input('user_role_id');
         $user->user_profile_image = "test";
         $user->user_major_id = (int)$request->input('user_major_id');
         $user->save();

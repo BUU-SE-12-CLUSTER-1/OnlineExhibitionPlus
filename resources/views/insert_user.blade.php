@@ -10,12 +10,12 @@
 <input type="text" name="user_email" maxlength="55"></br>
 <label for="user_password">Password</label>
 <input type="password" name="user_password" maxlength="20"></br>
-<input type="radio" name="user_role" id="user_admin" value="1">
-<label for="user_admin">Admin</label>
-<input type="radio" name="user_role" id="user_student" value="2">
-<label for="user_student">Student</label>
-<input type="radio" name="user_role" id="user_guest" value="3">
-<label for="user_guest">Guest</label></br>
+<label for="user_role_id">Role</label></br>
+<select name="user_role_id">
+@foreach($oe_roles as $role)
+    <option value={{$role['role_id']}}>{{$role['role_name']}}</option>
+@endforeach
+</select><br>
 <label for="user_major_id">major</label></br>
 <select name="user_major_id">
 @foreach($oe_majors as $major)
