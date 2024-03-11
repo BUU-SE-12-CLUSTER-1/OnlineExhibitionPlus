@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CompanyController;
 use App\Models\MajorModel;
-use App\Http\Controllers\AdvisorsController;
+use App\Http\Controllers\AdvisorController;
 use App\Http\Controllers\TagController;
 use App\Models\RoleModel;
 /*
@@ -45,10 +45,10 @@ Route::get('/search-user',[UserController::class, 'searchUser']);
 Route::get('/import-excel',[UserController::class, 'importExcel']);
 Route::post('/import-excel',[UserController::class, 'saveImportedExcel']);
 
-Route::get('/insert-advisors' , function(){
-    return view('insert_advisors');
+Route::get('/insert-advisor' , function(){
+    return view('insert_advisor');
 });
-Route::post('/insert-advisors', [AdvisorsController::class, 'insertAdvisors']);
+Route::post('/insert-advisor', [AdvisorController::class, 'insertAdvisor']);
 
 Route::get('/insert-tag', function(){
     return view('insert_tag');
