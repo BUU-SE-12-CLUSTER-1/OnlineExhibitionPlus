@@ -26,5 +26,6 @@
         @endforeach
         </select><br>
     <button type="submit" value="Submit" >Update</button>
+    <input type="button" value="Cancel" onclick="window.location='/user-list'">
 
 </form>
