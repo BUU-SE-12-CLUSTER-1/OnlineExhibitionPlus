@@ -1,4 +1,4 @@
-<form action="/edit-user" method="POST">
+<form action="{{url('/edit-user')}}" method="POST">
     @csrf
     <input type="hidden" name="user_id" value={{$oe_users['user_id']}}>
     <label for="user_student_id" >Student Id</label>

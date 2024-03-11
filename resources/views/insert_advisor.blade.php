@@ -1,4 +1,4 @@
-<form action="/insert-advisor" method="POST">
+<form action="{{url('/insert-advisor')}}" method="POST">
     @csrf
     <label for="advisors_fname">Frist name</label>
     <input type="text" name="advisor_fname"><br>

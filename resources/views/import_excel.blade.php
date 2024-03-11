@@ -1,5 +1,5 @@
 <H1> Import Excel</H1>
-<form action="/import-excel" method="POST" enctype="multipart/form-data">
+<form action="{{url('/import-excel')}}" method="POST" enctype="multipart/form-data">
 @csrf
 <input type="file" name="file" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel">
 <input type="submit" value="Upload" name="btn_submit">

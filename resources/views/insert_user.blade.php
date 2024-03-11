@@ -1,4 +1,4 @@
-<form action="/insert-user" method="POST">
+<form action="{{url('/insert-user')}}" method="POST">
 @csrf
 <label for="user_student_id">Student Id</label>
 <input type="text" name="user_student_id" maxlength="8"></br>
