@@ -82,6 +82,7 @@ class UserController extends Controller
             return redirect('/user-list');
         }
         $major_data = MajorModel::all();
-        return view('user_list',['oe_users'=>$user_data, 'oe_majors'=>$major_data]);
+        $role_data = RoleModel::all();
+        return view('user_list',['oe_users'=>$user_data, 'oe_majors'=>$major_data, 'oe_roles'=>$role_data]);
     }
 }
