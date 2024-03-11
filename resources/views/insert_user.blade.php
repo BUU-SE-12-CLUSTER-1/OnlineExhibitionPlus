@@ -21,7 +21,8 @@
 @foreach($oe_majors as $major)
     <option value={{$major['major_id']}}>{{$major['major_name']}}</option>
 @endforeach
-</select><br>
+</select><br></br>
 <input type="submit" value="Submit">
+<input type="button" value="Cancel" onclick="window.location='./user-list'">
 
 </form>
