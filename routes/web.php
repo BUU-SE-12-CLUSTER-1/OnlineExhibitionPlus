@@ -44,6 +44,7 @@ Route::post('/search-user',[UserController::class, 'searchUser']);
 Route::get('/search-user',[UserController::class, 'searchUser']);
 Route::get('/import-excel',[UserController::class, 'importExcel']);
 Route::post('/import-excel',[UserController::class, 'saveImportedExcel']);
+Route::get('/user-profile',[UserController::class, 'ShowUserProfile']);
 
 Route::get('/insert-advisor' , function(){
     return view('insert_advisor');

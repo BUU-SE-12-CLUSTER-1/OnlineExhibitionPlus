@@ -85,4 +85,7 @@ class UserController extends Controller
         $role_data = RoleModel::all();
         return view('user_list',['oe_users'=>$user_data, 'oe_majors'=>$major_data, 'oe_roles'=>$role_data]);
     }
+    public function showUserProfile(){
+        return view('user_profile');
+    }
 }
