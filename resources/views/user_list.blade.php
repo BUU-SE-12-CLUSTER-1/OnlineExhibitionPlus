@@ -1,5 +1,5 @@
 <h1>User List</h1>
-<form action="{{url('/search-user/.')}}" method="POST" name="form_search" >
+<form action="{{url("/search-user/.")}}" method="POST" name="form_search" >
     @csrf
 <label for="search_user"></label>
 <input type="text" name="search_user" placeholder="search here" >
