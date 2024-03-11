@@ -37,8 +37,8 @@
         }
         ?>
         <td>
-            <a href={{"/edit-user/".$user['user_id']}}>Edit</a>
-            <a href={{"/delete-user/".$user['user_id']}}>Delete</a>
+            <a href={{url('"/edit-user/".$user['user_id']')}}>Edit</a>
+            <a href={{url('"/delete-user/".$user['user_id']')}}>Delete</a>
         </td>
 
     </tr>
