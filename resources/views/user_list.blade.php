@@ -1,12 +1,12 @@
 <h1>User List</h1>
-<form action="/search-user/." method="POST" name="form_search" >
+<form action="{{url('/search-user/.')}}" method="POST" name="form_search" >
     @csrf
 <label for="search_user"></label>
 <input type="text" name="search_user" placeholder="search here" >
 <button type="submit" name="btn_search_user">Search</button>
 </form>
-<button type="button" onclick="window.location='{{url("/import-excel")}}'" name="btn_add_excel" >Add user excel</button>
-<button type="button" onclick="window.location='{{url("/insert-user")}}'" name="btn_add_user" >Add user</button>
+<button type="button" onclick="window.location='{{url('/import-excel')}}'" name="btn_add_excel" >Add user excel</button>
+<button type="button" onclick="window.location='{{url('/insert-user')}}'" name="btn_add_user" >Add user</button>
 
 <table border="1">
     <tr>

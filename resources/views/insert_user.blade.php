@@ -23,6 +23,6 @@
 @endforeach
 </select><br></br>
 <input type="submit" value="Submit">
-<input type="button" value="Cancel" onclick="window.location='./user-list'">
+<input type="button" value="Cancel" onclick="window.location='{{url('./user-list')}}'">
 
 </form>
