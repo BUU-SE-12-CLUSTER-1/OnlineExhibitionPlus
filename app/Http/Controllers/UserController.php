@@ -42,7 +42,8 @@ class UserController extends Controller
     public function showUserList(){
         $user_data = UserModel::paginate(5);
         $major_data = MajorModel::all();
-        return view('user_list',['oe_users'=>$user_data, 'oe_majors'=>$major_data]);
+        $role_data = RoleModel::all();
+        return view('user_list',['oe_users'=>$user_data, 'oe_majors'=>$major_data, 'oe_roles'=>$role_data]);
     }
     public function deleteUser($user_id){
         $user = UserModel::find($user_id);

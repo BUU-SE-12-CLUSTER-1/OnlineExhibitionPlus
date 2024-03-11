@@ -13,12 +13,14 @@
     <input type="password" name="user_password" maxlength="20"></br>
     <label for="user_role_id">Role</label></br>
     <select name="user_role_id">
+        @foreach($oe_roles as $role) @if($oe_users['user_role_id']==$role['role_id']) <option value={{$role['role_id']}}>{{$role['role_name']}}</option>@endif @endforeach
         @foreach($oe_roles as $role)
             <option value={{$role['role_id']}}>{{$role['role_name']}}</option>
         @endforeach
     </select><br>
     <label for="user_major_id">major</label></br>
     <select name="user_major_id">
+        @foreach($oe_majors as $major) @if($oe_users['user_major_id']==$major['major_id']) <option value={{$major['major_id']}}>{{$major['major_name']}}</option>@endif @endforeach
         @foreach($oe_majors as $major)
             <option value={{$major['major_id']}}>{{$major['major_name']}}</option>
         @endforeach

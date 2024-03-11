@@ -23,12 +23,11 @@
         <td>{{$user['user_student_id']}}</td>
         <td>{{$user['user_fname']}} {{$user['user_lname']}}</td>
         <?php
-        if ($user['user_role_id']==1) {
-            echo "<td>Admin</td>";
-        }elseif ($user['user_role_id']==2) {
-            echo "<td>Student</td>";
-        }elseif ($user['user_role_id']==3) {
-            echo "<td>Guest</td>";
+        foreach ($oe_roles as $role) {
+            if($user['user_role_id']==$role['role_id']) {
+                echo "<td>".$role['role_name']."</td>";
+                break;
+            }
         }
         foreach ($oe_majors as $major) {
             if($user['user_major_id']==$major['major_id']) {
