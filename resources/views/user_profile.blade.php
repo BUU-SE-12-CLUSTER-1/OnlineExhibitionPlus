@@ -31,11 +31,24 @@
     <button id="cancel-student-id" onclick="cancel('student-id')" style="display: none" type="button" >cancel</button>
 </p>
 </form>
-@foreach ($oe_majors as $major)
-@if($oe_users['user_major_id']==$major['major_id'])
-<p>Major : {{$major['major_name']}}</p>
-@endif
-@endforeach
+<?php
+foreach ($oe_majors as $major) {
+if($oe_users['user_major_id']==$major['major_id']){
+    $user_major = $major['major_name'];
+}
+}
+
+?>
+<p>Major :
+    <label id="txt-user-major">{{$user_major}}</label>
+<select name="user_major_id" id="input-user-major" style="display: none">
+    <option value={{$oe_users['user_major_id']}}>{{$user_major}}</option>
+    @foreach($oe_majors as $major)
+        <option value={{$major['major_id']}}>{{$major['major_name']}}</option>
+    @endforeach
+</select>
+<button id="edit-major" onclick="edit('major')" type="button">edit</button>
+</p>
 <h2>Contact</h2>
 <p>------------------------------------------------------------</p>
 <form action="#" method="POST">
