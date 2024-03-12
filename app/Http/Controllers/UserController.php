@@ -89,6 +89,37 @@ class UserController extends Controller
         $user_data = UserModel::find($user_id);
         $major_data = MajorModel::all();
         $role_data = RoleModel::all();
-        return view('user_profile',['oe_users'=>$user_data, 'oe_majors'=>$major_data, 'oe_roles'=>$role_data]);
+        return view('user_profile2',['oe_users'=>$user_data, 'oe_majors'=>$major_data, 'oe_roles'=>$role_data]);
+    }
+    /*
+    public function updateUserDetail($user_id, $Detail_name, Request $request){
+        $user = UserModel::find($user_id);
+        if($Detail_name == "fname"){
+            $user->user_fname = request('user_fname');
+        }elseif($Detail_name == 'lname'){
+            $user->user_lname = request('user_lname');
+        }elseif($Detail_name == 'student-id'){
+            $user->user_student_id = request('user_student_id');
+        }elseif($Detail_name == 'major'){
+            $user->user_major_id = (int)$request->input('user_major_id');
+        }elseif($Detail_name == 'email'){
+            $user->user_email = request('user_email');
+        }elseif($Detail_name == 'phone'){
+            $user->user_phone = request('user_phone');
+        }
+        $user->save();
+        return redirect('/user-profile/'.$user_id);
+    }
+    */
+    public function updateUserDetail($user_id, Request $request){
+        $user = UserModel::find($user_id);
+        $user->user_fname = request('user_fname');
+        $user->user_lname = request('user_lname');
+        $user->user_student_id = request('user_student_id');
+        $user->user_major_id = (int)$request->input('user_major_id');
+        $user->user_email = request('user_email');
+        $user->user_phone = request('user_phone');
+        $user->save();
+        return redirect('/user-profile/'.$user_id);
     }
 }
