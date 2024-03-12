@@ -48,6 +48,8 @@ if($oe_users['user_major_id']==$major['major_id']){
     @endforeach
 </select>
 <button id="edit-major" onclick="edit('major')" type="button">edit</button>
+<button id="save-major" style="display: none" type="button">save</button>
+    <button id="cancel-major" onclick="cancel('major')" style="display: none" type="button" >cancel</button>
 </p>
 <h2>Contact</h2>
 <p>------------------------------------------------------------</p>
