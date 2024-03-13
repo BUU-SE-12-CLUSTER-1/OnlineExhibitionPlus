@@ -33,7 +33,7 @@ class UsersImport implements ToModel,
             'user_fname' => $row['firstname'],
             'user_lname' => $row['lastname'],
             'user_email' => $row['email'],
-            'user_profile_image' => "Test",
+            'user_profile_image' => "test",
             'user_role_id' => 2,
             'user_major_id' => $row['majorid'],
         ]);
