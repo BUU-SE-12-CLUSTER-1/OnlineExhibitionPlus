@@ -63,6 +63,7 @@ Route::get('/insert-major', function(){
 });
 
 Route::post('/insert-major',[MajorController::class, 'insertMajor']);
+Route::get('/major-list',[MajorController::class, 'showMajorList']);
 
 Route::get('/insert-company', function(){
     return view('insert_company');
