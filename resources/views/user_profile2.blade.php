@@ -4,7 +4,9 @@
 
 <form action={{url("/update-user-detail/".$oe_users['user_id'])}} method="POST">
     @csrf
-    <img src="" alt="">
+    <?php
+    echo '<img src="data:image/png;base64,' . $oe_users['user_profile_image'] . '" style="width: 100px; height: 100px; object-fit: cover;"/>';
+    ?>
     <p>Name :
         <label id="txt-fname">{{$oe_users['user_fname']}}</label>
         <input type="text" maxlength="25" value="{{$oe_users['user_fname']}}" id="input-fname" name="user_fname" style="display: none">

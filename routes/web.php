@@ -45,8 +45,11 @@ Route::get('/search-user',[UserController::class, 'searchUser']);
 Route::get('/import-excel',[UserController::class, 'importExcel']);
 Route::post('/import-excel',[UserController::class, 'saveImportedExcel']);
 Route::get('/user-profile/{user_id}',[UserController::class, 'ShowUserProfile']);
+Route::get('get-user-image{user_id}',[UserModel::class, 'getUserImage']);
 Route::post('update-user-detail/{user_id}/{detail_name}',[UserController::class,'updateUserDetail']);
 Route::post('update-user-detail/{user_id}',[UserController::class,'updateUserDetail']);
+Route::get('upload-user-image/{user_id}',[UserController::class,'uploadImage']);
+Route::post('upload-user-image/{user_id}',[UserController::class,'uploadImageProcess']);
 
 Route::get('/insert-advisor' , function(){
     return view('insert_advisor');

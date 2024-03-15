@@ -40,6 +40,7 @@
             <a href={{url("/edit-user/".$user['user_id'])}}>Edit</a>
             <a href={{url("/delete-user/".$user['user_id'])}}>Delete</a>
             <a href={{url("/user-profile/".$user['user_id'])}}>Profile</a>
+            <a href={{url("/upload-user-image/".$user['user_id'])}}>Upload Image</a>
         </td>
 
     </tr>
