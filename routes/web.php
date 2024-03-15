@@ -70,3 +70,4 @@ Route::get('/insert-company', function(){
 
 Route::post('/insert-company',[CompanyController::class, 'insertCompany']);
 
+Route::get('/tag-list',[TagController::class,'showTagList']);
