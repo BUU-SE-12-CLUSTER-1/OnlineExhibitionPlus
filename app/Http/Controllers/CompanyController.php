@@ -14,4 +14,8 @@ class CompanyController extends Controller
         $company->save();
         return view('success');
     }
+    public function showCompanyList(){
+        $company_data = CompanyModel::all();
+        return view('company_list',['oe_companies'=>$company_data]);
+    }
 }
