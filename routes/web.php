@@ -11,6 +11,7 @@ use App\Models\MajorModel;
 use App\Http\Controllers\AdvisorController;
 use App\Http\Controllers\TagController;
 use App\Models\RoleModel;
+use App\Http\Controllers\ProjectController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -74,3 +75,4 @@ Route::get('/insert-company', function(){
 
 Route::post('/insert-company',[CompanyController::class, 'insertCompany']);
 
+Route::get('/insert-project',[ProjectController::class, 'insertProject']);
