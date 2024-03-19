@@ -170,5 +170,6 @@ class UserController extends Controller
         }
         return redirect('/user-profile/'.$user->user_id);
         //return back();
+        
     }
 }
