@@ -26,6 +26,15 @@
         <tr>
             <td>
                 <label for="proj_company_id">บริษัท/สำนักงาน</label>
+            <?php?>
+                    <input type="text" name="company_name">
+                    <select name="proj_company_id">
+                        <option value="#" selected="selected">-- Select company --</option>
+                        @foreach($oe_companies as $company)
+                        <option value={{$company['company_id']}}>{{$company['company_name']}}</option>
+                        @endforeach
+                        <option value="insert-company";">Add company</option>
+                    </select>
             </td>
             <td>
                 <label for="projtag_tag_id">หมวดหมู่</label>
@@ -33,6 +42,10 @@
         </tr>
         <tr>
             <td>
+                <input type="text" name="company_name">
+                <?php
+                    $oe_companies = Request::get(url('/company-dropdown-list'));
+                    ?>
                 <select name="proj_company_id" id="select-company">
                     <option value="#" selected="selected">-- Select company --</option>
                     @foreach($oe_companies as $company)
