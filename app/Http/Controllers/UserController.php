@@ -37,9 +37,9 @@ class UserController extends Controller
         $user->user_password = Hash::make(request('user_password'));
         $user->user_role_id = (int)$request->input('user_role_id');
         $path = public_path('/assets/img/users/img_user_icon.png');
-        $image = File::get($path);
-        $base64 = base64_encode($image);
-        $user->user_profile_image = $base64;
+        //$image = File::get($path);
+        //$base64 = base64_encode($image);
+        $user->user_profile_image = $path;
         $user->user_major_id = (int)$request->input('user_major_id');
         $user->save();
         return redirect('user-list');
@@ -72,7 +72,6 @@ class UserController extends Controller
             $user->user_password = Hash::make(request('user_password'));
         }
         $user->user_role_id = (int)$request->input('user_role_id');
-        $user->user_profile_image = "test";
         $user->user_major_id = (int)$request->input('user_major_id');
         $user->save();
         return redirect('/user-list');
@@ -131,7 +130,7 @@ class UserController extends Controller
         $img_content = file_get_contents($image);
         $base64 = base64_encode($img_content);
         $user->user_profile_image = $base64;
-        */if(isset($_FILES["upload-image"])&&$_FILES["upload-image"]["error"]== 0 ){
+        if(isset($_FILES["upload-image"])&&$_FILES["upload-image"]["error"]== 0 ){
             $image = $_FILES["upload-image"]["tmp_name"];
             //$image = $request->file("upload-image")->getRealPath();
             $img_content = file_get_contents($image);
@@ -141,6 +140,14 @@ class UserController extends Controller
             $_SESSION["success"] = "Image uploaded successfully";
         }else{
             $_SESSION["error"] = "Please select an image file to upload.";
+        }
+        */
+        if( $request->hasFile('upload-image')){
+            $image = $request->file('upload-image');
+            $path = public_path(). '/users/img/';
+            $filename = time().'.'.$user_id.'.'.$image->getClientOriginalExtension();
+            $image->move($path,$filename);
+            $user->user_profile_image = '/users/img/'.$filename;
         }
         $user->user_fname = request('user_fname');
         $user->user_lname = request('user_lname');
@@ -170,6 +177,6 @@ class UserController extends Controller
         }
         return redirect('/user-profile/'.$user->user_id);
         //return back();
-        
+
     }
 }
