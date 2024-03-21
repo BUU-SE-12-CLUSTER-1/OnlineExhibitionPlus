@@ -29,11 +29,11 @@
                 <label for="proj_company_id">Company</label>
                 <div class="select-company-box" name="proj_company_id">
                     <div class="select-company-option">
-                        <input type="text" placeholder="Please select company" id="soValue" readonly name="">
+                        <input type="text" placeholder="Please select company" id="companyValue" readonly name="">
                     </div>
                     <div class="company-content">
                         <div class="company-search">
-                            <input type="text" id="optionSearch" placeholder="Seach Company" name="">
+                            <input type="text" id="companyOptionSearch" placeholder="Seach Company" name="">
                         </div>
                         <ul class="company-options">
                             @foreach($oe_companies as $company)
@@ -101,8 +101,8 @@
     const selectOption = document.querySelector('.select-company-option');
     const companyContent = document.querySelector('.company-content');
     const companyOptions = document.querySelector('.company-options');
-    const optionSearch = document.getElementById('optionSearch');
-    const soValue = document.querySelector('#soValue');
+    const optionSearch = document.getElementById('companyOptionSearch');
+    const soValue = document.querySelector('#companyValue');
     const optionList = document.querySelectorAll('.company-options li');
 
     selectOption.addEventListener('click', function(){
