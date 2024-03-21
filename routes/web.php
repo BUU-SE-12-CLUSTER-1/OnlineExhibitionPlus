@@ -74,5 +74,5 @@ Route::get('/insert-company', function(){
 });
 
 Route::post('/insert-company',[CompanyController::class, 'insertCompany']);
-Route::get('/company-dropdown-list',[CompanyController::class, 'showCompanyDropdownList']);
+Route::post('/company-dropdown-list',[CompanyController::class, 'showCompanyDropdownList']);
 Route::get('/insert-project',[ProjectController::class, 'insertProject']);

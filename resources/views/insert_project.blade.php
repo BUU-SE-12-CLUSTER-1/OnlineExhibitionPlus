@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="{{asset('assets/css/company_selector.css')}}">
 <h1>ADD Project</h1>
 <form action={{url('/insert-project')}} method="POST">
 @csrf
@@ -25,16 +26,23 @@
         </tr>
         <tr>
             <td>
-                <label for="proj_company_id">บริษัท/สำนักงาน</label>
-            <?php?>
-                    <input type="text" name="company_name">
-                    <select name="proj_company_id">
-                        <option value="#" selected="selected">-- Select company --</option>
-                        @foreach($oe_companies as $company)
-                        <option value={{$company['company_id']}}>{{$company['company_name']}}</option>
-                        @endforeach
-                        <option value="insert-company";">Add company</option>
-                    </select>
+                <label for="proj_company_id">Company</label>
+                <div class="select-company-box" name="proj_company_id">
+                    <div class="select-company-option">
+                        <input type="text" placeholder="Please select company" id="soValue" readonly name="">
+                    </div>
+                    <div class="company-content">
+                        <div class="company-search">
+                            <input type="text" id="optionSearch" placeholder="Seach Company" name="">
+                        </div>
+                        <ul class="company-options">
+                            @foreach($oe_companies as $company)
+                            <li>{{$company['company_name']}}</li>
+                            @endforeach
+                            <a href="{{url('/insert-company')}}">add company</a>
+                        </ul>
+                    </div>
+                </div>
             </td>
             <td>
                 <label for="projtag_tag_id">หมวดหมู่</label>
@@ -42,17 +50,7 @@
         </tr>
         <tr>
             <td>
-                <input type="text" name="company_name">
-                <?php
-                    $oe_companies = Request::get(url('/company-dropdown-list'));
-                    ?>
-                <select name="proj_company_id" id="select-company">
-                    <option value="#" selected="selected">-- Select company --</option>
-                    @foreach($oe_companies as $company)
-                    <option value={{$company['company_id']}}>{{$company['company_name']}}</option>
-                    @endforeach
-                    <option value="insert-company";">Add company</option>
-                </select>
+
             </td>
             <td id="project-tag">
                 <button type="button" onclick="insert_tag()">+</button>
@@ -97,4 +95,37 @@
                     <option value="insert-tag";">Add tag</option>
                 </select>`)
     }
+</script>
+<script>
+    const selectBox = document.querySelector('.select-company-box');
+    const selectOption = document.querySelector('.select-company-option');
+    const companyContent = document.querySelector('.company-content');
+    const companyOptions = document.querySelector('.company-options');
+    const optionSearch = document.getElementById('optionSearch');
+    const soValue = document.querySelector('#soValue');
+    const optionList = document.querySelectorAll('.company-options li');
+
+    selectOption.addEventListener('click', function(){
+        selectBox.classList.toggle('active');
+    });
+    optionList.forEach(function(optionListSingle){
+        optionListSingle.addEventListener('click', function(){
+            text = this.textContent;
+            soValue.value = text;
+            selectBox.classList.remove('active');
+        })
+    });
+
+    optionSearch.addEventListener('keyup', function(){
+        const filter = optionSearch.value.toUpperCase();
+        optionList.forEach(option =>{
+            const companyName = option.textContent.toUpperCase();
+            if (companyName.includes(filter) || filter === ''){
+                option.style.display = 'block';
+            } else {
+                option.style.display = 'none';
+            }
+        });
+    });
+
 </script>
