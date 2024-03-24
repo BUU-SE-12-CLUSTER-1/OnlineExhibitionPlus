@@ -8,12 +8,18 @@
                 <label for="proj_name">ชื่อโปรเจกต์ </label>
             </td>
             <td>
-                <label for="proj_student_year">เลือกชั้นปี</label>
+                <label for="proj_created_year">Year</label>
+            </td>
+            <td>
+                <label for="proj_student_year">College Year</label>
             </td>
         </tr>
         <tr>
             <td>
                 <input type="text" name="proj_name">
+            </td>
+            <td>
+                <input name="proj_created_year" type="number" min="2010" max="2099" step="1" value="2024" id="year-picker">
             </td>
             <td>
                 <select name="proj_student_year">
@@ -40,6 +46,25 @@
                             <li>{{$company['company_name']}}</li>
                             @endforeach
                             <a href="{{url('/insert-company')}}">add company</a>
+                        </ul>
+                    </div>
+                </div>
+            </td>
+            <td>
+                <label for="proj_company_id">Advisor</label>
+                <div class="select-company-box" name="proj_company_id">
+                    <div class="select-company-option">
+                        <input type="text" placeholder="Please select company" id="companyValue" readonly name="">
+                    </div>
+                    <div class="company-content">
+                        <div class="company-search">
+                            <input type="text" id="companyOptionSearch" placeholder="Seach Company" name="">
+                        </div>
+                        <ul class="company-options">
+                            @foreach($oe_advisors as $advisor)
+                            <li>{{$advisor['advisor_title']}} {{$advisor['advisor_fname']}} {{$advisor['advisor_lname']}}</li>
+                            @endforeach
+                            <a href="{{url('/insert-advisor')}}">add advisor</a>
                         </ul>
                     </div>
                 </div>
