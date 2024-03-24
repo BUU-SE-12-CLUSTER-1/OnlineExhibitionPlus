@@ -11,6 +11,7 @@ class AdvisorController extends Controller
     public function insertAdvisor(Request $request){
         $advisor = new AdvisorModel();
         // dd($request->all());
+        $advisor->advisor_title = request('advisor_title');
         $advisor->advisor_fname = request('advisor_fname');
         $advisor->advisor_lname = request('advisor_lname');
         $advisor->save();

@@ -1,17 +1,17 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+}
 
-.select-company-box{
+.select-advisor-box{
     width: 80%;
-
     position: relative;
-    border: 1 !important;
-    outline: 1 !important;
 }
-.select-company-option{
+.select-advisor-option{
     position: relative;
-    border: 1 !important;
-    outline: 1 !important;
 }
-.select-company-option input{
+.select-advisor-option input{
     width: 105%;
     height: 5px;
     background-color: #fff;
@@ -22,10 +22,9 @@
     padding: 5px 10px;
     border: 1 !important;
     outline: 1 !important;
-
 }
 
-.select-company-option:after{
+.select-advisor-option:after{
     content: "";
     border-top: 10px solid #000;
     border-left: 6px solid transparent;
@@ -36,7 +35,7 @@
     margin-top: -6px;
 }
 
-.company-content{
+.advisor-content{
     background-color: #fff;
     position: absolute;
     color: #000;
@@ -46,7 +45,7 @@
     z-index: 999;
     display: none;
 }
-.company-search input{
+.advisor-search input{
     width: 100%;
     font-size: 14px;
     padding: 5px;
@@ -54,31 +53,31 @@
     border: 1px solid #b3b3b3;
     border-radius: 5px;
 }
-.company-options{
+.advisor-options{
     margin-top: 10px;
     max-height: 150px;
     overflow-y: auto;
     padding: 0px;
 }
-.company-options li{
+.advisor-options li{
     padding: 10px 15px;
     border-radius: 5px;
     font-size: 14px;
     cursor: pointer;
 }
-.company-options li:hover{
+.advisor-options li:hover{
     background-color: #f2f2f2;
 }
 
-.select-company-box.active .company-content{
+.select-advisor-box.active .advisor-content{
     display: block;
 }
 
-.select-company-box.active .select-company-option:after{
+.select-advisor-box.active .select-advisor-option:after{
     transform: rotate(-180deg);
 }
 
-.company-options a{
+.advisor-options a{
     padding: 10px 15px;
     border-radius: 5px;
     font-size: 14px;

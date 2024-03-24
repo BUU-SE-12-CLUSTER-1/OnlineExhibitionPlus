@@ -1,0 +1,16 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+
+}
+
+input, select, textarea{
+    background-color: #fff;
+    color: #000;
+    border-radius: 360px;
+    cursor: pointer;
+    border-radius: 360px;
+    width: 97%;
+    text-align: center;
+}

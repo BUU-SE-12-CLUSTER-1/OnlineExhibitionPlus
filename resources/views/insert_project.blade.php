@@ -1,14 +1,38 @@
+<link rel="stylesheet" href="{{asset('assets/css/insert_project_page_style.css')}}">
 <link rel="stylesheet" href="{{asset('assets/css/company_selector.css')}}">
+<link rel="stylesheet" href="{{asset('assets/css/advisor_selector.css')}}">
+
 <h1>ADD Project</h1>
 <form action={{url('/insert-project')}} method="POST">
 @csrf
-    <table >
+    <table border="0">
         <tr>
-            <td>
+            <td colspan="2">
                 <label for="proj_name">ชื่อโปรเจกต์ </label>
             </td>
             <td>
                 <label for="proj_created_year">Year</label>
+            </td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="text" name="proj_name" >
+            </td>
+            <td>
+                <input name="proj_created_year" type="number" min="2010" max="2099" step="1" value="2024" id="year-picker">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="proj_company_id">Company</label>
+
+            </td>
+            <td>
+                <label for="proj_advisor_id">Advisor</label>
+
             </td>
             <td>
                 <label for="proj_student_year">College Year</label>
@@ -16,23 +40,6 @@
         </tr>
         <tr>
             <td>
-                <input type="text" name="proj_name">
-            </td>
-            <td>
-                <input name="proj_created_year" type="number" min="2010" max="2099" step="1" value="2024" id="year-picker">
-            </td>
-            <td>
-                <select name="proj_student_year">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                </select>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <label for="proj_company_id">Company</label>
                 <div class="select-company-box" name="proj_company_id">
                     <div class="select-company-option">
                         <input type="text" placeholder="Please select company" id="companyValue" readonly name="">
@@ -51,16 +58,15 @@
                 </div>
             </td>
             <td>
-                <label for="proj_company_id">Advisor</label>
-                <div class="select-company-box" name="proj_company_id">
-                    <div class="select-company-option">
-                        <input type="text" placeholder="Please select company" id="companyValue" readonly name="">
+                <div class="select-advisor-box" name="proj_advisor_id">
+                    <div class="select-advisor-option">
+                        <input type="text" placeholder="Please select advisor" id="advisorValue" readonly name="">
                     </div>
-                    <div class="company-content">
-                        <div class="company-search">
-                            <input type="text" id="companyOptionSearch" placeholder="Seach Company" name="">
+                    <div class="advisor-content">
+                        <div class="advisor-search">
+                            <input type="text" id="advisorOptionSearch" placeholder="Seach Advisor" name="">
                         </div>
-                        <ul class="company-options">
+                        <ul class="advisor-options">
                             @foreach($oe_advisors as $advisor)
                             <li>{{$advisor['advisor_title']}} {{$advisor['advisor_fname']}} {{$advisor['advisor_lname']}}</li>
                             @endforeach
@@ -70,16 +76,12 @@
                 </div>
             </td>
             <td>
-                <label for="projtag_tag_id">หมวดหมู่</label>
-            </td>
-        </tr>
-        <tr>
-            <td>
-
-            </td>
-            <td id="project-tag">
-                <button type="button" onclick="insert_tag()">+</button>
-
+                <select name="proj_student_year">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
             </td>
         </tr>
 
@@ -122,30 +124,63 @@
     }
 </script>
 <script>
-    const selectBox = document.querySelector('.select-company-box');
-    const selectOption = document.querySelector('.select-company-option');
+    const selectCompanyBox = document.querySelector('.select-company-box');
+    const selectCompanyOption = document.querySelector('.select-company-option');
     const companyContent = document.querySelector('.company-content');
     const companyOptions = document.querySelector('.company-options');
-    const optionSearch = document.getElementById('companyOptionSearch');
-    const soValue = document.querySelector('#companyValue');
-    const optionList = document.querySelectorAll('.company-options li');
+    const optionCompanySearch = document.getElementById('companyOptionSearch');
+    const companyValue = document.querySelector('#companyValue');
+    const optionCompanyList = document.querySelectorAll('.company-options li');
 
-    selectOption.addEventListener('click', function(){
-        selectBox.classList.toggle('active');
+    selectCompanyOption.addEventListener('click', function(){
+        selectCompanyBox.classList.toggle('active');
     });
-    optionList.forEach(function(optionListSingle){
-        optionListSingle.addEventListener('click', function(){
+    optionCompanyList.forEach(function(optionCompanyListSingle){
+        optionCompanyListSingle.addEventListener('click', function(){
             text = this.textContent;
-            soValue.value = text;
-            selectBox.classList.remove('active');
+            companyValue.value = text;
+            selectCompanyBox.classList.remove('active');
         })
     });
 
-    optionSearch.addEventListener('keyup', function(){
-        const filter = optionSearch.value.toUpperCase();
-        optionList.forEach(option =>{
+    optionCompanySearch.addEventListener('keyup', function(){
+        const filter = optionCompanySearch.value.toUpperCase();
+        optionCompanyList.forEach(option =>{
             const companyName = option.textContent.toUpperCase();
             if (companyName.includes(filter) || filter === ''){
+                option.style.display = 'block';
+            } else {
+                option.style.display = 'none';
+            }
+        });
+    });
+
+</script>
+<script>
+    const selectAdvisorBox = document.querySelector('.select-advisor-box');
+    const selectAdvisorOption = document.querySelector('.select-advisor-option');
+    const advisorContent = document.querySelector('.advisor-content');
+    const advisorOptions = document.querySelector('.advisor-options');
+    const optionAdvisorSearch = document.getElementById('advisorOptionSearch');
+    const advisorValue = document.querySelector('#advisorValue');
+    const optionAdvisorList = document.querySelectorAll('.advisor-options li');
+
+    selectAdvisorOption.addEventListener('click', function(){
+        selectAdvisorBox.classList.toggle('active');
+    });
+    optionAdvisorList.forEach(function(optionAdvisorListSingle){
+        optionAdvisorListSingle.addEventListener('click', function(){
+            text = this.textContent;
+            advisorValue.value = text;
+            selectAdvisorBox.classList.remove('active');
+        })
+    });
+
+    optionAdvisorSearch.addEventListener('keyup', function(){
+        const filter = optionAdvisorSearch.value.toUpperCase();
+        optionAdvisorList.forEach(option =>{
+            const advisorName = option.textContent.toUpperCase();
+            if (advisorName.includes(filter) || filter === ''){
                 option.style.display = 'block';
             } else {
                 option.style.display = 'none';
