@@ -1,0 +1,24 @@
+.tag-input-wrap{
+    border: 1px #888 solid;
+    border-radius: 360px;
+    display: flex;
+}
+.tag-input-wrap input{
+    background: none;
+    border: none;
+    width: 100%;
+}
+.tag-input-wrap input:focus{
+    outline: none;
+}
+.tag{
+    background: #f1f1f1;
+    border: 1px #888 solid;
+    border-radius: 360px;
+    color: #888;
+    cursor: pointer;
+    font-size: 12px;
+    margin: 0 5px 5px 0;
+    padding: 5px 10px;
+    display: inline-block;
+}

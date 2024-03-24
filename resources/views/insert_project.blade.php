@@ -84,6 +84,20 @@
                 </select>
             </td>
         </tr>
+        <tr>
+            <td>
+                <label for="tag_id">Tag</label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="tag-input-wrap">
+                    <input type="text" placeholder="Add a tag.." id="tagInput" maxlength="25" autocomplete="off" />
+                    </div>
+                    <div class="tags"></div>
+                    <small style="color: #888"> Add up to 2 tags for your project</small>
+            </td>
+        </tr>
 
     </table>
 </form>
@@ -187,5 +201,23 @@
             }
         });
     });
+
+</script>
+<script>
+    const tagInput = document.querySelector('#tagInput');
+    //const tagForm = document.querySelector('#tag');
+    const tagOutput = document.querySelector('.tags');
+    const max = document.querySelector('.max');
+    function outputTag(){
+        const tag = `<span class="tags">
+                        <b>${tagFormat}<b>
+                        <span class="material-icons-outlined remove-btn">
+                        close
+                        </span>
+                    </span>`
+                    tagOutput.innerHTML += tag;
+                    tagInput.value = "";
+    }
+    
 
 </script>
