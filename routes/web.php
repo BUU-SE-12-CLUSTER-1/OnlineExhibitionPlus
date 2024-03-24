@@ -61,6 +61,7 @@ Route::post('/insert-tag', [TagController::class, 'insertTag']);
 Route::get('/insert-major', function(){
     return view('insert_major');
 });
+Route::get('/major-list',[MajorController::class, 'showMajorlist']);
 
 Route::post('/insert-major',[MajorController::class, 'insertMajor']);
 
@@ -69,4 +70,3 @@ Route::get('/insert-company', function(){
 });
 
 Route::post('/insert-company',[CompanyController::class, 'insertCompany']);
-

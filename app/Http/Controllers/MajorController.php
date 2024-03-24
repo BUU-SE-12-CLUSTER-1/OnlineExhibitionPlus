@@ -14,4 +14,8 @@ class MajorController extends Controller
         $major->save();
         return view('success');
     }
+    public function showMajorList(){
+        $major_data = MajorModel::all();
+        return view('major_list',['oe_majors' => $major_data]);
+    }
 }
