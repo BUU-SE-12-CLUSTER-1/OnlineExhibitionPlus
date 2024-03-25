@@ -76,3 +76,9 @@ Route::get('/insert-company', function(){
 Route::post('/insert-company',[CompanyController::class, 'insertCompany']);
 Route::post('/company-dropdown-list',[CompanyController::class, 'showCompanyDropdownList']);
 Route::get('/insert-project',[ProjectController::class, 'insertProject']);
+
+Route::get('/advisor-list',[AdvisorController::class, 'showAdvisorList']);
+Route::get('/delete-advisor/{advisor_id}',[AdvisorController::class, 'deleteAdvisor']);
+Route::get('/edit-advisor/{advisor_id}',[AdvisorController::class, 'editAdvisor']);
+
+Route::post('update-advisor/{advisor_id}',[AdvisorController::class, 'updateAdvisor']);
