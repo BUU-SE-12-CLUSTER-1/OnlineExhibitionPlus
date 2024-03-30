@@ -31,11 +31,7 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-Route::get('/insert-user',function(){
-    $major_data = MajorModel::all();
-    $role_data = RoleModel::all();
-    return view('insert_user',['oe_majors'=>$major_data,'oe_roles'=>$role_data]);
-});
+Route::get('/insert-user',[UserController::class, 'insertUserPage']);
 Route::post('/insert-user',[UserController::class, 'insertUser']);
 Route::get('/user-list',[UserController::class, 'showUserList']);
 Route::get('/delete-user/{user_id}',[UserController::class, 'deleteUser']);

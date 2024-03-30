@@ -28,6 +28,11 @@ class UserController extends Controller
         return redirect('/user-list');
         //return back()->withStatus('successfully');
     }
+    public function insertUserPage(){
+        $major_data = MajorModel::query()->orderBy('major_id','ASC')->get();
+        $role_data = RoleModel::all();
+        return view('insert_user',['oe_majors'=>$major_data,'oe_roles'=>$role_data]);
+    }
     public function insertUser(Request $request){
         $user = new UserModel();
         $user->user_student_id = request('user_student_id');

@@ -41,7 +41,6 @@
             <a href={{url("/delete-user/".$user['user_id'])}}>Delete</a>
             <a href={{url("/user-profile/".$user['user_id'])}}>Profile</a>
         </td>
-
     </tr>
     @endforeach
 </table>

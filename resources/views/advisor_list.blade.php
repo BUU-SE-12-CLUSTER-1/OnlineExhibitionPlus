@@ -17,6 +17,7 @@
     <label for="action"> Action </label>
 </td>
 </tr>
+<?php $advisor_id = null?>
 @foreach ($oe_advisors as $advisor)
     <tr>
         <td>
@@ -31,9 +32,12 @@
         <td>
             <label>{{$advisor['advisor_lname']}}</label>
         </td>
+        <?php $advisor_id = $advisor['advisor_id']?>
         <td>
-            <a href={{url("/delete-advisor/".$advisor['advisor_id'])}}>Delete</a>
+            <a href="javascript: deleteAlert();" id="delete">Delete</a>
             <a href={{url("/edit-advisor/".$advisor['advisor_id'])}}>Edit</a>
+            <button type="button" onclick="deleteAlert()">DELETE</button>
+            <button type="button" class="btn btn-danger;" onclick="deleteAlert()">Delete</button>
         </td>
     </tr>
 @endforeach
@@ -46,3 +50,28 @@
         display: none;
     }
 </style>
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    function deleteAlert(){
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire(
+                    'Deleted!',
+                    'Your file has been deleted.',
+                   'success'
+                ).then(function(){
+                    window.location.replace('{{url("/delete-advisor/".$advisor_id);}}');
+                });
+            }
+        })
+    }
+</script>

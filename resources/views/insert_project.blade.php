@@ -2,11 +2,13 @@
 <link rel="stylesheet" href="{{asset('assets/css/company_selector.css')}}">
 <link rel="stylesheet" href="{{asset('assets/css/advisor_selector.css')}}">
 <link rel="stylesheet" href="{{asset('assets/css/tag_selector.css')}}">
+<link rel="stylesheet" href="{{asset('assets/css/upload_box.css')}}">
 <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/thinline.css">
+<script src="https://kit.fontawesome.com/a87b92189d.js" crossorigin="anonymous"></script>
 <h1>ADD Project</h1>
 <form action={{url('/insert-project')}} method="POST" onkeydown="if(event.keyCode === 13) {
     return false;
-}">
+}" enctype="multipart/form-data">
 @csrf
     <table border="0">
         <tr>
@@ -115,6 +117,52 @@
                 </div>
             </td>
         </tr>
+        <tr>
+            <td>
+                <label for="proj_main_image">Picture</label>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <div class="drop-area">
+                <label for="input-user-image">
+                    <input type="file" name="upload-image" accept="image/*" id="input-user-image" hidden>
+                    <div id="img-view" style="width: 100%; height: 150px; border-radius: 25px; text-align: center; display: relative;border: 1px solid #000;">
+                        <i class="fa-regular fa-images" style="margin-top:25px;font-size: 40px;line-height:60px;"></i><br>
+                        <label style="line-height:20px;padding: 6px 4px 6px 4px;vertical-align: middle; font-size: 14px; border: 1px solid #000; border-radius: 12px; width:fit-content;">Upload from your device</label>
+                    </div>
+                </label>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="member" >Member</label>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <div style="overflow-y: scroll;width: 100%; height: 150px; border-radius: 25px; text-align: center; display: relative; border: 1px solid #000;">
+                    <table border="1" style="height: 90%; margin:7px 11px; overflow-x: scroll; " >
+                        <td style="height: 90%; width: 25%; border-radius:25px; margin:7px 12px;">
+                            test
+                        </td>
+                        <td style="height: 90%; width: 25%; border-radius:25px; margin:7px 10px;">
+                            test
+                        </td>
+                        <td style="height: 90%; width: 25%; border-radius:25px; margin:7px 10px;">
+                            test
+                        </td>
+                        <td style="height: 90%; width: 25%; border-radius:25px; margin:7px 10px;">
+                            test
+                        </td>
+                        <td style="height: 90%; width: 25%; border-radius:25px; margin:7px 10px;">
+                            test
+                        </td>
+                    </table>
+                </div>
+            </td>
+        </tr>
 
     </table>
 </form>
@@ -220,6 +268,53 @@
     tagSearch.addEventListener('keyup', function(){
         selectTagBox.classList.add('active');
     });
+    tagSearch.addEventListener('keydown', deleteTagByKeyPress);
+    function deleteTagByKeyPress(e){
+        if(tagSearch.value === "" && e.key === 'Backspace' || e.key === 'Delete' ){
+            const ulTagList = document.querySelectorAll('.tag-search ul li');
+            lastTag = "";
+            ulTagList.forEach(tag=>{
+                const ulTagName = tag.textContent;
+                lastTag = tag;
+            });
+            if(lastTag != ""){
+                lastTag.remove();
+            }
+            remainTag = 2 - ulTagList.length+1;
+            if(remainTag >=2){
+                optionTagSearch.placeholder = "Add a tag..";
+            }else{
+            optionTagSearch.placeholder = `${remainTag} tags are remaining`;
+            }
+        }else if(e.key === 'Enter'){
+            optionTagList.forEach(function(optionTagListSingle){
+        optionTagListSingle.addEventListener('click', function(){
+            text = this.textContent;
+            isDuplicate = false;
+            const ulTagList = document.querySelectorAll('.tag-search ul li');
+            ulTagList.forEach(tag=>{
+                const ulTagName = tag.textContent;
+                if(ulTagName == text){
+                    isDuplicate = true;
+                }
+            });
+            if(isDuplicate == false && ulTagList.length<2){
+                let newTag = `<li>${text}<i class="uit uit-multiply" onclick="removeTag(this, '${text}')"></i></li>`;
+                tagSearch.insertAdjacentHTML("beforebegin", newTag);
+            selectTagBox.classList.remove('active');
+            optionTagSearch.value = "";
+            remainTag = 2 - ulTagList.length-1;
+            if(remainTag >= 2){
+                optionTagSearch.placeholder = "Add a tag..";
+            }else{
+            optionTagSearch.placeholder = `${remainTag} tags are remaining`;
+            }
+        }
+
+        })
+    });
+        }
+    }
     optionTagList.forEach(function(optionTagListSingle){
         optionTagListSingle.addEventListener('click', function(){
             text = this.textContent;
@@ -237,12 +332,12 @@
             selectTagBox.classList.remove('active');
             optionTagSearch.value = "";
             remainTag = 2 - ulTagList.length-1;
-            if(remainTag == 2){
+            if(remainTag >= 2){
                 optionTagSearch.placeholder = "Add a tag..";
             }else{
             optionTagSearch.placeholder = `${remainTag} tags are remaining`;
             }
-        }
+            }
 
         })
     });
@@ -250,20 +345,16 @@
         const ulTagList = document.querySelectorAll('.tag-search ul li');
             ulTagList.forEach(tag=>{
                 const ulTagName = tag.textContent;
-                console.log(ulTagName);
-                console.log(tag.textContent);
-
                 if(ulTagName == tagName){
                     tag.remove();
                 }
             });
             remainTag = 2 - ulTagList.length+1;
-            if(remainTag == 2){
+            if(remainTag >= 2){
                 optionTagSearch.placeholder = "Add a tag..";
             }else{
             optionTagSearch.placeholder = `${remainTag} tags are remaining`;
             }
-        console.log(element, tagName);
     }
     optionTagSearch.addEventListener('keyup', function(){
         const filter = optionTagSearch.value.toUpperCase();
@@ -276,5 +367,75 @@
             }
         });
     });
+    optionTagSearch.addEventListener('keyup', addTagByKeyPress);
+    function addTagByKeyPress(e){
+        if(e.key == 'Enter'){
+            const filter = optionTagSearch.value.toUpperCase();
+            optionTagList.forEach(option =>{
+            const tagName = option.textContent.toUpperCase();
+            if (tagName === filter){
+                text = option.textContent;
+            isDuplicate = false;
+            const ulTagList = document.querySelectorAll('.tag-search ul li');
+            ulTagList.forEach(tag=>{
+                const ulTagName = tag.textContent;
+                if(ulTagName == text){
+                    isDuplicate = true;
+                }
+            });
+            if(isDuplicate == false && ulTagList.length<2){
+                let newTag = `<li>${text}<i class="uit uit-multiply" onclick="removeTag(this, '${text}')"></i></li>`;
+                tagSearch.insertAdjacentHTML("beforebegin", newTag);
+            selectTagBox.classList.remove('active');
+            optionTagSearch.value = "";
+            remainTag = 2 - ulTagList.length-1;
+            if(remainTag >= 2){
+                optionTagSearch.placeholder = "Add a tag..";
+            }else{
+            optionTagSearch.placeholder = `${remainTag} tags are remaining`;
+            }
+            }else{
+                optionTagSearch.value = "";
+            }
 
+            } else{
+            optionTagSearch.value = "";
+        }
+        });
+        }
+        else{
+            const filter = optionTagSearch.value.toUpperCase();
+        optionTagList.forEach(option =>{
+            const tagName = option.textContent.toUpperCase();
+            if (tagName.includes(filter) || filter === ''){
+                option.style.display = 'block';
+            } else {
+                option.style.display = 'none';
+            }
+        });
+        }
+    }
+
+</script>
+<script>
+    const dropArea = document.getElementById("drop-area");
+const inputFile = document.getElementById("input-user-image");
+const imageView = document.getElementById("img-view");
+
+inputFile.addEventListener("change", uploadImage);
+
+function uploadImage(){
+    let imgLink = URL.createObjectURL(inputFile.files[0]);
+    imageView.style.backgroundImage = `url(${imgLink})`;
+    imageView.textContent = "";
+    imageView.style.border = 0;
+}
+dropArea.addEventListener("dragover", function(e){
+    e.preventDefault();
+});
+dropArea.addEventListener("drop", function(e){
+    e.preventDefault();
+    inputFile.files = e.dataTransfer.files;
+    uploadImage();
+});
 </script>
