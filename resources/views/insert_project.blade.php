@@ -1,9 +1,12 @@
 <link rel="stylesheet" href="{{asset('assets/css/insert_project_page_style.css')}}">
 <link rel="stylesheet" href="{{asset('assets/css/company_selector.css')}}">
 <link rel="stylesheet" href="{{asset('assets/css/advisor_selector.css')}}">
-
+<link rel="stylesheet" href="{{asset('assets/css/tag_selector.css')}}">
+<link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/thinline.css">
 <h1>ADD Project</h1>
-<form action={{url('/insert-project')}} method="POST">
+<form action={{url('/insert-project')}} method="POST" onkeydown="if(event.keyCode === 13) {
+    return false;
+}">
 @csrf
     <table border="0">
         <tr>
@@ -91,52 +94,31 @@
         </tr>
         <tr>
             <td>
-                <div class="tag-input-wrap">
-                    <input type="text" placeholder="Add a tag.." id="tagInput" maxlength="25" autocomplete="off" />
+                <div class="select-tag-box" name="proj_tag_id">
+                    <div class="select-tag-option">
+                        <div class="tag-search">
+                            <ul>
+                                <input type="text" id="tagOptionSearch" placeholder="Add a tag.." name="">
+                            </ul>
+                            <small style="color: #888"> Add up to 2 tags for your project</small>
+                        </div>
                     </div>
-                    <div class="tags"></div>
-                    <small style="color: #888"> Add up to 2 tags for your project</small>
+                    <div class="tag-content">
+
+                        <ul class="tag-options">
+                            @foreach($oe_tags as $tag)
+                            <li>{{$tag['tag_name']}}</li>
+                            @endforeach
+                            <a href="{{url('/insert-tag')}}">add new tag</a>
+                        </ul>
+                    </div>
+                </div>
             </td>
         </tr>
 
     </table>
 </form>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-<script>
-    var company_selector = document.getElementById('select-company');
-    var tag_selector = document.getElementById('select-tag');
-
-    company_selector.onchange = function(){
-        var user_option = this.options[this.selectedIndex];
-        if(user_option.value == 'insert-company'){
-            window.open('{{url('/insert-company')}}', "company page");
-        }
-    }
-    tag_selector.onchange = function(){
-        var user_option = this.options[this.selectedIndex];
-        if(user_option.value == 'insert-tag'){
-            window.open('{{url('/insert-tag')}}', "tag page");
-        }
-    }
-    $(document).ready(function(){
-        $('#project-tag').after(`<select name="projtag_tag_id" id="select-tag">
-                    <option value="#" selected="selected">-- Select tag --</option>
-                    @foreach($oe_tags as $tag)
-                    <option value={{$tag['tag_id']}}>{{$tag['tag_name']}}</option>
-                    @endforeach
-                    <option value="insert-tag";">Add tag</option>
-                </select>`)
-    });
-    function insert_tag(){
-        $('#project-tag').after(`<select name="projtag_tag_id" id="select-tag">
-                    <option value="#" selected="selected">-- Select tag --</option>
-                    @foreach($oe_tags as $tag)
-                    <option value={{$tag['tag_id']}}>{{$tag['tag_name']}}</option>
-                    @endforeach
-                    <option value="insert-tag";">Add tag</option>
-                </select>`)
-    }
-</script>
 <script>
     const selectCompanyBox = document.querySelector('.select-company-box');
     const selectCompanyOption = document.querySelector('.select-company-option');
@@ -218,6 +200,81 @@
                     tagOutput.innerHTML += tag;
                     tagInput.value = "";
     }
-    
+
+
+</script>
+<script>
+    const selectTagBox = document.querySelector('.select-tag-box');
+    const selectTagOption = document.querySelector('.select-tag-option');
+    const tagContent = document.querySelector('.tag-content');
+    const tagOptions = document.querySelector('.tag-options');
+    const optionTagSearch = document.getElementById('tagOptionSearch');
+    const tagValue = document.querySelector('#tagValue');
+    const optionTagList = document.querySelectorAll('.tag-options li');
+    const ulTag = document.querySelector('.tag-search ul');
+    const tagSearch = document.querySelector('.tag-search input');
+
+    tagSearch.addEventListener('click', function(){
+        selectTagBox.classList.toggle('active');
+    });
+    tagSearch.addEventListener('keyup', function(){
+        selectTagBox.classList.add('active');
+    });
+    optionTagList.forEach(function(optionTagListSingle){
+        optionTagListSingle.addEventListener('click', function(){
+            text = this.textContent;
+            isDuplicate = false;
+            const ulTagList = document.querySelectorAll('.tag-search ul li');
+            ulTagList.forEach(tag=>{
+                const ulTagName = tag.textContent;
+                if(ulTagName == text){
+                    isDuplicate = true;
+                }
+            });
+            if(isDuplicate == false && ulTagList.length<2){
+                let newTag = `<li>${text}<i class="uit uit-multiply" onclick="removeTag(this, '${text}')"></i></li>`;
+                tagSearch.insertAdjacentHTML("beforebegin", newTag);
+            selectTagBox.classList.remove('active');
+            optionTagSearch.value = "";
+            remainTag = 2 - ulTagList.length-1;
+            if(remainTag == 2){
+                optionTagSearch.placeholder = "Add a tag..";
+            }else{
+            optionTagSearch.placeholder = `${remainTag} tags are remaining`;
+            }
+        }
+
+        })
+    });
+    function removeTag(element, tagName){
+        const ulTagList = document.querySelectorAll('.tag-search ul li');
+            ulTagList.forEach(tag=>{
+                const ulTagName = tag.textContent;
+                console.log(ulTagName);
+                console.log(tag.textContent);
+
+                if(ulTagName == tagName){
+                    tag.remove();
+                }
+            });
+            remainTag = 2 - ulTagList.length+1;
+            if(remainTag == 2){
+                optionTagSearch.placeholder = "Add a tag..";
+            }else{
+            optionTagSearch.placeholder = `${remainTag} tags are remaining`;
+            }
+        console.log(element, tagName);
+    }
+    optionTagSearch.addEventListener('keyup', function(){
+        const filter = optionTagSearch.value.toUpperCase();
+        optionTagList.forEach(option =>{
+            const tagName = option.textContent.toUpperCase();
+            if (tagName.includes(filter) || filter === ''){
+                option.style.display = 'block';
+            } else {
+                option.style.display = 'none';
+            }
+        });
+    });
 
 </script>

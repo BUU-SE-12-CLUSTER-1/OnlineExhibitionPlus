@@ -1,3 +1,4 @@
+/*
 .tag-input-wrap{
     border: 1px #888 solid;
     border-radius: 360px;
@@ -21,4 +22,180 @@
     margin: 0 5px 5px 0;
     padding: 5px 10px;
     display: inline-block;
+}
+.wrapper :where(li, li i, .tag-details){
+    display: flex;
+    align-items: center;
+}
+.tag-content p{
+    font-size: 14px;
+}
+
+.tag-content ul{
+    display: flex;
+    padding: 7px;
+    border-radius: 365px;
+    border: 1px solid #888;
+}
+
+.tag-content ul li{
+    list-style: none;
+    margin: 4px 3px;
+    border-radius: 365px;
+    background: #f2f2f2;
+    padding: 5px 8px 5px 10px;
+    border: 1px solid #888;
+}
+.tag-content ul li i{
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+    color: #808080;
+    font-size: 12px;
+    border-radius: 365px;
+    background: #dfdfdf;
+    justify-content: center;
+}
+.tag-content ul input{
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 5px;
+    font-size: 16px;
+}
+
+.wrapper .tag-details{
+    justify-content: space-between;
+}
+.tag-details button{
+    border: none;
+    outline: none;
+    color: #fff;
+    font-size: 14px;
+    padding: 9px 15px;
+    border-radius: 365px;
+    background: #5372F0;
+
+}
+
+*/
+.select-tag-box{
+    width: 94%;
+    position: relative;
+    justify-content: space-between;
+}
+.select-tag-option{
+    position: relative;
+
+}
+.select-tag-option input{
+    width: 105%;
+    height: 5px;
+    background-color: #fff;
+    color: #000;
+    border-radius: 360px;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 5px 10px;
+    border: 1 !important;
+    outline: 1 !important;
+
+}
+
+.tag-content{
+    background-color: #fff;
+    position: absolute;
+    color: #000;
+    border-radius: 360px;
+    margin-top: 15px;
+    width: 120%;
+    z-index: 999;
+    display: none;
+}
+.tag-search input{
+    width: 94%;
+    font-size: 14px;
+    padding: 5px;
+    outline: 0px;
+    border: 1px solid #000;
+    border-radius: 360px;
+    height: 5px;
+
+
+}
+.tag-options{
+    margin-top: 10px;
+    max-height: 150px;
+    overflow-y: auto;
+    padding: 0px;
+}
+.tag-options li{
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+}
+.tag-options li:hover{
+    background-color: #f2f2f2;
+}
+
+.select-tag-box.active .tag-content{
+    display: block;
+}
+
+.select-tag-box.active .select-tag-option:after{
+    transform: rotate(-180deg);
+}
+
+.tag-options a{
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    /*margin-top: -50%;z*/
+}
+
+.tag-search ul{
+    display: flex;
+    align-items: center;
+    width: 94%;
+    font-size: 14px;
+    padding: 5px;
+    outline: 0px;
+    border: 1px solid #000;
+    border-radius: 360px;
+    border: 1 !important;
+    outline: 1 !important;
+
+}
+.tag-search ul li{
+    list-style: none;
+    margin: -1px 3px;
+    border-radius: 365px;
+    background: #f2f2f2;
+    padding: 5px 8px 5px 10px;
+    border: 1px solid #888;
+    width: fit-content;
+    font-size: 14px;
+}
+.tag-search ul li i{
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+    color: #808080;
+    font-size: 12px;
+    border-radius: 365px;
+    background: #dfdfdf;
+    justify-content: center;
+
+}
+.tag-search ul input{
+    position: flex;
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 5px;
+    font-size: 14px;
+    text-align: left;
+    width: 50%;
 }

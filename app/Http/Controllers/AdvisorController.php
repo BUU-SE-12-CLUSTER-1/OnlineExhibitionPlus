@@ -15,7 +15,7 @@ class AdvisorController extends Controller
         $advisor->advisor_fname = request('advisor_fname');
         $advisor->advisor_lname = request('advisor_lname');
         $advisor->save();
-        return back();
+        return redirect('/advisor-list');
 
     }
     public function showAdvisorList(){
