@@ -24,7 +24,11 @@ use App\Http\Controllers\ProjectController;
 */
 
 Route::get('/', function (){
-    return view('welcome');
+    return view('frontend.index');
+});
+
+Route::get('/h', function(){
+    return view('layouts.layout');
 });
 
 Route::get('/dashboard', function () {

@@ -1,3 +1,8 @@
+@extends('layouts.layout')
+@section('title')
+user list | Online Exhibition+
+@endsection
+@section('content')
 <h1>User List</h1>
 <form action={{url("/search-user")}} method="POST" name="form_search" >
     @csrf
@@ -53,3 +58,4 @@
         display: none;
     }
 </style>
+@endsection
