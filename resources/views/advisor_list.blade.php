@@ -1,21 +1,34 @@
+@extends('layouts.layout')
+@section('title')
+user list | Online Exhibition+
+@endsection
+@section('content')
 <h1>Advisor List</h1>
-<table border="1">
+<table border="0">
 <tr>
-    <td>
+
+        <th>
         <label> id </label>
-    </td>
-    <td>
+    </th>
+
+
+        <th>
         <label for="advisor_title"> Title </label>
-    </td>
-<td>
+    </th>
+
+
+    <th>
     <label for="advisor_fname"> FisrtName </label>
-</td>
-<td>
+</th>
+
+    <th>
     <label for="advisor_lname"> LastName </label>
-</td>
-<td>
+</th>
+
+    <th>
     <label for="action"> Action </label>
-</td>
+</th>
+
 </tr>
 <?php $advisor_id = null?>
 @foreach ($oe_advisors as $advisor)
@@ -75,3 +88,4 @@
         })
     }
 </script>
+@endsection
