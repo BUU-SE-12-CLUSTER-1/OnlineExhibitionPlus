@@ -13,7 +13,7 @@
     <table border="0">
         <tr>
             <td colspan="2">
-                <label for="proj_name">ชื่อโปรเจกต์ </label>
+                <label for="proj_name">Project Name</label>
             </td>
             <td>
                 <label for="proj_created_year">Year</label>
