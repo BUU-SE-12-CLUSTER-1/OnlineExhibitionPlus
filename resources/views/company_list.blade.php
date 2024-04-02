@@ -1,18 +1,36 @@
 <h1>Company List</h1>
 <table border="1">
     <tr>
-        <td>ID</td>
-        <td>Company Name</td>
-        <td>Action</td>
-    </tr>
-    @foreach ($oe_companies as $company)
-    <tr>
-        <td>{{$company["company_id"]}}</td>
-        <td>{{$company["company_name"]}}</td>
         <td>
-            <a href="">Edit</a>
-            <a href="">Delete</a>
+            <label for="company_id">ID</label>
+        </td>
+        <td>
+            <label for="company_name">Company Name</label>
+        </td>
+        <td>
+            <label for="action">Action</label>
         </td>
     </tr>
-@endforeach
+    @foreach ($oe_companies as $company)
+        <tr>
+            <td>
+                <label> {{ $company['company_id'] }} </label>
+            </td>
+            <td>
+                <label> {{ $company['company_name'] }} </label>
+            </td>
+            <td>
+                <a href={{ url('/delete-company/' . $company['company_id']) }}>Delete</a>
+                <a href={{ url('/edit-company/' . $company['company_id']) }}>Edit</a>
+            </td>
+        </tr>
+    @endforeach
 </table>
+<span>
+    {{ $oe_companies->appends(request()->input())->links() }}
+</span>
+<style>
+    .w-5 {
+        display: none;
+    }
+</style>

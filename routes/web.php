@@ -71,4 +71,9 @@ Route::get('/insert-company', function(){
 Route::post('/insert-company',[CompanyController::class, 'insertCompany']);
 
 Route::post('/insert-company',[CompanyController::class, 'insertCompany']);
+
 Route::get('/company-list',[CompanyController::class, 'showCompanyList']);
+Route::get('/delete-company/{company_id}',[CompanyController::class, 'deleteCompany']);
+Route::get('/edit-company/{company_id}',[CompanyController::class, 'editCompany']);
+
+Route::post('update-company/{company_id}',[CompanyController::class, 'updateCompany']);
