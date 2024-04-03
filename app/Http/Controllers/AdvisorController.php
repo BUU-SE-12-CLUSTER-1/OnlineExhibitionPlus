@@ -17,4 +17,9 @@ class AdvisorController extends Controller
         return view('success');
 
     }
+    public function showAdvisorList(){
+        $advisor_data = AdvisorModel::all();
+       return view('advisor_list',['oe_advisors'=>$advisor_data]);
+
+    }
 }

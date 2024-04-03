@@ -70,3 +70,5 @@ Route::get('/insert-company', function(){
 
 Route::post('/insert-company',[CompanyController::class, 'insertCompany']);
 
+Route::get('/advisor-list',[AdvisorController::class, 'showAdvisorList']);
+
