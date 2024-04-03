@@ -129,3 +129,27 @@ left: 1040px;
 #button-area button{
     margin-left: 6px;
 }
+.side-navbar{
+    height: 135.5% !important;
+  width: 200px;
+  position: absolute;
+  z-index: 1;
+  top: 118px;
+  left: 0;
+  background: rgba(255, 255, 255, 0.90);
+  padding-top: 20px;
+  display: block;
+}
+.side-navbar a, .dropdown-btn {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #818181;
+    display: block;
+    border: none;
+    background: none;
+    width:100%;
+    text-align: left;
+    cursor: pointer;
+    outline: none;
+  }

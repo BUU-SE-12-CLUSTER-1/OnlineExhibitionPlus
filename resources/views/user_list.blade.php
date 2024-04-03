@@ -35,20 +35,30 @@
         <td>{{$user['user_fname']}}</td>
         <td> {{$user['user_lname']}}</td>
         <td>
-            <a href={{url("/edit-user/".$user['user_id'])}}>Edit</a>
+            <a href="javascript:editUser();">Edit</a>
             <a href={{url("/delete-user/".$user['user_id'])}}><i class="fa-solid fa-trash-can"></i></a>
             <a href={{url("/user-profile/".$user['user_id'])}}>Profile</a>
         </td>
     </tr>
+    <?php
+    $user_id = $user['user_id'];
+    ?>
+    <div class="edit-box">
+
+</div>
     @endforeach
 </table>
 <span>
     {{$oe_users->appends(request()->input())->links()}}
 </span>
-
     <style>
         .w-5 {
             display: none;
         }
     </style>
+    <script>
+        const editBox = document.querySelector('.edit-box');
+        function editUser(){
+        }
+    </script>
 @endsection

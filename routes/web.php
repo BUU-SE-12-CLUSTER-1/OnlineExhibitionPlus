@@ -24,7 +24,7 @@ use App\Http\Controllers\ProjectController;
 */
 
 Route::get('/', function (){
-    return view('frontend.index');
+    return view('layouts.layout');
 });
 
 Route::get('/h', function(){
