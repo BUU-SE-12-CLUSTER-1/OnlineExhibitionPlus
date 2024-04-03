@@ -10,7 +10,8 @@
         *{
             padding: 0;
             margin: 0;
-            box-sizing: border-box;
+            width: 100px;
+            height: 700px;
         }
         body{
             background-color: #7aacff;
