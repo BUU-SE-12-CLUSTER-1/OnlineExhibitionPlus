@@ -4,6 +4,7 @@ user list | Online Exhibition+
 @endsection
 @section('content')
 <script src="https://kit.fontawesome.com/a87b92189d.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="{{asset('assets/css/major_table.css')}}">
 <h1>User List</h1>
 <form action={{url("/search-user")}} method="POST" name="form_search" >
     @csrf
@@ -16,12 +17,12 @@ user list | Online Exhibition+
 
 <table border="1">
     <tr>
-        <td>ID</td>
-        <td>Student id</td>
-        <td>Fullname</td>
-        <td>roles</td>
-        <td>Major</td>
-        <td>Action</td>
+        <th>ID</th>
+        <th>Student id</th>
+        <th>Fullname</th>
+        <th>roles</th>
+        <th>Major</th>
+        <th>Action</th>
     </tr>
     @foreach($oe_users as $user)
     <tr>

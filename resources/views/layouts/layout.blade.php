@@ -22,34 +22,35 @@
         </div>
 
 
-        <div class="container py-2" style="margin-top:2%;margin-left: 22%;background-color: #fff; border-radius: 25px; width:75%; align-items:center;justify-content:center;justify-items:center">
+        <div class="container py-2" style="display: block;margin-top:2%;background-color: #fff; border-radius: 25px; width:90%; align-items:center;justify-content:center;justify-items:center">
             @yield('content')
+        </div>
+        <div class="web-footer">
+            <label id="faculty">Faculty of Informatics, Burapha University</label>
+            <label id="copyright">Copyright © 2018-2022 Faculty of Informatics, Burapha University. All rights reserved.</label>
+            <i id="location-icon" class="fa-solid fa-location-dot"></i>
+            <div id="faculty-address">
+            <label>Faculty of Informatics, Burapha University
+                <br>
+                169 Long Had Bangsaen Rd,
+                <br>
+                Saen Suk Chonburi  20131</label>
+            </div>
+            <i id="phone-icon" class="fa-solid fa-phone"></i>
+            <i id="email-icon" class="fa-solid fa-envelope"></i>
+            <div id="faculty-contact">
+                <label>+66 (0)38-103061,<br>
+                    +66 (0)38-10309
+                    <br><br>
+                    pr@informatics.buu.ac.th
+
+                    </label>
+            </div>
         </div>
         </body>
 
         <footer>
-            <div class="web-footer">
-                <label id="faculty">Faculty of Informatics, Burapha University</label>
-                <label id="copyright">Copyright © 2018-2022 Faculty of Informatics, Burapha University. All rights reserved.</label>
-                <i id="location-icon" class="fa-solid fa-location-dot"></i>
-                <div id="faculty-address">
-                <label>Faculty of Informatics, Burapha University
-                    <br>
-                    169 Long Had Bangsaen Rd,
-                    <br>
-                    Saen Suk Chonburi  20131</label>
-                </div>
-                <i id="phone-icon" class="fa-solid fa-phone"></i>
-                <i id="email-icon" class="fa-solid fa-envelope"></i>
-                <div id="faculty-contact">
-                    <label>+66 (0)38-103061,<br>
-                        +66 (0)38-10309
-                        <br><br>
-                        pr@informatics.buu.ac.th
 
-                        </label>
-                </div>
-            </div>
         </footer>
 </html>
 <script>
