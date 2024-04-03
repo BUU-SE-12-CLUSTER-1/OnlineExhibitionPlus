@@ -66,17 +66,20 @@
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <div class="wrapper">
             <?php
-                $images = array("https://th.bing.com/th/id/OIP.fNWgyiZN1juxFkEkUFQ_ewHaEo?pid=ImgDet&w=474&h=296&rs=1", "https://wallpapercave.com/wp/wp2273273.jpg", "https://th.bing.com/th/id/OIP.fNWgyiZN1juxFkEkUFQ_ewHaEo?pid=ImgDet&w=474&h=296&rs=1", "https://th.bing.com/th/id/OIP.B0PB4NuNLePrD31IY66TaAHaEK?pid=ImgDet&w=474&h=266&rs=1", "https://th.bing.com/th/id/OIP.WHw9L5ONr461cZ9Xf-6ghAHaEK?pid=ImgDet&w=474&h=266&rs=1");
-                
+                $images = array("https://wallpapercave.com/wp/wp2273273.jpg", "https://wallpapercave.com/wp/jJzPPVN.jpg", "https://wallpaperaccess.com/full/106956.jpg", "https://cdn.wallpapersafari.com/3/36/9a0eDC.jpg");
+                foreach ($images as $image) {
+                    echo "<img src='$image' class='slide-image'>";
+                }
             ?>
-            @foreach($images as $image) 
-                    <img style="object-fit: cover; width: 100%; height: 100%;" src='{{$image}}' class='slide-image'>;
-            @endforeach
+            
         </div>
     </div>
 </body>
 </html>
+         
+            
