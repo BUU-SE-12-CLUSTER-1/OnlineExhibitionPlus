@@ -14,23 +14,13 @@ class CompanyController extends Controller
         $company->save();
         return view('success');
     }
-    public function showCompanyList(){
-        $company_data = CompanyModel::paginate(5);
-        return view('company_list',['oe_companies'=>$company_data]);
-    }
-    public function deleteCompany($company_id){
-        $company = CompanyModel::find($company_id);
-        $company->delete();
-        return back();
-    }
-    public function editCompany($company_id){
-        $company=CompanyModel::find($company_id);
-        return view('edit_company',['oe_companies'=>$company]);
-    }
-    public function updateCompany($company_id){
-        $company = CompanyModel::find($company_id);
-        $company->company_name = request('company_name');
-        $company->save();
-        return redirect('/company-list');
+    public function showCompanyDropdownList(Request $request){
+        if(request('company_name') == NULL){
+            $company_data = CompanyModel::all();
+            return  response()->json(['oe_companies'=>$company_data]);
+        }else{
+            $company_data = CompanyModel::where('companyname', 'LIKE','%'.$request['company_name'],'%');
+            return response()->json(['oe_companies'=>$company_data]);
+        }
     }
 }

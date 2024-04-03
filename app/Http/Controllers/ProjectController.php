@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\ProjectModel;
 use App\Models\CompanyModel;
+use App\Models\AdvisorModel;
 use App\Models\TagModel;
 
 class ProjectController extends Controller
@@ -13,7 +14,8 @@ class ProjectController extends Controller
     public function insertProject(Request $request){
         $company_data = CompanyModel::all();
         $tag_data = TagModel::all();
-        return view('insert_project',['oe_companies' => $company_data, 'oe_tags' => $tag_data]);
+        $advisor_data = AdvisorModel::all();
+        return view('insert_project',['oe_companies' => $company_data, 'oe_tags' => $tag_data, 'oe_advisors' => $advisor_data]);
     }
     public function insertProjectProcess(Request $request){
         $project = new ProjectModel();
