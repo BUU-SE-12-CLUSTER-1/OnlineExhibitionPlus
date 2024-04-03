@@ -16,11 +16,9 @@
     </head>
     <body>
         <div class="top-navbar">
-            <a href="#"><img src="{{asset('assets/img/system/OE_LOGO.png')}}" alt=""></a>
-            <a href="#">test</a>
             <a href="#"><i id="hamberger-bar" class="fa-solid fa-bars"></i></a>
             <a href="#"><img id="web-logo" src="{{asset('assets/img/system/OE_LOGO.png')}}" alt=""></a>
-                <a href="#"><img id="web-icon" src="{{asset('assets/img/system/OE_ICON.png')}}" alt=""></a>
+            <a href="#"><img id="web-icon" src="{{asset('assets/img/system/OE_ICON.png')}}" alt=""></a>
         </div>
 
 
