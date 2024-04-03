@@ -14,4 +14,13 @@ class CompanyController extends Controller
         $company->save();
         return view('success');
     }
+    public function showCompanyDropdownList(Request $request){
+        if(request('company_name') == NULL){
+            $company_data = CompanyModel::all();
+            return  response()->json(['oe_companies'=>$company_data]);
+        }else{
+            $company_data = CompanyModel::where('companyname', 'LIKE','%'.$request['company_name'],'%');
+            return response()->json(['oe_companies'=>$company_data]);
+        }
+    }
 }

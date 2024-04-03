@@ -1,10 +1,22 @@
+<link rel="stylesheet" href="{{asset('assets/css/upload_box.css')}}">
 <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <h1>{{$oe_users['user_fname']}} PROFILE</h1>
 <button type="button" id="edit" onclick="edit()">Edit</button>
 
-<form action={{url("/update-user-detail/".$oe_users['user_id'])}} method="POST">
+<form action={{url("/update-user-detail/".$oe_users['user_id'])}} method="POST" enctype="multipart/form-data">
     @csrf
-    <img src="" alt="">
+    <?php
+    //echo '<img id="img-user-image" src="data:image/png;base64,' . $oe_users['user_profile_image'] . '" style="width: 100px; height: 100px; object-fit: cover;"/>';
+    ?>
+    <img id="img-user-image" src="{{url($oe_users['user_profile_image'])}}" style="width: 100px; height: 100px; object-fit: cover;"/>
+    <div id="drop-area" style="display: none">
+    <label for="input-user-image" >
+        <input type="file" name="upload-image" accept="image/*" id="input-user-image" hidden>
+        <div id="img-view">
+            <p>Drag and drop or <br>click here<br> to upload image</p>
+        </div>
+    </label>
+</div>
     <p>Name :
         <label id="txt-fname">{{$oe_users['user_fname']}}</label>
         <input type="text" maxlength="25" value="{{$oe_users['user_fname']}}" id="input-fname" name="user_fname" style="display: none">
@@ -55,6 +67,7 @@ if($oe_users['user_major_id']==$major['major_id']){
         document.getElementById("txt-major").style.display = "none";
         document.getElementById("txt-email").style.display = "none";
         document.getElementById("txt-phone").style.display = "none";
+        document.getElementById("img-user-image").style.display = "none";
         document.getElementById("input-fname").style.display = "inline";
         document.getElementById("input-lname").style.display = "inline";
         document.getElementById("input-student-id").style.display = "inline";
@@ -64,5 +77,27 @@ if($oe_users['user_major_id']==$major['major_id']){
         document.getElementById("edit").style.display = "none";
         document.getElementById("save").style.display = "inline";
         document.getElementById("cancel").style.display = "inline";
+        document.getElementById("drop-area").style.display = "inline";
     }
+const dropArea = document.getElementById("drop-area");
+const inputFile = document.getElementById("input-user-image");
+const imageView = document.getElementById("img-view");
+
+inputFile.addEventListener("change", uploadImage);
+
+function uploadImage(){
+    let imgLink = URL.createObjectURL(inputFile.files[0]);
+    imageView.style.backgroundImage = `url(${imgLink})`;
+    imageView.textContent = "";
+    imageView.style.border = 0;
+}
+dropArea.addEventListener("dragover", function(e){
+    e.preventDefault();
+});
+dropArea.addEventListener("drop", function(e){
+    e.preventDefault();
+    inputFile.files = e.dataTransfer.files;
+    uploadImage();
+});
+
 </script>

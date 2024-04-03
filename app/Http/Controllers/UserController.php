@@ -11,7 +11,9 @@ use Illuminate\Support\Facades\Hash;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Imports\UsersImport;
 use App\Models\RoleModel;
-
+use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 class UserController extends Controller
 {
     public function importExcel(){
@@ -26,6 +28,11 @@ class UserController extends Controller
         return redirect('/user-list');
         //return back()->withStatus('successfully');
     }
+    public function insertUserPage(){
+        $major_data = MajorModel::query()->orderBy('major_id','ASC')->get();
+        $role_data = RoleModel::all();
+        return view('insert_user',['oe_majors'=>$major_data,'oe_roles'=>$role_data]);
+    }
     public function insertUser(Request $request){
         $user = new UserModel();
         $user->user_student_id = request('user_student_id');
@@ -34,7 +41,10 @@ class UserController extends Controller
         $user->user_email = request('user_email');
         $user->user_password = Hash::make(request('user_password'));
         $user->user_role_id = (int)$request->input('user_role_id');
-        $user->user_profile_image = "test";
+        $path = public_path('/assets/img/users/img_user_icon.png');
+        //$image = File::get($path);
+        //$base64 = base64_encode($image);
+        $user->user_profile_image = $path;
         $user->user_major_id = (int)$request->input('user_major_id');
         $user->save();
         return redirect('user-list');
@@ -67,7 +77,6 @@ class UserController extends Controller
             $user->user_password = Hash::make(request('user_password'));
         }
         $user->user_role_id = (int)$request->input('user_role_id');
-        $user->user_profile_image = "test";
         $user->user_major_id = (int)$request->input('user_major_id');
         $user->save();
         return redirect('/user-list');
@@ -91,6 +100,14 @@ class UserController extends Controller
         $role_data = RoleModel::all();
         return view('user_profile2',['oe_users'=>$user_data, 'oe_majors'=>$major_data, 'oe_roles'=>$role_data]);
     }
+    public function getUserImage($user_id){
+        $user_data = UserModel::find($user_id);
+        $user_image = $user_data->user_profile_image;
+        $response = Response::make($user_image);
+        $response->header('Content-Type', 'image/jpeg');
+        $response->headers('Cache-Control','max-age=2592000');
+        return $response;
+    }
     /*
     public function updateUserDetail($user_id, $Detail_name, Request $request){
         $user = UserModel::find($user_id);
@@ -113,6 +130,30 @@ class UserController extends Controller
     */
     public function updateUserDetail($user_id, Request $request){
         $user = UserModel::find($user_id);
+        /*
+        $image = $request->file("upload_image")->getRealPath();
+        $img_content = file_get_contents($image);
+        $base64 = base64_encode($img_content);
+        $user->user_profile_image = $base64;
+        if(isset($_FILES["upload-image"])&&$_FILES["upload-image"]["error"]== 0 ){
+            $image = $_FILES["upload-image"]["tmp_name"];
+            //$image = $request->file("upload-image")->getRealPath();
+            $img_content = file_get_contents($image);
+            $base64 = base64_encode($img_content);
+            $user->user_profile_image = $base64;
+            $user->save();
+            $_SESSION["success"] = "Image uploaded successfully";
+        }else{
+            $_SESSION["error"] = "Please select an image file to upload.";
+        }
+        */
+        if( $request->hasFile('upload-image')){
+            $image = $request->file('upload-image');
+            $path = public_path(). '/users/img/';
+            $filename = time().'.'.$user_id.'.'.$image->getClientOriginalExtension();
+            $image->move($path,$filename);
+            $user->user_profile_image = '/users/img/'.$filename;
+        }
         $user->user_fname = request('user_fname');
         $user->user_lname = request('user_lname');
         $user->user_student_id = request('user_student_id');
@@ -121,5 +162,26 @@ class UserController extends Controller
         $user->user_phone = request('user_phone');
         $user->save();
         return redirect('/user-profile/'.$user_id);
+    }
+    public function uploadImage($user_id){
+        $user_data = UserModel::find($user_id);
+        return view('upload_user_image',['oe_users'=>$user_data]);
+    }
+    public function uploadImageProcess($user_id,Request $request){
+        $user = UserModel::find($user_id);
+        if(isset($_FILES["upload-image"])&&$_FILES["upload-image"]["error"]== 0 ){
+            $image = $_FILES["upload-image"]["tmp_name"];
+            //$image = $request->file("upload-image")->getRealPath();
+            $img_content = file_get_contents($image);
+            $base64 = base64_encode($img_content);
+            $user->user_profile_image = $base64;
+            $user->save();
+            $_SESSION["success"] = "Image uploaded successfully";
+        }else{
+            $_SESSION["error"] = "Please select an image file to upload.";
+        }
+        return redirect('/user-profile/'.$user->user_id);
+        //return back();
+
     }
 }

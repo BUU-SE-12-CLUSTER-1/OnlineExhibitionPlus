@@ -14,11 +14,10 @@ return new class extends Migration
     {
         DB::statement("CREATE TABLE IF NOT EXISTS `oe_comments` (
             `comment_id` INT NOT NULL AUTO_INCREMENT,
-            `comment_user_profile_image` LONGBLOB NOT NULL,
-            `comment_text` VARCHAR(510) NOT NULL,
+            `comment_text` TEXT NOT NULL,
             `comment_proj_id` INT NOT NULL,
             `comment_user_id` INT NOT NULL,
-            PRIMARY KEY (`comment_id`, `comment_proj_id`, `comment_user_id`),
+            PRIMARY KEY (`comment_id`),
             INDEX `fk_comments_projects1_idx` (`comment_proj_id` ASC) ,
             INDEX `fk_comments_users1_idx` (`comment_user_id` ASC) ,
             CONSTRAINT `fk_comments_projects1`

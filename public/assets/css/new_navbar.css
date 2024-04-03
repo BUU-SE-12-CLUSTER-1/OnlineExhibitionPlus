@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+}
+body{
+    max-width: 1440px;
+    max-height: 1080px;
+    min-width: 500px;
+}
+.top-navbar{
+    width: 1440px;
+    height: 118px;
+    background: linear-gradient(91deg, #9DBEFF 42.58%, #FED9FF 79.57%);
+    flex-shrink: 0;
+}
+.top-navbar img{
+    width: 171px;
+    height: 71px;
+    margin: 1.5% 89px;
+}

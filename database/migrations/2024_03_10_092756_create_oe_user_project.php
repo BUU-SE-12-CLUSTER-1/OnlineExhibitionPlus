@@ -16,7 +16,7 @@ return new class extends Migration
             `userproj_id` INT NOT NULL AUTO_INCREMENT,
             `userproj_proj_id` INT NOT NULL,
             `userproj_user_id` INT NOT NULL,
-            PRIMARY KEY (`userproj_id`, `userproj_proj_id`, `userproj_user_id`),
+            PRIMARY KEY (`userproj_id`),
             INDEX `fk_users_has_project_project1_idx` (`userproj_proj_id` ASC) ,
             INDEX `fk_users_has_project_users1_idx` (`userproj_user_id` ASC) ,
             CONSTRAINT `fk_users_has_project_users1`
