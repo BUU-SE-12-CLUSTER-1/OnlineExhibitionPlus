@@ -17,6 +17,7 @@
     <body style="background-color: rgba(255, 168, 255, 0.699)">
         <div class="top-navbar">
             <a href="#"><img src="{{asset('assets/img/system/OE_LOGO.png')}}" alt=""></a>
+            <a href="#">test</a>
         </div>
 
         <div class="container py-2" style="margin-top:2%;margin-left: 22%;background-color: #fff; border-radius: 25px; width:75%; align-items:center;justify-content:center;justify-items:center">
