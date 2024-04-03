@@ -1,10 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Chonburi&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 .add_excel{
     background-color: #4E6CEF;
     color: #FFFF;
@@ -47,7 +41,7 @@
 }
 
 .search {
-    width: 205.006px;
+    width: 195px;
     height: 70%;
     flex-shrink: 0;
     border: none;
@@ -59,7 +53,7 @@
 
 .search::placeholder{
     opacity: 0.3;
-    transform: translateX(12px);
+
 }
 
 .search_button{

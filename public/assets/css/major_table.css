@@ -11,6 +11,8 @@ table {
     border: 1px solid black;
     border: var(--border);
     overflow: hidden;
+    width: 1425px;
+    height: 100%;
   }
 
   table td {
@@ -18,7 +20,7 @@ table {
     font-style: normal;
     font-weight: 600;
     line-height: normal;
-    padding: 12px 0 12px 1%;
+    padding: 18px 0 18px 47px;
   }
 
   table tr:nth-child(even){background-color: #FFFFFF;}
@@ -33,9 +35,10 @@ table {
     text-align: left;
     background-color: #323694;
     color: white;
-    width: 1391px;
+
     height: 79px;
     flex-shrink: 0;
+    padding: 12px 0 12px 47px;
   }
 
 #delete-icon{
@@ -57,7 +60,7 @@ table {
     text-align: center;
     background-color: #323694;
     color: white;
-    width: 1391px;
+
     height: 79px;
     flex-shrink: 0;
 }

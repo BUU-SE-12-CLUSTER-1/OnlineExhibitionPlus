@@ -20,9 +20,11 @@
             <a href="#"><img id="web-logo" src="{{asset('assets/img/system/OE_LOGO.png')}}" alt=""></a>
             <a href="#"><img id="web-icon" src="{{asset('assets/img/system/OE_ICON.png')}}" alt=""></a>
         </div>
+        <div id="button-area">
+            @yield('button-area')
+        </div>
 
-
-        <div class="container py-2" style="display: block;margin-top:2%;background-color: #fff; border-radius: 25px; width:90%; align-items:center;justify-content:center;justify-items:center">
+        <div class="container py-2" id="main-content">
             @yield('content')
         </div>
         <div class="web-footer">
