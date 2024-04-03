@@ -3,6 +3,7 @@
 user list | Online Exhibition+
 @endsection
 @section('content')
+<script src="https://kit.fontawesome.com/a87b92189d.js" crossorigin="anonymous"></script>
 <h1>User List</h1>
 <form action={{url("/search-user")}} method="POST" name="form_search" >
     @csrf
@@ -43,7 +44,7 @@ user list | Online Exhibition+
         ?>
         <td>
             <a href={{url("/edit-user/".$user['user_id'])}}>Edit</a>
-            <a href={{url("/delete-user/".$user['user_id'])}}>Delete</a>
+            <a href={{url("/delete-user/".$user['user_id'])}}><i class="fa-solid fa-trash-can"></i></a>
             <a href={{url("/user-profile/".$user['user_id'])}}>Profile</a>
         </td>
     </tr>
