@@ -24,18 +24,18 @@ use App\Http\Controllers\ProjectController;
 */
 
 Route::get('/', function (){
-    return view('welcome');
+    return view('frontend.index');
+});
+
+Route::get('/h', function(){
+    return view('layouts.layout');
 });
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-Route::get('/insert-user',function(){
-    $major_data = MajorModel::all();
-    $role_data = RoleModel::all();
-    return view('insert_user',['oe_majors'=>$major_data,'oe_roles'=>$role_data]);
-});
+Route::get('/insert-user',[UserController::class, 'insertUserPage']);
 Route::post('/insert-user',[UserController::class, 'insertUser']);
 Route::get('/user-list',[UserController::class, 'showUserList']);
 Route::get('/delete-user/{user_id}',[UserController::class, 'deleteUser']);
@@ -74,5 +74,11 @@ Route::get('/insert-company', function(){
 });
 
 Route::post('/insert-company',[CompanyController::class, 'insertCompany']);
-
+Route::post('/company-dropdown-list',[CompanyController::class, 'showCompanyDropdownList']);
 Route::get('/insert-project',[ProjectController::class, 'insertProject']);
+
+Route::get('/advisor-list',[AdvisorController::class, 'showAdvisorList']);
+Route::get('/delete-advisor/{advisor_id}',[AdvisorController::class, 'deleteAdvisor']);
+Route::get('/edit-advisor/{advisor_id}',[AdvisorController::class, 'editAdvisor']);
+
+Route::post('update-advisor/{advisor_id}',[AdvisorController::class, 'updateAdvisor']);

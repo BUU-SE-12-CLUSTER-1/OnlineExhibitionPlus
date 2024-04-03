@@ -10,4 +10,5 @@ class AdvisorModel extends Model
     use HasFactory;
     public $timestamps = false;
     public $table = 'oe_advisors';
+    public $primaryKey = 'advisor_id';
 }

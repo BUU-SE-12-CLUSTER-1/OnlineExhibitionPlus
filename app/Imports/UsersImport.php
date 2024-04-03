@@ -28,15 +28,16 @@ class UsersImport implements ToModel,
     * @return \Illuminate\Database\Eloquent\Model|null
     */
     public function model(array $row)
-    {   $path = public_path('/assets/img/users/img_user_icon.png');
-        $image = File::get($path);
-        $img_base64 = base64_encode($image);
+    {   //$path = public_path('/assets/img/users/img_user_icon.png');
+        $path = "/assets/img/users/img_user_icon.png";
+        //$image = File::get($path);
+        //$img_base64 = base64_encode($image);
         return new UserModel([
             'user_student_id' => $row['studentid'],
             'user_fname' => $row['firstname'],
             'user_lname' => $row['lastname'],
             'user_email' => $row['email'],
-            'user_profile_image' => $img_base64,
+            'user_profile_image' => $path,
             'user_role_id' => 2,
             'user_major_id' => $row['majorid'],
         ]);

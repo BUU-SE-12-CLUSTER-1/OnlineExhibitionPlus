@@ -16,7 +16,7 @@ return new class extends Migration
             `projtag_id` INT NOT NULL AUTO_INCREMENT,
             `projtag_proj_id` INT NOT NULL,
             `projtag_tag_id` INT NOT NULL,
-            PRIMARY KEY (`projtag_id`, `projtag_proj_id`, `projtag_tag_id`),
+            PRIMARY KEY (`projtag_id`),
             INDEX `fk_tags_has_projects_projects1_idx` (`projtag_proj_id` ASC) ,
             INDEX `fk_tags_has_projects_tags1_idx` (`projtag_tag_id` ASC) ,
             CONSTRAINT `fk_tags_has_projects_tags1`

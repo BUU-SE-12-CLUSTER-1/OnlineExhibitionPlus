@@ -6,8 +6,9 @@
 <form action={{url("/update-user-detail/".$oe_users['user_id'])}} method="POST" enctype="multipart/form-data">
     @csrf
     <?php
-    echo '<img id="img-user-image" src="data:image/png;base64,' . $oe_users['user_profile_image'] . '" style="width: 100px; height: 100px; object-fit: cover;"/>';
+    //echo '<img id="img-user-image" src="data:image/png;base64,' . $oe_users['user_profile_image'] . '" style="width: 100px; height: 100px; object-fit: cover;"/>';
     ?>
+    <img id="img-user-image" src="{{url($oe_users['user_profile_image'])}}" style="width: 100px; height: 100px; object-fit: cover;"/>
     <div id="drop-area" style="display: none">
     <label for="input-user-image" >
         <input type="file" name="upload-image" accept="image/*" id="input-user-image" hidden>

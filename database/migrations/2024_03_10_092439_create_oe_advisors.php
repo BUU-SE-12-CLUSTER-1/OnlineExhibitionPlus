@@ -14,9 +14,10 @@ return new class extends Migration
     {
         DB::statement("CREATE TABLE IF NOT EXISTS `oe_advisors` (
             `advisor_id` INT NOT NULL AUTO_INCREMENT,
+            `advisor_title` VARCHAR(45) NOT NULL,
             `advisor_fname` VARCHAR(25) NOT NULL,
             `advisor_lname` VARCHAR(25) NOT NULL,
-            PRIMARY KEY (`advisor_id`, `advisor_fname`, `advisor_lname`))
+            PRIMARY KEY (`advisor_id`))
           ENGINE = InnoDB;");
     }
 
