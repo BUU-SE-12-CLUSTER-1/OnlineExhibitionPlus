@@ -11,6 +11,7 @@ use App\Models\MajorModel;
 use App\Http\Controllers\AdvisorController;
 use App\Http\Controllers\TagController;
 use App\Models\RoleModel;
+use App\Http\Controllers\ProjectController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -45,8 +46,11 @@ Route::get('/search-user',[UserController::class, 'searchUser']);
 Route::get('/import-excel',[UserController::class, 'importExcel']);
 Route::post('/import-excel',[UserController::class, 'saveImportedExcel']);
 Route::get('/user-profile/{user_id}',[UserController::class, 'ShowUserProfile']);
+Route::get('get-user-image{user_id}',[UserModel::class, 'getUserImage']);
 Route::post('update-user-detail/{user_id}/{detail_name}',[UserController::class,'updateUserDetail']);
 Route::post('update-user-detail/{user_id}',[UserController::class,'updateUserDetail']);
+Route::get('upload-user-image/{user_id}',[UserController::class,'uploadImage']);
+Route::post('upload-user-image/{user_id}',[UserController::class,'uploadImageProcess']);
 
 Route::get('/insert-advisor' , function(){
     return view('insert_advisor');
@@ -63,6 +67,7 @@ Route::get('/insert-major', function(){
 });
 
 Route::post('/insert-major',[MajorController::class, 'insertMajor']);
+Route::get('/major-list',[MajorController::class, 'showMajorList']);
 
 Route::get('/insert-company', function(){
     return view('insert_company');
@@ -70,10 +75,4 @@ Route::get('/insert-company', function(){
 
 Route::post('/insert-company',[CompanyController::class, 'insertCompany']);
 
-Route::post('/insert-company',[CompanyController::class, 'insertCompany']);
-
-Route::get('/company-list',[CompanyController::class, 'showCompanyList']);
-Route::get('/delete-company/{company_id}',[CompanyController::class, 'deleteCompany']);
-Route::get('/edit-company/{company_id}',[CompanyController::class, 'editCompany']);
-
-Route::post('update-company/{company_id}',[CompanyController::class, 'updateCompany']);
+Route::get('/insert-project',[ProjectController::class, 'insertProject']);
