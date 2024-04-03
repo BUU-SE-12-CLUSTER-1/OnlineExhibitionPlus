@@ -11,6 +11,7 @@ use App\Models\MajorModel;
 use App\Http\Controllers\AdvisorController;
 use App\Http\Controllers\TagController;
 use App\Models\RoleModel;
+use App\Http\Controllers\ProjectController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -45,8 +46,11 @@ Route::get('/search-user',[UserController::class, 'searchUser']);
 Route::get('/import-excel',[UserController::class, 'importExcel']);
 Route::post('/import-excel',[UserController::class, 'saveImportedExcel']);
 Route::get('/user-profile/{user_id}',[UserController::class, 'ShowUserProfile']);
+Route::get('get-user-image{user_id}',[UserModel::class, 'getUserImage']);
 Route::post('update-user-detail/{user_id}/{detail_name}',[UserController::class,'updateUserDetail']);
 Route::post('update-user-detail/{user_id}',[UserController::class,'updateUserDetail']);
+Route::get('upload-user-image/{user_id}',[UserController::class,'uploadImage']);
+Route::post('upload-user-image/{user_id}',[UserController::class,'uploadImageProcess']);
 
 Route::get('/insert-advisor' , function(){
     return view('insert_advisor');
@@ -61,12 +65,14 @@ Route::post('/insert-tag', [TagController::class, 'insertTag']);
 Route::get('/insert-major', function(){
     return view('insert_major');
 });
-Route::get('/major-list',[MajorController::class, 'showMajorlist']);
 
 Route::post('/insert-major',[MajorController::class, 'insertMajor']);
+Route::get('/major-list',[MajorController::class, 'showMajorList']);
 
 Route::get('/insert-company', function(){
     return view('insert_company');
 });
 
 Route::post('/insert-company',[CompanyController::class, 'insertCompany']);
+
+Route::get('/insert-project',[ProjectController::class, 'insertProject']);
