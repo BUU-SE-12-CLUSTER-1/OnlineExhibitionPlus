@@ -1,3 +1,8 @@
+@extends('layouts.layout')
+@section('title')
+user list | Online Exhibition+
+@endsection
+@section('content')
 <h1>User List</h1>
 <form action={{url("/search-user")}} method="POST" name="form_search" >
     @csrf
@@ -41,7 +46,6 @@
             <a href={{url("/delete-user/".$user['user_id'])}}>Delete</a>
             <a href={{url("/user-profile/".$user['user_id'])}}>Profile</a>
         </td>
-
     </tr>
     @endforeach
 </table>
@@ -54,3 +58,4 @@
         display: none;
     }
 </style>
+@endsection

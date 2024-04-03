@@ -12,12 +12,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        DB::statement("CREATE TABLE IF NOT EXISTS `oe_detail_areas` (
+        DB::statement('CREATE TABLE IF NOT EXISTS `oe_detail_areas` (
             `da_id` INT NOT NULL AUTO_INCREMENT,
-            `da_text` VARCHAR(510) NOT NULL,
+            `da_data` VARCHAR(510) NOT NULL,
+            `da_item_index` INT NOT NULL,
+            `da_template_index` INT NOT NULL,
+            `da_data_type` ENUM("I", "T") NOT NULL,
             `da_template_id` INT NOT NULL,
             `da_proj_id` INT NOT NULL,
-            PRIMARY KEY (`da_id`, `da_template_id`, `da_proj_id`),
+            PRIMARY KEY (`da_id`),
             INDEX `fk_details_area_area_template1_idx` (`da_template_id` ASC) ,
             INDEX `fk_details_area_projects1_idx` (`da_proj_id` ASC) ,
             CONSTRAINT `fk_details_area_area_template1`
@@ -30,7 +33,8 @@ return new class extends Migration
               REFERENCES `oe_projects` (`proj_id`)
               ON DELETE NO ACTION
               ON UPDATE NO ACTION)
-          ENGINE = InnoDB;");
+          ENGINE = InnoDB;
+          ');
     }
 
     /**
