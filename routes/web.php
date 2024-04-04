@@ -24,13 +24,12 @@ use App\Http\Controllers\ProjectController;
 */
 
 Route::get('/', function (){
-    return view('frontend.index');
-});
-
-Route::get('/h', function(){
     return view('layouts.layout');
 });
 
+Route::get('/test', function(){
+    return view('success');
+});
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
