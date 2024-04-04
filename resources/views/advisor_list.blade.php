@@ -1,32 +1,33 @@
 @extends('layouts.layout')
 @section('title')
-user list | Online Exhibition+
+Advisor list | Online Exhibition+
 @endsection
 @section('content')
-<h1>Advisor List</h1>
+<link rel="stylesheet" href="{{asset('assets/css/table.css')}}">
+<button style="position:fixed;right:25px;margin-top:0;" type="button" class="oe-button" onclick="window.location = '{{url('/insert-advisor')}}'">Add Advisor</button>
 <table border="0">
 <tr>
 
         <th>
-        <label> id </label>
+        id
     </th>
 
 
         <th>
-        <label for="advisor_title"> Title </label>
+         Title
     </th>
 
 
     <th>
-    <label for="advisor_fname"> FisrtName </label>
+    FisrtName
 </th>
 
     <th>
-    <label for="advisor_lname"> LastName </label>
+    LastName
 </th>
 
     <th>
-    <label for="action"> Action </label>
+   Action
 </th>
 
 </tr>

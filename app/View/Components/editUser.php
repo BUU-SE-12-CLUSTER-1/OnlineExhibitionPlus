@@ -14,13 +14,12 @@ class editUser extends Component
     /**
      * Create a new component instance.
      */
-    public $user_id;
-    public function __construct($user_id)
+    public $user;
+    public function __construct($user)
     {
         //
-        $user_data = UserModel::find($user_id);
-        $major_data = MajorModel::all();
-        $role_data = RoleModel::all();
+        $this->user = $user;
+
     }
 
     /**

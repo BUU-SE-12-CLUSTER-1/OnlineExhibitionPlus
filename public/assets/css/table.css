@@ -13,6 +13,7 @@ table {
     overflow: hidden;
     width: 1425px;
     height: 100%;
+    margin-top: 65px;
   }
 
   table td {

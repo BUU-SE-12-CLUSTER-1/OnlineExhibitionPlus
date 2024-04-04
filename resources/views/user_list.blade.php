@@ -5,22 +5,22 @@
 @section('content')
 <script src="https://kit.fontawesome.com/a87b92189d.js" crossorigin="anonymous"></script>
 
-<link rel="stylesheet" href="{{ asset('/assets/css/button_userlist.css') }}">
-<link rel="stylesheet" href="{{asset('assets/css/major_table.css')}}">
+<link rel="stylesheet" href="{{ asset('/assets/css/button.css') }}">
+<link rel="stylesheet" href="{{asset('assets/css/table.css')}}">
 <form action={{url("/search-user")}} method="POST" name="form_search" >
     @csrf
-    <div class="search_container" style="position:absolute;right:313px;margin-top:0;">
+    <div class="search-container" style="position:fixed;right:313px;margin-top:0;">
         <input style="padding-left: 10px;" type="text" class="search" name="search_user" placeholder="Search User">
-        <button type="submit" class="search_button" name="btn_search_user">
+        <button type="submit" class="search-button" name="btn_search_user">
             <i class="fa-solid fa-magnifying-glass"></i>
         </button>
     </div>
     </form>
-    <button style="position:absolute;right:169px;margin-top:0;" type="button" class="add_excel" onclick="window.location='{{ url('/import-excel') }}'" name="btn_add_excel">Add
+    <button style="position:fixed;right:169px;margin-top:0;" type="button" class="oe-button" onclick="window.location='{{ url('/import-excel') }}'" name="btn_add_excel">Add
         Excel</button>
-    <button style="position:absolute;right:25px;margin-top:0;" type="button" class="add_user" onclick="window.location='{{ url('/insert-user') }}'" name="btn_add_user">Add
+    <button style="position:fixed;right:25px;margin-top:0;" type="button" class="oe-button" onclick="window.location='{{ url('/insert-user') }}'" name="btn_add_user">Add
         User</button>
-<table border="0" style="margin-top: 65px">
+<table border="0">
     <tr>
         <th>#</th>
         <th>Student id</th>
@@ -35,19 +35,16 @@
         <td>{{$user['user_fname']}}</td>
         <td> {{$user['user_lname']}}</td>
         <td>
-            <a href="javascript:editUser();">Edit</a>
+            <a href="javascript:editUser({{$user}});">Edit</a>
             <a href={{url("/delete-user/".$user['user_id'])}}><i class="fa-solid fa-trash-can"></i></a>
             <a href={{url("/user-profile/".$user['user_id'])}}>Profile</a>
         </td>
     </tr>
-    <?php
-    $user_id = $user['user_id'];
-    ?>
-    <div class="edit-box">
-
-</div>
     @endforeach
 </table>
+<div class="edit-box">
+
+</div>
 <span>
     {{$oe_users->appends(request()->input())->links()}}
 </span>
@@ -58,7 +55,8 @@
     </style>
     <script>
         const editBox = document.querySelector('.edit-box');
-        function editUser(){
+        function editUser($user){
+            editBox.innerHTML = "<x-edit-user :user='"+$user+"'/>";
         }
     </script>
 @endsection
