@@ -14,4 +14,9 @@ class TagController extends Controller
         $tag->save();
         return view('success');
       }
+
+    public function showTagList(){
+        $tag_data = TagModel::all();
+        return view('tag_list',['oe_tags' => $tag_data]);
+    }
 }
