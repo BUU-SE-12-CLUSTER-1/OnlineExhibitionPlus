@@ -7,6 +7,9 @@
 
 <link rel="stylesheet" href="{{ asset('/assets/css/button.css') }}">
 <link rel="stylesheet" href="{{asset('assets/css/table.css')}}">
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    Launch demo modal
+  </button>
 <form action={{url("/search-user")}} method="POST" name="form_search" >
     @csrf
     <div class="search-container" style="position:fixed;right:313px;margin-top:0;">
@@ -18,7 +21,7 @@
     </form>
     <button style="position:fixed;right:169px;margin-top:0;" type="button" class="oe-button" onclick="window.location='{{ url('/import-excel') }}'" name="btn_add_excel">Add
         Excel</button>
-    <button style="position:fixed;right:25px;margin-top:0;" type="button" class="oe-button" onclick="window.location='{{ url('/insert-user') }}'" name="btn_add_user">Add
+    <button style="position:fixed;right:25px;margin-top:0;" type="button" class="oe-button" data-toggle="modal" data-target="#exampleModal"name="btn_add_user">Add
         User</button>
 <table border="0">
     <tr>
@@ -35,16 +38,16 @@
         <td>{{$user['user_fname']}}</td>
         <td> {{$user['user_lname']}}</td>
         <td>
-            <a href="javascript:editUser({{$user}});">Edit</a>
+            <a href="#" data-toggle="modal" data-target="#ModalEdit">Edit</a>
             <a href={{url("/delete-user/".$user['user_id'])}}><i class="fa-solid fa-trash-can"></i></a>
             <a href={{url("/user-profile/".$user['user_id'])}}>Profile</a>
         </td>
+        @include('modals.edit_user')
     </tr>
     @endforeach
 </table>
-<div class="edit-box">
-
-</div>
+@include('modals.add_user')
+<livewire:insert-user>
 <span>
     {{$oe_users->appends(request()->input())->links()}}
 </span>
@@ -54,9 +57,5 @@
         }
     </style>
     <script>
-        const editBox = document.querySelector('.edit-box');
-        function editUser($user){
-            editBox.innerHTML = "<x-edit-user :user='"+$user+"'/>";
-        }
     </script>
 @endsection
