@@ -1,7 +1,11 @@
+@extends('layouts.layout')
+@section('title')
+Advisor list | Online Exhibition+
+@endsection
+@section('content')
 <script src="https://kit.fontawesome.com/a87b92189d.js" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="{{asset('assets/css/major_table.css')}}">
+<link rel="stylesheet" href="{{asset('assets/css/table.css')}}">
 <link rel="import" href="component.html">
-<h1>Major List</h1>
 <table>
 <tr>
     <th>ID</th>
@@ -18,6 +22,6 @@
 </tr>
 @endforeach
 </table>
-
+@endsection
 
 

@@ -44,7 +44,7 @@ class UserController extends Controller
         $path = public_path('/assets/img/users/img_user_icon.png');
         //$image = File::get($path);
         //$base64 = base64_encode($image);
-        $user->user_profile_image = $path;
+        $user->user_profile_image = '/assets/img/users/img_user_icon.png';
         $user->user_major_id = (int)$request->input('user_major_id');
         $user->save();
         return redirect('user-list');

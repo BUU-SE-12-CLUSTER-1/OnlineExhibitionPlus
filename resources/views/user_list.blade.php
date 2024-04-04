@@ -3,13 +3,16 @@
     user list | Online Exhibition+
 @endsection
 @section('content')
+@livewireStyles
 <script src="https://kit.fontawesome.com/a87b92189d.js" crossorigin="anonymous"></script>
 
 <link rel="stylesheet" href="{{ asset('/assets/css/button.css') }}">
 <link rel="stylesheet" href="{{asset('assets/css/table.css')}}">
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-    Launch demo modal
-  </button>
+<x-modal name="add-user" title="Add User">
+    <x-slot:body>
+        <livewire:insert-user></livewire:insert-user>
+    </x-slot>
+  </x-modal>
 <form action={{url("/search-user")}} method="POST" name="form_search" >
     @csrf
     <div class="search-container" style="position:fixed;right:313px;margin-top:0;">
@@ -21,7 +24,8 @@
     </form>
     <button style="position:fixed;right:169px;margin-top:0;" type="button" class="oe-button" onclick="window.location='{{ url('/import-excel') }}'" name="btn_add_excel">Add
         Excel</button>
-    <button style="position:fixed;right:25px;margin-top:0;" type="button" class="oe-button" data-toggle="modal" data-target="#exampleModal"name="btn_add_user">Add
+
+    <button style="position:fixed;right:25px;margin-top:0;" type="button" class="oe-button" x-data x-on:click="$dispatch('open-modal',{name : 'add-user'})" name="btn_add_user">Add
         User</button>
 <table border="0">
     <tr>
@@ -42,12 +46,9 @@
             <a href={{url("/delete-user/".$user['user_id'])}}><i class="fa-solid fa-trash-can"></i></a>
             <a href={{url("/user-profile/".$user['user_id'])}}>Profile</a>
         </td>
-        @include('modals.edit_user')
     </tr>
     @endforeach
 </table>
-@include('modals.add_user')
-<livewire:insert-user>
 <span>
     {{$oe_users->appends(request()->input())->links()}}
 </span>
@@ -58,4 +59,5 @@
     </style>
     <script>
     </script>
+    @livewireScripts
 @endsection

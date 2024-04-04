@@ -1,5 +1,25 @@
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-    Launch demo modal
-  </button>
-  <livewire:insert-user></livewire:insert-user>
+@extends('layouts.layout')
+@section('title')
+    user list | Online Exhibition+
+@endsection
+@section('content')
+@livewireStyles
+
+    <body class="antialiased">
+          <x-modal name="1" title="Modal 1">
+            <x-slot:body>
+                <livewire:insert-user></livewire:insert-user>
+            </x-slot>
+          </x-modal>
+          <x-modal name="2" title="Modal 2">
+            <x-slot:body>
+                <livewire:insert-user></livewire:insert-user>
+            </x-slot>
+          </x-modal>
+          <button x-data x-on:click="$dispatch('open-modal',{name : '1'})" >Open Modal</button>
+          <button x-data @click="$dispatch('open-modal',{name : '2'})" >Open Modal</button>
+    </body>
+
+
+@livewireScripts
+@endsection
