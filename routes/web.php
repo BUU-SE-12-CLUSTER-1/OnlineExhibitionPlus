@@ -92,3 +92,4 @@ Route::post('update-company/{companyr_id}',[CompanyController::class, 'updateCom
 Route::get('/homePage', function (){
     return view('home');
 });
+
