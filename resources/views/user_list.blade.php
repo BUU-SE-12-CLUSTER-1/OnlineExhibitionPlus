@@ -8,6 +8,11 @@
 
 <link rel="stylesheet" href="{{ asset('/assets/css/button.css') }}">
 <link rel="stylesheet" href="{{asset('assets/css/table.css')}}">
+<x-modal name="import-user" title="Import User">
+    <x-slot:body>
+        <livewire:import-user></livewire:import-user>
+    </x-slot>
+  </x-modal>
 <x-modal name="add-user" title="Add User">
     <x-slot:body>
         <livewire:insert-user></livewire:insert-user>
@@ -22,7 +27,7 @@
         </button>
     </div>
     </form>
-    <button style="position:fixed;right:169px;margin-top:0;" type="button" class="oe-button" onclick="window.location='{{ url('/import-excel') }}'" name="btn_add_excel">Add
+    <button style="position:fixed;right:169px;margin-top:0;" type="button" class="oe-button" x-data x-on:click="$dispatch('open-modal',{name : 'import-user'})" name="btn_add_excel">Add
         Excel</button>
 
     <button style="position:fixed;right:25px;margin-top:0;" type="button" class="oe-button" x-data x-on:click="$dispatch('open-modal',{name : 'add-user'})" name="btn_add_user">Add

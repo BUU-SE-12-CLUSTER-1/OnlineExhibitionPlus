@@ -26,6 +26,7 @@ class InsertUser extends Component
     public $profile_image = '/assets/img/users/img_user_icon.png';
     public $role_id = '';
     public $major_id = '';
+    public $search;
 
     public function insertUser(){
         $this->validate([
