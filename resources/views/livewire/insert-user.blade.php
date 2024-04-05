@@ -8,7 +8,7 @@
 
     @endif
 
-    <form wire:submit="insertUser" action="">
+    <form wire:submit.prevent="insertUser" action="">
         @csrf
         <label class="oe-input-label" for="user_student_id">Student ID</label>
         <input class="oe-input" wire:model="student_id" type="text" name="user_student_id" maxlength="8">
