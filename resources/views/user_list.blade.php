@@ -32,42 +32,6 @@
 
     <button style="position:fixed;right:25px;margin-top:0;" type="button" class="oe-button" x-data x-on:click="$dispatch('open-modal',{name : 'add-user'})" name="btn_add_user">Add
         User</button>
-<table border="0">
-    <tr>
-        <th>#</th>
-        <th>Student id</th>
-        <th>Name</th>
-        <th>Surname</th>
-        <th>Action</th>
-    </tr>
-    @foreach($oe_users as $user)
-    <tr>
-        <td>{{$user['user_id']}}</td>
-        <td>{{$user['user_student_id']}}</td>
-        <td>{{$user['user_fname']}}</td>
-        <td> {{$user['user_lname']}}</td>
-        <td>
-            <a href="#"  x-data x-on:click="$dispatch('open-modal',{name : 'edit-user-{{$user['user_id']}}'})">Edit</a>
-            <a href={{url("/delete-user/".$user['user_id'])}}><i class="fa-solid fa-trash-can"></i></a>
-            <a href={{url("/user-profile/".$user['user_id'])}}>Profile</a>
-        </td>
-    </tr>
-    <x-modal name="edit-user-{{$user['user_id']}}" title="Edit User">
-        <x-slot:body>
-            <livewire:edit-user :user="$user"></livewire:insert-user>
-        </x-slot>
-      </x-modal>
-    @endforeach
-</table>
-<span>
-    {{$oe_users->appends(request()->input())->links()}}
-</span>
-    <style>
-        .w-5 {
-            display: none;
-        }
-    </style>
-    <script>
-    </script>
+        <livewire:user-list></livewire:user-list>
     @livewireScripts
 @endsection
