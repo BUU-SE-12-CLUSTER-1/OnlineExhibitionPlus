@@ -73,6 +73,18 @@ Route::post('/insert-company',[CompanyController::class, 'insertCompany']);
 Route::get('/advisor-list',[AdvisorController::class, 'showAdvisorList']);
 
 
+Route::post('update-advisor/{advisor_id}',[AdvisorController::class, 'updateAdvisor']);
+
+Route::get('/company-list',[CompanyController::class, 'showCompanyList']);
+Route::get('/delete-company/{company_id}',[CompanyController::class, 'deleteCompany']);
+Route::get('/edit-company/{company_id}',[CompanyController::class, 'editCompany']);
+
+Route::post('update-company/{companyr_id}',[CompanyController::class, 'updateCompany']);
+
+Route::get('/homePage', function (){
+    return view('home');
+});
+
 Route::get('/select-template', function(){
     return view('template');
 });
