@@ -1,4 +1,5 @@
 <div>
+    @livewireStyles
     <table border="0">
         <tr>
             <th>#</th>
@@ -9,25 +10,23 @@
         </tr>
         @foreach($oe_users as $user)
         <tr>
-            <td>{{$user['user_id']}}</td>
-            <td>{{$user['user_student_id']}}</td>
-            <td>{{$user['user_fname']}}</td>
-            <td> {{$user['user_lname']}}</td>
+            <td>{{ $user->user_id }}</td>
+            <td>{{ $user->user_student_id }}</td>
+            <td>{{ $user->user_fname }}</td>
+            <td>{{ $user->user_lname }}</td>
             <td>
-                @livewire('user-action',[$user])
+                <livewire:user-action :user="$user" :key="$user->id"></livewire:user-action>
             </td>
         </tr>
-
         @endforeach
     </table>
     <span>
-        {{$oe_users->appends(request()->input())->links()}}
+        {{ $oe_users->appends(request()->input())->links() }}
     </span>
-        <style>
-            .w-5 {
-                display: none;
-            }
-        </style>
-        <script>
-        </script>
+    <style>
+        .w-5 {
+            display: none;
+        }
+    </style>
+    @livewireScripts
 </div>
