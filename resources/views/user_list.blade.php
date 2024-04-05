@@ -47,11 +47,16 @@
         <td>{{$user['user_fname']}}</td>
         <td> {{$user['user_lname']}}</td>
         <td>
-            <a href="#" data-toggle="modal" data-target="#ModalEdit">Edit</a>
+            <a href="#"  x-data x-on:click="$dispatch('open-modal',{name : 'edit-user-{{$user['user_id']}}'})">Edit</a>
             <a href={{url("/delete-user/".$user['user_id'])}}><i class="fa-solid fa-trash-can"></i></a>
             <a href={{url("/user-profile/".$user['user_id'])}}>Profile</a>
         </td>
     </tr>
+    <x-modal name="edit-user-{{$user['user_id']}}" title="Edit User">
+        <x-slot:body>
+            <livewire:edit-user :user="$user"></livewire:insert-user>
+        </x-slot>
+      </x-modal>
     @endforeach
 </table>
 <span>

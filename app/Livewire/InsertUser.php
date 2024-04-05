@@ -59,12 +59,10 @@ class InsertUser extends Component
     }
     public function render()
     {
-        $title = "TEST PAGE";
         $users = UserModel::all();
         $major_data = MajorModel::query()->orderBy('major_id','ASC')->get();
         $role_data = RoleModel::all();
         return view('livewire.insert-user',[
-            'title' => $title,
             'oe_users' => $users,
             'oe_roles' => $role_data,
             'oe_majors' => $major_data
