@@ -1,25 +1,19 @@
 <div>
+    <div class="table-div">
 <table border="0">
 <tr>
-
         <th>
         id
     </th>
-
-
         <th>
          Title
     </th>
-
-
     <th>
     FisrtName
 </th>
-
     <th>
     LastName
 </th>
-
     <th>
    Action
 </th>
@@ -42,14 +36,13 @@
         </td>
         <?php $advisor_id = $advisor['advisor_id']?>
         <td>
-            <a href="javascript: deleteAlert();" id="delete">Delete</a>
+            <a href={{url("/delete-advisor/".$advisor['advisor_id'])}} id="delete">Delete</a>
             <a href={{url("/edit-advisor/".$advisor['advisor_id'])}}>Edit</a>
-            <button type="button" onclick="deleteAlert()">DELETE</button>
-            <button type="button" class="btn btn-danger;" onclick="deleteAlert()">Delete</button>
         </td>
     </tr>
 @endforeach
 </table>
+</div>
 <span>
     {{$oe_advisors->appends(request()->input())->links()}}
 </span>
