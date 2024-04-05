@@ -11,13 +11,15 @@
         <form action="{{ url('/insert-company') }}" method="POST">
             @csrf
             <div>
-                <label class="company_name" for="company_name">Company name</label>
+                <label class="company_tag_major__name" for="company_name">Company name</label>
             </div>
             <div>
-                <input class="input_company" type="text" name="company_name">
-            </div><br>
+                <input class="input_company_tag_major" type="text" name="company_name">
+            </div>
+            <div>
             <button class="buttonClear" type="reset" value="reset">Clear</button>
             <button class="buttonAdd" type="submit" value="submit">Add</button>
+        </div>
         </form>
     </body>
 @endsection
