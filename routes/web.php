@@ -92,3 +92,7 @@ Route::get('/select-template1', function(){
 Route::get('/select-template2', function(){
     return view('template2');
 });
+
+Route::get('/select-template4', function(){
+    return view('template4');
+});
