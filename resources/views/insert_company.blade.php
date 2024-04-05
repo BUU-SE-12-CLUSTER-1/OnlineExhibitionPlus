@@ -5,16 +5,16 @@
 @section('content')
     <script src="https://kit.fontawesome.com/a87b92189d.js" crossorigin="anonymous"></script>
     <head>
-        <link rel="stylesheet" href="{{ asset('assets/css/insert_company_tag_major.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/form_input.css') }}">
     </head>
     <body>
         <form action="{{ url('/insert-company') }}" method="POST">
             @csrf
             <div>
-                <label class="company_tag_major__name" for="company_name">Company name</label>
+                <label class="oe-input-name" for="company_name">Company name</label>
             </div>
             <div>
-                <input class="input_company_tag_major" type="text" name="company_name">
+                <input class="oe-input" type="text" name="company_name">
             </div>
             <div>
             <button class="buttonClear" type="reset" value="reset">Clear</button>

@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Chonburi&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
 
-.company_tag_major_name {
+.oe-input-label {
     width: 146px;
     height: 26px;
     flex-shrink: 0;
@@ -12,7 +12,7 @@
     line-height: normal;
 }
 
-.input_company_tag_major {
+.oe-input {
     width: 401px;
     height: 28px;
     flex-shrink: 0;
