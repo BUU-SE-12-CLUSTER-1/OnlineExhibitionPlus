@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Chonburi&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+
+table {
+    font-family: Mulish;
+    font-style: normal;
+    line-height: normal;
+    border-spacing: 0;
+    border-collapse: separate;
+    border-radius: 10px;
+    border: 1px solid black;
+    border: var(--border);
+    overflow: hidden;
+    width: 1425px;
+    height: 100%;
+    margin-top: 65px;
+  }
+
+  table td {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    padding: 18px 0 18px 47px;
+  }
+
+  table tr:nth-child(even){background-color: #FFFFFF;}
+  table tr:nth-child(odd){background-color: rgba(0, 0, 0, 0.06)}
+  table tr:hover {background-color: #ddd;}
+
+  table th {
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    text-align: left;
+    background-color: #323694;
+    color: white;
+
+    height: 79px;
+    flex-shrink: 0;
+    padding: 12px 0 12px 47px;
+  }
+
+#delete-icon{
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-align: center;
+    width: 27px;
+    height: 29.332px;
+    flex-shrink: 0;
+}
+
+#action{
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    text-align: center;
+    background-color: #323694;
+    color: white;
+
+    height: 79px;
+    flex-shrink: 0;
+}
