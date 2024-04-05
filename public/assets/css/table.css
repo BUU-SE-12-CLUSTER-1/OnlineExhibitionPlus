@@ -72,3 +72,8 @@ th {
     height: 79px;
     flex-shrink: 0;
 }
+@media only screen and (max-width: 1840px){
+  table {
+    width: 113.5%;
+  }
+}

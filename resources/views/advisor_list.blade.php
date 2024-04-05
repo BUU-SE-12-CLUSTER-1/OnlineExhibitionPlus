@@ -5,6 +5,7 @@ Advisor list | Online Exhibition+
 @section('content')
 <link rel="stylesheet" href="{{asset('assets/css/table.css')}}">
 <button style="position:fixed;right:25px;margin-top:0;" type="button" class="oe-button" onclick="window.location = '{{url('/insert-advisor')}}'">Add Advisor</button>
+<div class="table-div">
 <table border="0">
 <tr>
 
@@ -56,6 +57,7 @@ Advisor list | Online Exhibition+
     </tr>
 @endforeach
 </table>
+</div>
 <span>
     {{$oe_advisors->appends(request()->input())->links()}}
 </span>
