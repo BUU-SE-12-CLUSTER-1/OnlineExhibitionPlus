@@ -24,15 +24,15 @@ body{
 }
 #hamberger-bar{
     font-size: 50px;
-flex-shrink: 0;
-margin: 34px 21px;
-color: white;
+    flex-shrink: 0;
+    margin: 34px 21px;
+    color: white;
 }
 #web-icon{
     width: 94px;
-height: 105px;
-position:absolute;
-right: 22px;
+    height: 105px;
+    position:absolute;
+    right: 22px;
 }
 #main-content{
     display: block;
@@ -50,17 +50,17 @@ right: 22px;
 }
 #main-content:after{
     content: '';
-  display: block;
+    display: block;
     height: 224px;
 }
 #web-footer{
     width: 100%;
-height: 224px;
-background: linear-gradient(91deg, #9DBEFF 39.91%, #FED9FF 78.86%);
-filter: drop-shadow(0px 4px 7px rgba(0, 0, 0, 0.25));
-position:relative;
-  bottom: 0;
-  margin-top: 62px;
+    height: 224px;
+    background: linear-gradient(91deg, #9DBEFF 39.91%, #FED9FF 78.86%);
+    filter: drop-shadow(0px 4px 7px rgba(0, 0, 0, 0.25));
+    position:relative;
+    bottom: 0;
+    margin-top: 62px;
 }
 #copyright{
     position: absolute;
@@ -88,31 +88,31 @@ position:relative;
 
 #faculty-address{
     color: #323694;
-font-family: Mulish;
-font-size: 16px;
-font-style: normal;
-font-weight: 700;
-line-height: 23px;
-position: absolute;
-left: 652px;
-top: 69px;
+    font-family: Mulish;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 23px;
+    position: absolute;
+    left: 652px;
+    top: 69px;
 }
 #location-icon{
-position: absolute;
+    position: absolute;
     top:66px;
     left: 625px;
     font-size: 23px;
 }
 #faculty-contact{
     color: #323694;
-font-family: Mulish;
-font-size: 20px;
-font-style: normal;
-font-weight: 700;
-line-height: normal;
-position:absolute;
-top: 67px;
-left: 1040px;
+    font-family: Mulish;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    position:absolute;
+    top: 67px;
+    left: 1040px;
 }
 #phone-icon{
     position: absolute;
@@ -135,14 +135,14 @@ left: 1040px;
 }
 .side-navbar{
     height: 100% !important;
-  width: 200px;
-  position: fixed;
-  z-index: 1;
-  top: 118px;
-  left: 0;
-  background: rgba(255, 255, 255, 0.90);
-  padding-top: 20px;
-  display: none;
+    width: 200px;
+    position: fixed;
+    z-index: 1;
+    top: 118px;
+    left: 0;
+    background: rgba(255, 255, 255, 0.90);
+    padding-top: 20px;
+    display: none;
 }
 .side-navbar a, .dropdown-btn {
     padding: 6px 8px 6px 16px;
