@@ -49,6 +49,7 @@ right: 22px;
     padding: 0;
     padding-bottom: 224px;
 
+
 }
 #main-content:after{
     content: '';
@@ -199,3 +200,4 @@ position:relative;
 bottom:0px;
 margin-top: 320px;
 }
+

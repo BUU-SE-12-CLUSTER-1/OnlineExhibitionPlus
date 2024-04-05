@@ -11,24 +11,31 @@ table {
     border: 1px solid black;
     border: var(--border);
     overflow: hidden;
-    width: 100%;
+    width: 120%;
     height: 100%;
-    margin-top: 65px;
-  }
 
-  table td {
+  }
+.table-div{
+    margin-top: 65px;
+    align-items: center;
+    justify-items: center;
+    margin-left: 24px;
+    margin-right: 24px;
+}
+ td {
     font-size: 16px;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
     padding: 18px 0 18px 47px;
+
   }
 
-  table tr:nth-child(even){background-color: #FFFFFF;}
-  table tr:nth-child(odd){background-color: rgba(0, 0, 0, 0.06)}
-  table tr:hover {background-color: #ddd;}
+  tr:nth-child(even){background-color: #FFFFFF;}
+  tr:nth-child(odd){background-color: rgba(0, 0, 0, 0.06)}
+  tr:hover {background-color: #ddd;}
 
-  table th {
+th {
     font-size: 30px;
     font-style: normal;
     font-weight: 800;

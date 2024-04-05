@@ -6,6 +6,7 @@
             <i class="fa-solid fa-magnifying-glass"></i>
         </button>
     </div>
+    <div class="table-div">
     <table border="0">
         <tr>
             <th>#</th>
@@ -26,6 +27,7 @@
         </tr>
         @endforeach
     </table>
+</div>
     <span>
         {{ $oe_users->appends(request()->input())->links() }}
     </span>
