@@ -19,7 +19,7 @@
     fill: rgba(255, 255, 255, 0.79);
     stroke-width: 1px;
     stroke: rgba(0, 0, 0, 0.50);
-
+    border-radius: 20px;
 }
 
 .buttonAdd {
