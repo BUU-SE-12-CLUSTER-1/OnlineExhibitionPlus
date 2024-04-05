@@ -81,3 +81,14 @@ Route::get('/delete-advisor/{advisor_id}',[AdvisorController::class, 'deleteAdvi
 Route::get('/edit-advisor/{advisor_id}',[AdvisorController::class, 'editAdvisor']);
 
 Route::post('update-advisor/{advisor_id}',[AdvisorController::class, 'updateAdvisor']);
+
+Route::get('/company-list',[CompanyController::class, 'showCompanyList']);
+Route::get('/delete-company/{company_id}',[CompanyController::class, 'deleteCompany']);
+Route::get('/edit-company/{company_id}',[CompanyController::class, 'editCompany']);
+
+Route::post('update-company/{companyr_id}',[CompanyController::class, 'updateCompany']);
+
+Route::get('/homePage', function (){
+    return view('home');
+});
+
