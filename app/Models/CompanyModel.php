@@ -10,4 +10,5 @@ class CompanyModel extends Model
     use HasFactory;
     public $timestamps = false;
     public $table = 'oe_companies';
+    public $primaryKey = 'company_id';
 }
