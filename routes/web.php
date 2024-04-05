@@ -85,6 +85,10 @@ Route::get('/homePage', function (){
     return view('home');
 });
 
-Route::get('/select-template', function(){
-    return view('template');
+Route::get('/select-template1', function(){
+    return view('template1');
+});
+
+Route::get('/select-template2', function(){
+    return view('template2');
 });
