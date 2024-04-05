@@ -24,13 +24,10 @@ use App\Http\Controllers\ProjectController;
 */
 
 Route::get('/', function (){
-<<<<<<< HEAD
-    return view('proj_image_slider');
+    return view('home');
 });
 
 Route::get('/h', function(){
-=======
->>>>>>> main
     return view('layouts.layout');
 });
 
