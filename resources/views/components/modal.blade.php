@@ -21,5 +21,4 @@
             {{ $body }}
         </div>
     </div>
-
 </div>
