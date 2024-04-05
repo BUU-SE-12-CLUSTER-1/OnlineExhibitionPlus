@@ -1,13 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Chonburi&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: content-box;
+
 }
 body{
     max-width: 100%;
     min-width: 500px;
     background: #E5ECFF;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
 
 }
 .top-navbar{
@@ -135,7 +137,7 @@ left: 1040px;
 }
 .side-navbar{
     height: 100% !important;
-  width: 200px;
+  width: 238px !important;
   position: fixed;
   z-index: 1;
   top: 118px;
@@ -143,8 +145,12 @@ left: 1040px;
   background: rgba(255, 255, 255, 0.90);
   padding-top: 20px;
   display: none;
+  text-align: center;
 }
-.side-navbar a, .dropdown-btn {
+.side-navbar a, .dropdown-btn, .side-nav-menu {
+    width: 100% !important;
+    height: 59px;
+    flex-shrink: 0;
     padding: 6px 8px 6px 16px;
     text-decoration: none;
     font-size: 20px;
@@ -153,7 +159,43 @@ left: 1040px;
     border: none;
     background: none;
     width:100%;
-    text-align: left;
+    text-align: center;
     cursor: pointer;
     outline: none;
+    color: #000;
+    font-family: Mulish;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
   }
+.side-nav-menu{
+    border-top: 1px solid rgba(0, 0, 0, 0.25);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+    background: #FFF;
+    width: 100% !important;
+}
+.dropdown-container{
+    margin-top: 18px;
+    display: none;
+}
+.btn-logout{
+    width: 148px;
+height: 43px;
+flex-shrink: 0;
+    border-radius: 15px;
+border: 1px solid #323694;
+background: #FFF;
+box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    color: #4E6CEF;
+font-family: Mulish;
+font-size: 16px;
+font-style: normal;
+font-weight: 800;
+line-height: normal;
+justify-self: center;
+margin: 0;
+position:relative;
+bottom:0px;
+margin-top: 320px;
+}

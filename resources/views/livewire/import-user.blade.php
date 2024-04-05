@@ -6,6 +6,9 @@
 @error('file')
 <span class="text-danger-500">{{ $message }}</span>
 @enderror
+@if (session('error'))
+<span>{{session('error')}}</span>
+@endif
 <input class="buttonAdd" type="submit" value="Upload" name="btn_submit">
 </form>
 </div>
