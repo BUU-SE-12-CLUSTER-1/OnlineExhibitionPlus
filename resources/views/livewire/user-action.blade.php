@@ -4,7 +4,9 @@
     <a href="{{ url('/user-profile/' . $user->user_id) }}">Profile</a>
     <x-modal name="{{ $user->user_id }}" title="Edit User" id="edit-box">
         <x-slot name="body">
+
             @livewire('edit-user', ['user' => $user])
+
         </x-slot>
     </x-modal>
 </div>

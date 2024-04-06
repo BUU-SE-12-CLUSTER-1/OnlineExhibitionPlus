@@ -11,4 +11,5 @@ class AdvisorModel extends Model
     public $timestamps = false;
     public $table = 'oe_advisors';
     public $primaryKey = 'advisor_id';
+    protected $fillable = ['advisor_title', 'advisor_fname', 'advisor_lname'];
 }
