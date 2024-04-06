@@ -18,15 +18,7 @@
         <livewire:insert-user></livewire:insert-user>
     </x-slot>
   </x-modal>
-<form action={{url("/search-user")}} method="POST" name="form_search" >
-    @csrf
-    <div class="search-container" style="position:fixed;right:313px;margin-top:0;">
-        <input style="padding-left: 10px;" type="text" class="search" name="search_user" placeholder="Search User">
-        <button type="submit" class="search-button" name="btn_search_user">
-            <i class="fa-solid fa-magnifying-glass"></i>
-        </button>
-    </div>
-    </form>
+
     <button style="position:fixed;right:169px;margin-top:0;" type="button" class="oe-button" x-data x-on:click="$dispatch('open-modal',{name : 'import-user'})" name="btn_add_excel">Add
         Excel</button>
 

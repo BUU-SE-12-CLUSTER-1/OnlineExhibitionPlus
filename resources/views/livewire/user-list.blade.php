@@ -1,5 +1,12 @@
 <div>
     @livewireStyles
+    <div class="search-container" style="position:fixed;right:313px;margin-top:-65px;">
+        <input wire:model.live="search" style="padding-left: 10px;" type="text" class="search" name="search_user" placeholder="Search User">
+        <button type="button" class="search-button" name="btn_search_user">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+    </div>
+    <div class="table-div">
     <table border="0">
         <tr>
             <th>#</th>
@@ -20,6 +27,7 @@
         </tr>
         @endforeach
     </table>
+</div>
     <span>
         {{ $oe_users->appends(request()->input())->links() }}
     </span>

@@ -27,6 +27,7 @@ class ImportUser extends Component
             'file' =>'required'
 
          ]);
+         try{
         if($this->file){
         $this->file->store('Import','public');
         $import = new UsersImport;
@@ -34,6 +35,10 @@ class ImportUser extends Component
         $this->reset(['file']);
         request()->session()->flash('success','User Added Successfully');
         $this->dispatch('close-modal');
+        }
+        }catch(\Exception $e){
+            request()->session()->flash('error','Invalid File. Please use our file template instead.');
+
     }
     }
     public function render()
