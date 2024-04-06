@@ -18,6 +18,7 @@
         <link rel="stylesheet" href="{{ asset('/assets/css/button.css') }}">
         <link rel="stylesheet" href="{{ asset('/assets/css/form_input.css') }}">
         <script src="https://kit.fontawesome.com/a87b92189d.js" crossorigin="anonymous"></script>
+        @livewireStyles
 
     </head>
     <body>
@@ -126,3 +127,4 @@ for (i = 0; i < dropdown.length; i++) {
 <script>
     @yield('scripts')
 </script>
+@livewireScripts

@@ -48,12 +48,20 @@ class InsertUser extends Component
             'user_role_id' => $this->role_id,
             'user_major_id' => $this->major_id,
         ]);
-        $this->reset();
+        $this->resetForm();
         request()->session()->flash('success','User Added Successfully');
         $this->dispatch('close-modal');
 
+
     }
-    public function mount(){
+    public function resetForm(){
+        $this->student_id = '';
+        $this->fname = '';
+        $this->lname = '';
+        $this->email = '';
+        $this->password = '';
+        $this->role_id = '';
+        $this->major_id = '';
     }
     public function render()
     {
