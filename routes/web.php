@@ -92,3 +92,5 @@ Route::get('/homePage', function (){
     return view('home');
 });
 
+Route::get('/tag-list',[TagController::class, 'showTagList']);
+

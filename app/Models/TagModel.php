@@ -9,5 +9,9 @@ class TagModel extends Model
 {
     use HasFactory;
     public $table = 'oe_tags';
+
+    protected $fillable = ['tag_name'];
+    protected $primaryKey = 'tag_id';
     public $timestamps = false;
+
 }
