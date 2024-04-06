@@ -140,31 +140,14 @@
                 <label for="member" >Member</label>
             </td>
         </tr>
-        <tr>
-            <td colspan="3">
-                <div style="overflow-y: scroll;width: 100%; height: 150px; border-radius: 25px; text-align: center; display: relative; border: 1px solid #000;">
-                    <table border="1" style="height: 90%; margin:7px 11px; overflow-x: scroll; " >
-                        <td style="height: 90%; width: 25%; border-radius:25px; margin:7px 12px;">
-                            test
-                        </td>
-                        <td style="height: 90%; width: 25%; border-radius:25px; margin:7px 10px;">
-                            test
-                        </td>
-                        <td style="height: 90%; width: 25%; border-radius:25px; margin:7px 10px;">
-                            test
-                        </td>
-                        <td style="height: 90%; width: 25%; border-radius:25px; margin:7px 10px;">
-                            test
-                        </td>
-                        <td style="height: 90%; width: 25%; border-radius:25px; margin:7px 10px;">
-                            test
-                        </td>
-                    </table>
-                </div>
-            </td>
-        </tr>
-
     </table>
+    <div style="display:inline-block;width: fit-content; height: 150px; border-radius: 25px; text-align: center; display: relative; border: 1px solid #000;">
+        @for ($i = 0; $i < 3; $i++)
+        <div style="height: 90px; width: 25px; border-radius:25px; margin:7px 12px; border:1;">
+            test
+        </div>
+        @endfor
+</div>
 </form>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script>
