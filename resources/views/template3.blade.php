@@ -5,22 +5,20 @@
 @section('content')
     <link rel="stylesheet" href="{{ asset('/assets/css/template.css') }}">
         <div class="container">
-            <div class="box1" type="text">
-                <div id="drop-area" method="POST" enctype="multipart/form-data">
-                    @csrf
-                    <label for="input-file" >
-                    <input type="file" name="upload-image" accept="image/*" id="input-file" hidden>
-                        <div class="img-view1">
-                            <img src="{{url('assets/img/system/img_project_icon.png')}}" alt="" style = "width:200px" >
-                        </div>
-                    </label>
-                    </form>
+            <div class="box1">
+                    <div id="drop-area" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        <label for="input-file" >
+                        <input type="file" name="upload-image" accept="image/*" id="input-file" hidden>
+                            <div id="img-view1">
+                                <img src="{{url('assets/img/system/img_project_icon.png')}}" alt="" style = "width:200px">
+                            </div>
+                        </label>
+                        </form>
+                    </div>
 
-                </div>
-
-                </body>
-
-                <script>
+                    </body>
+                    <script>
                         const dropArea1 = document.getElementById("drop-area1");
                         const inputFile1 = document.getElementById("input-file1");
                         const imageView1 = document.getElementById("img-view1");
@@ -33,15 +31,17 @@
                             imageView.textContent = "";
                             imageView.style.border = 0;
                         }
-                        dropArea.addEventListener1("dragover", function(e){
+                        dropArea.addEventListener1("dragover1", function(e){
                             e.preventDefault();
                         });
-                        dropArea.addEventListener1("drop", function(e){
+                        dropArea.addEventListener1("drop1", function(e){
                             e.preventDefault();
                             inputFile.files = e.dataTransfer.files;
-                            uploadImage();
+                            uploadImage1();
                         });
                     </script>
+
+                
 
             </div>
             <div>
