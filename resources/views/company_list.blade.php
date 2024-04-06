@@ -1,15 +1,22 @@
-<h1>Company List</h1>
+@extends('layouts.layout')
+@section('title')
+Advisor list | Online Exhibition+
+@endsection
+@section('content')
+@livewireStyles
+<link rel="stylesheet" href="{{asset('assets/css/table.css')}}">
+<button style="position:fixed;right:25px;margin-top:0;" type="button" class="oe-button" x-data x-on:click="$dispatch('open-modal',{name : 'add-advisor'})" >Add Company</button>
 <table border="1">
     <tr>
-        <td>
-            <label for="company_id">ID</label>
-        </td>
-        <td>
-            <label for="company_name">Company Name</label>
-        </td>
-        <td>
-            <label for="action">Action</label>
-        </td>
+        <th>
+            ID
+        </th>
+        <th>
+            Company Name
+        </th>
+        <th>
+            Action
+        </th>
     </tr>
     @foreach ($oe_companies as $company)
         <tr>
@@ -34,3 +41,5 @@
         display: none;
     }
 </style>
+@livewireScripts
+@endsection
