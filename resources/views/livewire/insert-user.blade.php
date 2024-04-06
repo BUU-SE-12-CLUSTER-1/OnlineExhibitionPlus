@@ -36,7 +36,7 @@
         @enderror
         </br>
         <label class="oe-input-label" for="user_password">Password</label>
-        <input  wire:model="password" type="password" name="user_password" maxlength="20"></br>
+        <input class="oe-input" wire:model="password" type="password" name="user_password" maxlength="20"></br>
         <label class="oe-input-label" for="user_role_id">Role</label></br>
         <select class="oe-input" wire:model="role_id" name="user_role_id" style="width: fit-content;">
             <option value="">--</option>

@@ -1,4 +1,4 @@
-<div>
+<div wire:ignore>
     <link rel="stylesheet" href="{{ asset('assets/css/form_input.css') }}">
     <form wire:submit="updateUser">
         @csrf

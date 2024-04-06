@@ -26,6 +26,7 @@ class EditUser extends Component
     public $password;
     public $role_id;
     public $major_id;
+    public $user_id;
     public UserModel $user;
 
     public function updateUser(){
@@ -37,11 +38,11 @@ class EditUser extends Component
          $this->user->user_role_id = $this->role_id;
          $this->user->user_major_id = $this->major_id;
          $this->user->save();
-         $this->reset(['student_id','fname','lname','email','role_id','major_id']);
         request()->session()->flash('success','User Added Successfully');
         $this->dispatch('close-modal');
+
     }
-    public function mount($user){
+    public function mount(UserModel $user){
         $this->user = $user;
         $this->student_id = $user->user_student_id;
         $this->fname = $user->user_fname;
