@@ -1,14 +1,19 @@
 <div>
 @livewireStyles
-    <div class="search-container" style="position:fixed;right:313px;margin-top:-65px;">
-        <input wire:model.live="search" style="padding-left: 10px;" type="text" class="search" name="search_user" placeholder="Search advisor">
+    <div class="search-container" style="position:relative; margin-left:1400px; ">
+        <input wire:model.live="search" style="padding-left: 10px;   outline:none;" type="text"  name="search_advisor" placeholder="Search advisor">
         <button type="button" class="search-button" name="btn_search_advisor">
             <i class="fa-solid fa-magnifying-glass"></i>
         </button>
+
+        <button style="position:relative; margin-left:70px; " type="button" class="oe-button" x-data x-on:click="$dispatch('open-modal',{name : 'add-advisor'})" >Add Advisor</button>
+
+
     </div>
-    <div class="table-div">
-<table border="0" >
-<tr>
+
+<div class="table-div">
+    <table style="margin-top:-50px;" border="0" >
+    <tr>
         <th>
         id
     </th>
@@ -17,15 +22,15 @@
     </th>
     <th>
     FisrtName
-</th>
+    </th>
     <th>
     LastName
-</th>
+    </th>
     <th>
    Action
-</th>
+    </th>
 
-</tr>
+    </tr>
 <?php $advisor_id = null?>
 @foreach ($oe_advisors as $advisor)
     <tr>
@@ -48,7 +53,7 @@
         </td>
     </tr>
 @endforeach
-</table>
+    </table>
 </div>
 <span>
     {{$oe_advisors->appends(request()->input())->links()}}

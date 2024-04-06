@@ -6,6 +6,7 @@ Advisor list | Online Exhibition+
 @livewireStyles
 <link rel="stylesheet" href="{{asset('assets/css/table.css')}}">
 
+
 <x-modal name="add-advisor" title="Add Advisor">
     <x-slot:body>
     @livewire('insert-advisor')
@@ -16,7 +17,7 @@ Advisor list | Online Exhibition+
     @livewire('edit-advisor')
     </x-slot>
 </x-modal>
-<button style="position:relative;" type="button" class="oe-button" x-data x-on:click="$dispatch('open-modal',{name : 'add-advisor'})" >Add Advisor</button>
+
 
 @livewire('advisor-list')
 
