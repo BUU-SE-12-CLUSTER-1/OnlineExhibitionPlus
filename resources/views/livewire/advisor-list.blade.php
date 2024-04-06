@@ -43,7 +43,7 @@
         </td>
         <?php $advisor_id = $advisor['advisor_id']?>
         <td>
-            <livewire:advisor-action :advisor="$advisor" :key="$advisor->id"></livewire:user-action>
+            <livewire:advisor-action :advisor="$advisor" :key="$advisor->id"></livewire:advisor-action>
             
         </td>
     </tr>

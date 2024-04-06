@@ -1,4 +1,5 @@
 <div >
+    @livewireStyles
     <link rel="stylesheet" href="{{ asset('assets/css/form_input.css') }}">
     <form wire:submit="updateAdvisor">
     @csrf
