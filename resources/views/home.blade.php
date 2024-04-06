@@ -1,7 +1,9 @@
 @extends('layouts.layout')
+
 @section('title')
     home | Online Exhibition+
 @endsection
+
 @section('content')
 <script src="https://kit.fontawesome.com/a87b92189d.js" crossorigin="anonymous"></script>
     <head>

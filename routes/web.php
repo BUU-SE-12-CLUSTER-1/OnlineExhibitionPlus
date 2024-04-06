@@ -24,7 +24,7 @@ use App\Http\Controllers\ProjectController;
 */
 
 Route::get('/', function (){
-    return view('home');
+    return view('proj_image_slider');
 });
 
 Route::get('/h', function(){
