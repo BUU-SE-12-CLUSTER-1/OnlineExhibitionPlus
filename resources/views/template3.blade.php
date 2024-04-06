@@ -3,7 +3,7 @@
     home | Online Exhibition+
 @endsection
 @section('content')
-    <link rel="stylesheet" href="{{ asset('/assets/css/template.css') }}">
+    <link rel="stylesheet" href="{{ asset('/assets/css/template3.css') }}">
     <div class="container">
         <div class="box1">
             <div id="drop-area1" method="POST" enctype="multipart/form-data">
