@@ -1,13 +1,13 @@
 <div>
 @livewireStyles
     <div class="search-container" style="position:fixed;right:313px;margin-top:-65px;">
-        <input wire:model.live="search" style="padding-left: 10px;" type="text" class="search" name="search_user" placeholder="Search User">
-        <button type="button" class="search-button" name="btn_search_user">
+        <input wire:model.live="search" style="padding-left: 10px;" type="text" class="search" name="search_user" placeholder="Search advisor">
+        <button type="button" class="search-button" name="btn_search_advisor">
             <i class="fa-solid fa-magnifying-glass"></i>
         </button>
     </div>
     <div class="table-div">
-<table border="0">
+<table border="0" >
 <tr>
         <th>
         id
@@ -44,7 +44,7 @@
         <?php $advisor_id = $advisor['advisor_id']?>
         <td>
             <livewire:advisor-action :advisor="$advisor" :key="$advisor->id"></livewire:advisor-action>
-            
+
         </td>
     </tr>
 @endforeach
