@@ -19,12 +19,12 @@
                 <td>
                     <div class="box2" type="text" ></div>
                 </td>
-                test
-                    <div class = "box3" type="text" ></div>
             </tr>
             <tr>
+
                 <td>
                     <input class="detail" type="text" placeholder="Detail Project" >
+                    <div class = "box3" type="text" ></div>
                 </td>
             </tr>
         </table>
