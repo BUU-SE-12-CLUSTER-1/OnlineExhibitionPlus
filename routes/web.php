@@ -92,3 +92,6 @@ Route::get('/homePage', function (){
     return view('home');
 });
 
+Route::get('/testmas', function (){
+    return view('testmas');
+});

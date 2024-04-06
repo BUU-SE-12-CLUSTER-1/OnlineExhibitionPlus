@@ -14,6 +14,11 @@
     padding-left: 10px;
     padding-top: 15px;
 }
+.background_contentg{
+    width: 200px;
+    height: 200px;
+    background: #FFF;
+}
 
 .dropdown {
     width: 118px;
@@ -103,4 +108,10 @@
     line-height: normal;
     margin-left: 10px;
     margin-top: 15px;
+    border: 1px solid #000;
+
+}
+
+.recent posts{
+
 }

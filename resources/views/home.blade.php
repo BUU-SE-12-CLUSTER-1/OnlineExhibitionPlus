@@ -9,9 +9,8 @@
     </head>
 
     <body>
-        <table>
+        <table class="background_content">
             <tr>
-                <td id="recentpost">RECENT POSTS</td>
                 <td>
                     <div class="dropdown">
                         <label class="years">Years</label>
@@ -28,6 +27,10 @@
                 <td>
                     <button class="buttonAdvanced">Advanced Search</button>
                 </td>
+               
+            </tr>
+            <tr>
+                 <td class="recent posts" id="recentpost">RECENT POSTS</td>
             </tr>
         </table>
     </body>
