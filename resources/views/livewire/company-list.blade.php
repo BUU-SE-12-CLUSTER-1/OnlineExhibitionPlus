@@ -7,7 +7,7 @@
             <i class="fa-solid fa-magnifying-glass"></i>
         </button>
     </div></br>
-    <table border="1">
+    <table style="margin-top:-10px" border:"1">
         <tr>
             <th>
                 ID
