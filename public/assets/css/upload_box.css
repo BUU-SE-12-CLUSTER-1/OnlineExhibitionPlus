@@ -55,3 +55,16 @@
     justify-content: center;
     object-fit: cover;
 }
+
+#img-box1 {
+    width: 50px;
+    height: 50px;
+    border-radius: 360px;
+    border: 2px dashed #bbb5ff;
+    background: #f7f8ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 0px; 
+}

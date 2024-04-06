@@ -27,3 +27,43 @@
     border-radius: 15px;
     margin-left: 26px;
 }
+
+
+.detail::placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px; /* ปรับขนาดของ placeholder ตามต้องการ */
+    color: #999; /* สีของ placeholder */
+    font-size: 30px; /* ขนาดตัวอักษรของ placeholder */
+
+}
+#img-view1{
+    margin-left: 0px;
+    margin-top: 0px;
+    width: 500px;
+    height: 535px;
+    border-radius: 25px;
+    border: 2px dashed #bbb5ff;
+    background: #f7f8ff;
+    background-position: center;
+    background-size:cover;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#img-view2{
+    margin-left: 0px;
+    margin-top: 0px;
+    width: 500px;
+    height: 535px;
+    border-radius: 25px;
+    border: 2px dashed #bbb5ff;
+    background: #f7f8ff;
+    background-position: center;
+    background-size:cover;
+    align-items: center;
+    justify-content: center;
+
+}
