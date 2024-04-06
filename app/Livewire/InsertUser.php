@@ -26,11 +26,10 @@ class InsertUser extends Component
     public $profile_image = '/assets/img/users/img_user_icon.png';
     public $role_id = '';
     public $major_id = '';
-    public $search;
 
     public function insertUser(){
         $this->validate([
-           'student_id' =>'required|min:8|max:8|unique:oe_users,user_student_id',
+            'student_id' =>'required|min:8|max:8|unique:oe_users,user_student_id',
             'fname' =>'required|min:2|max:25',
             'lname' =>'required|min:2|max:25',
             'email' =>'required|email|unique:oe_users,user_email',
@@ -38,6 +37,7 @@ class InsertUser extends Component
             'major_id' => 'required'
 
         ]);
+        if($this->password != ''){
         UserModel::create([
             'user_student_id' => $this->student_id,
             'user_fname' => $this->fname,
@@ -47,21 +47,21 @@ class InsertUser extends Component
             'user_profile_image' => $this->profile_image,
             'user_role_id' => $this->role_id,
             'user_major_id' => $this->major_id,
-        ]);
-        $this->resetForm();
+        ]);}else{
+            UserModel::create([
+                'user_student_id' => $this->student_id,
+                'user_fname' => $this->fname,
+                'user_lname' => $this->lname,
+                'user_email' => $this->email,
+                'user_profile_image' => $this->profile_image,
+                'user_role_id' => $this->role_id,
+                'user_major_id' => $this->major_id,
+            ]);}
+        $this->reset();
         request()->session()->flash('success','User Added Successfully');
         $this->dispatch('close-modal');
 
 
-    }
-    public function resetForm(){
-        $this->student_id = '';
-        $this->fname = '';
-        $this->lname = '';
-        $this->email = '';
-        $this->password = '';
-        $this->role_id = '';
-        $this->major_id = '';
     }
     public function render()
     {
