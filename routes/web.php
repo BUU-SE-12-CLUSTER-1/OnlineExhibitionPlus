@@ -24,7 +24,7 @@ use App\Http\Controllers\ProjectController;
 */
 
 Route::get('/', function (){
-    return view('proj_image_slider');
+    return view('home');
 });
 
 Route::get('/h', function(){
@@ -98,4 +98,12 @@ Route::get('/homePage', function (){
 
 Route::get('/template3', function (){
     return view('template3');
+});
+
+Route::get('/template4', function (){
+    return view('template4');
+});
+
+Route::get('/ImageSlide', function (){
+    return view('proj_image_slider');
 });

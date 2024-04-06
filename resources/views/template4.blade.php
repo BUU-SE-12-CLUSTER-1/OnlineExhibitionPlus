@@ -3,7 +3,7 @@
     home | Online Exhibition+
 @endsection
 @section('content')
-    <link rel="stylesheet" href="{{ asset('/assets/css/template3.css') }}">
+    <link rel="stylesheet" href="{{ asset('/assets/css/template4.css') }}">
     <div class="container">
         <div class="box1">
             <div id="drop-area1" method="POST" enctype="multipart/form-data">
@@ -11,7 +11,7 @@
                 <label for="input-file1">
                     <input type="file" name="upload-image" accept="image/*" id="input-file1" hidden>
                     <div id="img-view1">
-                    <img src="{{url('assets/img/system/img_project_icon.png')}}" alt="" style="width: 608px; height: 900px; object-fit: cover;">
+                    <img src="{{url('assets/img/system/img_project_icon.png')}}" alt="" style="width: 600px; height: 500px; object-fit: cover;">
                     </div>
                 </label>
             </div>
@@ -22,11 +22,22 @@
                 <label for="input-file2">
                     <input type="file" name="upload-image" accept="image/*" id="input-file2" hidden>
                     <div id="img-view2">
-                    <img src="{{url('assets/img/system/img_project_icon.png')}}" alt="" style="width: 498px; height: 535px; object-fit: cover;">
+                    <img src="{{url('assets/img/system/img_project_icon.png')}}" alt="" style="width: 250px; height: 250px; object-fit: cover;">
                     </div> 
                 </label>
             </div>
-        
+        </div>
+        <div class="box3">
+            <div id="drop-area3" method="POST" enctype="multipart/form-data">
+                @csrf
+                <label for="input-file3">
+                    <input type="file" name="upload-image" accept="image/*" id="input-file3" hidden>
+                    <div id="img-view3">
+                    <img src="{{url('assets/img/system/img_project_icon.png')}}" alt="" style="width: 250px; height: 250px; object-fit: cover;">
+                    </div> 
+                </label>
+            </div>
+        </div>
             <textarea class="detail" name="Detail_Project" id="detail_project" placeholder="Detail Project"></textarea>
             <script>
                                 // เลือก textarea
