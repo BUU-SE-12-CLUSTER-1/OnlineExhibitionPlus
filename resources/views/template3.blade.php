@@ -11,4 +11,4 @@
                 <div class="detail">3</div>
             </div>
         </div>
-    @endsection
+@endsection

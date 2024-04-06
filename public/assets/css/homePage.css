@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Chonburi&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+.content {
+    background-color: white;
+    width: 1391px;
+    height: 876px;
+    border-radius: 15px;
+}
+
+.project {
+    background-image: url("https://i.pinimg.com/564x/06/a8/38/06a83820a113e86cdc82351c5092bccf.jpg");
+    background-position: center;
+    background-size: cover;
+    margin-left: 20px;
+    margin-top: 30px;
+    width: 319px;
+    height: 449px;
+    border-radius: 15px;
+    font-family: Mulish;
+    display:inline-block;
+}
+.detail{
+    color: #ffffff;
+    font-style: normal;
+    line-height: normal;
+    margin-top: 221px;
+    margin-left: 15px;
+}
+
+.detail h2{
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.detail p{
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.tag1{
+    margin-left: 48px;
+    width: 81px;
+    height: 36px;
+    flex-shrink: 0;
+    border-radius: 15px;
+    border: 3px solid #FFF;
+    background: #FBC2EB;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.star{
+    background-color: transparent;
+    border: none;
+    margin-top: 11px;
+    margin-left: 283px;
+    width: 27px;
+    height: 25px;
+    flex-shrink: 0;
+}
+.tag2{
+    margin-left: 20px;
+    width: 81px;
+    height: 36px;
+    flex-shrink: 0;
+    border-radius: 15px;
+    border: 3px solid #FFF;
+    background: #A57DFC;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
