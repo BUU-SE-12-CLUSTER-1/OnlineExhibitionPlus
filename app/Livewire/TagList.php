@@ -10,9 +10,9 @@ class TagList extends Component
     public function render()
     {
         $search = $this->search ? $this->search :"";
-        $tags = TagModel::where('tag_name','like',"%{$search}%")->paginate(10);
+        $tag = TagModel::where('tag_name','like',"%{$search}%")->paginate(10);
         return view('livewire.tag-list',[
-            'oe_tags' => $tags
+            'oe_tags' => $tag
         ]);
     }
 }
