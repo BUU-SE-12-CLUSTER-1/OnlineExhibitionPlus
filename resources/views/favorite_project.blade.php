@@ -13,8 +13,12 @@
     <body>
         <nav class="content_home">
             <table>
-                <div class="title">
-                    <td id="favoriteproject">Favorite Projects</td>
+                <div class="titleBlue" style="width: 1642px">
+                    <div>
+                        <h1 id="favoriteproject">Favorite Projects</h1>
+                    </div>
+                </div>
+
                     <td>
                     </td>
                     <td>
@@ -29,8 +33,7 @@
                 </div>
             </table>
 
-
-            {{-- @for ($i = 1; $i < 4; $i++)
+            @for ($i = 1; $i < 10; $i++)
                         <div class="project">
                             <div>
                                 <button type="button" class="star"><i class="fa-solid fa-star"></i></button>
@@ -45,8 +48,8 @@
                                 </div>
 
                             </div>
-                        </div> --}}
-            {{-- @endfor --}}
+                        </div>
+             @endfor
             </div>
 
     </body>
