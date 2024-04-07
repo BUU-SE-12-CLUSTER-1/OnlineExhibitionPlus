@@ -112,3 +112,7 @@ Route::get('/tag-list',[TagController::class, 'showTagList']);
 Route::get('/template1_show', function (){
     return view('template1_show');
 });
+
+Route::get('/template2_show', function (){
+    return view('template2_show');
+});
