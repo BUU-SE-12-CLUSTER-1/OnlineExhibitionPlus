@@ -95,3 +95,5 @@ Route::get('/homePage', function (){
 Route::get('/template3', function (){
     return view('template3');
 });
+Route::get('/tag-list',[TagController::class, 'showTagList']);
+

@@ -11,7 +11,7 @@ table {
     border: 1px solid black;
     border: var(--border);
     overflow: hidden;
-    width: 120%;
+    width: 100%;
     height: 100%;
 
   }
@@ -72,6 +72,10 @@ th {
     height: 79px;
     flex-shrink: 0;
 }
+.user-list{
+    width: 116%;
+}
+
 @media only screen and (max-width: 1840px){
   table {
     width: 113.5%;
