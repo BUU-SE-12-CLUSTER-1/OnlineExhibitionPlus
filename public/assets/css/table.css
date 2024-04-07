@@ -85,4 +85,12 @@ th {
     table {
       width: 116.5%;
     }
+}
+@media only screen and (min-width: 1440px){
+    table {
+      width: 110%;
+    }
+    .user-list{
+        width: 97%;
+    }
   }
