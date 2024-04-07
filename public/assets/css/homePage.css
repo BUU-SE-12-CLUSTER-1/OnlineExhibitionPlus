@@ -156,8 +156,12 @@ img{
 }
 
 .detail{
-
-
+    color: #ffffff;
+    font-style: normal;
+    line-height: normal;
+    margin-top: 221px;
+    margin-left: 15px;
+}
 
 .detail h2{
     font-size: 30px;
