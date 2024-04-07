@@ -25,4 +25,9 @@ class ProjectController extends Controller
         $project->save();
         return view('success');
     }
+
+    public function showProjectList(){
+        $project_data = ProjectModel::all();
+        return view('project_list',['oe_projects' => $project_data]);
+    }
 }

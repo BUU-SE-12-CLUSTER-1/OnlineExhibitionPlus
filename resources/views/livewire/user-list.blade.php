@@ -32,10 +32,6 @@
     <span>
         {{ $oe_users->appends(request()->input())->links() }}
     </span>
-    <style>
-        .w-5 {
-            display: none;
-        }
-    </style>
+    
     @livewireScripts
 </div>
