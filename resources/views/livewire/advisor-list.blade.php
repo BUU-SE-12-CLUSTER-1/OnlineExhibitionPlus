@@ -53,5 +53,6 @@
 <span>
     {{$oe_advisors->appends(request()->input())->links()}}
 </span>
+@livewireScripts
 </div>
 
