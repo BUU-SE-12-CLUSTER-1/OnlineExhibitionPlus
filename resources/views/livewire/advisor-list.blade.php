@@ -1,18 +1,14 @@
 <div>
 @livewireStyles
-<div style="position:relative;">
-        <input class="search-container" wire:model.live="search" style="padding-left: 10px; outline:none; margin-left:100px; display: inline-block;" type="text" name="search_advisor" placeholder="Search advisor">
-        <button type="button" class="search-button" name="btn_search_advisor" style="display: inline-block;">
+
+<div class="search-container" style="position:relative;margin-left:1010px;margin-top:-50px;">
+        <input wire:model.live="search" style="padding-left: 10px; outline:none;" type="text" class="search" name="search_company" placeholder="Search Advisor">
+        <button type="button" class="search-button" name="btn_search_advisor">
             <i class="fa-solid fa-magnifying-glass"></i>
         </button>
-        <button style="margin-left:100px; display: inline-block;" type="button" class="oe-button" x-data x-on:click="$dispatch('open-modal',{name : 'add-advisor'})">Add Advisor</button>
     </div>
 
-        
-
-    
-
-<div class="table-div">
+<div class="table-div" >
     <table style="margin-top:-50px;" border="0" >
     <tr>
         <th>
@@ -59,6 +55,7 @@
 <span>
     {{$oe_advisors->appends(request()->input())->links()}}
 </span>
+
 @livewireScripts
 </div>
 
