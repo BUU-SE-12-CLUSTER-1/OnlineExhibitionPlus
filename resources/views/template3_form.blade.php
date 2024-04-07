@@ -8,6 +8,13 @@
 </head>
     <table>
         <body>
+        <tr>
+                <td colspan="2">
+                    <h1> <!-- Move h1 inside td and colspan to span both columns -->
+                        Template 3
+                    </h1>
+                </td>
+            </tr>
             <td>
         <div class="box1">
             <div id="drop-area1" method="POST" enctype="multipart/form-data">
@@ -23,7 +30,7 @@
             </div>
         </div>
 </td>
-        <td>
+        <td >
         <div class="box2">
             <div id="drop-area2" method="POST" enctype="multipart/form-data">
                 @csrf

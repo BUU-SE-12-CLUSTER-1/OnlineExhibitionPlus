@@ -109,3 +109,6 @@ Route::get('/ImageSlide', function (){
 });
 Route::get('/tag-list',[TagController::class, 'showTagList']);
 
+Route::get('/template1_show', function (){
+    return view('template1_show');
+});
