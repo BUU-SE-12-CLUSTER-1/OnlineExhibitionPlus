@@ -86,7 +86,7 @@ Route::get('/homePage', function (){
 });
 
 Route::get('/select-template1', function(){
-    return view('template1');
+    return view('template1_form');
 });
 
 Route::get('/select-template2', function(){
