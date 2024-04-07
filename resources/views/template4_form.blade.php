@@ -8,7 +8,7 @@
 
 
     <head>
-        <link rel="stylesheet" href="{{ asset('assets\css\select_template4.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets\css\input_template4.css') }}">
     </head>
 
     <body>
