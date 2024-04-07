@@ -81,3 +81,9 @@ th {
     width: 113.5%;
   }
 }
+
+@media only screen and (min-width: 1440px){
+    table {
+      width: 110%;
+    }
+  }

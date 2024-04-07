@@ -7,7 +7,6 @@ use App\Models\TagModel;
 class TagAction extends Component
 {
     public TagModel $tag;
-
     public function mount(TagModel $tag){
         $this->tag = $tag;
     }
