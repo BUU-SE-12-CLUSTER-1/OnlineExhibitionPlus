@@ -11,14 +11,15 @@
     background-position: center;
     background-size: cover;
     margin-left: 20px;
-    margin-top: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     width: 319px;
     height: 449px;
     border-radius: 15px;
     font-family: Mulish;
     display:inline-block;
 }
-.detail{
+.detailproject{
     color: #ffffff;
     font-style: normal;
     line-height: normal;
@@ -48,10 +49,11 @@
 }
 
 .star{
+    font-size: 30px;
     background-color: transparent;
     border: none;
     margin-top: 11px;
-    margin-left: 283px;
+    margin-left: 270px;
     width: 27px;
     height: 25px;
     flex-shrink: 0;
