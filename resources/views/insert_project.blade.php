@@ -489,7 +489,7 @@
             });
             if(isDuplicate == false){
                 let newUser = `<div style=" height: 135px; width: 150px; border-radius:25px; margin:7px 12px; border:1px solid #000;">
-                <li>${text}<i class="uit uit-multiply" onclick="removeUser(this, '${text}')"></i></li></div>
+                <li>${text}<i class="uit uit-multiply" onclick="removeUser(this.parentElement, '${text}')"></i></li></div>
                 `;
                 userSearch.insertAdjacentHTML("beforebegin", newUser);
             selectUserBox.classList.remove('active');
