@@ -1,5 +1,6 @@
 
 <div>
+    @livewireStyles
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="{{ asset('assets/css/form_input.css') }}">
     @if (session('success'))
@@ -8,7 +9,7 @@
 
     @endif
 
-    <form wire:submit="insertUser" action="">
+    <form wire:submit.prevent="insertUser" action="">
         @csrf
         <label class="oe-input-label" for="user_student_id">Student ID</label>
         <input class="oe-input" wire:model="student_id" type="text" name="user_student_id" maxlength="8">
@@ -66,5 +67,5 @@
         <input class="buttonClear" x-data x-on:click="$dispatch('close-modal')" wire:loading.attr="disabled" wire:loading.remove type="button" class="oe-button" value="Cancel" style="margin-left: 368px ; margin-top: 10px">
         <input wire:loading.attr="disabled" wire:loading.remove type="submit" class="buttonAdd" value="Submit">
         </form>
-
+        @livewireScripts
 </div>

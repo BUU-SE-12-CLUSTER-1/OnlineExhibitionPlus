@@ -92,3 +92,6 @@ Route::get('/homePage', function (){
     return view('home');
 });
 
+Route::get('/template3', function (){
+    return view('template3');
+});
