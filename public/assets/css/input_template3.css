@@ -1,32 +1,34 @@
-.container {
-    display: flex;
-}
+
 
 .detail {
-    margin-left: 26px;
     width: 500px;
-    height: 339px;
-    padding: 10px;
-    box-sizing: border-box;
+    height: 400px;
+    flex-shrink: 0;
+    border-radius: 15px;
+    color: rgb(0, 0, 0);
+    font-family: Mulish;
+    font-size: 21px;
+    font-style: Mulish;
+    font-weight: 500;
+    line-height: normal;
+    margin-left: 26px;
+    margin-bottom: 20px;
     margin-top: 26px;
-    border-radius: 15px; /* กำหนดความโค้งของมุม */
 }
-
-
-.detail::placeholder {
+.detail::placeholder{
+    opacity: 0.5;
+    transform: translateX(12px);
+    text-align: top ;
     position: absolute;
-    top: 0;
-    left: 0;
-    padding: 10px; 
-    color: #999; 
-    font-size: 30px; 
-
+    top: 10px;
+    left: 10px;
 }
 #img-view1 {
     margin-left: 0px;
-    margin-top: 0px;
+    
     width: 608px; 
-    height: 900px; 
+    max-height: 900px; 
+    height: 900px;
     border-radius: 25px;
 
     background: #f7f8ff;
@@ -39,13 +41,16 @@
     margin-left: 26px;
     margin-top: 0px;
     width: 498px;
-    height: 535px;
+    height: 510px;
+    max-height: 535px;
     border-radius: 25px;
     display: flex;
     background: #f7f8ff;
     background-position: center;
     background-size:cover;
     align-items: center;
-    justify-content: center;
-
+    justify-content:center;
+    
 }
+
+textarea{resize: none;}

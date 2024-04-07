@@ -3,8 +3,12 @@
     home | Online Exhibition+
 @endsection
 @section('content')
+<head>
     <link rel="stylesheet" href="{{ asset('/assets/css/input_template3.css') }}">
-    <div class="container">
+</head>
+    <table>
+        <body>
+            <td>
         <div class="box1">
             <div id="drop-area1" method="POST" enctype="multipart/form-data">
                 @csrf
@@ -15,9 +19,11 @@
                     <img class="icon" src="{{url('assets/img/system/img_project_icon.png')}}" alt="" style="width:200px;">
                     </div>
                 </label>
-</form>
+                </form>
             </div>
         </div>
+</td>
+        <td>
         <div class="box2">
             <div id="drop-area2" method="POST" enctype="multipart/form-data">
                 @csrf
@@ -30,26 +36,11 @@
                 </label>
             </div>
             </form>
-            <textarea class="detail" name="Detail_Project" id="detail_project" placeholder="Detail Project"></textarea>
-            <script>
-                                // เลือก textarea
-                const textarea = document.getElementById('detail_project');
-
-                // เมื่อมีการพิมพ์ใน textarea
-                textarea.addEventListener('input', function() {
-                    // ถ้า textarea ว่างเปล่า
-                    if (!this.value.trim()) {
-                        // กำหนด placeholder เป็นเนื้อหาของ textarea
-                        this.setAttribute('placeholder', 'Detail Project');
-                    } else {
-                        // ถ้า textarea มีเนื้อหาอยู่
-                        // ลบ placeholder ทิ้ง
-                        this.removeAttribute('placeholder');
-                    }
-                });
-
-            </script>
-    </div>
+        
+            <textarea class="detail" type="text" placeholder="Detail Project" ></textarea>
+</td>
+            
+    
 
     <script>
         const dropArea1 = document.getElementById("drop-area1");
@@ -98,4 +89,7 @@
             uploadImage2();
         });
     </script>
+    </div>
+    </body>
+    </table>
 @endsection
