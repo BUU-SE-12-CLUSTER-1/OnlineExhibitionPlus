@@ -93,6 +93,10 @@ Route::get('/select-template2', function(){
     return view('template2');
 });
 
-Route::get('/input_template1', function(){
+Route::get('/input-template1', function(){
     return view('template1_form');
+});
+
+Route::get('/favorite', function(){
+    return view('favorite_project');
 });
