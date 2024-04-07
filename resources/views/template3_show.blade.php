@@ -4,7 +4,7 @@
 @endsection
 @section('content')
 <head>
-    <link rel="stylesheet" href="{{ asset('/assets/css/input_template3.css') }}">
+    <link rel="stylesheet" href="{{ asset('/assets/css/output_template3.css') }}">
 </head>
     <table>
         <body>

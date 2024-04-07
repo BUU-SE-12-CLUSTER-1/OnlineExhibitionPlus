@@ -116,3 +116,7 @@ Route::get('/template1_show', function (){
 Route::get('/template2_show', function (){
     return view('template2_show');
 });
+
+Route::get('/template3_show', function (){
+    return view('template3_show');
+});
