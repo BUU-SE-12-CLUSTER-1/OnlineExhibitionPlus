@@ -18,18 +18,18 @@
             <tr>
                 <td>
                     {{-- <div class="box1"> --}}
-                        <div id="drop-area1" method="POST" enctype="multipart/form-data">
-                            @csrf
-                            <form>
-                                <label for="input-file1">
-                                    <input type="file" name="upload-image1" accept="image/*" id="input-file1" hidden>
-                                    <div id="img-view1">
-                                        <img class="imgicon1" src="{{ url('assets\img\system\iconimage.png') }}" alt=""
-                                            style="width: 200px ">
-                                    </div>
-                                </label>
-                            </form>
-                        </div>
+                    <div id="drop-area1" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        <form>
+                            <label for="input-file1">
+                                <input type="file" name="upload-image1" accept="image/*" id="input-file1" hidden>
+                                <div id="img-view1">
+                                    <img class="imgicon1" src="{{ url('assets\img\system\iconimage.png') }}" alt=""
+                                        style="width: 200px ">
+                                </div>
+                            </label>
+                        </form>
+                    </div>
                     {{-- </div> --}}
                 </td>
 
@@ -60,18 +60,18 @@
                 <td>
                 <td>
                     {{-- <div class="box2"> --}}
-                        <div id="drop-area2" method="POST" enctype="multipart/form-data">
-                            @csrf
-                            <form>
-                                <label for="input-file2">
-                                    <input type="file" name="upload-image2" accept="image/*" id="input-file2" hidden>
-                                    <div id="img-view2">
-                                        <img  src="{{ url('assets\img\system\iconimage.png') }}" alt=""
-                                            style="width:200px">
-                                    </div>
-                                </label>
-                            </form>
-                        </div>
+                    <div id="drop-area2" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        <form>
+                            <label for="input-file2">
+                                <input type="file" name="upload-image2" accept="image/*" id="input-file2" hidden>
+                                <div id="img-view2">
+                                    <img src="{{ url('assets\img\system\iconimage.png') }}" alt=""
+                                        style="width:200px">
+                                </div>
+                            </label>
+                        </form>
+                    </div>
                     {{-- </div> --}}
                 </td>
 
@@ -103,7 +103,7 @@
             <tr>
                 <td>
                     {{-- <input class="detail" type a="text" placeholder="Detail Project"> --}}
-                    <textarea class="detail" id="detail" cols="30" rows="10" placeholder="Detail Project" ></textarea>
+                    <textarea class="detail" id="detail" cols="30" rows="10" placeholder="Detail Project"></textarea>
                 </td>
             </tr>
         </table>
