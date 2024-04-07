@@ -6,7 +6,7 @@
             <i class="fa-solid fa-magnifying-glass"></i>
         </button>
     </div>
-    <div class="table-div">
+    <div class="table-div user-list">
     <table border="0">
         <tr>
             <th>#</th>
