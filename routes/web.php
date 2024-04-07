@@ -96,12 +96,12 @@ Route::get('/homePage', function (){
     return view('home');
 });
 
-Route::get('/template3', function (){
-    return view('template3');
+Route::get('/template3_form', function (){
+    return view('template3_form');
 });
 
-Route::get('/template4', function (){
-    return view('template4');
+Route::get('/template4_form', function (){
+    return view('template4_form');
 });
 
 Route::get('/ImageSlide', function (){
