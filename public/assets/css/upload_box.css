@@ -10,11 +10,27 @@
     align-items: center;
     justify-content: center;
 }
-#drop-area{
+#drop-area1{
     width: 100px;
     height: 100px;
     padding: 0px;
     background: #ff84fdec;
+    text-align: center;
+    border-radius: 360px;
+}
+#drop-area2{
+    width: 100px;
+    height: 100px;
+    padding: 0px;
+    background: #ffbf84ec;
+    text-align: center;
+    border-radius: 360px;
+}
+#drop-area3{
+    width: 100px;
+    height: 100px;
+    padding: 0px;
+    background: #84f1ffec;
     text-align: center;
     border-radius: 360px;
 }
@@ -55,3 +71,4 @@
     justify-content: center;
     object-fit: cover;
 }
+
