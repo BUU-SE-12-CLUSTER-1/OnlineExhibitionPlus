@@ -91,6 +91,9 @@ Route::post('update-company/{companyr_id}',[CompanyController::class, 'updateCom
 Route::get('/homePage', function (){
     return view('home');
 });
+Route::get('/403forbidden', function (){
+    return view('forbidden');
+});
 
 Route::get('/template3', function (){
     return view('template3');
