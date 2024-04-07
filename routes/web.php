@@ -120,3 +120,7 @@ Route::get('/template2_show', function (){
 Route::get('/template3_show', function (){
     return view('template3_show');
 });
+
+Route::get('/template4_show', function (){
+    return view('template4_show');
+});
