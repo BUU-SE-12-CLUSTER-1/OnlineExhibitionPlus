@@ -9,7 +9,7 @@ class ProjectList extends Component
 {
       public function render()
     {
-        $projects = ProjectModel::paginate(10);
+        $projects = ProjectModel::paginate(16);
         return view('livewire.project-list',[
             'oe_projects' => $projects
 ]);

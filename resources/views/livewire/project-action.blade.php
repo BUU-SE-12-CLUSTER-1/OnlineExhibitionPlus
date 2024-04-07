@@ -1,7 +1,17 @@
 <div>
     <div style="margin-left:20px">
-        <a href="{{ url('/delete-project/' . $project->proj_id) }}" style="color: inherit"><i class="fa-solid fa-trash-can"></i></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <a href="{{ url('/toggle-project/' . $project->proj_id) }}" style="color: inherit" x-on:click="$dispatch('open-modal', { name: '{{ $project->project_id }}' })"<i class="fa-solid fa-eye"></i></a>
+        <a href="{{ url('/delete-project/' . $project->proj_id) }}" style="color: inherit">
+            <i class="fa-solid fa-trash-can"></i>
+        </a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="{{ url('/toggle-project/' . $project->proj_id) }}" style="color: inherit" x-on:click="$dispatch('open-modal', { name: '{{ $project->project_id }}' })">
+            @if ($project->proj_status == 1)
+            <i class="fa-solid fa-eye"></i>
+            @else
+            <i class="fa-solid fa-eye-slash"></i>
+            @endif
+
+
+        </a>
 
         </div>
 
