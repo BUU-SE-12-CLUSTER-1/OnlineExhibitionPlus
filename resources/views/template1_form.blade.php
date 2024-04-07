@@ -17,7 +17,7 @@
         <table>
             <tr>
                 <td>
-                    <div class="box1">
+                    {{-- <div class="box1"> --}}
                         <div id="drop-area1" method="POST" enctype="multipart/form-data">
                             @csrf
                             <form>
@@ -30,7 +30,7 @@
                                 </label>
                             </form>
                         </div>
-                    </div>
+                    {{-- </div> --}}
                 </td>
 
                 <script>
@@ -59,7 +59,7 @@
                 </td>
                 <td>
                 <td>
-                    <div class="box2">
+                    {{-- <div class="box2"> --}}
                         <div id="drop-area2" method="POST" enctype="multipart/form-data">
                             @csrf
                             <form>
@@ -72,7 +72,7 @@
                                 </label>
                             </form>
                         </div>
-                    </div>
+                    {{-- </div> --}}
                 </td>
 
                 <script>
