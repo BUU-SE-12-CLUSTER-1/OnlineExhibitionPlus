@@ -59,7 +59,7 @@
                         <form method="POST" enctype="multipart/form-data">
                             @csrf
                             <label for="input-file2">
-                                <input type="file" name="upload-image2" accept="image/*" id="input-file2" hidden>
+                                <input type="file" name="upload-image2" accept="image/*" id="input-file" hidden>
                                 <div id="img-view2">
                                     <img id="uploaded-image2" src="{{url('assets/img/users/DragHere.png')}}" alt="" style="width:150px">
                                 </div>
