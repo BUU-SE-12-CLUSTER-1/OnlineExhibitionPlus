@@ -152,3 +152,6 @@ Route::get('/template3_show', function (){
 Route::get('/template4_show', function (){
     return view('template4_show');
 });
+Route::get('/testmas', function (){
+    return view('testmas');
+});
