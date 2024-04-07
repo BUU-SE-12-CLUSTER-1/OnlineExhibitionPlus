@@ -1,11 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Chonburi&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
 
+
+
 .box1 {
     width: 843px;
     height: 422px;
     flex-shrink: 0;
     border-radius: 15px;
     background-color: white;
+
 }
 
 .box2 {
@@ -32,12 +35,35 @@
     font-weight: 500;
     line-height: normal;
 }
-.detail::placeholder{
+
+.detail::placeholder {
     opacity: 0.5;
     transform: translateX(12px);
-    text-align: top ;
+    text-align: top;
     position: absolute;
-    top: 10
-    px;
+    top: 10px;
     left: 10px;
+}
+#img-view1{
+    margin-left: 0px;
+    margin-top: 0px;
+    width: 843px;
+    height: 422px;
+    border-radius: 25px;
+    background: #f7f8ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+#img-view2{
+    margin-left: 0px;
+    margin-right:0px;
+    width: 265px;
+    height: 422px;
+    border-radius: 25px;
+    background: #f7f8ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
