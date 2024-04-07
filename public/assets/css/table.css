@@ -92,6 +92,9 @@ th {
     table {
       width: 110%;
     }
+    .user-list{
+        width: 97%;
+    }
   }
 
 

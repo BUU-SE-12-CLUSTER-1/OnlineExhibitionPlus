@@ -103,3 +103,8 @@ Route::get('/tag-list',[TagController::class, 'showTagList']);
 Route::get('/delete-tag/{tag_id}',[TagController::class, 'deleteTag']);
 Route::get('/edit-tag/{tag_id}',[TagController::class, 'editTag']);
 Route::post('update-tag/{tag_id}',[TagController::class, 'updateTag']);
+
+Route::get('/project-list',[ProjectController::class, 'showProjectList']);
+Route::get('/delete-project/{proj_id}',[ProjectController::class, 'deleteProject']);
+Route::get('/edit-project/{proj_id}',[ProjectController::class, 'editProject']);
+Route::post('update-project/{proj_id}',[ProjectController::class, 'updateProject']);
