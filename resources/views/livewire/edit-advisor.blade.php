@@ -6,7 +6,7 @@
 
     @csrf
     <label  class="oe-input-label" for="advisors_title"> Title : </label>
-    <input type="text" class="oe-input" wire:model="title" name="advisor_title" value={{$oe_advisors['advisor_title']}}>
+    <input  type="text" class="oe-input" wire:model="title" name="advisor_title" value={{$oe_advisors['advisor_title']}}>
     <br>
     @error('title')
     <span> {{$message}}</span> @enderror
