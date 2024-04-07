@@ -34,7 +34,7 @@
                             <div>
                                 <button type="button" class="star"><i class="fa-solid fa-star"></i></button>
                             </div>
-                            <div class="detail">
+                            <div class="detailproject">
                                 <h2>System {{$i}}</h2>
                                 <p>Author : </p>
                                 <p>Advisor : </p>
@@ -46,7 +46,7 @@
                             </div>
                         </div>
                     @endfor
-            </div>
+                    </nav>
 
     </body>
 @endsection
