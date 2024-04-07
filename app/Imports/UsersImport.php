@@ -3,6 +3,7 @@
 namespace App\Imports;
 
 use App\Models\UserModel;
+use Exception;
 use Maatwebsite\Excel\Concerns\SkipsOnError;
 use Maatwebsite\Excel\Concerns\Importable;
 use Maatwebsite\Excel\Concerns\SkipsErrors;
@@ -28,10 +29,8 @@ class UsersImport implements ToModel,
     * @return \Illuminate\Database\Eloquent\Model|null
     */
     public function model(array $row)
-    {   //$path = public_path('/assets/img/users/img_user_icon.png');
+    {  
         $path = "/assets/img/users/img_user_icon.png";
-        //$image = File::get($path);
-        //$img_base64 = base64_encode($image);
         return new UserModel([
             'user_student_id' => $row['studentid'],
             'user_fname' => $row['firstname'],
@@ -41,7 +40,6 @@ class UsersImport implements ToModel,
             'user_role_id' => 2,
             'user_major_id' => $row['majorid'],
         ]);
-
     }
     public function onError(Throwable $e){}
     public function rules(): array{

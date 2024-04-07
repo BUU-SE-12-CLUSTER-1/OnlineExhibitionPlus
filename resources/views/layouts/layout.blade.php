@@ -16,8 +16,10 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="{{asset('assets/css/new_navbar.css')}}">
         <link rel="stylesheet" href="{{ asset('/assets/css/button.css') }}">
+        <link rel="stylesheet" href="{{ asset('/assets/css/form_input.css') }}">
         <script src="https://kit.fontawesome.com/a87b92189d.js" crossorigin="anonymous"></script>
-        
+        @livewireStyles
+
     </head>
     <body>
         <div class="top-navbar" style="z-index:1;">
@@ -31,15 +33,29 @@
             <a href="#"><img id="web-icon" src="{{asset('assets/img/system/OE_ICON.png')}}" alt=""></a>
         </div>
         <div class="side-navbar" id="side-navbar">
-            <a href="{{url('/')}}">HOME</a>
-            <button class="dropdown-btn">Dropdown
+            <button class="oe-button" style="font-weight: 900;margin-bottom:44px;margin-top:18px;">Add Project</button>
+            <div class="side-nav-menu">
+            <a href="{{url('/')}}" class="side-nav-menu">HOME</a>
+            </div>
+            <button class="dropdown-btn side-nav-menu">Project
                 <i class="fa-solid fa-chevron-down"></i>
               </button>
-            <div class="user-dropdown-container">
-                <a href="#">Link 1</a>
-                <a href="#">Link 2</a>
-                <a href="#">Link 3</a>
+            <div class="dropdown-container" style="display: none;">
+                <a href="#">My Project</a>
+                <a href="#">Manage Project</a>
+                <a href="#">Favorite Project</a>
+                <a href="{{url('/advisor-list')}}">Manage Advisor</a>
+                <a href="{{url('/company-list')}}">Manage Company</a>
+                <a href="{{url('/tag-list')}}">Manage Tags</a>
             </div>
+            <button class="dropdown-btn side-nav-menu">User
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
+            <div class="dropdown-container">
+                <a href="#">My Profile</a>
+                <a href="{{url('/user-list')}}">Manage User</a>
+            </div>
+            <button class="btn-logout" >LOG OUT</button>
         </div>
         <div id="button-area">
             @yield('button-area')
@@ -93,5 +109,22 @@
      };
 </script>
 <script>
+var dropdown = document.getElementsByClassName("dropdown-btn");
+var i;
+
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var dropdownContent = this.nextElementSibling;
+    if (dropdownContent.style.display === "block") {
+      dropdownContent.style.display = "none";
+    } else {
+      dropdownContent.style.display = "block";
+    }
+  });
+}
+</script>
+<script>
     @yield('scripts')
 </script>
+@livewireScripts

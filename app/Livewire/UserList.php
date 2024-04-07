@@ -20,9 +20,15 @@ use Illuminate\Support\Facades\File;
 class UserList extends Component
 {
     use WithPagination;
+    public $search = '';
+    public function mount(){
+        //$this->search = $search;
+    }
+
     public function render()
     {
-        $users = UserModel::paginate(10);
+        $search = $this->search ? $this->search :"";
+        $users = UserModel::where('user_student_id','like',"%{$search}%")->orWhere('user_fname','like',"%{$search}%")->orWhere('user_lname','like',"%{$search}%")->paginate(10);
         return view('livewire.user-list',[
             'oe_users' => $users,
         ]);
