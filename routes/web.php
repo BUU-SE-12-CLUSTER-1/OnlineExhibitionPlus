@@ -95,5 +95,8 @@ Route::get('/homePage', function (){
 Route::get('/template3', function (){
     return view('template3');
 });
-Route::get('/tag-list',[TagController::class, 'showTagList']);
 
+Route::get('/tag-list',[TagController::class, 'showTagList']);
+Route::get('/delete-tag/{tag_id}',[TagController::class, 'deleteTag']);
+Route::get('/edit-tag/{tag_id}',[TagController::class, 'editTag']);
+Route::post('update-tag/{tag_id}',[TagController::class, 'updateTag']);

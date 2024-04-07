@@ -11,7 +11,7 @@
                 <livewire:insert-tag></livewire:insert-tag>
             </x-slot>
           </x-modal>
-        <button style="position:fixed;right:25px;margin-top:0;" type="button" class="oe-button" x-data x-on:click="$dispatch('open-modal',{name : 'add-tag'})" name="btn_add_user">Add
+        <button style="position:relative;margin-left:1269.5px;margin-top:-40px;" type="button" class="oe-button" x-data x-on:click="$dispatch('open-modal',{name : 'add-tag'})" name="btn_add_tag">Add
         Tag</button>
         <livewire:tag-list></livewire:tag-list>
     @livewireScripts
