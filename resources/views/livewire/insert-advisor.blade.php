@@ -26,7 +26,8 @@
     @error('last_name')
     <span> {{$message}}</span> @enderror 
     </br>
-    <button class="buttonAdd" type="submit" value="submint">submit</button>
+    <input class="buttonClear" x-data x-on:click="$dispatch('close-modal')" wire:loading.attr="disabled" wire:loading.remove type="button" class="oe-button" value="Cancel" style="margin-left: 368px ; margin-top: 10px">
+    <button class="buttonAdd" type="submit" value="submint">Submit</button>
 
     </form>
 

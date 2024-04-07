@@ -11,6 +11,11 @@ Advisor list | Online Exhibition+
     @livewire('insert-advisor')
     </x-slot>
 </x-modal>
+<x-modal name="edit-advisor" title="Edit Advisor">
+    <x-slot:body>
+    @livewire('edit-advisor')
+    </x-slot>
+</x-modal>
 <button style="position:fixed;right:25px;margin-top:0;" type="button" class="oe-button" x-data x-on:click="$dispatch('open-modal',{name : 'add-advisor'})" >Add Advisor</button>
 
 @livewire('advisor-list')
