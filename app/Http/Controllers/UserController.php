@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\MajorModel;
+use App\Models\UserProjectModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use App\Models\UserModel;
@@ -14,6 +15,8 @@ use App\Models\RoleModel;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
+use App\Models\UserLikedProjectModel;
+use App\Models\CommentModel;
 class UserController extends Controller
 {
     public function importExcel(){
@@ -56,6 +59,24 @@ class UserController extends Controller
         return view('user_list',['oe_users'=>$user_data, 'oe_majors'=>$major_data, 'oe_roles'=>$role_data]);
     }
     public function deleteUser($user_id){
+        $user_projects = UserProjectModel::all();
+        foreach($user_projects as $user_project){
+            if($user_project->userproj_user_id == $user_id){
+                $user_project->userproj_user_id = 1;
+            }
+        }
+        $user_liked_projects = UserLikedProjectModel::all();
+        foreach($user_liked_projects as $user_liked_project){
+            if($user_liked_project->ulp_user_id == $user_id){
+                $user_liked_project->delete();
+        }
+        }
+        $user_comments = CommentModel::all();
+        foreach($user_comments as $user_comment){
+            if($user_comment->comment_user_id == $user_id){
+                $user_comment->comment_user_id = 1;
+            }
+        }
         $user = UserModel::find($user_id);
         $user->delete();
         return Redirect::back();

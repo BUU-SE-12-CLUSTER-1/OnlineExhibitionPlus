@@ -17,6 +17,7 @@ return new class extends Migration
             `major_name` VARCHAR(100) NOT NULL,
             PRIMARY KEY (`major_id`))
           ENGINE = InnoDB;");
+          DB::statement('INSERT INTO oe_majors (major_name) VALUES ("Unknown")');
           DB::statement('INSERT INTO oe_majors (major_name) VALUES ("Software Engineering")');
           DB::statement('INSERT INTO oe_majors (major_name) VALUES ("Computer Science")');
           DB::statement('INSERT INTO oe_majors (major_name) VALUES ("Information Technology for Digital Industry")');

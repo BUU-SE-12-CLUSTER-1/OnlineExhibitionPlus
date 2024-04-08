@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\CompanyModel;
 use Illuminate\Http\Request;
-
+use App\Models\ProjectModel;
 class CompanyController extends Controller
 {
     //
@@ -28,6 +28,12 @@ class CompanyController extends Controller
         return view('company_list',['oe_companies'=>$company_data]);
     }
     public function deleteCompany($company_id){
+        $company_projects = ProjectModel::all();
+        foreach($company_projects as $company_project){
+            if($company_project->proj_company_id == $company_id){
+                $company_project->proj_company_id = 1;
+            }
+        }
         $company = CompanyModel::find($company_id);
         $company->delete();
         return back();
