@@ -10,24 +10,24 @@
     @csrf
     <label  class="oe-input-label" for="advisors_title">Title</label>
     <input class="oe-input" type="text"  wire:model="title"  name="advisor_title">
-    <br> 
+    <br>
     @error('title')
-    <span> {{$message}}</span> @enderror 
+    <span> {{$message}}</span> @enderror
     </br>
     <label class="oe-input-label" for="advisors_fname">Frist name</label>
     <input class="oe-input" type="text" wire:model="first_name" name="advisor_fname">
-    <br> 
+    <br>
     @error('first_name')
-    <span> {{$message}}</span> @enderror 
+    <span> {{$message}}</span> @enderror
     </br>
     <label class="oe-input-label" for="advisors_lname">Last name</label>
     <input class="oe-input" type="text" wire:model="last_name" name="advisor_lname"><br>
-    <br> 
+    <br>
     @error('last_name')
-    <span> {{$message}}</span> @enderror 
+    <span> {{$message}}</span> @enderror
     </br>
-    <input class="buttonClear" x-data x-on:click="$dispatch('close-modal')" wire:loading.attr="disabled" wire:loading.remove type="button" class="oe-button" value="Cancel" style="margin-left: 368px ; margin-top: 10px">
-    <button class="buttonAdd" type="submit" value="submint">Submit</button>
+    <button class="buttonClear" type="reset" value="reset"  style="margin-left: 368px ; margin-top: 10px">Cancle</button>
+    <button class="buttonAdd" type="submit" value="submit">Submit</button>
 
     </form>
 
