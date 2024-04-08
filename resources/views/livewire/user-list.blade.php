@@ -1,13 +1,14 @@
 <div>
     @livewireStyles
-    <div class="search-container" style="position:fixed;right:313px;margin-top:-65px;">
+    <div class="search-container" style="position:relative;margin-left:820px;margin-top:-50px;">
         <input wire:model.live="search" style="padding-left: 10px;" type="text" class="search" name="search_user" placeholder="Search User">
         <button type="button" class="search-button" name="btn_search_user">
             <i class="fa-solid fa-magnifying-glass"></i>
         </button>
     </div>
-    <div class="table-div">
-    <table border="0">
+
+    <div class="table-div user-list">
+    <table style="margin-top:-50px" border="1">
         <tr>
             <th>#</th>
             <th>Student id</th>
@@ -31,10 +32,6 @@
     <span>
         {{ $oe_users->appends(request()->input())->links() }}
     </span>
-    <style>
-        .w-5 {
-            display: none;
-        }
-    </style>
+    
     @livewireScripts
 </div>

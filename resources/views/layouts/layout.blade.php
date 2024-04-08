@@ -41,8 +41,8 @@
                 <i class="fa-solid fa-chevron-down"></i>
               </button>
             <div class="dropdown-container" style="display: none;">
-                <a href="#">My Project</a>
-                <a href="#">Manage Project</a>
+                <a href="{{url('/project-list')}}">My Project</a>
+                <a href="{{url('/project-list')}}">Manage Project</a>
                 <a href="#">Favorite Project</a>
                 <a href="{{url('/advisor-list')}}">Manage Advisor</a>
                 <a href="{{url('/company-list')}}">Manage Company</a>

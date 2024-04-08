@@ -1,0 +1,33 @@
+.container {
+    display: flex;
+}
+
+.box1 {
+    background-color: white;
+    width: 608px;
+    height: 900px;
+    margin-bottom: 26px;
+    border-radius: 15px;
+}
+
+.box2 {
+    background-color: white;
+    width: 498px;
+    height: 535px;
+    margin-bottom: 26px;
+    border-radius: 15px;
+    margin-left: 26px;
+}
+
+.detail {
+    background-color: white;
+    width: 500px;
+    height: 339px;
+    margin-bottom: 26px;
+    border-radius: 15px;
+    margin-left: 26px;
+}
+
+#rehome:hover{
+    cursor: pointer;
+}

@@ -1,0 +1,130 @@
+.select-user-box{
+    width: 94%;
+    position: relative;
+    justify-content: space-between;
+}
+.select-user-option{
+    position: relative;
+
+}
+.select-user-option input{
+    width: 105%;
+    height: 5px;
+    background-color: #fff;
+    color: #000;
+    border-radius: 360px;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 5px 10px;
+    border: 1 !important;
+    outline: 1 !important;
+
+}
+
+.user-content{
+    background-color: #fff;
+    position: absolute;
+    color: #000;
+    border-radius: 360px;
+    margin-top: 15px;
+    width: 120%;
+    z-index: 999;
+    display: none;
+}
+.user-search input{
+    width: 94%;
+    font-size: 14px;
+    padding: 5px;
+    outline: 0px;
+    border: 1px solid #000;
+    border-radius: 360px;
+    height: 5px;
+
+
+}
+.user-options{
+    margin-top: 10px;
+    max-height: 150px;
+    overflow-y: auto;
+    padding: 0px;
+}
+.user-options li{
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+}
+.user-options li:hover{
+    background-color: #f2f2f2;
+}
+
+.select-user-box.active .user-content{
+    display: block;
+}
+
+.select-user-box.active .select-user-option:after{
+    transform: rotate(-180deg);
+}
+
+.user-options a{
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    /*margin-top: -50%;z*/
+}
+
+.user-add ul{
+    display: flex;
+    align-items: center;
+    width: 94%;
+    font-size: 14px;
+    padding: 5px;
+    outline: 0px;
+    border-radius: 360px;
+    border: 1 !important;
+    outline: 1 !important;
+
+}
+.user-add ul li{
+    list-style: none;
+    margin: -1px 3px;
+    border-radius: 365px;
+    background: #f2f2f2;
+    padding: 5px 8px 5px 10px;
+    border: 1px solid #888;
+    width: fit-content;
+    font-size: 14px;
+}
+.user-add ul li i{
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+    color: #808080;
+    margin-left: 4px;
+    font-size: 12px;
+    border-radius: 365px;
+    background: #dfdfdf;
+    justify-content: center;
+}
+.user-add ul input{
+    position: flex;
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 5px;
+    font-size: 14px;
+    text-align: left;
+    width: 50%;
+
+}
+.user-search input{
+    position: flex;
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 5px;
+    font-size: 14px;
+    text-align: left;
+    width: 50%;
+}

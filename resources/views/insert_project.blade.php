@@ -2,6 +2,7 @@
 <link rel="stylesheet" href="{{asset('assets/css/company_selector.css')}}">
 <link rel="stylesheet" href="{{asset('assets/css/advisor_selector.css')}}">
 <link rel="stylesheet" href="{{asset('assets/css/tag_selector.css')}}">
+<link rel="stylesheet" href="{{asset('assets/css/member_selector.css')}}">
 <link rel="stylesheet" href="{{asset('assets/css/upload_box.css')}}">
 <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/thinline.css">
 <script src="https://kit.fontawesome.com/a87b92189d.js" crossorigin="anonymous"></script>
@@ -10,6 +11,7 @@
     return false;
 }" enctype="multipart/form-data">
 @csrf
+<div style="width:600px; border: 1px solid #000;display:inline-block">
     <table border="0">
         <tr>
             <td colspan="2">
@@ -140,31 +142,37 @@
                 <label for="member" >Member</label>
             </td>
         </tr>
-        <tr>
-            <td colspan="3">
-                <div style="overflow-y: scroll;width: 100%; height: 150px; border-radius: 25px; text-align: center; display: relative; border: 1px solid #000;">
-                    <table border="1" style="height: 90%; margin:7px 11px; overflow-x: scroll; " >
-                        <td style="height: 90%; width: 25%; border-radius:25px; margin:7px 12px;">
-                            test
-                        </td>
-                        <td style="height: 90%; width: 25%; border-radius:25px; margin:7px 10px;">
-                            test
-                        </td>
-                        <td style="height: 90%; width: 25%; border-radius:25px; margin:7px 10px;">
-                            test
-                        </td>
-                        <td style="height: 90%; width: 25%; border-radius:25px; margin:7px 10px;">
-                            test
-                        </td>
-                        <td style="height: 90%; width: 25%; border-radius:25px; margin:7px 10px;">
-                            test
-                        </td>
-                    </table>
-                </div>
-            </td>
-        </tr>
-
     </table>
+    <div style="display:inline-flex;width: fit-content; height: 150px; border-radius: 25px; text-align: center; display: relative; border: 1px solid #000;">
+        <div class="select-user-box" name="proj_tag_id">
+            <div class="select-user-option">
+                <div class="user-add">
+                    <ul>
+                        <button type="button" class="add-member-option">ADD MEMBER</button>
+                    </ul>
+                    <small style="color: #888"> Add member to your project</small>
+                </div>
+            </div>
+            <div class="user-content">
+                <div class="user-search">
+                <input type="text" id="userOptionSearch" placeholder="Add a member" name="">
+            </div>
+                <ul class="user-options">
+                    @foreach($oe_users as $user)
+                    <li value="{{$user['user_id']}}">{{$user['user_student_id']}} {{$user['user_fname']}} {{$user['user_lname']}}</li>
+                    @endforeach
+
+                </ul>
+            </div>
+        </div>
+        <!--
+        for ($i = 0; $i < 6; $i++)
+        <div style=" height: 135px; width: 150px; border-radius:25px; margin:7px 12px; border:1px solid #000;">
+            test
+        </div>
+        endfor
+        -->
+</div>
 </form>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script>
@@ -417,6 +425,123 @@
     }
 
 </script>
+
+<script>
+    const selectUserBox = document.querySelector('.select-user-box');
+    const selectUserOption = document.querySelector('.select-user-option');
+    const AddmemberOption = document.querySelector('.add-member-option');
+    const userContent = document.querySelector('.user-content');
+    const userOptions = document.querySelector('.user-options');
+    const optionUserSearch = document.getElementById('userOptionSearch');
+    const userValue = document.querySelector('#userValue');
+    const optionUserList = document.querySelectorAll('.user-options li');
+    const ulUser = document.querySelector('.user-search ul');
+    const userSearch = document.querySelector('.user-search input');
+    const userAdd = document.querySelector('.user-add button');
+
+    AddmemberOption.addEventListener('click', function(){
+        selectUserBox.classList.toggle('active');
+    });
+    userSearch.addEventListener('keyup', function(){
+        selectUserBox.classList.add('active');
+    });
+    userSearch.addEventListener('keydown', deleteUserByKeyPress);
+    function deleteUserByKeyPress(e){
+        if(userSearch.value === "" && e.key === 'Backspace' || e.key === 'Delete' ){
+            const ulUserList = document.querySelectorAll('.user-search ul li');
+            lastUser = "";
+            ulUserList.forEach(user=>{
+                const ulUserName = user.textContent;
+                lastUser = user;
+            });
+            if(lastUser != ""){
+                lastUser.remove();
+            }
+        }else if(e.key === 'Enter'){
+            optionUserList.forEach(function(optionUserListSingle){
+        optionUserListSingle.addEventListener('click', function(){
+            text = this.textContent;
+            id = this.value;
+            isDuplicate = false;
+            const ulUserList = document.querySelectorAll('.user-search ul li');
+            ulUserList.forEach(user=>{
+                const ulUserName = user.textContent;
+                if(ulUserName == text){
+                    isDuplicate = true;
+                }
+            });
+            if(isDuplicate == false && ulUserList.length<2){
+                let newUser = `<li>${text}<i class="uit uit-multiply" onclick="removeUser(this, '${text}')"></i></li>`;
+                userAdd.insertAdjacentHTML("beforebegin", newUser);
+            selectUserBox.classList.remove('active');
+            optionUserSearch.value = "";
+        }
+
+        })
+    });
+        }
+    }
+    optionUserList.forEach(function(optionUserListSingle){
+        optionUserListSingle.addEventListener('click', function(){
+            text = this.textContent;
+            id = this.value.toString();
+            isDuplicate = false;
+            const ulUserList = document.querySelectorAll('.user-search ul li');
+            ulUserList.forEach(user=>{
+                const ulUserName = user.textContent;
+                if(ulUserName == text){
+                    isDuplicate = true;
+                }
+            });
+            if(isDuplicate == false){
+                let newUser = `<div style=" height: 135px; width: 150px; border-radius:25px; margin:7px 12px; border:1px solid #000;">
+
+                    <?php
+                        $this_id = '${id}';
+                        $this_id = $this_id;
+                        echo $this_id;
+                    ?>
+                    @foreach ($oe_users as $user)
+                    <?php echo $user['user_id']."+".$this_id;?>
+                        @if($user['user_id'] == $this_id)
+                        <?php echo "Oh yeah";?>
+                        <li>{{$user['user_profile_image']}}<i class="uit uit-multiply" onclick="removeUser(this, '${text}')"></i></li>
+                        @endif
+                    @endforeach
+
+                    <li>${text}<i class="uit uit-multiply" onclick="removeUser(this, '${text}')"></i></li>
+            </div>
+                `;
+                userAdd.insertAdjacentHTML("beforebegin", newUser);
+            selectUserBox.classList.remove('active');
+            optionUserSearch.value = "";
+            }
+
+        })
+    });
+    function removeUser(element, userName){
+        const ulUserList = document.querySelectorAll('.user-add ul li');
+            ulUserList.forEach(user=>{
+                const ulUserName = user.textContent;
+                if(ulUserName == userName){
+                    user.parentNode.remove();
+                }
+            });
+    }
+    optionUserSearch.addEventListener('keyup', function(){
+        const filter = optionUserSearch.value.toUpperCase();
+        optionUserList.forEach(option =>{
+            const userName = option.textContent.toUpperCase();
+            if (userName.includes(filter) || filter === ''){
+                option.style.display = 'block';
+            } else {
+                option.style.display = 'none';
+            }
+        });
+    });
+
+</script>
+
 <script>
     const dropArea = document.getElementById("drop-area");
 const inputFile = document.getElementById("input-user-image");

@@ -1,28 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Chonburi&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
 
 
-
-.box1 {
-    width: 843px;
-    height: 422px;
-    flex-shrink: 0;
-    border-radius: 15px;
-    background-color: white;
-
-}
-
-.box2 {
-    width: 265px;
-    height: 422px;
-    flex-shrink: 0;
-
-    border-radius: 15px;
-    background-color: white;
-    margin-left: -270px;
-    margin-bottom: 22px;
-    margin-top: 22px;
-}
-
+textarea{resize: none;}
 .detail {
     width: 1132px;
     height: 248px;
@@ -34,6 +13,9 @@
     font-style: Mulish;
     font-weight: 500;
     line-height: normal;
+    padding-left: 20px;
+    padding-top: 10px;
+
 }
 
 .detail::placeholder {
@@ -54,6 +36,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    background-size: cover;
+    
 
 }
 #img-view2{
@@ -66,4 +50,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-left: -270px;
+    margin-bottom: 22px;
+    margin-top: 22px;
+    background-size: cover;
 }

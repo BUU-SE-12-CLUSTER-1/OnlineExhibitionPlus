@@ -3,50 +3,51 @@
     home | Online Exhibition+
 @endsection
 @section('content')
-    <link rel="stylesheet" href="{{ asset('/assets/css/template3.css') }}">
-    <div class="container">
+<head>
+    <link rel="stylesheet" href="{{ asset('/assets/css/input_template3.css') }}">
+</head>
+    <table>
+        <body>
+        <tr>
+                <td colspan="2">
+                    <h1> <!-- Move h1 inside td and colspan to span both columns -->
+                        Template 3
+                    </h1>
+                </td>
+            </tr>
+            <td>
         <div class="box1">
             <div id="drop-area1" method="POST" enctype="multipart/form-data">
                 @csrf
+                <form>
                 <label for="input-file1">
-                    <input type="file" name="upload-image" accept="image/*" id="input-file1" hidden>
+                    <input type="file" name="upload-image1" accept="image/*" id="input-file1" hidden>
                     <div id="img-view1">
-                    <img src="{{url('assets/img/system/img_project_icon.png')}}" alt="" style="width: 608px; height: 900px; object-fit: cover;">
+                    <img class="icon" src="{{url('assets/img/system/img_project_icon.png')}}" alt="" style="width:200px;">
                     </div>
                 </label>
+                </form>
             </div>
         </div>
+</td>
+        <td >
         <div class="box2">
             <div id="drop-area2" method="POST" enctype="multipart/form-data">
                 @csrf
+                <form>
                 <label for="input-file2">
                     <input type="file" name="upload-image" accept="image/*" id="input-file2" hidden>
                     <div id="img-view2">
-                    <img src="{{url('assets/img/system/img_project_icon.png')}}" alt="" style="width: 498px; height: 535px; object-fit: cover;">
+                    <img class="icon2" src="{{url('assets/img/system/img_project_icon.png')}}" alt="" style="width: 200px;">
                     </div> 
                 </label>
             </div>
+            </form>
         
-            <textarea class="detail" name="Detail_Project" id="detail_project" placeholder="Detail Project"></textarea>
-            <script>
-                                // เลือก textarea
-                const textarea = document.getElementById('detail_project');
-
-                // เมื่อมีการพิมพ์ใน textarea
-                textarea.addEventListener('input', function() {
-                    // ถ้า textarea ว่างเปล่า
-                    if (!this.value.trim()) {
-                        // กำหนด placeholder เป็นเนื้อหาของ textarea
-                        this.setAttribute('placeholder', 'Detail Project');
-                    } else {
-                        // ถ้า textarea มีเนื้อหาอยู่
-                        // ลบ placeholder ทิ้ง
-                        this.removeAttribute('placeholder');
-                    }
-                });
-
-            </script>
-    </div>
+            <textarea class="detail" type="text" placeholder="Detail Project" ></textarea>
+</td>
+            
+    
 
     <script>
         const dropArea1 = document.getElementById("drop-area1");
@@ -56,8 +57,10 @@
         inputFile1.addEventListener("change", uploadImage1);
 
         function uploadImage1(){
-            let imgLink = URL.createObjectURL(inputFile1.files[0]);
-            imageView1.querySelector('img').src = imgLink;
+            let imgLink1 = URL.createObjectURL(inputFile1.files[0]);
+            imageView1.style.backgroundImage = `url(${imgLink1})`;
+            imageView1.textContent="";
+            imageView1.Style.border="0";
         }
 
         dropArea1.addEventListener("dragover", function(e){
@@ -77,8 +80,10 @@
         inputFile2.addEventListener("change", uploadImage2);
 
         function uploadImage2(){
-            let imgLink = URL.createObjectURL(inputFile2.files[0]);
-            imageView2.querySelector('img').src = imgLink;
+            let imgLink2 = URL.createObjectURL(inputFile2.files[0]);
+            imageView2.style.backgroundImage = `url(${imgLink2})`;
+            imageView2.textContent="";
+            imageView2.Style.border="0";
         }
 
         dropArea2.addEventListener("dragover", function(e){
@@ -91,4 +96,7 @@
             uploadImage2();
         });
     </script>
+    </div>
+    </body>
+    </table>
 @endsection
