@@ -6,7 +6,7 @@
     <input type="text" name="advisor_fname"><br>
     <label for="advisors_lname">Last name</label>
     <input type="text" name="advisor_lname"><br>
-    <button type="submit" value="submint">submit</button>
+    <button type="submit" value="submint">Search</button>
 
 </form>
 
