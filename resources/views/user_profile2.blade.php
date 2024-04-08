@@ -8,7 +8,6 @@
 <link rel="stylesheet" href="{{ asset('assets/css/modal.css') }}">
 <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <link rel="stylesheet" href="{{asset('assets/css/profile.css')}}">
-<link rel="stylesheet" href="{{asset('assets/css/homePage.css')}}">
 <body>
     <nav class="profile_user">
         <div class="titleBlue">
@@ -89,22 +88,6 @@
         </div>
 
         <p id="txt_project">Project</p>
-        @for ($i = 1; $i < 13; $i++)
-            <div class="project">
-                <div>
-                    <button type="button" class="star"><i class="fa-solid fa-star"></i></button>
-                </div>
-                <div class="detailproject">
-                    <h2>System {{$i}}</h2>
-                    <p>Author : </p>
-                    <p>Advisor : </p>
-                    <div class="btn_tag">
-                    <button class="tag1">Tag A</button>
-                    <button class="tag2">Tag B</button>
-                </div>
-                </div>
-            </div>
-        @endfor
         <script>
             function edit(){
                 document.getElementById("txt-fname").style.display = "none";

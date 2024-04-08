@@ -98,7 +98,9 @@ Route::get('/homePage', function (){
 Route::get('/403forbidden', function (){
     return view('forbidden');
 });
-
+Route::get('/detail', function(){
+    return view('detail_main');
+});
 Route::get('/select-template1', function(){
     return view('template1');
 });
