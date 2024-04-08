@@ -15,7 +15,7 @@
             @endif
         </a>
         <?php
-        $user_id = 1;
+        $user_id = 221;
         ?>
         <a href="{{ url('/toggle-liked/' . $project->proj_id).'/'.$user_id }}" style="color: rgba(255, 255, 255, 0)">
             <?php
@@ -35,7 +35,6 @@
             <i class="fa-regular fa-star" style="color: white"></i>
             @endif
         </a>
-
         {{-- <x-modal name="{{ $project->project_id }}" title="Edit Project" id="edit-box">
             <x-slot name="body">
                 @livewire('edit-project', ['project' => $project])

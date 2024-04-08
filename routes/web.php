@@ -114,6 +114,7 @@ Route::get('/toggle-project/{proj_id}',[ProjectController::class, 'toggleVisible
 Route::get('/toggle-liked/{proj_id}/{user_id}',[ProjectController::class, 'toggleLikedProject']);
 Route::get('/edit-project/{proj_id}',[ProjectController::class, 'editProject']);
 Route::post('update-project/{proj_id}',[ProjectController::class, 'updateProject']);
+Route::get('/fav-project',[ProjectController::class, 'favProjectList']);
 Route::get('/select-template2', function(){
     return view('template2');
 });
