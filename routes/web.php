@@ -97,3 +97,6 @@ Route::get('/template3', function (){
 });
 Route::get('/tag-list',[TagController::class, 'showTagList']);
 
+Route::get('/main-detail', function (){
+    return view('main_detail');
+});
