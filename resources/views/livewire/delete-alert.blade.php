@@ -14,7 +14,7 @@
             <button class="buttonAdd" style="margin-left:80px"><a href="{{ url('/delete-tag/'.$model->tag_id) }}" >Delete</a></button>
     @elseif($topic === 'advisor')
             <button class="buttonClear"  x-data x-on:click="$dispatch('close-oe-alert')" style="margin-left: 50px ; margin-top: 20px">Cancel</button>
-            <button class="buttonAdd" style="margin-left:80px"><a href="{{ url('/delete-addvisor/'.$model->advisor_id) }}" >Delete</a></button>
+            <button class="buttonAdd" style="margin-left:80px"><a href="{{ url('/delete-advisor/'.$model->advisor_id) }}" >Delete</a></button>
     @endif
 
 </div>
