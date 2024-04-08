@@ -9,8 +9,6 @@
             @else
             <i class="fa-solid fa-eye-slash"></i>
             @endif
-
-
         </a>
 
         </div>
