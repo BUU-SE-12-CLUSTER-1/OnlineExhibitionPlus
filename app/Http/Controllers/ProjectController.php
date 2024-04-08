@@ -30,7 +30,15 @@ class ProjectController extends Controller
         $project_data = ProjectModel::all();
         return view('project_list',['oe_projects' => $project_data]);
     }
-
+    public function searchProject(Request $request){
+        $search_data = $request->input('search_project');
+        $project_data = ProjectModel::where('proj_name','LIKE','%'.$search_data.'%')
+        ->paginate(10);
+        if(!$project_data || !$project_data->count()){
+            return redirect('/');
+    }
+    return view('search_project_list',['oe_projects'=> $project_data]);
+}
     public function deleteProject($proj_id){
         $project = ProjectModel::find($proj_id);
         $project->delete();
