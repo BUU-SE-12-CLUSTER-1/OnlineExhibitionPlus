@@ -9,13 +9,13 @@
     <title>Document</title>
 </head>
 <body>
-    
+    .
     <div class="container">
         <div class="wrapper">
-            <img src="{{url('assets\img\testmas\5.jpg')}}">
-            <img src="{{url('assets\img\testmas\6.jpg')}}">
-            <img src="{{url('assets\img\testmas\7.jpg')}}">
-            <img src="{{url('assets\img\testmas\8.jpg')}}">
+            <img src="{{url('assets\img\testmas\1.jpg')}}">
+            <img src="{{url('assets\img\testmas\2.jpg')}}">
+            <img src="{{url('assets\img\testmas\3.jpg')}}">
+            <img src="{{url('assets\img\testmas\4.jpg')}}">
             <img src="{{url('assets\img\testmas\5.jpg')}}">
         </div>
     </div>
