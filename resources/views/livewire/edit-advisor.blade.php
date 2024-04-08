@@ -1,7 +1,7 @@
 <div >
 @livewireStyles
     <link rel="stylesheet" href="{{ asset('assets/css/form_input.css') }}">
-    
+
     <form wire:submit="updateAdvisor">
 
     @csrf
@@ -25,7 +25,6 @@
     </br>
     <input class="buttonClear"  x-data x-on:click="$dispatch('close-modal')" wire:loading.attr="disabled" wire:loading.remove type="button" class="oe-button" value="Cancel" style="margin-left: 368px ; margin-top: 10px">
     <input wire:loading.attr="disabled" wire:loading.remove type="submit" class="buttonAdd" value="Save">
-
     </form>
 
 </div>

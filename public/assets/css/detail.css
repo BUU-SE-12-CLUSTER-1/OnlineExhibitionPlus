@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Chonburi&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+.detail_project{
+    width: 1391px;
+    height: auto;
+    background-color: #FAFAFA;
+    border-radius: 15px;
+    margin-top: -30px;
+}
+.head_project{
+    width: 1127px;
+    height: 267px;
+    border-radius: 15px;
+    background-color: #Ffff;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    margin-left: 23px;
+    top: 33px;
+    position: relative;
+}
+.comment{
+    width: 1132px;
+    height: 115px;
+    border-radius: 15px;
+    background-color: #FAFAFA;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    margin-left: 23px;
+    margin-top: 800px;
+    bottom: 33px;
+    position: relative;
+}
+.img_project{
+    width: 174px;
+    height: 168px;
+    border-radius: 174px;
+    margin-left: 35px;
+    margin-top: 33px;
+}
+.haed_detail_project{
+    width: 300px;
+    height: 250px;
+    margin-left: 258px;
+    top: -170px;
+    position: relative;
+    color: #000;
+    font-family: Mulish;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+#haed_detail_project{
+    width: 300px;
+    height: 250px;
+    margin-left: 120px;
+    top: -158px;
+    position: relative;
+    color: #000;
+    font-family: Mulish;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.haed_detail_project h1{
+    color: #000;
+    font-family: Mulish;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.tag1 {
+    margin-left: 48px;
+    width: 81px;
+    height: 36px;
+    flex-shrink: 0;
+    border-radius: 15px;
+    border: 3px solid #FFF;
+    background: #FBC2EB;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+
+}
+.tag2 {
+    margin-left: 20px;
+    width: 81px;
+    height: 36px;
+    flex-shrink: 0;
+    border-radius: 15px;
+    border: 3px solid #FFF;
+    background: #A57DFC;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+
+}
+.comment h1{
+    width: 73px;
+    height: 20px;
+    margin-left: 15px;
+    top: 10px;
+    color: #000;
+    font-family: Mulish;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    position: relative;
+}
+.comment_container {
+    display: flex;
+    align-items: center;
+    width: 1102px;
+    height: 63px;
+    border-radius: 15px;
+    background: #FFF;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    margin-left: 15px;
+    margin-top: 24px;
+}
+
+.comment_project {
+    width: 1030px;
+    height: 70%;
+    flex-shrink: 0;
+    border: none;
+    outline: none;
+    margin: 0;
+    padding: 0;
+    transform: translateX(20px);
+}
+
+.comment_project::placeholder {
+    opacity: 0.3;
+    transform: translateX(12px);
+}
+
+.comment_button {
+    width: 47px;
+    height: 39px;
+    flex-shrink: 0;
+    border-radius: 15px;
+    background: none;
+    color: #FFF;
+    border: none;
+    transform: translateX(3px);
+    margin-left: 6px;
+}
+
+.comment_button i {
+    color: #4E6CEF;
+    font-size: 30px;
+
+}
+.member_head{
+    width: 196px;
+    height: 51px;
+    flex-shrink: 0;
+    border-radius: 15px;
+    background-color: #4E6CEF;
+    left: 1178px;
+    top: -1148px;
+    position: relative;
+}
+.member_head h1{
+    color: #FFF;
+    font-family: Mulish;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    top: 8px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+.member{
+    width: 196px;
+    height: 208px;
+    flex-shrink: 0;
+    background-color: #FFF;
+    border-radius: 15px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    position: relative;
+    left: 1178px;
+    top: -1130px;
+}
+.member img{
+    width: 108px;
+    height: 102px;
+    border-radius: 174px;
+    flex-shrink: 0;
+    margin-left: 44px;
+    margin-top: 19px;
+}
+.member p{
+    margin-left: 10px;
+    margin-top: 10px;
+    color: #000;
+    font-family: Mulish;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+#member_detail{
+    width: 30px;
+    height: 50px;
+    margin-left: 45px;
+    margin-top: -60px;
+    position: relative;
+    color: #000;
+    font-family: Mulish;
+    font-size: 8px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    
+}
