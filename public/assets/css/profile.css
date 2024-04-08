@@ -246,3 +246,13 @@
     width: 180px;
     height: 45px;
 }
+#img-view p{
+    font-size: 20px;
+    margin-top: auto;
+    margin-left: auto;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    top: 150px;
+    position: relative;
+}
