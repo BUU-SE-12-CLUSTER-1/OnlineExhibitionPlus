@@ -30,18 +30,14 @@
             <img src="assets/img/system/LOGO_TEXT.png" class="icon-text" alt="" style="width: 230px; height: 28px;">
             <input type="text" name="email" placeholder="Email" id="username-textbox" style="margin-top: 36%;"/>
             <label>
-				<span>Password</span>
 				<div class="passwd-wrap">
-					<input type="password" id="password" placeholder="Enter your password..." />
+					<input type="password" id="password" placeholder="Password" />
 					<button type="button" id="show-passwd">
-						<img src="./eye_open.svg" alt="Show Password" />
+                        <!-- <i class="fa fa-eye" aria-hidden="true"></i> -->
+						<img src="assets/img/users/eye_closed.svg" alt="Show Password" />
 					</button>
 				</div>
 			</label>
-            <!-- <input type="password" name="password" placeholder="Password" id="password-textbox"/> -->
-            <button type="submit" id="eye-button"><button type="button" id="eye-button"><i class="bi bi-eye-slash-fill"></i></button>
-            <br>
-
 
         <!-- BUTTON     -->
         <button type="submit" class="login-button" style="margin-top: 17%;">Login</button>
@@ -61,6 +57,19 @@
         console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
     }
 
+        const show_pw_btn = document.querySelector('#show-passwd')
+        const show_pw_icon = show_pw_btn.querySelector('img')
+        const pw_input = document.querySelector('#password')
+
+        show_pw_btn.addEventListener('click', () => {
+            pw_input.type = pw_input.type === 'password' 
+                ? 'text' 
+                : 'password'
+
+            show_pw_icon.src = show_pw_icon.src.includes('open') 
+                ? 'assets/img/users/eye_closed.svg' 
+                : 'assets/img/users/eye_open.svg'
+        })
     </script>
 
 </html>

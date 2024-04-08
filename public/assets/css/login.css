@@ -259,18 +259,57 @@ form{
     text-align: center;
 }
 
-#eye-button {
-    position: absolute;
-    top: 50%;
-    right: 5%;
-    transform: translateY(-50%);
-    background: none;
-    border: none;
-    cursor: pointer;
-    width: 35px; /* ปรับขนาดตามต้องการ */
-    height: 27px; /* ปรับขนาดตามต้องการ */
+input[type="text"],
+input[type="password"],
+button {
+	appearance: none;
+	outline: none;
+	border: none;
+	background: none;
 }
 
-#eye-button i {
-    font-size: 35px; /* ปรับขนาดไอคอนตาตามต้องการ */
+input[type="text"],
+input[type="password"] {
+	display: block;
+	width: 50%;
+	padding-left: 10px;
+	border: 1px solid #bbb;
+    margin-top: 8%;
+    margin-left: 15%;
+    width: 310px;
+    height: 61px;
+    flex-shrink: 0;
+    fill: #FFF;
+    stroke-width: 1px;
+    stroke: #000;
+    border-radius: 20px;
+    text-align: left;
+    font-size: 20px;
+    padding-left: 3%;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+	border-color: #2b2d2f;
+}
+
+.passwd-wrap {
+	position: relative;
+}
+
+#show-passwd {
+	position: absolute;
+	top: 50%;
+	right: 70px;
+	transform: translateY(-50%);
+	cursor: pointer;
+	width: 50px;
+	display: flex;
+	align-items: center;
+}
+
+#show-passwd img {
+	width: 100%;
+	height: auto;
+    padding-right: 20%;
 }
