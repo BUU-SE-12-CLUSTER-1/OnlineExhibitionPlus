@@ -97,3 +97,8 @@ Route::get('/select-template4', function(){
     return view('template4');
 });
 
+Route::get('/login', function(){
+    return view('login');
+});
+
+
