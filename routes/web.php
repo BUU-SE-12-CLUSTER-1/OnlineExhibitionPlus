@@ -126,9 +126,6 @@ Route::get('/input-template1', function(){
     return view('template1_form');
 });
 
-Route::get('/favorite', function(){
-    return view('favorite_project');
-});
 Route::get('/template3_form', function (){
     return view('template3_form');
 });

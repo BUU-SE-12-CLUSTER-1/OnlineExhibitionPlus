@@ -15,7 +15,7 @@
             @endif
         </a>
         <?php
-        $user_id = 221;
+        $user_id = 1;
         ?>
         <a href="{{ url('/toggle-liked/' . $project->proj_id).'/'.$user_id }}" style="color: rgba(255, 255, 255, 0)">
             <?php
@@ -29,7 +29,7 @@
             @endif
             @endforeach
             @if ($isLiked == true)
-            <i class="fa-solid fa-star" style="color: white"></i>
+            <i class="fa-solid fa-star" style="color: gold"></i>
             &nbsp;
             @else
             <i class="fa-regular fa-star" style="color: white"></i>
