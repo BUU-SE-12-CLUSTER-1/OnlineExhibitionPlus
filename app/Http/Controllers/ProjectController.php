@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ProjectTagModel;
+use App\Models\UserProjectModel;
 use Illuminate\Http\Request;
 use App\Models\ProjectModel;
 use App\Models\CompanyModel;
@@ -41,7 +43,20 @@ class ProjectController extends Controller
 }
     public function deleteProject($proj_id){
         $project = ProjectModel::find($proj_id);
+        $project_tags = ProjectTagModel::all();
+        foreach($project_tags as $project_tag){
+            if($project_tag->projtag_proj_id == $proj_id){
+            $project_tag->delete();
+        }
+        }
+        $project_users = UserProjectModel::all();
+        foreach($project_users as $project_user){
+            if($project_user->userproj_proj_id == $proj_id){
+            $project_user->delete();
+        }
+        }
         $project->delete();
+
         return back();
     }
 

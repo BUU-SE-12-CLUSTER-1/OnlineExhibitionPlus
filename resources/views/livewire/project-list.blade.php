@@ -52,7 +52,7 @@
                     <?php
                         $td_count++;
                     ?>
-                @elseif ($td_count == 5)
+                @else
                     </tr>
 
                     <tr style="background-color: white">
@@ -62,7 +62,7 @@
                         <?php
                             $td_count = 1;
                         ?>
-                    </tr>
+
                 @endif
             @endforeach
 
