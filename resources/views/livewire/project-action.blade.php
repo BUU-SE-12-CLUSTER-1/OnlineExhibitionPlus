@@ -29,7 +29,7 @@
             @endif
             @endforeach
             @if ($isLiked == true)
-            <i class="fa-solid fa-star" style="color: gold43"></i>
+            <i class="fa-solid fa-star" style="color: gold"></i>
             &nbsp;
             @else
             <i class="fa-regular fa-star" style="color: white"></i>

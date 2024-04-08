@@ -30,6 +30,15 @@ class EditUser extends Component
     public UserModel $user;
 
     public function updateUser(){
+        $this->validate([
+            'student_id' =>'required|min:8|max:8|unique:oe_users,user_student_id,'.$this->user->user_id.',user_id',
+            'fname' =>'required|min:2|max:25',
+            'lname' =>'required|min:2|max:25',
+            'email' =>'required|email|unique:oe_users,user_email,'.$this->user->user_id.',user_id',
+            'role_id' => 'required',
+            'major_id' => 'required'
+
+        ]);
          $this->user->user_student_id = $this->student_id;
          $this->user->user_fname = $this->fname;
          $this->user->user_lname = $this->lname;
