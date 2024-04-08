@@ -98,7 +98,9 @@ Route::get('/homePage', function (){
 Route::get('/403forbidden', function (){
     return view('forbidden');
 });
-
+Route::get('/detail', function(){
+    return view('detail_main');
+});
 Route::get('/select-template1', function(){
     return view('template1');
 });
@@ -114,6 +116,7 @@ Route::get('/toggle-project/{proj_id}',[ProjectController::class, 'toggleVisible
 Route::get('/toggle-liked/{proj_id}/{user_id}',[ProjectController::class, 'toggleLikedProject']);
 Route::get('/edit-project/{proj_id}',[ProjectController::class, 'editProject']);
 Route::post('update-project/{proj_id}',[ProjectController::class, 'updateProject']);
+Route::get('/fav-project',[ProjectController::class, 'favProjectList']);
 Route::get('/select-template2', function(){
     return view('template2');
 });
@@ -159,7 +162,29 @@ Route::get('/template3_show', function (){
 Route::get('/template4_show', function (){
     return view('template4_show');
 });
-Route::get('/testmas', function (){
-    return view('testmas');
+
+
+
+// คลิกรูปโปรเจคแล้วเปลี่ยนหน้า
+Route::get('/testPJ01', function (){
+    return view('test_pj01');
 });
 
+Route::get('/testPJ02', function (){
+    return view('test_pj02');
+});
+Route::get('/testPJ03', function (){
+    return view('test_pj03');
+});
+Route::get('/testPJ04', function (){
+    return view('test_pj04');
+});
+
+
+// คลิก TAG แล้วเปลี่ยนหน้า
+Route::get('/testTag01', function (){
+    return view('test_tag01');
+});
+Route::get('/testTag02', function (){
+    return view('test_tag02');
+});
