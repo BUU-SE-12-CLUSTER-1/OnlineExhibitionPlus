@@ -39,7 +39,7 @@
 
     @if ($td_count<5)
     <td>
-        <livewire:project-manage-box :project="$project" :key="$project['proj_id']" />
+        <livewire:project-view-box :project="$project" :key="$project['proj_id']" />
     </td>
     <?php
     $td_count++;
@@ -48,7 +48,7 @@
     </tr>
     <tr>
         <td>
-            <livewire:project-manage-box :project="$project" :key="$project['proj_id']" />
+            <livewire:project-view-box :project="$project" :key="$project['proj_id']" />
         </td>
     <?php
     $td_count = 2;
