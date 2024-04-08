@@ -94,46 +94,6 @@
                         uploadImage();
                     });
                 </script>
-
-                <!-- BOX3 -->
-                <!-- <td>
-                    <div class="box3">
-                        <div id="drop-area3" method="POST" enctype="multipart/form-data">
-                            @csrf
-                            <form>
-                                <label for="input-file3">
-                                    <input type="file" name="upload-image3" accept="image/*" id="input-file3" hidden>
-                                    <div id="img-view3">
-                                        <img  src="{{ url('assets\img\system\iconimage.png') }}" alt=""
-                                            style="width:200px">
-                                    </div>
-                                </label>
-                            </form>
-                        </div>
-                    </div>
-                </td>
-
-                <script>
-                    const dropArea3 = document.getElementById("drop-area3");
-                    const inputFile3 = document.getElementById("input-file3");
-                    const imageView3 = document.getElementById("img-view3");
-                    inputFile2.addEventListener("change", uploadImage);
-
-                    function uploadImage() {
-                        let imgLink3 = URL.createObjectURL(inputFile3.files[0]);
-                        imageView3.style.backgroundImage = `url(${imgLink3})`;
-                        imageView3.textContent = "";
-                        imageView3.style.border = "0";
-                    }
-                    dropArea3.addEventListener("dragover", function(e) {
-                        e.preventDefault();
-                    });
-                    dropArea3.addEventListener("drop", function(e) {
-                        e.preventDefault();
-                        inputFile3.files = e.dataTransfer.files;
-                        uploadImage();
-                    });
-                </script> -->
             </div>
         </div>
         </td>

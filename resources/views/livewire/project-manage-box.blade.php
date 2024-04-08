@@ -38,9 +38,9 @@
                                         $tag_count++;
                                 ?>
                                 <button class="tag1">{{$tag->tag_name}}</button>
-                                @elseif ($tag_count == 2 && $project->proj_id == $proj_single_tag->projtag_proj_id && $tag->tag_id == $proj_single_tag->projtag_tag_id)
+                                @elseif ($tag_count == 2 && $tag->tag_id != $firstTagId &&$project->proj_id == $proj_single_tag->projtag_proj_id && $tag->tag_id == $proj_single_tag->projtag_tag_id)
                                 <button class="tag2">{{$tag->tag_name}}</button>
-                                <?php 
+                                <?php
                                 $tag_count++;
                                 ?>
                                 @endif

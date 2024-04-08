@@ -8,7 +8,7 @@ use App\Models\CompanyModel;
 use App\Models\AdvisorModel;
 use App\Models\TagModel;
 use App\Models\UserModel;
-
+use App\Models\UserLikedProjectModel;
 class ProjectController extends Controller
 {
     //
@@ -47,5 +47,24 @@ class ProjectController extends Controller
         }
         $project->save();
         return back();
+    }
+
+    public function toggleLikedProject($proj_id, $user_id){
+        $isLiked = false;
+        $liked_data = UserLikedProjectModel::all();
+        foreach ($liked_data as $liked){
+            if($liked->ulp_proj_id == $proj_id && $liked->ulp_user_id == $user_id){
+                $liked->delete();
+                $isLiked = true;
+            }
+        }
+        if($isLiked == false){
+            $liked = new UserLikedProjectModel();
+            $liked->ulp_proj_id = $proj_id;
+            $liked->ulp_user_id = $user_id;
+            $liked->save();
+        }
+        return back();
+
     }
 }
