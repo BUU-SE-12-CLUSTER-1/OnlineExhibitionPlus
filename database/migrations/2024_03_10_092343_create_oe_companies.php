@@ -16,6 +16,7 @@ return new class extends Migration
             `company_name` VARCHAR(100) NOT NULL,
             PRIMARY KEY (`company_id`))
           ENGINE = InnoDB;");
+        DB::statement('INSERT INTO oe_companies (company_name) VALUES ("Unknown");');
     }
 
     /**

@@ -11,7 +11,7 @@ Company list | Online Exhibition+
     </x-slot>
   </x-modal>
 
-<button style="position:relative;margin-left:1650px;margin-top:-40px;" type="button" class="oe-button" x-data x-on:click="$dispatch('open-modal',{name : 'add-company'})" >Add Company</button>
+<button style="position:relative;margin-left:1270px;margin-top:-40px;" type="button" class="oe-button" x-data x-on:click="$dispatch('open-modal',{name : 'add-company'})" >Add Company</button>
 <livewire:company-list></livewire:company-list>
 
 @livewireScripts
