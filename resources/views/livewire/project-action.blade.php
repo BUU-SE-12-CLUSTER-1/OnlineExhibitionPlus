@@ -30,7 +30,7 @@
             @else
             <i class="fa-regular fa-star"></i>
             @endif
-        </div>
+        </a>
 
         {{-- <x-modal name="{{ $project->project_id }}" title="Edit Project" id="edit-box">
             <x-slot name="body">

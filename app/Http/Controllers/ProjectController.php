@@ -19,7 +19,7 @@ class ProjectController extends Controller
         $advisor_data = AdvisorModel::all();
         return view('insert_project',['oe_users' => $user_data,'oe_companies' => $company_data, 'oe_tags' => $tag_data, 'oe_advisors' => $advisor_data]);
     }
-    public function insertProjectProcess(Request $request){
+    public function insertProjectProcess(){
         $project = new ProjectModel();
         $project->project_name = request('project_name');
         $project->save();
@@ -31,13 +31,13 @@ class ProjectController extends Controller
         return view('project_list',['oe_projects' => $project_data]);
     }
     public function searchProject(Request $request){
-        $search_data = $request->input('search_project');
-        $project_data = ProjectModel::where('proj_name','LIKE','%'.$search_data.'%')
-        ->paginate(10);
-        if(!$project_data || !$project_data->count()){
+        $search_data = request('search_project');
+        $project_data = ProjectModel::where('proj_name','LIKE','%'.$search_data.'%');
+        if(!$project_data || !$project_data->count() ||$search_data == ''){
             return redirect('/');
-    }
+    }else{
     return view('search_project_list',['oe_projects'=> $project_data]);
+}
 }
     public function deleteProject($proj_id){
         $project = ProjectModel::find($proj_id);
