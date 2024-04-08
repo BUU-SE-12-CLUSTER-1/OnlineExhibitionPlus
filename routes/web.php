@@ -117,6 +117,7 @@ Route::post('update-project/{proj_id}',[ProjectController::class, 'updateProject
 Route::get('/select-template2', function(){
     return view('template2');
 });
+Route::post('/search-project',[ProjectController::class,'searchProject']);
 
 Route::get('/input-template1', function(){
     return view('template1_form');

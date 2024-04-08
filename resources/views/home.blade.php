@@ -18,12 +18,16 @@
                     </div>
                 </td>
                 <td>
-                    <div class="search_container">
+                    <form action="{{url('/search-project')}}" method="POST">
+                        @csrf
+                        <div class="search_container">
                         <input type="text" class="search" name="search_user" placeholder="Search project here">
                         <button type="submit" class="search_button" name="btn_search_user">
                         <i class="fa-solid fa-magnifying-glass"></i>
                         </button>
                     </div>
+                    </form>
+                    
                 </td>
                  <td>
                     <button class="buttonAdvanced">Advanced Search</button>
