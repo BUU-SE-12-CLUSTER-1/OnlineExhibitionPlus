@@ -7,8 +7,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/modal.css') }}">
     <!-- CSS -->
     <div x-on:click="show = false" class="fixed inset-0 bg-gray-300 opacity-40"></div>
-    <div class="backgroundWhite" style="background: #fff">
-        <button class="buttonCloseAlert" x-on:click="$dispatch('close-oe-alert')"><i class="fa-solid fa-xmark"></i></button>
+    <div class="backgroundWhite" style="padding-left: 30px; padding-right: 30px">
         <div class="bodyAlert">
             {{ $body }}
         </div>
