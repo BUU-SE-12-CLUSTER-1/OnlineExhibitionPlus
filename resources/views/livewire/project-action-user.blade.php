@@ -1,6 +1,6 @@
 <div>
     <?php
-    $user_id = 221;
+    $user_id = 1;
     ?>
     <a href="{{ url('/toggle-liked/' . $project->proj_id).'/'.$user_id }}" style="color: inherit">
         <?php

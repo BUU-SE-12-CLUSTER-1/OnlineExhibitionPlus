@@ -62,7 +62,6 @@
                         <?php
                             $td_count = 1;
                         ?>
-                    </tr>
                 @endif
             @endforeach
 
