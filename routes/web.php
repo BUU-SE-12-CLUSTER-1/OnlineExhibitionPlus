@@ -133,6 +133,11 @@ Route::get('/template4_form', function (){
     return view('template4_form');
 });
 
+Route::get('/login', function(){
+    return view('login');
+});
+
+
 Route::get('/ImageSlide', function (){
     return view('proj_image_slider');
 });
