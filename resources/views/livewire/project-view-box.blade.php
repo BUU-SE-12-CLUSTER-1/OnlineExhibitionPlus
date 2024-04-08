@@ -4,7 +4,6 @@
         </div>
         <div class="information_01" >
             
-                   
                     <div class="detail" >
                         <h2>{{$project->proj_name}}</h2>
                         <?php

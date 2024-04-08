@@ -7,6 +7,7 @@
             <i class="fa-solid fa-magnifying-glass"></i>
         </button>
     </div><br>
+    
     <!--
     <table style="margin-top:-10px" border="1">
     <tr>
@@ -29,6 +30,7 @@
         endforeach
     </table>-->
 <table>
+    
     <?php
     $td_count = 1;
         ?>

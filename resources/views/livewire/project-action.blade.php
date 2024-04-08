@@ -1,13 +1,20 @@
 <div>
+
     <div style="margin-left:20px">
         <a href="{{ url('/delete-project/' . $project->proj_id) }}" style="color: inherit">
-            <i class="fa-solid fa-trash-can"></i>
+        <a href="#" style="color: inherit" x-data x-on:click="$dispatch('open-oe-alert', { name: 'delete-{{ $project->proj_id }}' })"><i class="fa-solid fa-trash-can"></i></a>&nbsp;&nbsp;
         </a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
         <a href="{{ url('/toggle-project/' . $project->proj_id) }}" style="color: inherit" x-on:click="$dispatch('open-modal', { name: '{{ $project->project_id }}' })">
+        <x-oe-alert name="delete-{{ $project->proj_id }}">
+        <x-slot:body>
+        @livewire('delete-alert', ['topic'=>'project', 'model' => $project])
+        </x-slot>
+      </x-oe-alert>
             @if ($project->proj_status == 1)
             <i class="fa-solid fa-eye"></i>
             @else
-            <i class="fa-solid fa-eye-slash"></i>
+            <i class="fa-solid fa-eye-slash"></i>   
             @endif
         </a>
         <?php
@@ -37,4 +44,9 @@
                 @livewire('edit-project', ['project' => $project])
             </x-slot>
         </x-modal> --}}
+
+        
+    </div>
+    
 </div>
+
