@@ -88,6 +88,11 @@
         </div>
 
         <p id="txt_project">Project</p>
+
+        <div class="project">
+            
+        </div>
+
         <script>
             function edit(){
                 document.getElementById("txt-fname").style.display = "none";
