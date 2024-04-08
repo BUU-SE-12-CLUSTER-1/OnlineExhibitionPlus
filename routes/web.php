@@ -113,6 +113,7 @@ Route::post('update-tag/{tag_id}',[TagController::class, 'updateTag']);
 Route::get('/project-list',[ProjectController::class, 'showProjectList']);
 Route::get('/delete-project/{proj_id}',[ProjectController::class, 'deleteProject']);
 Route::get('/toggle-project/{proj_id}',[ProjectController::class, 'toggleVisible']);
+Route::get('/toggle-liked/{proj_id}/{user_id}',[ProjectController::class, 'toggleLikedProject']);
 Route::get('/edit-project/{proj_id}',[ProjectController::class, 'editProject']);
 Route::post('update-project/{proj_id}',[ProjectController::class, 'updateProject']);
 Route::get('/select-template2', function(){
@@ -157,3 +158,4 @@ Route::get('/template4_show', function (){
 Route::get('/testmas', function (){
     return view('testmas');
 });
+
