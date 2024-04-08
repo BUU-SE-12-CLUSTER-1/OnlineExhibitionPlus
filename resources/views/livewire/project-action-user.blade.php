@@ -14,10 +14,12 @@
         @endif
         @endforeach
         @if ($isLiked == true)
-
-        <i class="fa-solid fa-star"></i>
+        <div style="margin-left:280px">
+        <i class="fa-solid fa-star" style="color: gold"></i>
         @else
-        <i class="fa-regular fa-star"></i>
+        <i class="fa-regular fa-star" style="color: gold"></i>
+        </div>
         @endif
+
     </a>
 </div>
