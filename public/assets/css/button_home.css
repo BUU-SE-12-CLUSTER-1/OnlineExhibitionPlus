@@ -14,6 +14,11 @@
     padding-left: 25px;
     padding-top: 31px;
 }
+.background_contentg{
+    width: 200px;
+    height: 200px;
+    background: #FFF;
+}
 
 .dropdown {
     width: 118px;
