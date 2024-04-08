@@ -29,9 +29,21 @@
             <img src="assets/img/system/OE_ICON.png" class="icon" alt="" style="width: 199px; height: 199px"><br>
             <img src="assets/img/system/LOGO_TEXT.png" class="icon-text" alt="" style="width: 230px; height: 28px;">
             <input type="text" name="email" placeholder="Email" id="username-textbox" style="margin-top: 36%;"/>
-            <input type="password" name="password" placeholder="Password" id="password-textbox"/>
+            <label>
+				<span>Password</span>
+				<div class="passwd-wrap">
+					<input type="password" id="password" placeholder="Enter your password..." />
+					<button type="button" id="show-passwd">
+						<img src="./eye_open.svg" alt="Show Password" />
+					</button>
+				</div>
+			</label>
+            <!-- <input type="password" name="password" placeholder="Password" id="password-textbox"/> -->
             <button type="submit" id="eye-button"><button type="button" id="eye-button"><i class="bi bi-eye-slash-fill"></i></button>
             <br>
+
+
+        <!-- BUTTON     -->
         <button type="submit" class="login-button" style="margin-top: 17%;">Login</button>
         <!--<div class="g-signin2" data-onsuccess="onSignIn"> -->
         <button type="button" id="google-login-button"><i class="fa-brands fa-google"></i>      Login with Google</button>
