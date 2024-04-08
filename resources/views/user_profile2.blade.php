@@ -10,11 +10,10 @@
 <link rel="stylesheet" href="{{asset('assets/css/profile.css')}}">
 <body>
     <nav class="profile_user">
-        <div class="titleBlue">
+        <div class="titleBlue1">
             <div>
                 <h1 class="title">Personal Information</h1>
             </div>
-            
         </div>
         <div class="box">
             <button type="button" id="edit" onclick="edit()"><i class="fa-solid fa-pen-to-square"></i></button>
@@ -86,13 +85,7 @@
         <div class="box_reset">
             <button id="resetpassword" style="display: none" type="button">Reset Password</button>
         </div>
-
         <p id="txt_project">Project</p>
-
-        <div class="project">
-            
-        </div>
-
         <script>
             function edit(){
                 document.getElementById("txt-fname").style.display = "none";
