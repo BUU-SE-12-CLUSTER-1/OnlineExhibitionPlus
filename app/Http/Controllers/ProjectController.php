@@ -68,20 +68,4 @@ class ProjectController extends Controller
 
     }
 
-
-
-    public function favProject(Request $request){
-        $major_data = MajorModel::all();
-        $role_data = RoleModel::all();
-        $search_data = $request->input('search_user');
-        $user_data = UserModel::where('user_student_id','LIKE','%'.$search_data.'%')
-        ->orWhere('user_fname','LIKE','%'.$search_data.'%')
-        ->orWhere('user_lname','LIKE','%'.$search_data.'%')
-        ->paginate(10);
-        if(!$user_data || !$user_data->count()){
-            return redirect('/user-list');
-        }
-
-        return view('user_list',['oe_users'=>$user_data, 'oe_majors'=>$major_data, 'oe_roles'=>$role_data]);
-    }
 }
