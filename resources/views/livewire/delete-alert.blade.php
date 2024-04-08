@@ -12,6 +12,7 @@
     @elseif($topic === 'advisor')
             <button class="buttonClear"  x-data x-on:click="$dispatch('close-oe-alert')" style="margin-left: 5px ; margin-top: 20px">Cancel</button>
             <button class="buttonAdd" style="margin-left:80px"><a href="{{ url('/delete-advisor/'.$model->advisor_id) }}" >Delete</a></button>
+
     @endif
 
 </div>
