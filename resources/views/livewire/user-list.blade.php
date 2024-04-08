@@ -23,7 +23,7 @@
             <td>{{ $user->user_fname }}</td>
             <td>{{ $user->user_lname }}</td>
             <td>
-                <livewire:user-action :user="$user" :key="$user->id"></livewire:user-action>
+                <livewire:user-action :user="$user" :key="$user->user_id"></livewire:user-action>
             </td>
         </tr>
         @endforeach
@@ -32,6 +32,6 @@
     <span>
         {{ $oe_users->appends(request()->input())->links() }}
     </span>
-    
+
     @livewireScripts
 </div>
