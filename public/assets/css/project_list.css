@@ -334,10 +334,11 @@ table{
     background-color: #FFF;
 }
 
-#action {
+
+/* #action {
     display: flex;
-    justify-content: flex-end; /* จัดวางไอคอนไปทางขวา */
-    align-items: left; /* จัดวางไอคอนให้อยู่กึ่งกลางตามแนวดิ่ง */
+    justify-content: flex-end;
+    align-items: left;
     font-size: 30px;
     font-style: normal;
     font-weight: 800;
@@ -346,7 +347,7 @@ table{
     background-color: #323694;
     color: white;
     height: 79px;
-    margin-right: 0; /* ไม่ต้องมีการกำหนดค่า margin-right */
+    margin-right: 0;
     flex-shrink: 0;
 }
 
@@ -361,3 +362,8 @@ table{
     flex-shrink: 0;
     margin-left: 0px;
 }
+#1,#2,#3,#4{
+    background: none;
+    border: none;
+} */
+
