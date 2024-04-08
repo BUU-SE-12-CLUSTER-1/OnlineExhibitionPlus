@@ -16,7 +16,7 @@ body{
     background: linear-gradient(91deg, #9DBEFF 42.58%, #FED9FF 79.57%);
     flex-shrink: 0;
     display: flex;
-    z-index: 999999999;
+    z-index: 999;
 }
 #web-logo{
     width: 171px;

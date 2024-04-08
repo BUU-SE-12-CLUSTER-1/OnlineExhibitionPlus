@@ -22,6 +22,7 @@ table {
     margin-left: 24px;
     margin-right: 24px;
 }
+
  td {
     font-size: 16px;
     font-style: normal;
@@ -81,3 +82,19 @@ th {
     width: 113.5%;
   }
 }
+@media only screen and (max-width: 1920px){
+    table {
+      width: 116.5%;
+    }
+}
+
+@media only screen and (min-width: 1440px){
+    table {
+      width: 110%;
+    }
+    .user-list{
+        width: 97%;
+    }
+}
+
+

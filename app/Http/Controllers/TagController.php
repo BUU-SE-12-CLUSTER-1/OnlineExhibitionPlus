@@ -19,4 +19,10 @@ class TagController extends Controller
         $tag_data = TagModel::all();
         return view('tag_list',['oe_tags' => $tag_data]);
     }
+
+    public function deleteTag($tag_id){
+        $tag = TagModel::find($tag_id);
+        $tag->delete();
+        return back();
+    }
 }

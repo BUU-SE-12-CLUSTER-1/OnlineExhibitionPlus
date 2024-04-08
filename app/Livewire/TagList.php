@@ -6,11 +6,13 @@ use App\Models\TagModel;
 use Illuminate\Http\Request;
 class TagList extends Component
 {
+    public $search = '';
     public function render()
     {
-        $tags = TagModel::paginate(10);
+        $search = $this->search ? $this->search :"";
+        $tag = TagModel::where('tag_name','like',"%{$search}%")->paginate(10);
         return view('livewire.tag-list',[
-            'oe_tags' => $tags
+            'oe_tags' => $tag
         ]);
     }
 }

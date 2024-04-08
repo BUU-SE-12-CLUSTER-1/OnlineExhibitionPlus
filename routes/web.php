@@ -24,6 +24,10 @@ use App\Http\Controllers\ProjectController;
 */
 
 Route::get('/', function (){
+    return view('home');
+});
+
+Route::get('/h', function(){
     return view('layouts.layout');
 });
 
@@ -91,12 +95,63 @@ Route::post('update-company/{companyr_id}',[CompanyController::class, 'updateCom
 Route::get('/homePage', function (){
     return view('home');
 });
+Route::get('/403forbidden', function (){
+    return view('forbidden');
+});
 
-Route::get('/template3', function (){
-    return view('template3');
+Route::get('/select-template1', function(){
+    return view('template1');
+});
+
+Route::get('/tag-list',[TagController::class, 'showTagList']);
+Route::get('/delete-tag/{tag_id}',[TagController::class, 'deleteTag']);
+Route::get('/edit-tag/{tag_id}',[TagController::class, 'editTag']);
+Route::post('update-tag/{tag_id}',[TagController::class, 'updateTag']);
+
+Route::get('/project-list',[ProjectController::class, 'showProjectList']);
+Route::get('/delete-project/{proj_id}',[ProjectController::class, 'deleteProject']);
+Route::get('/toggle-project/{proj_id}',[ProjectController::class, 'toggleVisible']);
+Route::get('/edit-project/{proj_id}',[ProjectController::class, 'editProject']);
+Route::post('update-project/{proj_id}',[ProjectController::class, 'updateProject']);
+Route::get('/select-template2', function(){
+    return view('template2');
+});
+
+Route::get('/input-template1', function(){
+    return view('template1_form');
+});
+
+Route::get('/favorite', function(){
+    return view('favorite_project');
+});
+Route::get('/template3_form', function (){
+    return view('template3_form');
+});
+
+Route::get('/template4_form', function (){
+    return view('template4_form');
+});
+
+Route::get('/ImageSlide', function (){
+    return view('proj_image_slider');
 });
 Route::get('/tag-list',[TagController::class, 'showTagList']);
 
-Route::get('/main-detail', function (){
-    return view('main_detail');
+Route::get('/template1_show', function (){
+    return view('template1_show');
+});
+
+Route::get('/template2_show', function (){
+    return view('template2_show');
+});
+
+Route::get('/template3_show', function (){
+    return view('template3_show');
+});
+
+Route::get('/template4_show', function (){
+    return view('template4_show');
+});
+Route::get('/testmas', function (){
+    return view('testmas');
 });

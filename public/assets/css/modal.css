@@ -52,3 +52,22 @@
     justify-items: center;
 
 }
+
+.buttonCloseAlert{
+    padding-top: 10px;
+    color: black;
+    font-size: 30px;
+    margin-left: 350px;
+    margin-right: 20px;
+    margin-top: 5px;
+}
+
+.bodyAlert {
+    margin-left: 10px;
+    justify-items: center;
+
+}
+
+.messageAlert{
+    
+}
