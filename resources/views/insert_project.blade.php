@@ -146,18 +146,20 @@
     <div style="display:inline-flex;width: fit-content; height: 150px; border-radius: 25px; text-align: center; display: relative; border: 1px solid #000;">
         <div class="select-user-box" name="proj_tag_id">
             <div class="select-user-option">
-                <div class="user-search">
+                <div class="user-add">
                     <ul>
-                        <input type="text" id="userOptionSearch" placeholder="Add a member" name="">
+                        <button type="button" class="add-member-option">ADD MEMBER</button>
                     </ul>
                     <small style="color: #888"> Add member to your project</small>
                 </div>
             </div>
             <div class="user-content">
-
+                <div class="user-search">
+                <input type="text" id="userOptionSearch" placeholder="Add a member" name="">
+            </div>
                 <ul class="user-options">
                     @foreach($oe_users as $user)
-                    <li>{{$user['user_student_id']}} {{$user['user_fname']}} {{$user['user_lname']}}</li>
+                    <li value="{{$user['user_id']}}">{{$user['user_student_id']}} {{$user['user_fname']}} {{$user['user_lname']}}</li>
                     @endforeach
 
                 </ul>
@@ -427,6 +429,7 @@
 <script>
     const selectUserBox = document.querySelector('.select-user-box');
     const selectUserOption = document.querySelector('.select-user-option');
+    const AddmemberOption = document.querySelector('.add-member-option');
     const userContent = document.querySelector('.user-content');
     const userOptions = document.querySelector('.user-options');
     const optionUserSearch = document.getElementById('userOptionSearch');
@@ -434,8 +437,9 @@
     const optionUserList = document.querySelectorAll('.user-options li');
     const ulUser = document.querySelector('.user-search ul');
     const userSearch = document.querySelector('.user-search input');
+    const userAdd = document.querySelector('.user-add button');
 
-    userSearch.addEventListener('click', function(){
+    AddmemberOption.addEventListener('click', function(){
         selectUserBox.classList.toggle('active');
     });
     userSearch.addEventListener('keyup', function(){
@@ -457,6 +461,7 @@
             optionUserList.forEach(function(optionUserListSingle){
         optionUserListSingle.addEventListener('click', function(){
             text = this.textContent;
+            id = this.value;
             isDuplicate = false;
             const ulUserList = document.querySelectorAll('.user-search ul li');
             ulUserList.forEach(user=>{
@@ -467,7 +472,7 @@
             });
             if(isDuplicate == false && ulUserList.length<2){
                 let newUser = `<li>${text}<i class="uit uit-multiply" onclick="removeUser(this, '${text}')"></i></li>`;
-                userSearch.insertAdjacentHTML("beforebegin", newUser);
+                userAdd.insertAdjacentHTML("beforebegin", newUser);
             selectUserBox.classList.remove('active');
             optionUserSearch.value = "";
         }
@@ -479,6 +484,7 @@
     optionUserList.forEach(function(optionUserListSingle){
         optionUserListSingle.addEventListener('click', function(){
             text = this.textContent;
+            id = this.value.toString();
             isDuplicate = false;
             const ulUserList = document.querySelectorAll('.user-search ul li');
             ulUserList.forEach(user=>{
@@ -489,9 +495,24 @@
             });
             if(isDuplicate == false){
                 let newUser = `<div style=" height: 135px; width: 150px; border-radius:25px; margin:7px 12px; border:1px solid #000;">
-                <li>${text}<i class="uit uit-multiply" onclick="removeUser(this, '${text}')"></i></li></div>
+
+                    <?php
+                        $this_id = '${id}';
+                        $this_id = $this_id;
+                        echo $this_id;
+                    ?>
+                    @foreach ($oe_users as $user)
+                    <?php echo $user['user_id']."+".$this_id;?>
+                        @if($user['user_id'] == $this_id)
+                        <?php echo "Oh yeah";?>
+                        <li>{{$user['user_profile_image']}}<i class="uit uit-multiply" onclick="removeUser(this, '${text}')"></i></li>
+                        @endif
+                    @endforeach
+
+                    <li>${text}<i class="uit uit-multiply" onclick="removeUser(this, '${text}')"></i></li>
+            </div>
                 `;
-                userSearch.insertAdjacentHTML("beforebegin", newUser);
+                userAdd.insertAdjacentHTML("beforebegin", newUser);
             selectUserBox.classList.remove('active');
             optionUserSearch.value = "";
             }
@@ -499,11 +520,11 @@
         })
     });
     function removeUser(element, userName){
-        const ulUserList = document.querySelectorAll('.user-search ul li');
+        const ulUserList = document.querySelectorAll('.user-add ul li');
             ulUserList.forEach(user=>{
                 const ulUserName = user.textContent;
                 if(ulUserName == userName){
-                    user.remove();
+                    user.parentNode.remove();
                 }
             });
     }

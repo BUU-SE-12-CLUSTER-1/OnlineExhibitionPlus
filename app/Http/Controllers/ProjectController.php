@@ -25,4 +25,27 @@ class ProjectController extends Controller
         $project->save();
         return view('success');
     }
+
+    public function showProjectList(){
+        $project_data = ProjectModel::all();
+        return view('project_list',['oe_projects' => $project_data]);
+    }
+
+    public function deleteProject($proj_id){
+        $project = ProjectModel::find($proj_id);
+        $project->delete();
+        return back();
+    }
+
+    public function toggleVisible($proj_id){
+        $project = ProjectModel::find($proj_id);
+        $status = $project->proj_status;
+        if($status == 0){
+            $project->proj_status = 1;
+        }else{
+            $project->proj_status = 0;
+        }
+        $project->save();
+        return back();
+    }
 }

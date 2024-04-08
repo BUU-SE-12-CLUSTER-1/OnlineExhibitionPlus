@@ -5,6 +5,15 @@
     height: 876px;
     border-radius: 15px;
 }
+
+.project {
+    background-image: url("https://i.pinimg.com/564x/06/a8/38/06a83820a113e86cdc82351c5092bccf.jpg");
+    background-position: center;
+    background-size: cover;
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
 .project{
     width: 319px;
     height: 449px;
@@ -18,6 +27,14 @@
     border-radius: 15px;
     font-family: Mulish;
     box-shadow: 10px 25px 30px rgba(30, 30, 200, 0.3);
+}
+.detailproject{
+    color: #ffffff;
+    font-style: normal;
+    line-height: normal;
+    margin-top: 221px;
+    margin-left: 15px;
+
 }
 
 .pj_02 {
@@ -54,7 +71,7 @@
     width: 100%;
     display: flex;
     animation: slide 16s infinite;
-    
+
 }
 
 img{
@@ -99,8 +116,8 @@ img{
     margin-left: 30px;
     margin-top: 30px;
     overflow: hidden;
-    position: absolute; 
-}   
+    position: absolute;
+}
 
 .information_02{
     max-width: 319px;
@@ -109,8 +126,8 @@ img{
     margin-left: 380px;
     margin-top: 30px;
     overflow: hidden;
-    position: absolute; 
-}  
+    position: absolute;
+}
 
 .information_03{
     max-width: 319px;
@@ -119,8 +136,8 @@ img{
     margin-left: 730px;
     margin-top: 30px;
     overflow: hidden;
-    position: absolute; 
-}  
+    position: absolute;
+}
 
 .information_04{
     max-width: 319px;
@@ -129,8 +146,8 @@ img{
     margin-left: 1080px;
     margin-top: 30px;
     overflow: hidden;
-    position: absolute; 
-} 
+    position: absolute;
+}
 
 .inf_wrapper{
     width: 100%;
@@ -139,23 +156,28 @@ img{
 }
 
 .detail{
-    
     color: #ffffff;
     font-style: normal;
     line-height: normal;
     margin-top: 221px;
     margin-left: 15px;
-    
-}   
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
 
 .detail h2{
     font-size: 30px;
     font-weight: 700;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .detail p{
     font-size: 20px;
     font-weight: 400;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .tag1{
@@ -167,18 +189,22 @@ img{
     border: 3px solid #FFF;
     background: #FBC2EB;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+
 }
 
 .star{
+    font-size: 30px;
     background-color: transparent;
     border: none;
     margin-top: 11px;
     margin-left: 291px;
     width: 27px;
     height: 25px;
-    
-    
+
+
 }
 .tag2{
     margin-left: 20px;
@@ -189,5 +215,8 @@ img{
     border: 3px solid #FFF;
     background: #A57DFC;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+
 }

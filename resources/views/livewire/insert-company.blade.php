@@ -15,8 +15,8 @@
             </br>
         </div>
         <div>
-        <button class="buttonClear" type="reset" value="reset">Clear</button>
-        <button class="buttonAdd" type="submit" value="submit">Add</button>
+        <button class="buttonClear" type="reset" value="reset" style="margin-left: 368px ; margin-top: 10px">Cancle</button>
+        <button class="buttonAdd" type="submit" value="submit">Submit</button>
     </div>
     </form>
     @livewireScripts

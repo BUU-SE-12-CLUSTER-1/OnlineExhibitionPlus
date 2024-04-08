@@ -74,20 +74,19 @@
     /*margin-top: -50%;z*/
 }
 
-.user-search ul{
+.user-add ul{
     display: flex;
     align-items: center;
     width: 94%;
     font-size: 14px;
     padding: 5px;
     outline: 0px;
-    border: 1px solid #000;
     border-radius: 360px;
     border: 1 !important;
     outline: 1 !important;
 
 }
-.user-search ul li{
+.user-add ul li{
     list-style: none;
     margin: -1px 3px;
     border-radius: 365px;
@@ -97,7 +96,7 @@
     width: fit-content;
     font-size: 14px;
 }
-.user-search ul li i{
+.user-add ul li i{
     height: 50px;
     width: 50px;
     cursor: pointer;
@@ -108,7 +107,7 @@
     background: #dfdfdf;
     justify-content: center;
 }
-.user-search ul input{
+.user-add ul input{
     position: flex;
     flex: 1;
     border: none;
@@ -118,4 +117,14 @@
     text-align: left;
     width: 50%;
 
+}
+.user-search input{
+    position: flex;
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 5px;
+    font-size: 14px;
+    text-align: left;
+    width: 50%;
 }

@@ -27,3 +27,7 @@
     border-radius: 15px;
     margin-left: 26px;
 }
+
+#rehome:hover{
+    cursor: pointer;
+}

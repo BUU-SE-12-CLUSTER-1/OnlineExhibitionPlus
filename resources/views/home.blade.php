@@ -22,7 +22,7 @@
                         <input type="text" class="search" name="search_user" placeholder="Search project here">
                         <button type="submit" class="search_button" name="btn_search_user">
                         <i class="fa-solid fa-magnifying-glass"></i>
-                        </button>   
+                        </button>
                     </div>
                 </td>
                  <td>
@@ -281,5 +281,3 @@
 
     </body>
 @endsection
-
-
