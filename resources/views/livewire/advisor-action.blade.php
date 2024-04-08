@@ -1,6 +1,14 @@
 <div>
     <div style="margin-left: 30px">
+        <?php $isHasProject = false ?>
+        @foreach ($advisor_projects as $advisor_project)
+        @if($advisor_project->proj_advisor_id == $advisor->advisor_id)
+        <?php $isHasProject = true ?>
+        @endif
+        @endforeach
+        @if(!$isHasProject)
         <a href="#" x-data x-on:click="$dispatch('open-oe-alert', { name: 'delete-{{ $advisor->advisor_id }}' })"><i class="fa-solid fa-trash-can"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        @endif
         <a href="#" x-data x-on:click="$dispatch('open-modal', { name: '{{ $advisor->advisor_id }}' })"><i class="fa-solid fa-pen-to-square"></i></a>
     </div>
 
