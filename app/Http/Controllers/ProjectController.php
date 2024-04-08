@@ -67,5 +67,4 @@ class ProjectController extends Controller
         return back();
 
     }
-
 }
