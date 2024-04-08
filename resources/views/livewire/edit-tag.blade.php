@@ -11,7 +11,8 @@
         <span>{{ $message }}</span>
         @enderror
         <br> <!-- Use <br> instead of </br> -->
-        <button class="buttonAdd" type="submit">Save</button>
+        <input class="buttonClear"  x-data x-on:click="$dispatch('close-modal')" wire:loading.attr="disabled" wire:loading.remove type="button" class="oe-button" value="Cancel" style="margin-left: 368px ; margin-top: 10px">
+        <input wire:loading.attr="disabled" wire:loading.remove type="submit" class="buttonAdd" value="Save">
     </form>
     @livewireScripts <!-- Corrected livewireScripts from livewireStyles -->
 </div>

@@ -8,7 +8,7 @@ use App\Models\CompanyModel;
 use App\Models\AdvisorModel;
 use App\Models\TagModel;
 use App\Models\UserModel;
-
+use App\Models\UserLikedProjectModel;
 class ProjectController extends Controller
 {
     //
@@ -19,7 +19,7 @@ class ProjectController extends Controller
         $advisor_data = AdvisorModel::all();
         return view('insert_project',['oe_users' => $user_data,'oe_companies' => $company_data, 'oe_tags' => $tag_data, 'oe_advisors' => $advisor_data]);
     }
-    public function insertProjectProcess(Request $request){
+    public function insertProjectProcess(){
         $project = new ProjectModel();
         $project->project_name = request('project_name');
         $project->save();
@@ -30,7 +30,15 @@ class ProjectController extends Controller
         $project_data = ProjectModel::all();
         return view('project_list',['oe_projects' => $project_data]);
     }
-
+    public function searchProject(Request $request){
+        $search_data = request('search_project');
+        $project_data = ProjectModel::where('proj_name','LIKE','%'.$search_data.'%');
+        if(!$project_data || !$project_data->count() ||$search_data == ''){
+            return redirect('/');
+    }else{
+    return view('search_project_list',['oe_projects'=> $project_data]);
+}
+}
     public function deleteProject($proj_id){
         $project = ProjectModel::find($proj_id);
         $project->delete();
@@ -48,4 +56,40 @@ class ProjectController extends Controller
         $project->save();
         return back();
     }
+
+    public function favProject(Request $request){
+        $major_data = MajorModel::all();
+        $role_data = RoleModel::all();
+        $search_data = $request->input('search_user');
+        $user_data = UserModel::where('user_student_id','LIKE','%'.$search_data.'%')
+        ->orWhere('user_fname','LIKE','%'.$search_data.'%')
+        ->orWhere('user_lname','LIKE','%'.$search_data.'%')
+        ->paginate(10);
+        if(!$user_data || !$user_data->count()){
+            return redirect('/user-list');
+        }
+
+        return view('user_list',['oe_users'=>$user_data, 'oe_majors'=>$major_data, 'oe_roles'=>$role_data]);
+    }
+
+    public function toggleLikedProject($proj_id, $user_id){
+        $isLiked = false;
+        $liked_data = UserLikedProjectModel::all();
+        foreach ($liked_data as $liked){
+            if($liked->ulp_proj_id == $proj_id && $liked->ulp_user_id == $user_id){
+                $liked->delete();
+                $isLiked = true;
+            }
+        }
+        if($isLiked == false){
+            $liked = new UserLikedProjectModel();
+            $liked->ulp_proj_id = $proj_id;
+            $liked->ulp_user_id = $user_id;
+            $liked->save();
+        }
+        return back();
+
+    }
+
+
 }
