@@ -59,24 +59,6 @@ class UserController extends Controller
         return view('user_list',['oe_users'=>$user_data, 'oe_majors'=>$major_data, 'oe_roles'=>$role_data]);
     }
     public function deleteUser($user_id){
-        $user_projects = UserProjectModel::all();
-        foreach($user_projects as $user_project){
-            if($user_project->userproj_user_id == $user_id){
-                $user_project->userproj_user_id = 1;
-            }
-        }
-        $user_liked_projects = UserLikedProjectModel::all();
-        foreach($user_liked_projects as $user_liked_project){
-            if($user_liked_project->ulp_user_id == $user_id){
-                $user_liked_project->delete();
-        }
-        }
-        $user_comments = CommentModel::all();
-        foreach($user_comments as $user_comment){
-            if($user_comment->comment_user_id == $user_id){
-                $user_comment->comment_user_id = 1;
-            }
-        }
         $user = UserModel::find($user_id);
         $user->delete();
         return Redirect::back();
@@ -196,5 +178,16 @@ class UserController extends Controller
         return redirect('/user-profile/'.$user->user_id);
         //return back();
 
+    }
+    public function toggleVisible($user_id){
+        $user = UserModel::find($user_id);
+        $status = $user->user_status;
+        if($status == 0){
+            $user->user_status = 1;
+        }else{
+            $user->user_status = 0;
+        }
+        $user->save();
+        return back();
     }
 }

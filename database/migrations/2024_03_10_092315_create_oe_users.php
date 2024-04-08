@@ -23,7 +23,7 @@ return new class extends Migration
                 `user_profile_image` VARCHAR(255) NOT NULL,
                 `user_role_id` INT NOT NULL,
                 `user_major_id` INT NOT NULL,
-                `user_status` TINYINT NOT NULL
+                `user_status` TINYINT NOT NULL DEFAULT '1',
                 PRIMARY KEY (`user_id`),
                 INDEX `fk_users_roles1_idx` (`user_role_id` ASC) ,
                 INDEX `fk_users_majors1_idx` (`user_major_id` ASC) ,

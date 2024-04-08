@@ -19,7 +19,6 @@ return new class extends Migration
             `advisor_lname` VARCHAR(25) NOT NULL,
             PRIMARY KEY (`advisor_id`))
           ENGINE = InnoDB;");
-          DB::statement('INSERT INTO oe_advisors (advisor_id, advisor_title, advisor_fname, advisor_lname) VALUES ("1", "Unknown", "Unknown", "Unknown");');
     }
 
     /**
