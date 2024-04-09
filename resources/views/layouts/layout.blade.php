@@ -59,7 +59,7 @@
 
             <!--<button class="btn-logout" >LOG OUT</button>-->
             <div class="btn-logout">
-                <a href="#" x-data x-on:click="$dispatch('open-oe-alert', { name: '{{url('/')}}' })" style="font-weight: 900;margin-left:-5px;color:#4E6CEF; margin-top:5px">Log out</a>
+                <a href="#" x-data x-on:click="$dispatch('open-oe-alert', { name: '{{url('/')}}' })" style="font-weight: 900;margin-left:-15px;color:#4E6CEF; margin-top:5px">Log out</a>
             </div>
 
 
