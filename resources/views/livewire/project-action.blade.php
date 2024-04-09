@@ -6,11 +6,9 @@
         </a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
         <a href="{{ url('/toggle-project/' . $project->proj_id) }}" style="color: inherit" x-on:click="$dispatch('open-modal', { name: '{{ $project->project_id }}' })">
-        <x-oe-alert name="delete-{{ $project->proj_id }}">
-        <x-slot:body>
-        @livewire('delete-alert', ['topic'=>'project', 'model' => $project])
-        </x-slot>
-      </x-oe-alert>
+
+        
+      
             @if ($project->proj_status == 1)
             <i class="fa-solid fa-eye"></i>
             @else
@@ -45,6 +43,11 @@
             </x-slot>
         </x-modal> --}}
 
+        <x-oe-alert name="delete-{{ $project->proj_id }}">
+        <x-slot:body>
+        @livewire('delete-alert', ['topic'=>'project', 'model' => $project])
+        </x-slot>
+        </x-oe-alert>
         
     </div>
     
