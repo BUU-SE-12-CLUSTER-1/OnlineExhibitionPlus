@@ -13,5 +13,6 @@
         Project</button>
         <livewire:project-list></livewire:project-list>
     @livewireScripts
+
 @endsection
 

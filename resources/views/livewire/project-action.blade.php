@@ -43,11 +43,9 @@
             </x-slot>
         </x-modal> --}}
 
-        <x-oe-alert name="delete-{{ $project->proj_id }}">
-        <x-slot:body>
-        @livewire('delete-alert', ['topic'=>'project', 'model' => $project])
-        </x-slot>
-        </x-oe-alert>
+        
+        
+        
         
     </div>
     

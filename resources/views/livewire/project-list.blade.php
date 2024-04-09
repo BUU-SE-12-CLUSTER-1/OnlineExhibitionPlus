@@ -51,6 +51,7 @@
     <?php
     $td_count = 2;
     ?>
+    
     @endif
 
 @endforeach
@@ -62,4 +63,18 @@
 
 @livewireScripts
 <script></script>
+
+@foreach ($oe_projects as $project)
+    @if ($project != null)
+<x-oe-alert name="delete-{{ $project->proj_id }}">
+        <x-slot:body>
+        @livewire('delete-alert', ['topic'=>'project', 'model' => $project])
+        </x-slot>
+        </x-oe-alert>
+    @else    
+
+
+    @endif
+
+@endforeach
 </div>
