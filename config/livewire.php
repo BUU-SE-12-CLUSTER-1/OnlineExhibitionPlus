@@ -156,5 +156,5 @@ return [
     */
 
     'pagination_theme' => 'tailwind',
-    'asset_url' => '/cluster1',
+    'asset_url' => '/cluster1/public/assets/composer',
 ];
