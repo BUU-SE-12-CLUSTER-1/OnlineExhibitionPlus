@@ -6,6 +6,7 @@
 <script src="https://kit.fontawesome.com/a87b92189d.js" crossorigin="anonymous"></script>
     <head>
         <link rel="stylesheet" href="{{ asset('assets/css/detail.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/homePage.css') }}">
     </head>
     <body>
         <div class="detail_project">
@@ -47,9 +48,9 @@
                                 <?php $firstTagId = $tag->tag_id;
                                         $tag_count++;
                                 ?>
-                                <a href="{{url('/tag-search/'.$tag->tag_id)}}"><button class="tag1">{{$tag->tag_name}}</button></a>
+                                <a href="{{url('/tag-search/'.$tag->tag_id)}}"><button class="tag1" style="width: fit-content">{{$tag->tag_name}}</button></a>
                                 @elseif ($tag_count == 2 && $tag->tag_id != $firstTagId &&$project->proj_id == $proj_single_tag->projtag_proj_id && $tag->tag_id == $proj_single_tag->projtag_tag_id)
-                                <a href="{{url('/tag-search/'.$tag->tag_id)}}"><button class="tag2">{{$tag->tag_name}}</button></a>
+                                <a href="{{url('/tag-search/'.$tag->tag_id)}}"><button class="tag2" style="width: fit-content">{{$tag->tag_name}}</button></a>
                                 <?php
                                 $tag_count++;
                                 ?>
@@ -85,7 +86,7 @@
             @foreach ($oe_project_users as $project_user)
             @foreach ($oe_users as $user)
 
-            @if($project_user->userproj_user_id == $user->user_id && $project_user->userproj_project_id == $project->project_id)
+            @if($project_user->userproj_proj_id == $project->proj_id && $project_user->userproj_user_id == $user->user_id )
             <?php
             $isDupicated = false;
             for($i = 0; $i < count($member_id); $i++){
