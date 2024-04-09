@@ -9,7 +9,7 @@
     <input  type="text" class="oe-input" wire:model="title" name="advisor_title" value={{$oe_advisors['advisor_title']}}>
     <br>
     @error('title')
-    <span> {{$message}}</span> @enderror
+    <span class="oe-error"> {{$message}}</span> @enderror
     </br>
     <label class="oe-input-label" for="advisors_fname">Firstname</label>
     <input class="oe-input" wire:model="first_name" type="text" name="advisor_fname" id="" value={{$oe_advisors['advisor_fname']}}>
