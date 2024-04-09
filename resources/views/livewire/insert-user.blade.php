@@ -18,22 +18,22 @@
         <span class="oe-error">{{ $message }}</span>
         @enderror
         </br>
-        <label class="oe-input-label" for="user_fname" maxlength="25">Name</label>
-        <input class="oe-input" wire:model="fname" type="text" name="user_fname" maxlength="25"><br>
-        @error('fname')
+        <label class="oe-input-label" for="user_fname" maxlength="25">Firstname</label>
+        <input class="oe-input" wire:model="first_name" type="text" name="user_fname" maxlength="25"><br>
+        @error('first_name')
         <span class="oe-error">{{ $message }}</span>
         @enderror
         </br>
-        <label class="oe-input-label" for="user_lname">Surname</label>
-        <input class="oe-input" wire:model="lname" type="text" name="user_lname" maxlength="25"><br>
-        @error('lname')
+        <label class="oe-input-label" for="user_lname">Lastname</label>
+        <input class="oe-input" wire:model="last_name" type="text" name="user_lname" maxlength="25"><br>
+        @error('last_name')
         <span class="oe-error">{{ $message }}</span>
         @enderror
         </br>
         <label class="oe-input-label" for="user_email">Email</label>
         <input class="oe-input" wire:model="email" type="text" name="user_email" maxlength="55"><br>
         @error('email')
-        <span class="oe-error">{{ $message }}</span>
+        <span class="text-danger-500">{{ $message }}</span>
         @enderror
         </br>
         <label class="oe-input-label" for="user_password">Password</label>
@@ -46,7 +46,7 @@
         @endforeach
         </select><br>
         @error('major_id')
-        <span class="oe-error">{{ $message }}</span>
+        <span class="text-danger-500">{{ $message }}</span>
         @enderror
         <br>
         <label class="oe-input-label" for="user_role_id">Role</label>
@@ -57,7 +57,7 @@
         @endforeach
         </select><br>
         @error('role_id')
-        <span class="oe-error">{{ $message }}</span>
+        <span class="text-danger-500">{{ $message }}</span>
         @enderror
         <br></br>
         <div wire:loading>
@@ -68,9 +68,4 @@
         <input wire:loading.attr="disabled" wire:loading.remove type="button" class="buttonAdd" value="Submit" wire:click="insertUser" >
         </form>
         @livewireScripts
-        <script>
-            setTimeout(function() {
-    $('.oe-error').fadeOut('fast');
-}, 6000);
-        </script>
 </div>

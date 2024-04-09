@@ -8,7 +8,7 @@
 
 
     <head>
-        <link rel="stylesheet" href="{{ asset('assets\css\output_template4.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets\css\all_output_template.css') }}">
         <style>
             h1 {
                 margin-bottom: 40px; /* Add margin-bottom to create space between h1 and rows */
@@ -28,13 +28,13 @@
 
             <tr>
                 <td>
-                    <div class="box1"  >
-                    <img class="img1" src="https://th.bing.com/th/id/OIP.vW7IunH-kNT11k_BsjE0vQHaEK?rs=1&pid=ImgDetMain" alt="Image 1" >
+                    <div class="template4_box1"  >
+                    <img class="template4_img1" src="https://th.bing.com/th/id/OIP.vW7IunH-kNT11k_BsjE0vQHaEK?rs=1&pid=ImgDetMain" alt="Image 1" >
                     </div>
                 </td>
 
                 <td>
-                    <div class="detail">
+                    <div class="template4_detail">
                     หู
                     </div>
                 </td>
@@ -42,13 +42,13 @@
 
             <tr>
                 <td>
-                    <div class="box2" >
-                    <img class="img2" src="https://www.meme-arsenal.com/memes/f0635b0cfafc42bd0641fc4ee7787e18.jpg" alt="Image 1" >
+                    <div class="template4_box2" >
+                    <img class="template4_img2" src="https://www.meme-arsenal.com/memes/f0635b0cfafc42bd0641fc4ee7787e18.jpg" alt="Image 1" >
                     </div>
                 </td>
                 <td>
-                    <div class = "box3"  >
-                    <img class="img3" src="https://th.bing.com/th/id/OIF.qz3cmi7j247UJ3CfQr1Qdg?rs=1&pid=ImgDetMain" alt="Image 1" >
+                    <div class = "template4_box3"  >
+                    <img class="template4_img3" src="https://th.bing.com/th/id/OIF.qz3cmi7j247UJ3CfQr1Qdg?rs=1&pid=ImgDetMain" alt="Image 1" >
                     </div>
                  </td>
             </tr>
