@@ -14,7 +14,7 @@ return new class extends Migration
     {
         DB::statement("CREATE TABLE IF NOT EXISTS `oe_tags` (
             `tag_id` INT NOT NULL AUTO_INCREMENT,
-            `tag_name` VARCHAR(40) NOT NULL,
+            `tag_name` VARCHAR(40) NOT NULL ,
             PRIMARY KEY (`tag_id`))
           ENGINE = InnoDB;");
     }

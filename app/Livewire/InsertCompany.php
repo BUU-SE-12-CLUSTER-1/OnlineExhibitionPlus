@@ -11,7 +11,7 @@ class InsertCompany extends Component
     public $name = '';
     public function insertCompany(){
         $this->validate([
-            'name' => 'required|min:2|max:100'
+            'name' => 'required|min:2|max:100|unique:oe_companies,company_name'
         ]);
         CompanyModel::create([
             'company_name' => $this->name

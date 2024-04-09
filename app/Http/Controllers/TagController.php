@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\TagModel;
 use Illuminate\Http\Request;
+use App\Models\ProjectTagModel;
 
 class TagController extends Controller
 {
@@ -22,6 +23,12 @@ class TagController extends Controller
 
     public function deleteTag($tag_id){
         $tag = TagModel::find($tag_id);
+        $project_tags = ProjectTagModel::all();
+        foreach($project_tags as $project_tag){
+            if($project_tag->projtag_tag_id == $tag_id){
+            $project_tag->delete();
+        }
+        }
         $tag->delete();
         return back();
     }

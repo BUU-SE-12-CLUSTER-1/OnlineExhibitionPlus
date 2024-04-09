@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\AdvisorModel;
+use App\Models\ProjectModel;
 use Illuminate\Http\Request;
 
 class AdvisorController extends Controller
@@ -23,6 +24,12 @@ class AdvisorController extends Controller
         return view('advisor_list',['oe_advisors'=>$advisor_data]);
     }
     public function deleteAdvisor($advisor_id){
+        $advisor_projects = ProjectModel::all();
+        foreach($advisor_projects as $advisor_project){
+            if($advisor_project->proj_advisor_id == $advisor_id){
+                $advisor_project->proj_advisor_id = 1;
+            }
+        }
         $advisor = AdvisorModel::find($advisor_id);
         $advisor->delete();
         return back();

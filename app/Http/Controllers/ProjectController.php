@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ProjectTagModel;
+use App\Models\UserProjectModel;
 use Illuminate\Http\Request;
 use App\Models\ProjectModel;
 use App\Models\CompanyModel;
@@ -41,7 +43,26 @@ class ProjectController extends Controller
 }
     public function deleteProject($proj_id){
         $project = ProjectModel::find($proj_id);
+        $project_tags = ProjectTagModel::all();
+        foreach($project_tags as $project_tag){
+            if($project_tag->projtag_proj_id == $proj_id){
+            $project_tag->delete();
+        }
+        }
+        $project_users = UserProjectModel::all();
+        foreach($project_users as $project_user){
+            if($project_user->userproj_proj_id == $proj_id){
+            $project_user->delete();
+        }
+        }
+        $user_liked_projects = UserLikedProjectModel::all();
+        foreach($user_liked_projects as $user_liked_project){
+            if($user_liked_project->ulp_proj_id == $proj_id){
+                $user_liked_project->delete();
+        }
+        }
         $project->delete();
+
         return back();
     }
 
@@ -57,19 +78,9 @@ class ProjectController extends Controller
         return back();
     }
 
-    public function favProject(Request $request){
-        $major_data = MajorModel::all();
-        $role_data = RoleModel::all();
-        $search_data = $request->input('search_user');
-        $user_data = UserModel::where('user_student_id','LIKE','%'.$search_data.'%')
-        ->orWhere('user_fname','LIKE','%'.$search_data.'%')
-        ->orWhere('user_lname','LIKE','%'.$search_data.'%')
-        ->paginate(10);
-        if(!$user_data || !$user_data->count()){
-            return redirect('/user-list');
-        }
-
-        return view('user_list',['oe_users'=>$user_data, 'oe_majors'=>$major_data, 'oe_roles'=>$role_data]);
+    public function favProjectList(){
+        $project_data = ProjectModel::all();
+        return view('/fav_project_list',['oe_projects' => $project_data]);
     }
 
     public function toggleLikedProject($proj_id, $user_id){
