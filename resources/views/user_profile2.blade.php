@@ -31,7 +31,7 @@
                             </div>
                         </label>
                     </div>
-                    <div class="detail">
+                    <div class="details">
                         <div class="none"></div>
                         <div id="user">
                             <p>Student ID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -117,15 +117,6 @@
             </div>
         </div>
         </div>
-        <div class="box_reset">
-            <a href="" id="resetpassword" style="display: none">Change Password</a>
-
-        </div>
-
-        <div>
-        <p id="txt_project">Project</p>
-        <!--livewire('user-project-list',['user_id'=>$oe_users['user_id']])-->
-        <x-user_project :oe_projects= "$oe_projects"/>
     </div>
 
         <script>

@@ -206,6 +206,9 @@
     font-weight: 500;
     line-height: normal;
 }
+.member a{
+    margin-left: 14px;
+}
 #member_detail{
     width: 30px;
     height: 50px;
@@ -219,4 +222,8 @@
     font-weight: 600;
     line-height: normal;
     
+}
+.project_content{
+    width: 1127px;
+    height: auto;
 }
