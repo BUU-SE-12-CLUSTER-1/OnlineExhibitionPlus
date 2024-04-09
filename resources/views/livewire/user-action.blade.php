@@ -30,7 +30,7 @@
         @if($user->user_role_id != '1')
     <a title="Go to this user profile page." href="{{ url('/user-profile/' . $user->user_id) }}">Profile</a>
     @else
-    <a title="This user doesn't have a profile!" style="color:#777777">Profile</a>
+    <a title="This user has a role as a Guest!" style="color:#777777">Profile</a>
     @endif
         </div>
 
