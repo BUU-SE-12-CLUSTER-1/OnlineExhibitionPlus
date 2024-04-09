@@ -17,7 +17,7 @@
         <?php
         $user_id = 9;
         ?>
-        <a title="Add this project to My Favorite Projects." href="{{ url('/toggle-liked/' . $project->proj_id).'/'.$user_id }}" style="color: inherit">
+
             <?php
             $isLiked = false;
             ?>
@@ -30,12 +30,13 @@
             @endforeach
             @if ($isLiked == true)
 
-            <i class="fa-solid fa-star"></i>
+            <a title="Add this project to My favorite projects." href="{{ url('/toggle-liked/' . $project->proj_id).'/'.$user_id }}" style="color: inherit"><i class="fa-solid fa-star"></i>
+            </a>
             @else
-            <i class="fa-regular fa-star"></i>
+            <a title="Add this project to My favorite projects." style="color: inherit"><i class="fa-regular fa-star"></i>
+        </a>
             @endif
 
-        </a>
 
         {{-- <x-modal name="{{ $project->project_id }}" title="Edit Project" id="edit-box">
             <x-slot name="body">
