@@ -118,11 +118,12 @@
                 <a href="#" x-data x-on:click="$dispatch('open-modal', { name: 'change-password' })" id="resetpassword" style="display: none">Change Password</a>
             </div>
 
-            @foreach ($oe_projects as $project)
+
 
 
         <div>
-          <p id="txt_project">Project</p>
+        <p id="txt_project">Project</p>
+        @foreach ($oe_projects as $project)
         <div class="project pj_01" style="background-image: url('{{$project->proj_main_image}}') !important;white-space: nowrap; text-overflow: ellipsis;">
         </div>
         <div class="information_01" >

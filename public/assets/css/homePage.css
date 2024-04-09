@@ -166,7 +166,7 @@ img{
     max-width: 319px;
     width: 100%;
     height: 449px;
-    cursor: pointer;    
+    cursor: pointer;
 }
 
 .detail{
@@ -234,7 +234,7 @@ img{
     top: 0;
     z-index: -1;
     transition:.4s;
-    
+
 }
 .tag1:hover{
     color: #FFF;
@@ -270,7 +270,7 @@ img{
     top: 0;
     z-index: -1;
     transition:.4s;
-    
+
 }
 .tag2:hover{
     color: #ffffff;
@@ -287,5 +287,5 @@ img{
     justify-content: center;
     align-items: center;
     font-size: 10rem;
-    font-weight: 700;   
+    font-weight: 700;
 }
