@@ -28,7 +28,7 @@
                 </div>
             </label>
         </div>
-        <div class="detail">
+        <div class="details">
 
             <?php
             //echo '<img id="img-user-image" src="data:image/png;base64,' . $oe_users['user_profile_image'] . '" style="width: 100px; height: 100px; object-fit: cover;"/>';
@@ -109,7 +109,9 @@
 
         <div>
         <p id="txt_project">Project</p>
-        @livewire('user-project-list',['user_id'=>$oe_users['user_id']])
+        @livewireStyles
+
+    @livewire('user-project-list',['user_id'=>$oe_users['user_id']])
     </div>
 
 
