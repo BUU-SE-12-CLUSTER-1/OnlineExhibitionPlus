@@ -159,7 +159,29 @@ Route::get('/template3_show', function (){
 Route::get('/template4_show', function (){
     return view('template4_show');
 });
-Route::get('/testmas', function (){
-    return view('testmas');
+
+
+
+// คลิกรูปโปรเจคแล้วเปลี่ยนหน้า
+Route::get('/testPJ01', function (){
+    return view('test_pj01');
 });
 
+Route::get('/testPJ02', function (){
+    return view('test_pj02');
+});
+Route::get('/testPJ03', function (){
+    return view('test_pj03');
+});
+Route::get('/testPJ04', function (){
+    return view('test_pj04');
+});
+
+
+// คลิก TAG แล้วเปลี่ยนหน้า
+Route::get('/testTag01', function (){
+    return view('test_tag01');
+});
+Route::get('/testTag02', function (){
+    return view('test_tag02');
+});

@@ -82,6 +82,7 @@ img{
 
 }
 
+
 @keyframes slide {
     0%{
         transform: translateX(0);
@@ -155,6 +156,13 @@ img{
     animation: slide 16s infinite;
 }
 
+.inf_all{
+    max-width: 319px;
+    width: 100%;
+    height: 449px;
+    cursor: pointer;    
+}
+
 .detail{
     color: #ffffff;
     font-style: normal;
@@ -180,21 +188,6 @@ img{
     overflow: hidden;
 }
 
-.tag1{
-    margin-left: 48px;
-    width: 81px;
-    height: 36px;
-    flex-shrink: 0;
-    border-radius: 15px;
-    border: 3px solid #FFF;
-    background: #FBC2EB;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-
-}
-
 .star{
     font-size: 30px;
     background-color: transparent;
@@ -206,17 +199,87 @@ img{
 
 
 }
-.tag2{
-    margin-left: 20px;
-    width: 81px;
-    height: 36px;
-    flex-shrink: 0;
-    border-radius: 15px;
-    border: 3px solid #FFF;
-    background: #A57DFC;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
 
+
+
+.tag1{
+    margin-left: 48px;
+    padding: 6px 20px;
+    background: #FFF;
+    border-radius: 15px;
+    border: 2px solid #fe9fe3;
+    color: #fe9fe3;
+    font-weight: 700;
+    box-shadow: 0px 6px 3px 0px rgba(0, 0, 0, 0.6);
+    position: relative;
+    z-index: 0;
+    transition:.4s;
+    overflow: hidden;
+    cursor: pointer;
+
+}
+.tag1::after{
+    content:'';
+    width: 0;
+    height: 100%;
+    position: absolute;
+    background: #fe9fe3;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    transition:.4s;
+    
+}
+.tag1:hover{
+    color: #FFF;
+    border: 2px solid #ffffff;
+    padding: 8.5px 20px;
+}
+.tag1:hover::after{
+    width: 100%;
+}
+.tag2{
+    margin-left: 36px;
+    padding: 6px 20px;
+    background: #ffffff;
+    border-radius: 15px;
+    border: 2px solid #bd9fff;
+    color: #bd9fff;
+    font-weight: 700;
+    box-shadow: 0px 6px 3px 0px rgba(0, 0, 0, 0.6);
+    position: relative;
+    z-index: 0;
+    transition:.4s;
+    overflow: hidden;
+    cursor: pointer;
+
+}
+.tag2::after{
+    content:'';
+    width: 0;
+    height: 100%;
+    position: absolute;
+    background: #bd9fff;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    transition:.4s;
+    
+}
+.tag2:hover{
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    padding: 8.5px 20px;
+}
+.tag2:hover::after{
+    width: 100%;
+}
+
+.text{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10rem;
+    font-weight: 700;
 }

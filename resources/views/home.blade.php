@@ -37,59 +37,81 @@
             {{-- หน้าโปรเจค1 --}}
                 <div class="project pj_01">
                     <div class="wrapper">
-                        <img src="{{url('assets\img\testmas\1.jpg')}}">
-                        <img src="{{url('assets\img\testmas\5.jpg')}}">
-                        <img src="{{url('assets\img\testmas\9.jpg')}}">
-                        <img src="{{url('assets\img\testmas\13.jpg')}}">
+                        <img src="{{url('assets\img\testmas\1.jpg')}}" alt="Description of the image">
+                        <img src="{{url('assets\img\testmas\5.jpg')}}" alt="Description of the image">
+                        <img src="{{url('assets\img\testmas\9.jpg')}}" alt="Description of the image">
+                        <img src="{{url('assets\img\testmas\13.jpg')}}" alt="Description of the image">
                     </div>
                 </div>
                 <div class="information_01">
                     <div class="inf_wrapper">
-                        <div class="inf_all">
+                        <div class="inf_all" id="myDiv01">
+                            <script>
+                                document.getElementById("myDiv01").addEventListener("click", function() {
+                                    window.location.href = "/testPJ01";
+                                });
+                            </script>
                             <button type="button" class="star"></i></button>
                             <div class="detail">
                                 <h2>System</h2>
                                 <p>Author : ปลายุท</p>
                                 <p>Advisor : ปลาวัน</p>
                                 <div class="btn_tag">
-                                    <button class="tag1">Tag A</button>
-                                    <button class="tag2">Tag B</button>
+                                    <div class="container_bnt_tag">
+                                        <a href="/testTag01"><button class="tag1">Tag A</button></a>
+                                        <a href="/testTag02"><button class="tag2">Tag B</button></a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div inf_all>
+                        <div inf_all id="myDiv02">
+                            <script>
+                                document.getElementById("myDiv02").addEventListener("click", function() {
+                                    window.location.href = "/testPJ02";
+                                });
+                            </script>
                             <button type="button" class="star"></button>
                             <div class="detail">
                                 <h2>System</h2>
                                 <p>Author : ปลาวิท</p>
                                 <p>Advisor : ปลาทู</p>
                                 <div class="btn_tag">
-                                    <button class="tag1">Tag A</button>
-                                    <button class="tag2">Tag B</button>
+                                    <a href="/testTag01"><button class="tag1">Tag A</button></a>
+                                    <a href="/testTag02"><button class="tag2">Tag B</button></a>
                                 </div>
                             </div>
                         </div>
-                        <div inf_all>
+                        <div inf_all id="myDiv03">
+                            <script>
+                                document.getElementById("myDiv03").addEventListener("click", function() {
+                                    window.location.href = "/testPJ03";
+                                });
+                            </script>
                             <button type="button" class="star"></i></button>
                             <div class="detail">
                                 <h2>System</h2>
                                 <p>Author : ปลาวีนา</p>
                                 <p>Advisor : ปลาทรี</p>
                                 <div class="btn_tag">
-                                    <button class="tag1">Tag A</button>
-                                    <button class="tag2">Tag B</button>
+                                    <a href="/testTag01"><button class="tag1">Tag A</button></a>
+                                    <a href="/testTag02"><button class="tag2">Tag B</button></a>
                                 </div>
                             </div>
                         </div>
-                        <div inf_all>
+                        <div inf_all id="myDiv04">
+                            <script> 
+                                document.getElementById("myDiv04").addEventListener("click", function() {
+                                    window.location.href = "/testPJ04";
+                                });
+                            </script>
                             <button type="button" class="star"></button>
                             <div class="detail">
                                 <h2>System</h2>
                                 <p>Author : ปลาเจรา</p>
                                 <p>Advisor : ปลาโฟ</p>
                                 <div class="btn_tag">
-                                    <button class="tag1">Tag A</button>
-                                    <button class="tag2">Tag B</button>
+                                    <a href="/testTag01"><button class="tag1">Tag A</button></a>
+                                    <a href="/testTag02"><button class="tag2">Tag B</button></a>
                                 </div>
                             </div>
                         </div>
@@ -107,51 +129,71 @@
                 </div>
                 <div class="information_02">
                     <div class="inf_wrapper">
-                        <div class="inf_all">
+                        <div class="inf_all" id="myDiv05">
+                            <script>
+                                document.getElementById("myDiv05").addEventListener("click", function() {
+                                    window.location.href = "/testPJ01";
+                                });
+                            </script>
                             <button type="button" class="star"></i></button>
                             <div class="detail">
                                 <h2>System</h2>
                                 <p>Author : ปลายุท</p>
                                 <p>Advisor : ปลาวัน</p>
                                 <div class="btn_tag">
-                                    <button class="tag1">Tag A</button>
-                                    <button class="tag2">Tag B</button>
+                                    <a href="/testTag01"><button class="tag1">Tag A</button></a>
+                                    <a href="/testTag02"><button class="tag2">Tag B</button></a>
                                 </div>
                             </div>
                         </div>
-                        <div inf_all>
+                        <div inf_all id="myDiv06">
+                            <script>
+                                document.getElementById("myDiv06").addEventListener("click", function() {
+                                    window.location.href = "/testPJ02";
+                                });
+                            </script>
                             <button type="button" class="star"></button>
                             <div class="detail">
                                 <h2>System</h2>
                                 <p>Author : ปลาวิท</p>
                                 <p>Advisor : ปลาทู</p>
                                 <div class="btn_tag">
-                                    <button class="tag1">Tag A</button>
-                                    <button class="tag2">Tag B</button>
+                                    <a href="/testTag01"><button class="tag1">Tag A</button></a>
+                                    <a href="/testTag02"><button class="tag2">Tag B</button></a>
                                 </div>
                             </div>
                         </div>
-                        <div inf_all>
+                        <div inf_all id="myDiv07">
+                            <script>
+                                document.getElementById("myDiv07").addEventListener("click", function() {
+                                    window.location.href = "/testPJ03";
+                                });
+                            </script>
                             <button type="button" class="star"></i></button>
                             <div class="detail">
                                 <h2>System</h2>
                                 <p>Author : ปลาวีนา</p>
                                 <p>Advisor : ปลาทรี</p>
                                 <div class="btn_tag">
-                                    <button class="tag1">Tag A</button>
-                                    <button class="tag2">Tag B</button>
+                                    <a href="/testTag01"><button class="tag1">Tag A</button></a>
+                                    <a href="/testTag02"><button class="tag2">Tag B</button></a>
                                 </div>
                             </div>
                         </div>
-                        <div inf_all>
-                            <button type="button" class="star"></i></button>
+                        <div inf_all id="myDiv08">
+                            <script> 
+                                document.getElementById("myDiv08").addEventListener("click", function() {
+                                    window.location.href = "/testPJ04";
+                                });
+                            </script>
+                            <button type="button" class="star"></button>
                             <div class="detail">
                                 <h2>System</h2>
                                 <p>Author : ปลาเจรา</p>
                                 <p>Advisor : ปลาโฟ</p>
                                 <div class="btn_tag">
-                                    <button class="tag1">Tag A</button>
-                                    <button class="tag2">Tag B</button>
+                                    <a href="/testTag01"><button class="tag1">Tag A</button></a>
+                                    <a href="/testTag02"><button class="tag2">Tag B</button></a>
                                 </div>
                             </div>
                         </div>
@@ -169,51 +211,71 @@
                 </div>
                 <div class="information_03">
                     <div class="inf_wrapper">
-                        <div class="inf_all">
+                        <div class="inf_all" id="myDiv09">
+                            <script>
+                                document.getElementById("myDiv09").addEventListener("click", function() {
+                                    window.location.href = "/testPJ01";
+                                });
+                            </script>
                             <button type="button" class="star"></i></button>
                             <div class="detail">
                                 <h2>System</h2>
                                 <p>Author : ปลายุท</p>
                                 <p>Advisor : ปลาวัน</p>
                                 <div class="btn_tag">
-                                    <button class="tag1">Tag A</button>
-                                    <button class="tag2">Tag B</button>
+                                    <a href="/testTag01"><button class="tag1">Tag A</button></a>
+                                    <a href="/testTag02"><button class="tag2">Tag B</button></a>
                                 </div>
                             </div>
                         </div>
-                        <div inf_all>
+                        <div inf_all id="myDiv10">
+                            <script>
+                                document.getElementById("myDiv10").addEventListener("click", function() {
+                                    window.location.href = "/testPJ02";
+                                });
+                            </script>
                             <button type="button" class="star"></button>
                             <div class="detail">
                                 <h2>System</h2>
                                 <p>Author : ปลาวิท</p>
                                 <p>Advisor : ปลาทู</p>
                                 <div class="btn_tag">
-                                    <button class="tag1">Tag A</button>
-                                    <button class="tag2">Tag B</button>
+                                    <a href="/testTag01"><button class="tag1">Tag A</button></a>
+                                    <a href="/testTag02"><button class="tag2">Tag B</button></a>
                                 </div>
                             </div>
                         </div>
-                        <div inf_all>
+                        <div inf_all id="myDiv11">
+                            <script>
+                                document.getElementById("myDiv11").addEventListener("click", function() {
+                                    window.location.href = "/testPJ03";
+                                });
+                            </script>
                             <button type="button" class="star"></i></button>
                             <div class="detail">
                                 <h2>System</h2>
                                 <p>Author : ปลาวีนา</p>
                                 <p>Advisor : ปลาทรี</p>
                                 <div class="btn_tag">
-                                    <button class="tag1">Tag A</button>
-                                    <button class="tag2">Tag B</button>
+                                    <a href="/testTag01"><button class="tag1">Tag A</button></a>
+                                    <a href="/testTag02"><button class="tag2">Tag B</button></a>
                                 </div>
                             </div>
                         </div>
-                        <div inf_all>
-                            <button type="button" class="star"></i></button>
+                        <div inf_all id="myDiv12">
+                            <script> 
+                                document.getElementById("myDiv12").addEventListener("click", function() {
+                                    window.location.href = "/testPJ04";
+                                });
+                            </script>
+                            <button type="button" class="star"></button>
                             <div class="detail">
                                 <h2>System</h2>
                                 <p>Author : ปลาเจรา</p>
                                 <p>Advisor : ปลาโฟ</p>
                                 <div class="btn_tag">
-                                    <button class="tag1">Tag A</button>
-                                    <button class="tag2">Tag B</button>
+                                    <a href="/testTag01"><button class="tag1">Tag A</button></a>
+                                    <a href="/testTag02"><button class="tag2">Tag B</button></a>
                                 </div>
                             </div>
                         </div>
@@ -231,51 +293,71 @@
                 </div>
                 <div class="information_04">
                     <div class="inf_wrapper">
-                        <div class="inf_all">
+                        <div class="inf_all" id="myDiv13">
+                            <script>
+                                document.getElementById("myDiv13").addEventListener("click", function() {
+                                    window.location.href = "/testPJ01";
+                                });
+                            </script>
                             <button type="button" class="star"></i></button>
                             <div class="detail">
                                 <h2>System</h2>
                                 <p>Author : ปลายุท</p>
                                 <p>Advisor : ปลาวัน</p>
                                 <div class="btn_tag">
-                                    <button class="tag1">Tag A</button>
-                                    <button class="tag2">Tag B</button>
+                                    <a href="/testTag01"><button class="tag1">Tag A</button></a>
+                                    <a href="/testTag02"><button class="tag2">Tag B</button></a>
                                 </div>
                             </div>
                         </div>
-                        <div inf_all>
+                        <div inf_all id="myDiv14">
+                            <script>
+                                document.getElementById("myDiv14").addEventListener("click", function() {
+                                    window.location.href = "/testPJ02";
+                                });
+                            </script>
                             <button type="button" class="star"></button>
                             <div class="detail">
                                 <h2>System</h2>
                                 <p>Author : ปลาวิท</p>
                                 <p>Advisor : ปลาทู</p>
                                 <div class="btn_tag">
-                                    <button class="tag1">Tag A</button>
-                                    <button class="tag2">Tag B</button>
+                                    <a href="/testTag01"><button class="tag1">Tag A</button></a>
+                                    <a href="/testTag02"><button class="tag2">Tag B</button></a>
                                 </div>
                             </div>
                         </div>
-                        <div inf_all>
+                        <div inf_all id="myDiv15">
+                            <script>
+                                document.getElementById("myDiv15").addEventListener("click", function() {
+                                    window.location.href = "/testPJ03";
+                                });
+                            </script>
                             <button type="button" class="star"></i></button>
                             <div class="detail">
                                 <h2>System</h2>
                                 <p>Author : ปลาวีนา</p>
                                 <p>Advisor : ปลาทรี</p>
                                 <div class="btn_tag">
-                                    <button class="tag1">Tag A</button>
-                                    <button class="tag2">Tag B</button>
+                                    <a href="/testTag01"><button class="tag1">Tag A</button></a>
+                                    <a href="/testTag02"><button class="tag2">Tag B</button></a>
                                 </div>
                             </div>
                         </div>
-                        <div inf_all>
-                            <button type="button" class="star"></i></button>
+                        <div inf_all id="myDiv16">
+                            <script> 
+                                document.getElementById("myDiv16").addEventListener("click", function() {
+                                    window.location.href = "/testPJ04";
+                                });
+                            </script>
+                            <button type="button" class="star"></button>
                             <div class="detail">
                                 <h2>System</h2>
                                 <p>Author : ปลาเจรา</p>
                                 <p>Advisor : ปลาโฟ</p>
                                 <div class="btn_tag">
-                                    <button class="tag1">Tag A</button>
-                                    <button class="tag2">Tag B</button>
+                                    <a href="/testTag01"><button class="tag1">Tag A</button></a>
+                                    <a href="/testTag02"><button class="tag2">Tag B</button></a>
                                 </div>
                             </div>
                         </div>
