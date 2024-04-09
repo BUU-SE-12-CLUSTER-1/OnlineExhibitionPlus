@@ -12,8 +12,8 @@
         <tr>
             <th>#</th>
             <th>Student ID</th>
-            <th>Name</th>
-            <th>Surname</th>
+            <th>Firstname</th>
+            <th>Lastname</th>
             <th>Email</th>
             <th>Action</th>
         </tr>

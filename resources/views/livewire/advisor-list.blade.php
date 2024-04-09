@@ -18,13 +18,13 @@
          Title
     </th>
     <th>
-    Name
+    Firstname
     </th>
     <th>
-    Surname
+    Lastname
     </th>
     <th>
-   Action
+    Action
     </th>
 
     </tr>

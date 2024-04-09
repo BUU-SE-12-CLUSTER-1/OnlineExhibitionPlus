@@ -11,13 +11,13 @@
     @error('title')
     <span> {{$message}}</span> @enderror
     </br>
-    <label class="oe-input-label" for="advisors_fname">Name</label>
+    <label class="oe-input-label" for="advisors_fname">Firstname</label>
     <input class="oe-input" wire:model="first_name" type="text" name="advisor_fname" id="" value={{$oe_advisors['advisor_fname']}}>
     <br>
     @error('first_name')
     <span> {{$message}}</span> @enderror
     </br>
-    <label class="oe-input-label" for="advisors_lname">Surname</label>
+    <label class="oe-input-label" for="advisors_lname">Lastname</label>
     <input class="oe-input" wire:model="last_name" type="text" name="advisor_lname" id="" value={{$oe_advisors['advisor_lname']}}>
     <br>
     @error('last_name')
