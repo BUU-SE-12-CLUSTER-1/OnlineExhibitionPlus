@@ -10,7 +10,7 @@
 <input class="oe-choose-file" wire:model="file" type="file" name="file" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" >
 
 @error('file')
-<span style="white-space:nowrap; font:red;" >{{ $message }}</span>
+<span class="oe-error" style="white-space:nowrap;" >{{ $message }}</span>
 @enderror
 
 <input class="buttonAdd" type="submit" value="Upload" name="btn_submit" style="position:fixed; bottom: 20px; right: 30px;  ">
