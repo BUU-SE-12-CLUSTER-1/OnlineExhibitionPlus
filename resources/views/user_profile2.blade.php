@@ -107,7 +107,8 @@
         </div>
         <div>
         <p id="txt_project">Project</p>
-        @livewire('user-project-list',['user_id'=>$oe_users['user_id']])
+        <!--livewire('user-project-list',['user_id'=>$oe_users['user_id']])-->
+        <x-user_project :oe_projects= "$oe_projects"/>
     </div>
         <script>
             function edit(){

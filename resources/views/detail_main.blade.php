@@ -62,9 +62,9 @@
                 </div>
                 </div>
         <div class="project_content">
-            <x-template1_show></x-template1_show>
-            <x-template2_show></x-template2_show>
-            <x-template3_show></x-template3_show>
+            <x-template1_show/>
+            <x-template2_show/>
+            <x-template3_show/>
         </div>
             </div>
             <div class="comment">
