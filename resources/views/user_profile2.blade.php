@@ -24,7 +24,7 @@
             <label for="input-user-image" >
                 <input type="file" name="upload-image" accept="image/*" id="input-user-image" hidden>
                 <div id="img-view">
-                    <p>Drag and drop or <br>click here<br> to upload image</p>
+                    <i class="fa-solid fa-images"></i>
                 </div>
             </label>
         </div>
