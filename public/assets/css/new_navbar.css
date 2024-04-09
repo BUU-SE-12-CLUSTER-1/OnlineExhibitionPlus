@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Chonburi&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
 
-body{
+body {
     max-width: 100%;
     min-width: 500px;
     background: #E5ECFF;
@@ -10,7 +10,8 @@ body{
     box-sizing: content-box;
 
 }
-.top-navbar{
+
+.top-navbar {
     width: 100%;
     height: 118px;
     background: linear-gradient(91deg, #9DBEFF 42.58%, #FED9FF 79.57%);
@@ -18,53 +19,60 @@ body{
     display: flex;
     z-index: 999;
 }
-#web-logo{
+
+#web-logo {
     width: 171px;
     height: 71px;
     margin-top: 23px;
 }
-#hamberger-bar{
+
+#hamberger-bar {
     font-size: 50px;
-flex-shrink: 0;
-margin: 34px 21px;
-color: white;
+    flex-shrink: 0;
+    margin: 34px 21px;
+    color: white;
 }
-#web-icon{
+
+#web-icon {
     width: 94px;
-height: 105px;
-position:absolute;
-right: 22px;
+    height: 105px;
+    position: absolute;
+    right: 22px;
 }
-#main-content{
+
+#main-content {
     display: block;
-    margin-top:50px;
+    margin-top: 50px;
     background-color: #ffffff00;
     border-radius: 25px;
     width: 100%;
-    align-items:center;
-    justify-content:center;
-    justify-items:center;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
     margin-left: 24px;
     padding: 0;
     padding-bottom: 224px;
 
 
 }
-#main-content:after{
+
+#main-content:after {
     content: '';
-  display: block;
+    display: block;
     height: 224px;
 }
-#web-footer{
+
+#web-footer {
     width: 100%;
-height: 224px;
-background: linear-gradient(91deg, #9DBEFF 39.91%, #FED9FF 78.86%);
-filter: drop-shadow(0px 4px 7px rgba(0, 0, 0, 0.25));
-position:relative;
-  bottom: 0;
-  margin-top: 62px;
+    height: 224px;
+    background: linear-gradient(91deg, #9DBEFF 39.91%, #FED9FF 78.86%);
+    filter: drop-shadow(0px 4px 7px rgba(0, 0, 0, 0.25));
+    position: relative;
+    bottom: 0;
+    margin-top: 62px;
 }
-#copyright{
+
+#copyright {
     position: absolute;
     left: 12px;
     bottom: 10px;
@@ -76,7 +84,7 @@ position:relative;
     line-height: normal;
 }
 
-#faculty{
+#faculty {
     color: #323694;
     font-family: Mulish;
     font-size: 25px;
@@ -88,66 +96,75 @@ position:relative;
     left: 41px;
 }
 
-#faculty-address{
+#faculty-address {
     color: #323694;
-font-family: Mulish;
-font-size: 16px;
-font-style: normal;
-font-weight: 700;
-line-height: 23px;
-position: absolute;
-left: 652px;
-top: 69px;
+    font-family: Mulish;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 23px;
+    position: absolute;
+    left: 652px;
+    top: 69px;
 }
-#location-icon{
-position: absolute;
-    top:66px;
+
+#location-icon {
+    position: absolute;
+    top: 66px;
     left: 625px;
     font-size: 23px;
 }
-#faculty-contact{
+
+#faculty-contact {
     color: #323694;
-font-family: Mulish;
-font-size: 20px;
-font-style: normal;
-font-weight: 700;
-line-height: normal;
-position:absolute;
-top: 67px;
-left: 1040px;
+    font-family: Mulish;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    position: absolute;
+    top: 67px;
+    left: 1040px;
 }
-#phone-icon{
+
+#phone-icon {
     position: absolute;
     top: 67px;
     left: 1010px;
     font-size: 23px;
 }
-#email-icon{
+
+#email-icon {
     position: absolute;
     top: 147px;
     left: 1010px;
     font-size: 23px;
 }
 
-#button-area{
+#button-area {
     display: flex;
 }
-#button-area button{
+
+#button-area button {
     margin-left: 6px;
 }
-.side-navbar{
+
+.side-navbar {
     height: 100% !important;
-  width: 238px !important;
-  position: fixed;
-  z-index: 1;
-  top: 118px;
-  left: 0;
-  background: rgba(255, 255, 255, 0.90);
-  padding-top: 20px;
-  display: none;
-  text-align: center;
+    width: 238px !important;
+    position: fixed;
+    z-index: 1;
+    top: 118px;
+    left: 0;
+    background: rgba(255, 255, 255, 0.90);
+    padding-top: 20px;
+    display: none;
+    text-align: center;
 }
-.side-navbar a, .dropdown-btn, .side-nav-menu {
+
+.side-navbar a,
+.dropdown-btn,
+.side-nav-menu {
     width: 100% !important;
     height: 59px;
     flex-shrink: 0;
@@ -158,7 +175,7 @@ left: 1040px;
     display: block;
     border: none;
     background: none;
-    width:100%;
+    width: 100%;
     text-align: center;
     cursor: pointer;
     outline: none;
@@ -168,35 +185,38 @@ left: 1040px;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
-  }
-.side-nav-menu{
+}
+
+.side-nav-menu {
     border-top: 1px solid rgba(0, 0, 0, 0.25);
     border-bottom: 1px solid rgba(0, 0, 0, 0.25);
     background: #FFF;
     width: 100% !important;
 }
-.dropdown-container{
+
+.dropdown-container {
     margin-top: 18px;
     display: none;
 }
-.btn-logout{
-    width: 148px;
-height: 43px;
-flex-shrink: 0;
+
+.btn-logout {
+    width: 138px;                                                          
+    height: 50px;
+    flex-shrink: 0;                       
     border-radius: 15px;
     border: 1px solid #323694;
-background: #FFF;
-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    background: #ffff;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     color: #4E6CEF;
-font-family: Mulish;
-font-size: 16px;
-font-style: normal;
-font-weight: 800;
-line-height: normal;
-justify-self: center;
-margin: 0;
-position:relative;
-bottom:0px;
-margin-top: 200%;
+    font-family: Mulish;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    justify-self: center;
+    margin: 0;
+    position: relative;
+    bottom: 0px;
+    margin-top: 195%;
+    margin-left: 45px;
 }
-
