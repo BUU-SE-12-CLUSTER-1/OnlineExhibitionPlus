@@ -25,29 +25,37 @@
 
             <br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;From cutting-edge applications to robust system solutions, our site is a hub of creativity and technical expertise.</p>
             <div class="login-container">
-            <form action="{{ url('/login')}}" method="post">
-                @csrf
-            <!-- LOGO -->
-            <img src="assets/img/system/OE_ICON.png" class="icon" alt="" style="width: 199px; height: 199px"><br>
-            <img src="assets/img/system/LOGO_TEXT.png" class="icon-text" alt="" style="width: 230px; height: 28px;">
-            <input type="text" name="email" placeholder="Email" id="username-textbox" style="margin-top: 36%;"/>
-            <label>
-				<div class="passwd-wrap">
-					<input type="password" id="password" placeholder="Password" />
-					<button type="button" id="show-passwd">
-                        <!-- <i class="fa fa-eye" aria-hidden="true"></i> -->
-						<img src="assets/img/users/eye_closed.svg" alt="Show Password" />
-					</button>
-				</div>
-			</label>
-
-        <!-- BUTTON     -->
-        <button type="submit" class="login-button" style="margin-top: 17%;">Login</button>
-        <!--<div class="g-signin2" data-onsuccess="onSignIn"> -->
-        <button type="button" id="google-login-button"><i class="fa-brands fa-google"></i>      Login with Google</button>
-        </div>
+                <form action="{{ url('/login')}}" method="post">
+                @csrf<!-- LOGO -->
+                <img src="assets/img/system/OE_ICON.png" class="icon" alt="" style="width: 199px; height: 199px"><br>
+                <img src="assets/img/system/LOGO_TEXT.png" class="icon-text" alt="" style="width: 230px; height: 28px;">
+        
+{{-- Email นะครับ--}}
+                <div class="box_container">
+                    <div class="email_entryarea">
+                        <div>
+                            <input type="text" required>
+                            <div class="email_labelline">Email</div>
+                        </div>
+                    </div>
+{{-- Password นะครับ--}}    
+                    <div class="password_entryarea">
+                        <div>
+                            <input type="password" required>
+                            <div class="password_labelline">Password</div>
+                        </div>
+                    </div>
+                </div> 
+<!-- BUTTON LOGIN -->
+                <div class="email_entryarea">
+                    <button type="submit" class="login-button">Login</button>
+                </div>
+                <div class="btn_GOOGLE_entryarea">
+                    <button type="button" id="google-login-button"><i class="fa-brands fa-google"></i>      Login with Google</button>
+                </div>
+            </div>
         </form>
-        </div>
+    </div>
 
         
     </body>

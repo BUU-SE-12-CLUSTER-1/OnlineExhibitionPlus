@@ -1,4 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Chonburi&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+*{
+    margin: 0 0;
+    padding: 0 0;
+    box-sizing: content-box;
+    max-width: 1920px;
+}
 .content_home {
     background-color: white;
     width: 1430px;
@@ -281,5 +287,5 @@ img{
     justify-content: center;
     align-items: center;
     font-size: 10rem;
-    font-weight: 700;
+    font-weight: 700;   
 }
