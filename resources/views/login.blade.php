@@ -32,7 +32,7 @@
             <label>
 				<div class="passwd-wrap">
 					<input type="password" id="password" placeholder="Password" />
-					<button type="button" id="show-passwd">
+					<button  type="button" id="show-passwd">
                         <!-- <i class="fa fa-eye" aria-hidden="true"></i> -->
 						<img src="assets/img/users/eye_closed.svg" alt="Show Password" />
 					</button>
