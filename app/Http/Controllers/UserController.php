@@ -112,6 +112,7 @@ class UserController extends Controller
     }
     public function showUserProfile($user_id){
         $user_data = UserModel::find($user_id);
+        $users = UserModel::all();
         $major_data = MajorModel::all();
         $role_data = RoleModel::all();
         $tags = TagModel::all();
@@ -126,7 +127,7 @@ class UserController extends Controller
         }
         $project_data = ProjectModel::whereIn('proj_id',$user_project_ids)->paginate(6);
 
-        return view('user_profile2',['oe_users'=>$user_data, 'oe_majors'=>$major_data, 'oe_roles'=>$role_data
+        return view('user_profile2',['user'=>$user_data, 'oe_users'=>$users, 'oe_majors'=>$major_data, 'oe_roles'=>$role_data
      , 'oe_projects'=>$project_data, 'oe_user_projects'=>$user_projects, 'oe_tags'=>$tags, 'oe_project_tag'=>$proj_tag, 'oe_advisors'=>$advisors]);
     }
     public function getUserImage($user_id){
