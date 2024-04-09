@@ -13,13 +13,13 @@
         <label  class="oe-input-label"for="user_fname" >Firstname</label>
         <input class="oe-input" wire:model="first_name" type="text" name="user_fname" maxlength="25" value={{$oe_users['user_fname']}}></br>
         @error('first_name')
-        <span class="text-danger-500">{{ $message }}</span>
+        <span class="oe-error">{{ $message }}</span>
         @enderror
         </br>
         <label class="oe-input-label" class="oe-input-label" for="user_lname">Lastname</label>
         <input class="oe-input" wire:model="last_name" type="text" name="user_lname" maxlength="25" value={{$oe_users['user_lname']}}></br>
         @error('last_name')
-        <span class="text-danger-500">{{ $message }}</span>
+        <span class="oe-error">{{ $message }}</span>
         @enderror
         </br>
         <label class="oe-input-label" for="user_email">Email</label>
