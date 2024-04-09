@@ -202,4 +202,11 @@ class UserController extends Controller
         $user->save();
         return back();
     }
+    public function changePassword($user_id,Request $request){
+        $request->validate([
+            'password' => 'min:6|required_with:password_confirmation',
+            'password_confirmation' => 'min:6|same:password',
+        ]);
+        return back();
+    }
 }

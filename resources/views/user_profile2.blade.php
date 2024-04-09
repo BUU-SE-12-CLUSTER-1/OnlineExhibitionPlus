@@ -8,8 +8,6 @@
     <link rel="stylesheet" href="{{ asset('assets/css/modal.css') }}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="{{ asset('assets/css/profile.css') }}">
-
-    <body>
         <div class="profile_user">
 
             <div class="titleBlue1">
@@ -108,19 +106,14 @@
                     </div>
                 </form>
             </div>
+            <x-modal name="change-password" title="Change password" id="edit-box">
+                <x-slot name="body">
+                   @livewire('change-password',['user_id' => $oe_users['user_id']])
+                </x-slot>
+            </x-modal>
             <div class="box_reset">
-                <a href="" id="resetpassword" style="display: none">Change Password</a>
+                <a href="#" x-data x-on:click="$dispatch('open-modal', { name: 'change-password' })" id="resetpassword" style="display: none">Change Password</a>
             </div>
-            <div>
-                <p id="txt_project">Project</p>
-                @livewire('user-project-list', ['user_id' => $oe_users['user_id']])
-            </div>
-        </div>
-        </div>
-        <div class="box_reset">
-            <button id="resetpassword" style="display: none" type="button">Reset Password</button>
-        </div>
-
         <div>
         <p id="txt_project">Project</p>
         <!--livewire('user-project-list',['user_id'=>$oe_users['user_id']])-->
@@ -175,6 +168,4 @@
             }, 6000);
         </script>
         </div>
-
-    </body>
 @endsection

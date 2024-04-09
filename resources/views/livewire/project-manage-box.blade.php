@@ -39,9 +39,9 @@
                                 <?php $firstTagId = $tag->tag_id;
                                         $tag_count++;
                                 ?>
-                                <a href="{{url('/tag-search/'.$tag->tag_id)}}"><button class="tag1">{{$tag->tag_name}}</button></a>
+                                <a href="{{url('/tag-search/'.$tag->tag_id)}}"><button class="tag1" style="white-space: nowrap;text-overflow: ellipsis;">{{$tag->tag_name}}</button></a>
                                 @elseif ($tag_count == 2 && $tag->tag_id != $firstTagId &&$project->proj_id == $proj_single_tag->projtag_proj_id && $tag->tag_id == $proj_single_tag->projtag_tag_id)
-                                <a href="{{url('/tag-search/'.$tag->tag_id)}}"><button class="tag2">{{$tag->tag_name}}</button></a>
+                                <a href="{{url('/tag-search/'.$tag->tag_id)}}"><button class="tag2" style="white-space: nowrap;text-overflow: ellipsis;">{{$tag->tag_name}}</button></a>
                                 <?php
                                 $tag_count++;
                                 ?>
