@@ -19,7 +19,7 @@ return new class extends Migration
             `proj_student_year` VARCHAR(1) NOT NULL,
             `proj_company_id` INT NULL DEFAULT NULL,
             `proj_advisor_id` INT NOT NULL,
-            `proj_status` TINYINT NOT NULL,
+            `proj_status` TINYINT NOT NULL DEFAULT '1',
             `proj_view_quantity` INT NOT NULL,
             PRIMARY KEY (`proj_id`),
             INDEX `fk_projects_companies1_idx` (`proj_company_id` ASC) ,

@@ -4,6 +4,7 @@ namespace App\Livewire;
 
 use Livewire\Component;
 use App\Models\CompanyModel;
+use App\Models\ProjectModel;
 
 class CompanyAction extends Component
 {
@@ -13,6 +14,8 @@ class CompanyAction extends Component
     }
     public function render()
     {
-        return view('livewire.company-action',['oe_companies'=> $this->company]);
+        $company_projects = ProjectModel::all();
+        return view('livewire.company-action',['oe_companies'=> $this->company,
+    'company_projects' => $company_projects]);
     }
 }

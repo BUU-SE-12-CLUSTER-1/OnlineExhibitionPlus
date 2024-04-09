@@ -45,7 +45,7 @@
                 $td_count = 1;
                     ?>
                 @foreach ($oe_projects as $project)
-                @if ($td_count < 5)
+                @if ($td_count < 4)
                     <td>
                         <livewire:project-manage-box :project="$project" :key="$project['proj_id']" />
                     </td>

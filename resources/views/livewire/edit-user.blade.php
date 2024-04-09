@@ -28,7 +28,7 @@
         <span class="text-danger-500">{{ $message }}</span>
         @enderror
         </br>
-        <label class="oe-input-label" for="user_password">Password</label>
+        <label class="oe-input-label" for="user_password">New Password</label>
         <input class="oe-input" wire:model="password" type="password" name="user_password" maxlength="20"><br></br>
         <label class="oe-input-label" for="user_major_id">Major</label>
         <select class="oe-input" wire:model="major_id" name="user_major_id">

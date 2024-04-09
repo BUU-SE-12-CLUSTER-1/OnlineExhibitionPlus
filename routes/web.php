@@ -23,7 +23,7 @@ use App\Http\Controllers\ProjectController;
 |
 */
 
-Route::get('/', function (){
+Route::get('/home', function (){
     return view('home');
 });
 
@@ -54,6 +54,7 @@ Route::post('update-user-detail/{user_id}/{detail_name}',[UserController::class,
 Route::post('update-user-detail/{user_id}',[UserController::class,'updateUserDetail']);
 Route::get('upload-user-image/{user_id}',[UserController::class,'uploadImage']);
 Route::post('upload-user-image/{user_id}',[UserController::class,'uploadImageProcess']);
+Route::get('/toggle-user/{user_id}',[UserController::class, 'toggleVisible']);
 
 Route::get('/insert-advisor' , function(){
     return view('insert_advisor');
