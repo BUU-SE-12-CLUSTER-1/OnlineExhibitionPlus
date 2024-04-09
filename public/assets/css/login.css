@@ -138,7 +138,7 @@ input{
     
     position: absolute;
     font-size: 18px;
-    color: #464647;
+    color: #575757;
     padding: 0 20px;
     margin: 0 5px;
     background:transparent;
@@ -171,7 +171,7 @@ input:valid + .email_labelline{
     
     position: absolute;
     font-size: 18px;
-    color: #464647;
+    color: #575757;
     padding: 0 20px;
     margin: 0 5px;
     background:transparent;
@@ -206,7 +206,7 @@ input:valid + .password_labelline{
 }
 .login-button:hover{
     transform: translate(0, -3px);
-    box-shadow: 5px -5px 15px 0px rgba(255, 138, 243, 0.666),
+    box-shadow: 5px -5px 15px 0px rgb(255, 121, 242),
     -5px 5px 15px 0px rgba(79, 173, 255, 0.601);
 }
 .login-button:hover::after{
@@ -220,8 +220,8 @@ input:valid + .password_labelline{
     top: -100px;
     left: -200px;
     background-color: #ff71c2;
-    background-image: linear-gradient(225deg, #5741ff 0%, 
-    #3748ff 50%, #ff08ce 100%);
+    background-image: linear-gradient(225deg, #414eff 0%, 
+    #4958ff 50%, #ff52dc 100%);
     z-index: -1;
     transition: all 0.25s ease;
 }
@@ -340,57 +340,3 @@ input:valid + .password_labelline{
     text-align: center;
 }
 
-/* input[type="text"],
-input[type="password"],
-button {
-	appearance: none;
-	outline: none;
-	border: none;
-	background: none;
-}
-
-input[type="text"],
-input[type="password"] {
-	display: block;
-	width: 50%;
-	padding-left: 10px;
-	border: 1px solid #bbb;
-    margin-top: 8%;
-    margin-left: 15%;
-    width: 310px;
-    height: 61px;
-    flex-shrink: 0;
-    fill: #FFF;
-    stroke-width: 1px;
-    stroke: #000;
-    border-radius: 13px;
-    text-align: left;
-    font-size: 20px;
-    padding-left: 3%;
-}
-
-input[type="text"]:focus,
-input[type="password"]:focus {
-	border-color: #2b2d2f;
-}
-
-.passwd-wrap {
-	position: relative;
-}
-
-#show-passwd {
-	position: absolute;
-	top: 50%;
-	right: 70px;
-	transform: translateY(-50%);
-	cursor: pointer;
-	width: 10;
-	display: flex;
-	align-items: center;
-}
-
-#show-passwd img {
-	width: 30px;
-	height: auto;
-    padding-right: 10%;
-} */
