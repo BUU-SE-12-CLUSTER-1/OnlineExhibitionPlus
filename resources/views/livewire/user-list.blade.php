@@ -14,6 +14,7 @@
             <th>Student id</th>
             <th>Name</th>
             <th>Surname</th>
+            <th>Email</th>
             <th>Action</th>
         </tr>
         @foreach($oe_users as $user)
@@ -22,8 +23,9 @@
             <td>{{ $user->user_student_id }}</td>
             <td>{{ $user->user_fname }}</td>
             <td>{{ $user->user_lname }}</td>
+            <td>{{ $user->user_email }}</td>
             <td>
-                <livewire:user-action :user="$user" :key="$user->id"></livewire:user-action>
+                <livewire:user-action :user="$user" :key="$user->user_id"></livewire:user-action>
             </td>
         </tr>
         @endforeach
@@ -32,6 +34,6 @@
     <span>
         {{ $oe_users->appends(request()->input())->links() }}
     </span>
-    
+
     @livewireScripts
 </div>

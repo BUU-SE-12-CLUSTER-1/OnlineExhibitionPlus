@@ -54,6 +54,7 @@ Route::post('update-user-detail/{user_id}/{detail_name}',[UserController::class,
 Route::post('update-user-detail/{user_id}',[UserController::class,'updateUserDetail']);
 Route::get('upload-user-image/{user_id}',[UserController::class,'uploadImage']);
 Route::post('upload-user-image/{user_id}',[UserController::class,'uploadImageProcess']);
+Route::get('/toggle-user/{user_id}',[UserController::class, 'toggleVisible']);
 
 Route::get('/insert-advisor' , function(){
     return view('insert_advisor');
@@ -126,9 +127,6 @@ Route::get('/input-template1', function(){
     return view('template1_form');
 });
 
-Route::get('/favorite', function(){
-    return view('favorite_project');
-});
 Route::get('/template3_form', function (){
     return view('template3_form');
 });
