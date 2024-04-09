@@ -102,9 +102,13 @@
         </div>
         </div>
         <div class="box_reset">
-            <button id="resetpassword" style="display: none" type="button">Reset Password</button>
+            <a href="" id="resetpassword" style="display: none">Change Password</a>
+
         </div>
+        <div>
         <p id="txt_project">Project</p>
+        @livewire('user-project-list',['user_id'=>$oe_users['user_id']])
+    </div>
         <script>
             function edit(){
                 document.getElementById("txt-fname").style.display = "none";
@@ -151,7 +155,7 @@
         <script>
             setTimeout(function() {
     $('.oe-error').fadeOut('fast');
-}, 3000);
+}, 6000);
         </script>
     </nav>
 
