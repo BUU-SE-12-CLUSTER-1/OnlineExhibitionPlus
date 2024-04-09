@@ -156,5 +156,5 @@ return [
     */
 
     'pagination_theme' => 'tailwind',
-    'asset_url' => '/cluster1/public/assets/composer/vendor/livewire',
+    'asset_url' => '/cluster1/public/assets/composer/vendor/livewire/livewire/dist/livewire.js',
 ];
