@@ -1,7 +1,7 @@
 <div>
     <div style="margin-left:205px ">
 
-        <a href="#" title="Edit this project."><i class="fa-solid fa-pen-to-square" style="color: white" id="2"></i>&nbsp;</a>
+        <a href="#" title="Edit this project."><i class="fa-solid fa-pen-to-square" style="color: white" id="2"></i></a>
         <a title="Toggle this project visibility." href="{{ url('/toggle-project/' . $project->proj_id) }}" style="color:  rgba(255, 255, 255, 0)">
             @if ($project->proj_status == 1)
             <i class="fa-solid fa-eye" style="color:#fff"></i>
@@ -17,7 +17,7 @@
         <?php
         $user_id = 9;
         ?>
-        <a title="Add this project to My Favorite Projects." href="{{ url('/toggle-liked/' . $project->proj_id).'/'.$user_id }}" style="color: inherit">
+
             <?php
             $isLiked = false;
             ?>
@@ -29,13 +29,13 @@
             @endif
             @endforeach
             @if ($isLiked == true)
-
-            <i class="fa-solid fa-star"></i>
+            <a title="Add this project to My favorite projects." href="{{ url('/toggle-liked/' . $project->proj_id).'/'.$user_id }}" style="color: Gold"><i class="fa-solid fa-star"></i>
+            </a>
             @else
-            <i class="fa-regular fa-star"></i>
+            <a title="Add this project to My favorite projects." href="{{ url('/toggle-liked/' . $project->proj_id).'/'.$user_id }}" style="color: white"><i class="fa-regular fa-star"></i>
+        </a>
             @endif
 
-        </a>
 
         {{-- <x-modal name="{{ $project->project_id }}" title="Edit Project" id="edit-box">
             <x-slot name="body">

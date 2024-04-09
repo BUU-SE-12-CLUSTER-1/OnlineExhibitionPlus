@@ -149,7 +149,7 @@ img { /*กำหนดขนาดรูปภาพ*/
 }
 
 .tag1 {
-    margin-left: 48px;
+    margin-left: 0px;
     width: 81px;
     height: 36px;
     flex-shrink: 0;

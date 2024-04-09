@@ -113,3 +113,23 @@
     color: rgb(219, 0, 0);
 
 }
+.password{
+    display: inline-block;
+    position: relative;
+
+}
+.pass-icon{
+
+    width: 30px;
+    position: absolute;
+    top: 9px;
+    margin-left: -35px;
+    cursor: pointer;
+}
+#eye-icon{
+    width: 30px;
+    position: absolute;
+    top: 9px;
+    margin-left: -35px;
+    cursor: pointer;
+}

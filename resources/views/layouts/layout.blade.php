@@ -36,9 +36,9 @@
         <div class="side-navbar" id="side-navbar">
             <button class="oe-button" style="font-weight: 900;margin-bottom:44px;margin-top:18px;">Add Project</button>
             <div class="side-nav-menu">
-            <a href="{{url('/')}}" class="side-nav-menu">HOME</a>
+            <a href="{{url('/')}}" class="side-nav-menu" style="margin-left: -15px;margin-top: 10px;">HOME</a>
             </div>
-            <button class="dropdown-btn side-nav-menu">Project
+            <button class="dropdown-btn side-nav-menu" >Project
                 <i class="fa-solid fa-chevron-down"></i>
               </button>
             <div class="dropdown-container" style="display: none;">
@@ -59,7 +59,7 @@
 
             <!--<button class="btn-logout" >LOG OUT</button>-->
             <div class="btn-logout">
-                <a href="#" x-data x-on:click="$dispatch('open-oe-alert', { name: '{{url('/')}}' })" style="font-weight: 900;margin-left:-5px;color:#4E6CEF; margin-top:5px">Log out</a>
+                <a href="#" x-data x-on:click="$dispatch('open-oe-alert', { name: '{{url('/')}}' })" style="font-weight: 900;margin-left:-15px;color:#4E6CEF; margin-top:5px">Log out</a>
             </div>
 
 
