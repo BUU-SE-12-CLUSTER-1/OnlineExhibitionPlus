@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Chonburi&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
 
-#Manageproject {
+#Manageproject {  /*สร้างขึ้นเพื่อแก้ไขหัวข้อ*/
     color: #FFF;
     font-family: Mulish;
     font-size: 25px;
@@ -15,7 +15,7 @@
     padding-top: 25px
 }
 
-.project {
+.project { /*กำหนดกรอบของโปรเจกต์*/
     width: 319px;
     height: 449px;
 }
@@ -30,7 +30,7 @@
     box-shadow: 10px 25px 30px rgba(30, 30, 200, 0.3);
 }
 
-.detailproject {
+.detailproject { /*กำหนดขนาดของดีเทลโปรเจกต์*/
     color: #ffffff;
     font-style: normal;
     line-height: normal;
@@ -68,7 +68,7 @@
     box-shadow: 10px 25px 30px rgba(30, 30, 200, 0.3);
 }
 
-img {
+img { /*กำหนดขนาดรูปภาพ*/
     max-width: 319px;
     width: 100%;
     height: 449px;
@@ -225,7 +225,7 @@ img {
 
 }
 
-.search_button {
+.search_button { /*ตั้ง ค่าปุ่มเสิร์จ*/
     width: 47px;
     height: 39px;
     flex-shrink: 0;
