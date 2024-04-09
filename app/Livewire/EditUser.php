@@ -20,8 +20,8 @@ class EditUser extends Component
 {
 
     public $student_id;
-    public $fname;
-    public $lname;
+    public $first_name;
+    public $last_name;
     public $email;
     public $password;
     public $role_id;
@@ -32,16 +32,16 @@ class EditUser extends Component
     public function updateUser(){
         $this->validate([
             'student_id' =>'required|min:8|max:8|unique:oe_users,user_student_id,'.$this->user->user_id.',user_id',
-            'fname' =>'required|min:2|max:25',
-            'lname' =>'required|min:2|max:25',
+            'first_name' =>'required|min:2|max:25',
+            'last_name' =>'required|min:2|max:25',
             'email' =>'required|email|unique:oe_users,user_email,'.$this->user->user_id.',user_id',
             'role_id' => 'required',
             'major_id' => 'required'
 
         ]);
          $this->user->user_student_id = $this->student_id;
-         $this->user->user_fname = $this->fname;
-         $this->user->user_lname = $this->lname;
+         $this->user->user_fname = $this->first_name;
+         $this->user->user_lname = $this->last_name;
          $this->user->user_email = $this->email;
          $this->user->user_password = Hash::make($this->password);
          $this->user->user_role_id = $this->role_id;
@@ -54,8 +54,8 @@ class EditUser extends Component
     public function mount(UserModel $user){
         $this->user = $user;
         $this->student_id = $user->user_student_id;
-        $this->fname = $user->user_fname;
-        $this->lname = $user->user_lname;
+        $this->first_name = $user->user_fname;
+        $this->last_name = $user->user_lname;
         $this->email = $user->user_email;
         $this->role_id = $user->user_role_id;
         $this->major_id = $user->user_major_id;

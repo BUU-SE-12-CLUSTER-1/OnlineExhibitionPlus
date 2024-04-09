@@ -70,6 +70,10 @@ Route::get('/insert-major', function(){
     return view('insert_major');
 });
 
+Route::get('/advanced-search-project' , function(){
+    return view('advanced_search_project');
+});
+
 Route::post('/insert-major',[MajorController::class, 'insertMajor']);
 Route::get('/major-list',[MajorController::class, 'showMajorList']);
 
@@ -125,6 +129,9 @@ Route::get('/select-template2', function(){
     return view('template2');
 });
 Route::post('/search-project',[ProjectController::class,'searchProject']);
+
+
+
 
 Route::get('/input-template1', function(){
     return view('template1_form');

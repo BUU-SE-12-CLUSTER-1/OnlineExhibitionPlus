@@ -29,14 +29,14 @@
         </div>
         <div class="top-navbar" style="position: fixed;top:0;">
             <a href="javascript:hamberger_bar();"><i id="hamberger-bar" class="fa-solid fa-bars"></i></a>
-            <a href="#"><img id="web-logo" src="{{asset('assets/img/system/OE_LOGO.png')}}" alt=""></a>
-            <a href="#"><img id="web-icon" src="{{asset('assets/img/system/OE_ICON.png')}}" alt=""></a>
+            <a href="{{url('/home')}}"><img id="web-logo" src="{{asset('assets/img/system/OE_LOGO.png')}}" alt=""></a>
+            <a href="{{url('/home')}}"><img id="web-icon" src="{{asset('assets/img/system/OE_ICON.png')}}" alt=""></a>
         </div>
 
         <div class="side-navbar" id="side-navbar">
             <button class="oe-button" style="font-weight: 900;margin-bottom:44px;margin-top:18px;">Add Project</button>
             <div class="side-nav-menu">
-            <a href="{{url('/')}}" class="side-nav-menu">HOME</a>
+            <a href="{{url('/home')}}" class="side-nav-menu">HOME</a>
             </div>
             <button class="dropdown-btn side-nav-menu">Project
                 <i class="fa-solid fa-chevron-down"></i>
