@@ -24,7 +24,7 @@
             <label for="input-user-image" >
                 <input type="file" name="upload-image" accept="image/*" id="input-user-image" hidden>
                 <div id="img-view">
-                    <p>Drag and drop or <br>click here<br> to upload image</p>
+                    <i class="fa-solid fa-images"></i>
                 </div>
             </label>
         </div>
@@ -36,7 +36,7 @@
             <div class="none">
             </div>
             <div id="user">
-                <p>Student Id&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <p>Student ID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <label id="txt-student-id">{{$oe_users['user_student_id']}}</label>
                     <input type="text" maxlength="8" value="{{$oe_users['user_student_id']}}" id="input-student-id" name="student_id" style="display: none">
                 </p>
