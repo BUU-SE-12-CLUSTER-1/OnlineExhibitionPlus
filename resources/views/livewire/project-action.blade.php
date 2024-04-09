@@ -1,6 +1,6 @@
 <div>
 
-    <div style="margin-left:20px">
+    <div style="margin-left:20px; margin-top:10px;">
         <a href="{{ url('/delete-project/' . $project->proj_id) }}" style="color: inherit">
         <a href="#" style="color: inherit" x-data x-on:click="$dispatch('open-oe-alert', { name: 'delete-{{ $project->proj_id }}' })"><i class="fa-solid fa-trash-can"></i></a>&nbsp;&nbsp;
         </a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
