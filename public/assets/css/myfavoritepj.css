@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Chonburi&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
 
-#Manageproject {
+#Favoriteproject {
     color: #FFF;
     font-family: Mulish;
     font-size: 25px;
@@ -333,8 +333,6 @@ th {
 table{
     background-color: #FFF;
 }
-
-
 /* #action {
     display: flex;
     justify-content: flex-end;

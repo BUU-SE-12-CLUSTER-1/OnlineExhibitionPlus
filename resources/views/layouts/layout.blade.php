@@ -32,6 +32,7 @@
             <a href="#"><img id="web-logo" src="{{asset('assets/img/system/OE_LOGO.png')}}" alt=""></a>
             <a href="#"><img id="web-icon" src="{{asset('assets/img/system/OE_ICON.png')}}" alt=""></a>
         </div>
+
         <div class="side-navbar" id="side-navbar">
             <button class="oe-button" style="font-weight: 900;margin-bottom:44px;margin-top:18px;">Add Project</button>
             <div class="side-nav-menu">
@@ -43,7 +44,7 @@
             <div class="dropdown-container" style="display: none;">
                 <a href="{{url('/project-list')}}">My Project</a>
                 <a href="{{url('/project-list')}}">Manage Project</a>
-                <a href="#">Favorite Project</a>
+                <a href="{{url('/fav-project')}}">Favorite Project</a>
                 <a href="{{url('/advisor-list')}}">Manage Advisor</a>
                 <a href="{{url('/company-list')}}">Manage Company</a>
                 <a href="{{url('/tag-list')}}">Manage Tags</a>
@@ -55,15 +56,29 @@
                 <a href="#">My Profile</a>
                 <a href="{{url('/user-list')}}">Manage User</a>
             </div>
-            <button class="btn-logout" >LOG OUT</button>
+
+            <!--<button class="btn-logout" >LOG OUT</button>-->
+            <div>
+                <a href="#" x-data x-on:click="$dispatch('open-oe-alert', { name: '{{url('/')}}' })" class="btn-logout">Log out</a>
+            </div>
+
+
+
         </div>
         <div id="button-area">
             @yield('button-area')
         </div>
-
         <div class="container py-2" id="main-content">
+
             @yield('content')
+
+
         </div>
+        <x-oe-alert name="{{url('/')}}" style="z-index: 99999999999">
+            <x-slot:body>
+            @livewire('logout-alert', [])
+            </x-slot>
+          </x-oe-alert>
         <footer id="web-footer">
         <div class="web-footer">
             <label id="faculty">Faculty of Informatics, Burapha University</label>

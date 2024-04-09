@@ -54,6 +54,7 @@ Route::post('update-user-detail/{user_id}/{detail_name}',[UserController::class,
 Route::post('update-user-detail/{user_id}',[UserController::class,'updateUserDetail']);
 Route::get('upload-user-image/{user_id}',[UserController::class,'uploadImage']);
 Route::post('upload-user-image/{user_id}',[UserController::class,'uploadImageProcess']);
+Route::get('/toggle-user/{user_id}',[UserController::class, 'toggleVisible']);
 
 Route::get('/insert-advisor' , function(){
     return view('insert_advisor');
@@ -98,7 +99,9 @@ Route::get('/homePage', function (){
 Route::get('/403forbidden', function (){
     return view('forbidden');
 });
-
+Route::get('/detail', function(){
+    return view('detail_main');
+});
 Route::get('/select-template1', function(){
     return view('template1');
 });
@@ -114,17 +117,16 @@ Route::get('/toggle-project/{proj_id}',[ProjectController::class, 'toggleVisible
 Route::get('/toggle-liked/{proj_id}/{user_id}',[ProjectController::class, 'toggleLikedProject']);
 Route::get('/edit-project/{proj_id}',[ProjectController::class, 'editProject']);
 Route::post('update-project/{proj_id}',[ProjectController::class, 'updateProject']);
+Route::get('/fav-project',[ProjectController::class, 'favProjectList']);
 Route::get('/select-template2', function(){
     return view('template2');
 });
+Route::post('/search-project',[ProjectController::class,'searchProject']);
 
 Route::get('/input-template1', function(){
     return view('template1_form');
 });
 
-Route::get('/favorite', function(){
-    return view('favorite_project');
-});
 Route::get('/template3_form', function (){
     return view('template3_form');
 });
@@ -165,6 +167,7 @@ Route::get('/template4_show', function (){
 Route::get('/testPJ01', function (){
     return view('test_pj01');
 });
+
 Route::get('/testPJ02', function (){
     return view('test_pj02');
 });
@@ -182,4 +185,5 @@ Route::get('/testTag01', function (){
 });
 Route::get('/testTag02', function (){
     return view('test_tag02');
+});
 });

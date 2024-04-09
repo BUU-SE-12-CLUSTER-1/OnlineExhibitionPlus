@@ -10,7 +10,7 @@ class InsertTag extends Component
     public $name = '';
     public function insertTag(){
         $this->validate([
-            'name' => 'required|min:2|max:40'
+            'name' => 'required|min:2|max:40|unique:oe_tags,tag_name'
         ]);
     TagModel::create([
         'tag_name' => $this->name
