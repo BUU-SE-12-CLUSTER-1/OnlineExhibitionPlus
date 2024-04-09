@@ -37,7 +37,18 @@
         @enderror
         </br>
         <label class="oe-input-label" for="user_password">Password</label>
-        <input class="oe-input" wire:model="password" type="password" name="user_password" maxlength="20"><br></br>
+    
+        <div class="password">
+            <input class="oe-input"  wire:model="password" type="password" name="user_password" maxlength="20">
+            
+            <i class="fa-solid fa-eye-slash pass-icon" id="eye-icon"  onclick="togglePasswordVisibility()"></i>
+        </div>
+		
+    
+        
+        <br></br>
+
+					
         <label class="oe-input-label" for="user_major_id">Major</label>
         <select class="oe-input" wire:model="major_id" name="user_major_id">
             <option value="">--</option>
@@ -69,8 +80,28 @@
         </form>
         @livewireScripts
         <script>
+            function togglePasswordVisibility() {
+    var passwordInput = document.getElementsByName("user_password")[0];
+    var eyeIcon = document.getElementById("eye-icon");
+
+    if (passwordInput.type === "password") {
+        passwordInput.type = "text";
+        eyeIcon.className = "fa-solid fa-eye"; 
+    } else {
+        passwordInput.type = "password";
+        eyeIcon.className = "fa-solid fa-eye-slash pass-icon"; 
+    }
+}
+
+
             setTimeout(function() {
     $('.oe-error').fadeOut('fast');
 }, 6000);
+
+
+    
+    
+    
+       
         </script>
 </div>
