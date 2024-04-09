@@ -7,7 +7,7 @@
     <script src="https://kit.fontawesome.com/a87b92189d.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{{ asset('assets/css/modal.css') }}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="{{ asset('assets/css/profile.css') }}">
+
         <div class="profile_user">
 
             <div class="titleBlue1">
@@ -29,7 +29,7 @@
                             </div>
                         </label>
                     </div>
-                    <div class="detail">
+                    <div class="details">
                         <div class="none"></div>
                         <div id="user">
                             <p>Student ID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -116,8 +116,7 @@
             </div>
         <div>
         <p id="txt_project">Project</p>
-        <!--livewire('user-project-list',['user_id'=>$oe_users['user_id']])-->
-        <x-user_project :oe_projects= "$oe_projects"/>
+        @livewire('user-project-list',['user_id' => $oe_users['user_id']])
     </div>
 
         <script>

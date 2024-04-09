@@ -1,5 +1,4 @@
 <div style="margin-bottom: 150%;z-index:99;display:flex;white-space: nowrap;text-overflow: ellipsis;">
-    <link rel="stylesheet" href="{{ asset('assets/css/homePage.css') }}">
     <div style="text-overflow: ellipsis;white-space: nowrap;">
         <div class="project pj_01" style="background-image: url('{{$project->proj_main_image}}') !important;white-space: nowrap; text-overflow: ellipsis;">
         </div>
@@ -8,7 +7,7 @@
             @livewire('project-action',['project'=>$project])
                     {{-- <button type="button" class="star"></i></button> --}}
                     <div class="detail" >
-                        <a style="color:inherit;color:white" href={{url('/project-detail/'.$project->proj_id)}}><h2>{{$project->proj_name}}</h2></a>
+                        <a style="color:inherit;color:white" href="{{url('/project-detail/'.$project->proj_id)}}"><h2>{{$project->proj_name}}</h2></a>
                         <?php
                         $isHasOwner = false;
                         ?>

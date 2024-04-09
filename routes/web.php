@@ -12,6 +12,7 @@ use App\Http\Controllers\AdvisorController;
 use App\Http\Controllers\TagController;
 use App\Models\RoleModel;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\MyAuth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -41,7 +42,7 @@ Route::get('/test', function(){
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
-
+Route::post('/login',[MyAuth::class, 'login_process']);
 Route::get('/insert-user',[UserController::class, 'insertUserPage']);
 Route::post('/insert-user',[UserController::class, 'insertUser']);
 Route::get('/user-list',[UserController::class, 'showUserList']);
