@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
 *{
     margin: 0 0;
@@ -27,7 +28,7 @@ body{
 }
 
 .icon {
-    
+
     margin-top: -3.75%;
     margin-left: 5%;
     position: fixed;
@@ -91,6 +92,7 @@ form{
     margin-left: 5%;
     transition: 0.5s;
 }
+
 @media only screen and (max-width: 600px){
     .logo{
         display: none;
@@ -116,7 +118,7 @@ form{
 
 .email_entryarea{
     position: relative;
-    height: 90px; 
+    height: 90px;
     line-height: 50px;
 }
 input{
@@ -132,10 +134,10 @@ input{
     box-shadow: 0px 0px 5px 1px #C4C4C4;
     transition: 0.1s ease;
     z-index: 1111;
-    
+
 }
 .email_labelline{
-    
+
     position: absolute;
     font-size: 18px;
     color: #575757;
@@ -164,11 +166,11 @@ input:valid + .email_labelline{
 /* Password */
 .password_entryarea{
     position: relative;
-    height: 110px; 
+    height: 110px;
     line-height: 50px;
 }
 .password_labelline{
-    
+
     position: absolute;
     font-size: 18px;
     color: #575757;
@@ -220,12 +222,12 @@ input:valid + .password_labelline{
     top: -100px;
     left: -200px;
     background-color: #ff71c2;
-    background-image: linear-gradient(225deg, #414eff 0%, 
+    background-image: linear-gradient(225deg, #414eff 0%,
     #4958ff 50%, #ff52dc 100%);
     z-index: -1;
     transition: all 0.25s ease;
 }
-/* .login-button{  
+/* .login-button{
     margin-left: 0;
     width: 100%;
     height: 61px;
@@ -267,7 +269,7 @@ input:valid + .password_labelline{
 
 .btn_GOOGLE_entryarea{
     position: relative;
-    height: 150px; 
+    height: 150px;
     line-height: 50px;
 }
 
@@ -339,4 +341,65 @@ input:valid + .password_labelline{
     border: none;
     text-align: center;
 }
+
+input[type="text"],
+input[type="password"],
+button {
+	appearance: none;
+	outline: none;
+	border: none;
+	background: none;
+}
+
+input[type="text"],
+input[type="password"] {
+	display: block;
+	width: 50%;
+	padding-left: 10px;
+	border: 1px solid #bbb;
+    margin-top: 8%;
+    margin-left: 15%;
+    width: 310px;
+    height: 61px;
+    flex-shrink: 0;
+    fill: #FFF;
+    stroke-width: 1px;
+    stroke: #000;
+    border-radius: 20px;
+    text-align: left;
+    font-size: 20px;
+    padding-left: 3%;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+	border-color: #2b2d2f;
+}
+
+.passwd-wrap {
+	position: relative;
+}
+
+#show-passwd {
+	position: absolute;
+	top: 50%;
+	right: 70px;
+	transform: translateY(-50%);
+	cursor: pointer;
+	width: 50px;
+	display: flex;
+	align-items: center;
+}
+
+#show-passwd img {
+	width: 100%;
+	height: auto;
+    padding-right: 20%;
+}
+
+
+
+
+
+
 
