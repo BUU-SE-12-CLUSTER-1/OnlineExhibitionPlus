@@ -5,19 +5,19 @@
     <form wire:submit="updateAdvisor">
 
     @csrf
-    <label  class="oe-input-label" for="advisors_title"> Title : </label>
+    <label  class="oe-input-label" for="advisors_title"> Title</label>
     <input  type="text" class="oe-input" wire:model="title" name="advisor_title" value={{$oe_advisors['advisor_title']}}>
     <br>
     @error('title')
     <span class="oe-error"> {{$message}}</span> @enderror
     </br>
-    <label class="oe-input-label" for="advisors_fname">First name : </label>
+    <label class="oe-input-label" for="advisors_fname">Firstname</label>
     <input class="oe-input" wire:model="first_name" type="text" name="advisor_fname" id="" value={{$oe_advisors['advisor_fname']}}>
     <br>
     @error('first_name')
     <span class="oe-error"> {{$message}}</span> @enderror
     </br>
-    <label class="oe-input-label" for="advisors_lname">Last name : </label>
+    <label class="oe-input-label" for="advisors_lname">Lastname</label>
     <input class="oe-input" wire:model="last_name" type="text" name="advisor_lname" id="" value={{$oe_advisors['advisor_lname']}}>
     <br>
     @error('last_name')
@@ -26,5 +26,9 @@
     <input class="buttonClear"  x-data x-on:click="$dispatch('close-modal')" wire:loading.attr="disabled" wire:loading.remove type="button" class="oe-button" value="Cancel" style="margin-left: 368px ; margin-top: 10px">
     <input wire:loading.attr="disabled" wire:loading.remove type="submit" class="buttonAdd" value="Save">
     </form>
-
+    <script>
+        setTimeout(function() {
+    $('.oe-error').fadeOut('fast');
+    }, 3000);
+    </script>
 </div>

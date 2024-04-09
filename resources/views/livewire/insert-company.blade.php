@@ -6,7 +6,7 @@
     <form wire:submit.prevent="insertCompany" action="">
         @csrf
         <div>
-            <label class="oe-input-name" for="company_name">Company name</label>
+            <label class="oe-input-label" for="company_name">Name</label>
             <input class="oe-input" wire:model="name" type="text" name="company_name" maxlength="100">
             <br>
             @error('name')
