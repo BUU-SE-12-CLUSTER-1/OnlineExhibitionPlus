@@ -1,23 +1,23 @@
 <div>
     <div style="margin-left:205px ">
 
-        <a href="#" title="Edit this project."><i class="fa-solid fa-pen-to-square" style="color: white" id="2"></i>&nbsp;</a>
-        <a title="Toggle this project visibility." href="{{ url('/toggle-project/' . $project->proj_id) }}" style="color:  rgba(255, 255, 255, 0)">
+        <a href="#" title="Edit this project."><i class="fa-solid fa-pen-to-square" style="color: white; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);" id="2"></i></a>
+        <a title="Toggle this project visibility." href="{{ url('/toggle-project/' . $project->proj_id) }}" style="color: rgba(0, 0, 0, 0);; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); margin-left: 5px;">
             @if ($project->proj_status == 1)
             <i class="fa-solid fa-eye" style="color:#fff"></i>
             @else
             <i class="fa-solid fa-eye-slash" style="color:#fff"></i>
             @endif
-            &nbsp;
+
         </a>
         <a title="Delete this project!!" href="{{ url('/delete-project/' . $project->proj_id) }}" style="color: rgba(255, 255, 255, 0)">
-            <i class="fa-solid fa-trash-can" style="color: white" id="1"></i>
-            &nbsp;
+            <i class="fa-solid fa-trash-can" style="color: white; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); margin-left: 5px;" id="1"></i>
+
         </a>
         <?php
         $user_id = 9;
         ?>
-        <a title="Add this project to My Favorite Projects." href="{{ url('/toggle-liked/' . $project->proj_id).'/'.$user_id }}" style="color: inherit">
+        <a title="Add this project to My Favorite Projects." href="{{ url('/toggle-liked/' . $project->proj_id).'/'.$user_id }}" style="color: inherit; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); margin-left: 5px;">
             <?php
             $isLiked = false;
             ?>
