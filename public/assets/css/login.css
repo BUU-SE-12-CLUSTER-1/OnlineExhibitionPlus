@@ -337,7 +337,6 @@ input[type="password"]:focus {
 	z-index: -1;
 }
 
-/* KEYFRAMES */
 
 @-webkit-keyframes animateBubble {
     0% {
@@ -393,7 +392,7 @@ input[type="password"]:focus {
     }
 }
 
-/* ANIMATIONS */
+
 
 .x1 {
     -webkit-animation: animateBubble 25s linear infinite, sideWays 2s ease-in-out infinite alternate;
@@ -525,7 +524,7 @@ input[type="password"]:focus {
 	transform: scale(0.3);
 }
 
-/* OBJECTS */
+
 
 .bubble {
     -webkit-border-radius: 50%;
