@@ -9,30 +9,6 @@
             <i class="fa-solid fa-magnifying-glass"></i>
         </button>
     </div><br>
-
-
-    <!--
-    <table style="margin-top:-10px" border="1">
-    <tr>
-        <th>ID</th>
-        <th>Project Name</th>
-        <th>Status</th>
-        <th>Action</th>
-    </tr>
-        foreach ($oe_projects as $project)
-    <tr>
-        <td>project['proj_id']}}</td>
-        <td>project['proj_name']}}</td>
-        <td>project['proj_status']}}</td>
-        <td>
-
-
-
-        </td>
-    </tr>
-        endforeach
-    </table>-->
-
             <table>
                 <tr>
                 <div class="titleBlue" style="width: 1450px"> <!--เรียกใช้คลาส titleBlue จากไฟล์ myfavoritepj.css และกำหนดสไตล์ความสูงให้เป็น 1450px -->

@@ -99,7 +99,7 @@
                             </div>
                         </div>
                         <div inf_all id="myDiv04">
-                            <script> 
+                            <script>
                                 document.getElementById("myDiv04").addEventListener("click", function() {
                                     window.location.href = "/testPJ04";
                                 });
@@ -181,7 +181,7 @@
                             </div>
                         </div>
                         <div inf_all id="myDiv08">
-                            <script> 
+                            <script>
                                 document.getElementById("myDiv08").addEventListener("click", function() {
                                     window.location.href = "/testPJ04";
                                 });
@@ -263,7 +263,7 @@
                             </div>
                         </div>
                         <div inf_all id="myDiv12">
-                            <script> 
+                            <script>
                                 document.getElementById("myDiv12").addEventListener("click", function() {
                                     window.location.href = "/testPJ04";
                                 });
@@ -345,7 +345,7 @@
                             </div>
                         </div>
                         <div inf_all id="myDiv16">
-                            <script> 
+                            <script>
                                 document.getElementById("myDiv16").addEventListener("click", function() {
                                     window.location.href = "/testPJ04";
                                 });

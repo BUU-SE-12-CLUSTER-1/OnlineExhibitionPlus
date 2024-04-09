@@ -36,7 +36,7 @@
             <div class="none">
             </div>
             <div id="user">
-                <p>Student Id&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <p>Student Id&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <label id="txt-student-id">{{$oe_users['user_student_id']}}</label>
                     <input type="text" maxlength="8" value="{{$oe_users['user_student_id']}}" id="input-student-id" name="student_id" style="display: none">
                 </p>
@@ -102,19 +102,14 @@
         </div>
         </div>
         <div class="box_reset">
-            <button id="resetpassword" style="display: none" type="button">Reset Password</button>
+            <a href="" id="resetpassword" style="display: none">Change Password</a>
+
         </div>
 
-
+        <div>
         <p id="txt_project">Project</p>
-        @livewireStyles
-    {{-- <link rel="stylesheet" href="{{ asset('assets/css/table.css') }}">
-        <script src="https://kit.fontawesome.com/a87b92189d.js" crossorigin="anonymous"></script>
-        <button style="position:relative;margin-left:1269.5px;margin-top:-40px;" type="button" class="oe-button" x-data x-on:click="$dispatch('open-modal',{name : 'add-tag'})" name="btn_add_tag">Add
-        Project</button>
-        <livewire:project-list></livewire:project-list>
-    @livewireScripts --}}
-
+        @livewire('user-project-list',['user_id'=>$oe_users['user_id']])
+    </div>
 
         <script>
             function edit(){
@@ -162,7 +157,7 @@
         <script>
             setTimeout(function() {
     $('.oe-error').fadeOut('fast');
-}, 3000);
+}, 6000);
         </script>
     </nav>
 
