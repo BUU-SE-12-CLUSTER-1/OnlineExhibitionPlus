@@ -7,7 +7,7 @@
             @livewire('project-action',['project'=>$project])
                     {{-- <button type="button" class="star"></i></button> --}}
                     <div class="detail" >
-                        <h2>{{$project->proj_name}}</h2>
+                        <a style="color:inherit;color:white" href={{url('/project-detail/'.$project->proj_id)}}><h2>{{$project->proj_name}}</h2></a>
                         <?php
                         $isHasOwner = false;
                         ?>
@@ -38,9 +38,9 @@
                                 <?php $firstTagId = $tag->tag_id;
                                         $tag_count++;
                                 ?>
-                                <a href="/testTag01"><button class="tag1" onclick="window.location.href='{{url('/tag-search/'.$tag->tag_id)}}'">{{$tag->tag_name}}</button></a>
+                                <a href="{{url('/tag-search/'.$tag->tag_id)}}"><button class="tag1">{{$tag->tag_name}}</button></a>
                                 @elseif ($tag_count == 2 && $tag->tag_id != $firstTagId &&$project->proj_id == $proj_single_tag->projtag_proj_id && $tag->tag_id == $proj_single_tag->projtag_tag_id)
-                                <a href="/testTag01"><button class="tag2" onclick="window.location.href='{{url('/tag-search/'.$tag->tag_id)}}'">{{$tag->tag_name}}</button></a>
+                                <a href="{{url('/tag-search/'.$tag->tag_id)}}"><button class="tag2">{{$tag->tag_name}}</button></a>
                                 <?php
                                 $tag_count++;
                                 ?>
@@ -49,9 +49,10 @@
 
                                 @endforeach
 
+                            </div>
                         </div>
                     </div>
                 </div>
-        </div>
+            </div>
     </div>
 </div>

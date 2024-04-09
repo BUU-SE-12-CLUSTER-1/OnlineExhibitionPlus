@@ -1,17 +1,10 @@
-@extends('layouts.layout')
-@section('title')
-    project list | Online Exhibition+
-@endsection
-    @section('content')
+@extends('detail_main')
+    @section('project_content')
     @livewireStyles
     <link rel="stylesheet" href="{{ asset('assets/css/table.css') }}">
         <script src="https://kit.fontawesome.com/a87b92189d.js" crossorigin="anonymous"></script>
-        {{-- <x-modal name="add-project" title="Add Project">
-            <x-slot:body>
-                <livewire:insert-project></livewire:insert-prjoect>
-            </x-slot>
-          </x-modal> --}}
-        <livewire:tag-project-list></livewire:tag-project-list>
+        <Div> <h1> TAG : {{$tag->tag_name}}</h1> </Div>
+        @livewire('tag-project-list',['tag_id'=>$tag->tag_id])
     @livewireScripts
 @endsection
 

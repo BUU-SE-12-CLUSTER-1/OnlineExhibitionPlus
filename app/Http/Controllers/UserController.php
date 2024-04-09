@@ -12,6 +12,10 @@ use Illuminate\Support\Facades\Hash;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Imports\UsersImport;
 use App\Models\RoleModel;
+use App\Models\ProjectModel;
+use App\Models\ProjectTagModel;
+use App\Models\TagModel;
+use App\Models\AdvisorModel;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
@@ -24,12 +28,9 @@ class UserController extends Controller
     }
     public function saveImportedExcel(Request $request){
         $file = $request->file('file')->store('import');
-        //dd($file);
-        //Excel::import(new UsersImport, $request->file);
         $import = new UsersImport;
         $import->import($file);
         return redirect('/user-list');
-        //return back()->withStatus('successfully');
     }
     public function insertUserPage(){
         $major_data = MajorModel::query()->orderBy('major_id','ASC')->get();
@@ -45,8 +46,6 @@ class UserController extends Controller
         $user->user_password = Hash::make(request('user_password'));
         $user->user_role_id = (int)$request->input('user_role_id');
         $path = public_path('/assets/img/users/img_user_icon.png');
-        //$image = File::get($path);
-        //$base64 = base64_encode($image);
         $user->user_profile_image = '/assets/img/users/img_user_icon.png';
         $user->user_major_id = (int)$request->input('user_major_id');
         $user->save();
@@ -67,7 +66,20 @@ class UserController extends Controller
         $user_data = UserModel::find($user_id);
         $major_data = MajorModel::all();
         $role_data = RoleModel::all();
-        return view('edit_user',['oe_users'=>$user_data, 'oe_majors'=>$major_data, 'oe_roles'=>$role_data]);
+        $project_data = ProjectModel::all();
+        $user_projects = UserProjectModel::all();
+        $tags = TagModel::all();
+        $proj_tag = ProjectTagModel::all();
+        $advisors = AdvisorModel::all();
+        return view('edit_user',[
+            'oe_users'=>$user_data,
+            'oe_majors'=>$major_data,
+             'oe_roles'=>$role_data ,
+              'oe_projects'=>$project_data,
+               'oe_user_projects'=>$user_projects,
+            'oe_tags'=>$tags,
+            'oe_project_tag'=>$proj_tag,
+            'oe_advisors'=>$advisors]);
     }
     public function updateUser(Request $request){
         $user = UserModel::find(request('user_id'));
