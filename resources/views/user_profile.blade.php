@@ -6,9 +6,9 @@
     <p>Name :
     <label id="txt-user-fname">{{$oe_users['user_fname']}}</label>
     <input type="text" value="{{$oe_users['user_fname']}}" id="input-user-fname" name="user_fname" style="display: none">
-    <button id="edit-fname" onclick="edit('fname')" type="button">edit</button>
-    <button id="save-fname" style="display: none" type="submit">save</button>
-    <button id="cancel-fname" onclick="cancel('fname')" style="display: none" type="button" >cancel</button>
+    <button id="edit-fname" onclick="edit('fname')" type="button">Edit</button>
+    <button id="save-fname" style="display: none" type="submit">Save</button>
+    <button id="cancel-fname" onclick="cancel('fname')" style="display: none" type="button" >Cancel</button>
 </p>
 </form>
 <form action={{url("/update-user-detail/".$oe_users['user_id']."/lname")}} method="POST">
@@ -16,19 +16,19 @@
     <p>Surname :
     <label id="txt-user-lname">{{$oe_users['user_lname']}}</label>
     <input type="text" value="{{$oe_users['user_lname']}}" id="input-user-lname" name="user_lname" style="display: none">
-    <button id="edit-lname" onclick="edit('lname')" type="button">edit</button>
-    <button id="save-lname" style="display: none" type="submit">save</button>
-    <button id="cancel-lname" onclick="cancel('lname')" style="display: none" type="button" >cancel</button>
+    <button id="edit-lname" onclick="edit('lname')" type="button">Edit</button>
+    <button id="save-lname" style="display: none" type="submit">Save</button>
+    <button id="cancel-lname" onclick="cancel('lname')" style="display: none" type="button" >Cancel</button>
 </p>
 </form>
 <form action={{url("/update-user-detail/".$oe_users['user_id']."/student-id")}} method="POST">
     @csrf
-    <p>Student Id :
+    <p>Student ID :
     <label id="txt-user-student-id">{{$oe_users['user_student_id']}}</label>
     <input type="text" value="{{$oe_users['user_student_id']}}" id="input-user-student-id" name="user_student_id" style="display: none">
-    <button id="edit-student-id" onclick="edit('student-id')" type="button">edit</button>
-    <button id="save-student-id" style="display: none" type="submit">save</button>
-    <button id="cancel-student-id" onclick="cancel('student-id')" style="display: none" type="button" >cancel</button>
+    <button id="edit-student-id" onclick="edit('student-id')" type="button">Edit</button>
+    <button id="save-student-id" style="display: none" type="submit">Save</button>
+    <button id="cancel-student-id" onclick="cancel('student-id')" style="display: none" type="button" >Cancel</button>
 </p>
 </form>
 <?php

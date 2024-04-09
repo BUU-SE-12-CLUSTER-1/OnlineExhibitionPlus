@@ -23,7 +23,7 @@ use App\Http\Controllers\ProjectController;
 |
 */
 
-Route::get('/', function (){
+Route::get('/home', function (){
     return view('home');
 });
 

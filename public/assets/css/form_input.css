@@ -14,14 +14,15 @@
 
 .oe-input {
     width: 401px;
-    height: 28px;
+    height: 40px;
     flex-shrink: 0;
     fill: rgba(255, 255, 255, 0.79);
     stroke-width: 1px;
-    border-radius: 20px;
+    border-radius: 15px;
     border: 1px solid rgba(0, 0, 0, 0.50);
     justify-self: center;
     align-self: center;
+    padding-left: 15px;
 }
 
 .buttonAdd {
@@ -91,4 +92,15 @@
     border: 1px solid rgba(0, 0, 0, 0.50);
     justify-self: center;
     align-self: center;
+}
+
+.oe-error {
+    font-family: Mulish;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 40px;
+    position: relative;
+    color: rgb(219, 0, 0);
+    margin-left: 150px;
 }

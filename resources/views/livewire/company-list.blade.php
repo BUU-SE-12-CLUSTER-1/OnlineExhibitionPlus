@@ -10,10 +10,10 @@
     <table style="margin-top:-10px" border:"1">
         <tr>
             <th>
-                ID
+                #
             </th>
             <th>
-                Company Name
+                Company
             </th>
             <th>
                 Action
