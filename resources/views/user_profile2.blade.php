@@ -106,10 +106,14 @@
 
         </div>
 
+
         <div>
         <p id="txt_project">Project</p>
         @livewire('user-project-list',['user_id'=>$oe_users['user_id']])
     </div>
+
+
+
 
         <script>
             function edit(){
