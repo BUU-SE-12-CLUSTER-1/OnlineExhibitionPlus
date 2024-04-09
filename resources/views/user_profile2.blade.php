@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="{{ asset('assets/css/modal.css') }}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="{{ asset('assets/css/profile.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/project_list.css') }}">
+
 
         <div class="profile_user">
 
@@ -30,7 +32,7 @@
                             </div>
                         </label>
                     </div>
-                    <div class="details">
+                    <div class="details" style="height: 500px">
                         <div class="none"></div>
                         <div id="user">
                             <p>Student ID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -112,14 +114,15 @@
                    @livewire('change-password',['user_id' => $user['user_id']])
                 </x-slot>
             </x-modal>
-            <div class="box_reset">
+           <div class="box_reset">
                 <a href="#" x-data x-on:click="$dispatch('open-modal', { name: 'change-password' })" id="resetpassword" style="display: none">Change Password</a>
             </div>
+
             @foreach ($oe_projects as $project)
 
 
         <div>
-        <p id="txt_project">Project</p>
+          <p id="txt_project">Project</p>
         <div class="project pj_01" style="background-image: url('{{$project->proj_main_image}}') !important;white-space: nowrap; text-overflow: ellipsis;">
         </div>
         <div class="information_01" >
