@@ -10,7 +10,7 @@
             <input class="oe-input" wire:model="name" type="text" name="company_name" maxlength="100">
             <br>
             @error('name')
-            <span class="text-danger-500">{{ $message }}</span>
+            <span class="oe-error">{{ $message }}</span>
             @enderror
             </br>
         </div>

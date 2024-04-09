@@ -4,7 +4,7 @@
 @csrf
 <input class="oe-input" wire:model="file" type="file" name="file" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" >
 @error('file')
-<span class="text-danger-500">{{ $message }}</span>
+<span class="oe-error">{{ $message }}</span>
 @enderror
 @if (session('error'))
 <span>{{session('error')}}</span>
