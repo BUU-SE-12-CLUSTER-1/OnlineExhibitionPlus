@@ -113,7 +113,7 @@ return [
     |
     */
 
-    'inject_assets' => false,
+    'inject_assets' => true,
 
     /*
     |---------------------------------------------------------------------------
@@ -156,4 +156,5 @@ return [
     */
 
     'pagination_theme' => 'tailwind',
+    'asset_url' => '/cluster1',
 ];
