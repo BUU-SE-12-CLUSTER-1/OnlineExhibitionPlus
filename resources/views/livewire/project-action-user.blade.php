@@ -15,9 +15,9 @@
         @endforeach
         @if ($isLiked == true)
         <div style="margin-left:280px">
-            <a title="Add this project to My favorite projects." href="{{ url('/toggle-liked/' . $project->proj_id).'/'.$user_id }}" style="color: inherit"><i class="fa-solid fa-star" style="color: gold"></i></a>
+            <a title="Add this project to My favorite projects." href="{{ url('/toggle-liked/' . $project->proj_id).'/'.$user_id }}" style="color: gold"><i class="fa-solid fa-star" style="color: gold"></i></a>
         @else
-        <a title="Remove this project from My favorite projects." href="{{ url('/toggle-liked/' . $project->proj_id).'/'.$user_id }}" style="color: inherit"><i class="fa-regular fa-star" style="color: gold"></i></a>
+        <a title="Remove this project from My favorite projects." href="{{ url('/toggle-liked/' . $project->proj_id).'/'.$user_id }}" style="color: white"><i class="fa-regular fa-star" style="color: gold"></i></a>
         </div>
         @endif
 

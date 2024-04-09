@@ -1,7 +1,7 @@
 <div>
     <div style="margin-left:205px ">
 
-        <a href="#" title="Edit this project."><i class="fa-solid fa-pen-to-square" style="color: white" id="2"></i>&nbsp;</a>
+        <a href="#" title="Edit this project."><i class="fa-solid fa-pen-to-square" style="color: white" id="2"></i></a>
         <a title="Toggle this project visibility." href="{{ url('/toggle-project/' . $project->proj_id) }}" style="color:  rgba(255, 255, 255, 0)">
             @if ($project->proj_status == 1)
             <i class="fa-solid fa-eye" style="color:#fff"></i>
@@ -32,7 +32,7 @@
             <a title="Add this project to My favorite projects." href="{{ url('/toggle-liked/' . $project->proj_id).'/'.$user_id }}" style="color: Gold"><i class="fa-solid fa-star"></i>
             </a>
             @else
-            <a title="Add this project to My favorite projects." href="{{ url('/toggle-liked/' . $project->proj_id).'/'.$user_id }}" style="color: inherit"><i class="fa-regular fa-star"></i>
+            <a title="Add this project to My favorite projects." href="{{ url('/toggle-liked/' . $project->proj_id).'/'.$user_id }}" style="color: white"><i class="fa-regular fa-star"></i>
         </a>
             @endif
 
