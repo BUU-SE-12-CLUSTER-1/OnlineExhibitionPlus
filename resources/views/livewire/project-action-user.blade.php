@@ -2,7 +2,7 @@
     <?php
     $user_id = 9;
     ?>
-    <a href="{{ url('/toggle-liked/' . $project->proj_id).'/'.$user_id }}" style="color: inherit">
+
         <?php
         $isLiked = false;
         ?>
@@ -15,11 +15,11 @@
         @endforeach
         @if ($isLiked == true)
         <div style="margin-left:280px">
-        <i class="fa-solid fa-star" style="color: gold"></i>
+            <a title="Add this project to My favorite projects." href="{{ url('/toggle-liked/' . $project->proj_id).'/'.$user_id }}" style="color: inherit"><i class="fa-solid fa-star" style="color: gold"></i></a>
         @else
-        <i class="fa-regular fa-star" style="color: gold"></i>
+        <a title="Remove this project from My favorite projects." href="{{ url('/toggle-liked/' . $project->proj_id).'/'.$user_id }}" style="color: inherit"><i class="fa-regular fa-star" style="color: gold"></i></a>
         </div>
         @endif
 
-    </a>
+
 </div>

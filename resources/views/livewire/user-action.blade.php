@@ -20,7 +20,7 @@
         @endif
 
         @if ($isHasProject == true && $user->user_role_id != '3')
-        <a title="This user already has an project!"><i class="fa-solid fa-trash-can" style="color: #777777" ></i></a>&nbsp;&nbsp;
+        <a title="This user already has a project!"><i class="fa-solid fa-trash-can" style="color: #777777" ></i></a>&nbsp;&nbsp;
         @elseif( $user->user_role_id == '3')
         <a title="This user has a role as an admin!"><i class="fa-solid fa-trash-can" style="color: #777777" ></i></a>&nbsp;&nbsp;
         @else
