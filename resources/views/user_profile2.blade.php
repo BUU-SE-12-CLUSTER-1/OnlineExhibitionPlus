@@ -104,7 +104,11 @@
         <div class="box_reset">
             <button id="resetpassword" style="display: none" type="button">Reset Password</button>
         </div>
+
+        
         <p id="txt_project">Project</p>
+
+
         <script>
             function edit(){
                 document.getElementById("txt-fname").style.display = "none";
