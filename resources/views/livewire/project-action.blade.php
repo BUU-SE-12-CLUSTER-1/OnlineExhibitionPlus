@@ -29,7 +29,7 @@
             @endif
             @endforeach
             @if ($isLiked == true)
-            <a title="Add this project to My favorite projects." href="{{ url('/toggle-liked/' . $project->proj_id).'/'.$user_id }}" style="color: inherit"><i class="fa-solid fa-star"></i>
+            <a title="Add this project to My favorite projects." href="{{ url('/toggle-liked/' . $project->proj_id).'/'.$user_id }}" style="color: Gold"><i class="fa-solid fa-star"></i>
             </a>
             @else
             <a title="Add this project to My favorite projects." href="{{ url('/toggle-liked/' . $project->proj_id).'/'.$user_id }}" style="color: inherit"><i class="fa-regular fa-star"></i>
