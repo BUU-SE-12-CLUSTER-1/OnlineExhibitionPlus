@@ -104,3 +104,13 @@
     color: rgb(219, 0, 0);
     margin-left: 150px;
 }
+.oe-file-error {
+    font-family: Mulish;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 40px;
+    position: relative;
+    color: rgb(219, 0, 0);
+    
+}
