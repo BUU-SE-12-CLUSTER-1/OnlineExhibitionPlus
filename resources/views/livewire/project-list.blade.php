@@ -11,9 +11,9 @@
     </div><br>
             <table>
                 <tr>
-                <div class="titleBlue" style="width: 1450px">
+                <div class="titleBlue" style="width: 1450px"> <!--เรียกใช้คลาส titleBlue จากไฟล์ myfavoritepj.css และกำหนดสไตล์ความสูงให้เป็น 1450px -->
                     <div >
-                        <h1 id="Manageproject">Manage Project</h1>
+                        <h1 id="Manageproject">Manage Project</h1> <!-- สร้าง h1 เป็นหัวขข้อหน้าเว็บ -->
                     </div>
                 </div>
             </tr>
@@ -31,8 +31,8 @@
                 @else
                     </tr>
 
-                    <tr style="background-color: white">
-                        <td style="background-color: white">
+                    <tr style="background-color: white"> <!--กำหนด tr ให้สีพื้นหลังเป็นสีขาว-->
+                        <td style="background-color: white"> <!--กำหนด td ให้สีพื้นหลังเป็นสีขาว-->
                             <livewire:project-manage-box :project="$project" :key="$project['proj_id']" />
                         </td>
                         <?php
