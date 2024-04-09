@@ -241,17 +241,10 @@ input:valid + .password_labelline{
     font-weight: 600;
     line-height: normal;
     border: none;
-    cursor: pointer;
-    -webkit-transition-duration:0.3s ;
-     transition-duration:0.3s ;
-     -webkit-transition-property:box-shadow,transform ;
-     transition-property:box-shadow,transform ;
-
 }
- .login-button:hover, .login-button:focus, .login-button:active{
-    -webkit-transform:scale(1.04) ;
-    transform:scale(1.04) ;
- }
+.login-button:hover{
+    cursor: pointer;
+}
 .login-button:active{
     background-color: #4e6bef50;
 } */
@@ -282,17 +275,7 @@ input:valid + .password_labelline{
 
 #google-login-button:hover{
     cursor: pointer;
-    -webkit-transition-duration:0.3s ;
-     transition-duration:0.3s ;
-     -webkit-transition-property:box-shadow,transform ;
-     transition-property:box-shadow,transform ;
 }
-#google-login-button:hover, #google-login-button:focus, #google-login-button:active{
-
-    -webkit-transform:scale(1.04) ;
-    transform:scale(1.04) ;
- }
-
 #google-login-button:active{
     background-color: #4e6bef50;
 }

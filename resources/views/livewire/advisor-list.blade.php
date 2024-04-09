@@ -12,19 +12,19 @@
     <table style="margin-top:-50px;" border="0" >
     <tr>
         <th>
-        #
+        id
     </th>
         <th>
          Title
     </th>
     <th>
-    Firstname
+    FisrtName
     </th>
     <th>
-    Lastname
+    LastName
     </th>
     <th>
-    Action
+   Action
     </th>
 
     </tr>
