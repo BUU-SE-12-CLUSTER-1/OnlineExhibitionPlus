@@ -1,22 +1,20 @@
 <div>
-
-    <div style="margin-left:20px; margin-top:10px;">
-        <a href="{{ url('/delete-project/' . $project->proj_id) }}" style="color: inherit">
-        <a href="#" style="color: inherit" x-data x-on:click="$dispatch('open-oe-alert', { name: 'delete-{{ $project->proj_id }}' })"><i class="fa-solid fa-trash-can"></i></a>&nbsp;&nbsp;
-        </a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-        <a href="{{ url('/toggle-project/' . $project->proj_id) }}" style="color: inherit" x-on:click="$dispatch('open-modal', { name: '{{ $project->project_id }}' })">
-
-        
-      
+    <div style="margin-left:205px ">
+        <a href="{{ url('/delete-project/' . $project->proj_id) }}" style="color: rgba(255, 255, 255, 0)">
+            <i class="fa-solid fa-trash-can" style="color: white" id="1"></i>
+            &nbsp;
+        </a>
+        <a href="#"><i class="fa-solid fa-pen-to-square" style="color: white" id="2"></i>
+            &nbsp;</a>
+        <a href="{{ url('/toggle-project/' . $project->proj_id) }}" style="color:  rgba(255, 255, 255, 0)">
             @if ($project->proj_status == 1)
             <i class="fa-solid fa-eye"></i>
             @else
-            <i class="fa-solid fa-eye-slash"></i>   
+            <i class="fa-solid fa-eye-slash"></i>
             @endif
         </a>
         <?php
-        $user_id = 1;
+        $user_id = 9;
         ?>
         <a href="{{ url('/toggle-liked/' . $project->proj_id).'/'.$user_id }}" style="color: inherit">
             <?php
@@ -43,11 +41,5 @@
             </x-slot>
         </x-modal> --}}
 
-        
-        
-        
-        
-    </div>
-    
 </div>
 
