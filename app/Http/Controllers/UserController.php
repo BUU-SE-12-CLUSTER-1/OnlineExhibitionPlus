@@ -124,6 +124,26 @@ class UserController extends Controller
         $response->headers('Cache-Control','max-age=2592000');
         return $response;
     }
+    /*
+    public function updateUserDetail($user_id, $Detail_name, Request $request){
+        $user = UserModel::find($user_id);
+        if($Detail_name == "fname"){
+            $user->user_fname = request('user_fname');
+        }elseif($Detail_name == 'lname'){
+            $user->user_lname = request('user_lname');
+        }elseif($Detail_name == 'student-id'){
+            $user->user_student_id = request('user_student_id');
+        }elseif($Detail_name == 'major'){
+            $user->user_major_id = (int)$request->input('user_major_id');
+        }elseif($Detail_name == 'email'){
+            $user->user_email = request('user_email');
+        }elseif($Detail_name == 'phone'){
+            $user->user_phone = request('user_phone');
+        }
+        $user->save();
+        return redirect('/user-profile/'.$user_id);
+    }
+    */
     public function updateUserDetail($user_id, Request $request){
         $request->validate([
             'student_id' =>'required|min:8|max:8|unique:oe_users,user_student_id,'.$user_id.',user_id',

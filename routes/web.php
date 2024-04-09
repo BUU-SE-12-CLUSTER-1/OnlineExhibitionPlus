@@ -23,6 +23,10 @@ use App\Http\Controllers\ProjectController;
 |
 */
 
+Route::get('/', function (){
+    return view('home');
+});
+
 Route::get('/home', function (){
     return view('home');
 });

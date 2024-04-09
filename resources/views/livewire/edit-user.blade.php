@@ -3,7 +3,7 @@
     <form wire:submit.prevent="updateUser">
         @csrf
         <input type="hidden" name="user_id" value={{$oe_users['user_id']}}>
-        <label class="oe-input-label" for="user_student_id" >Student ID</label>
+        <label class="oe-input-label" for="user_student_id" >Student Id</label>
         <input class="oe-input"  wire:model="student_id" type="text" name="user_student_id"   maxlength="8" value={{$oe_users['user_student_id']}} /></br>
 
         @error('student_id')
@@ -25,7 +25,7 @@
         <label class="oe-input-label" for="user_email">Email</label>
         <input class="oe-input" wire:model="email" type="text" name="user_email" maxlength="55"value={{$oe_users['user_email']}}></br>
         @error('email')
-        <span class="oe-error">{{ $message }}</span>
+        <span class="text-danger-500">{{ $message }}</span>
         @enderror
         </br>
         <label class="oe-input-label" for="user_password">New Password</label>
@@ -38,7 +38,7 @@
             @endforeach
             </select><br>
             @error('major_id')
-            <span class="oe-error">{{ $message }}</span>
+            <span class="text-danger-500">{{ $message }}</span>
             @enderror
             <br>
             <label class="oe-input-label" for="user_role_id">Role</label>
@@ -49,7 +49,7 @@
                 @endforeach
             </select><br>
             @error('role_id')
-            <span class="oe-error">{{ $message }}</span>
+            <span class="text-danger-500">{{ $message }}</span>
             @enderror
             <br></br>
             <div wire:loading>
@@ -58,12 +58,6 @@
             <div></div>
             <input class="buttonClear"  x-data x-on:click="$dispatch('close-modal')" wire:loading.attr="disabled" wire:loading.remove type="button" class="oe-button" value="Cancel" style="margin-left: 368px ; margin-top: 10px">
             <input wire:loading.attr="disabled" wire:loading.remove type="submit" class="buttonAdd" value="Submit" wire:click="updateUser">
-        </form>
-        <script>
-            setTimeout(function() {
-    $('.oe-error').fadeOut('fast');
-}, 6000);
-    </script>
-
+    </form>
 
 </div>

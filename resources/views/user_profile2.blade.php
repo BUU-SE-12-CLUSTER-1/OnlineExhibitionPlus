@@ -118,8 +118,7 @@
         </div>
         </div>
         <div class="box_reset">
-            <a href="" id="resetpassword" style="display: none">Change Password</a>
-
+            <button id="resetpassword" style="display: none" type="button">Reset Password</button>
         </div>
 
         <div>
