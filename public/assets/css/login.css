@@ -2,8 +2,8 @@
 *{
     margin: 0 0;
     padding: 0 0;
-    box-sizing: content-box;
-    max-width: 1440px;
+    box-sizing: border-box;
+    max-width: 1920px;
 }
 html{
     font-family: "Mulish", sans-serif;
@@ -27,10 +27,9 @@ body{
 }
 
 .icon {
-    width: 600px;
-    height: 180px;
+
     margin-top: -3.75%;
-    margin-left: 8.85%;
+    margin-left: 5%;
     position: fixed;
     transition: 0.5s;
 }
@@ -38,19 +37,21 @@ body{
 .icon-text {
     width: 600px;
     height: 180px;
-    margin-top: 97px;
-    margin-left: 8%;
+    margin-top: 90px;
+    margin-left: 4.5%;
     position: fixed;
     transition: 0.5s;
 }
 
 .login-container{
+    justify-content: center;
+    align-items: center;
     margin-top: 2.95%;
     margin-left: 60%;
     width: 450px;
     height: 670px;
     border-radius: 52px;
-    background: rgba(255, 255, 255, 0.89);
+    background: rgb(255, 251, 251);
     box-shadow: 0px 0px 17.5px 7px #C4C4C4;
     position: fixed;
     transition: 0.5s;
@@ -70,6 +71,7 @@ body{
 }
 form{
     margin-top: 8%;
+    width: 73%;
 }
 .intro-text{
     display: flex;
@@ -105,55 +107,127 @@ form{
         transition: 0.5s;
     }
 }
-#username-textbox{
-    margin-top: 10%;
-    margin-left: 15%;
-    width: 310px;
-    height: 61px;
-    flex-shrink: 0;
-    fill: #FFF;
-    stroke-width: 1px;
-    stroke: #000;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    border-radius: 20px;
-    text-align: 100px;
-    font-size: 20px;
-    padding-left: 3%;
-
-}
-#username-textbox::placeholder{
-    text-align:left;
-    font-size: 20px;
-    line-height: 0;
-    color: rgba(0, 0, 0, 0.40);
+/* Email */
+.box_container{
+    width: 100%;
+    margin-top: 45%;
+    margin-left:0%;
 }
 
-#password-textbox{
-    margin-top: 8%;
-    margin-left: 15%;
-    width: 310px;
-    height: 61px;
-    flex-shrink: 0;
-    fill: #FFF;
-    stroke-width: 1px;
-    stroke: #000;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    border-radius: 20px;
-    text-align: left;
-    font-size: 20px;
-    padding-left: 3%;
+.email_entryarea{
+    position: relative;
+    height: 90px;
+    line-height: 50px;
 }
-#password-textbox::placeholder{
-    text-align: left;
+input{
+    position: absolute;
+    width: 100%;
+    outline: none;
     font-size: 20px;
-    line-height: 0;
-    color: rgba(0, 0, 0, 0.40);
+    padding: 0 20px;
+    line-height: 50px;
+    border-radius: 10px ;
+    border: 2px solid #bbb;
+    background:transparent;
+    box-shadow: 0px 0px 5px 1px #C4C4C4;
+    transition: 0.1s ease;
+    z-index: 1111;
+
+}
+.email_labelline{
+
+    position: absolute;
+    font-size: 18px;
+    color: #575757;
+    padding: 0 20px;
+    margin: 0 5px;
+    background:transparent;
+    transition: 0.2s ease;
+}
+input:focus,
+input:valid{
+    color: #9999FF;
+    border: 2px solid#9999FF;
+}
+input:focus + .email_labelline,
+input:valid + .email_labelline{
+    color: #9999FF;
+    background-color:  rgb(255, 251, 251);
+    height: 10px;
+    line-height: 10px;
+    padding: 0 10px;
+    transform: translate(-2px,-5px) scale(0.8);
+    z-index: 1111;
 }
 
+
+/* Password */
+.password_entryarea{
+    position: relative;
+    height: 110px;
+    line-height: 50px;
+}
+.password_labelline{
+
+    position: absolute;
+    font-size: 18px;
+    color: #575757;
+    padding: 0 20px;
+    margin: 0 5px;
+    background:transparent;
+    transition: 0.2s ease;
+}
+input:focus + .password_labelline,
+input:valid + .password_labelline{
+    color: #9999FF;
+    background-color:  rgb(255, 251, 251);
+    height: 10px;
+    line-height: 10px;
+    padding: 0 10px;
+    transform: translate(-2px,-5px) scale(0.8);
+    z-index: 1111;
+}
+
+/* ปุ่ม Login */
 .login-button{
-    margin-top: 5%;
-    margin-left: 15%;
-    width: 313px;
+    position: relative;
+    margin-left: 0;
+    width: 100%;
+    height: 61px;
+    color: #FFF;
+    background-color: transparent;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0px -0px 0px 0px rgba(113, 130, 255, 0.5),
+    0px 0px 0px 0px rgba(139, 200, 255, 0.5);
+}
+.login-button:hover{
+    transform: translate(0, -3px);
+    box-shadow: 5px -5px 15px 0px rgb(255, 121, 242),
+    -5px 5px 15px 0px rgba(79, 173, 255, 0.601);
+}
+.login-button:hover::after{
+    transform: rotate(150deg);
+}
+.login-button::after{
+    content: "";
+    width: 700px;
+    height: 700px;
+    position: absolute;
+    top: -100px;
+    left: -200px;
+    background-color: #ff71c2;
+    background-image: linear-gradient(225deg, #414eff 0%,
+    #4958ff 50%, #ff52dc 100%);
+    z-index: -1;
+    transition: all 0.25s ease;
+}
+/* .login-button{
+    margin-left: 0;
+    width: 100%;
     height: 61px;
     border-radius: 20px;
     flex-shrink: 0;
@@ -178,12 +252,12 @@ form{
  }
 .login-button:active{
     background-color: #4e6bef50;
-}
+} */
 
 #google-login-button{
-    margin-top: 8%;
-    margin-left: 15%;
-    width: 313px;
+    margin-top: 0%;
+    margin-left: 0%;
+    width: 100%;
     height: 61px;
     border-radius: 20px;
     flex-shrink: 0;
@@ -196,6 +270,15 @@ form{
     line-height: normal;
     border: none;
     text-align: center;
+}
+
+.btn_GOOGLE_entryarea{
+    position: relative;
+    height: 150px;
+    line-height: 50px;
+}
+
+#google-login-button:hover{
     cursor: pointer;
     -webkit-transition-duration:0.3s ;
      transition-duration:0.3s ;
@@ -274,57 +357,3 @@ form{
     text-align: center;
 }
 
-input[type="text"],
-input[type="password"],
-button {
-	appearance: none;
-	outline: none;
-	border: none;
-	background: none;
-}
-
-input[type="text"],
-input[type="password"] {
-	display: block;
-	width: 50%;
-	padding-left: 10px;
-	border: 1px solid #bbb;
-    margin-top: 8%;
-    margin-left: 15%;
-    width: 310px;
-    height: 61px;
-    flex-shrink: 0;
-    fill: #FFF;
-    stroke-width: 1px;
-    stroke: #000;
-    border-radius: 20px;
-    text-align: left;
-    font-size: 20px;
-    padding-left: 3%;
-}
-
-input[type="text"]:focus,
-input[type="password"]:focus {
-	border-color: #2b2d2f;
-}
-
-.passwd-wrap {
-	position: relative;
-}
-
-#show-passwd {
-	position: absolute;
-	top: 50%;
-	right: 70px;
-	transform: translateY(-50%);
-	cursor: pointer;
-	width: 50px;
-	display: flex;
-	align-items: center;
-}
-
-#show-passwd img {
-	width: 100%;
-	height: auto;
-    padding-right: 20%;
-}

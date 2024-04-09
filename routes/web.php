@@ -193,3 +193,7 @@ Route::get('/testTag01', function (){
 Route::get('/testTag02', function (){
     return view('test_tag02');
 });
+
+Route::get('/testmas', function (){
+    return view('testmas');
+});
