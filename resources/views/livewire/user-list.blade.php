@@ -11,7 +11,7 @@
     <table style="margin-top:-50px" border="1">
         <tr>
             <th>#</th>
-            <th>Student id</th>
+            <th>Student ID</th>
             <th>Name</th>
             <th>Surname</th>
             <th>Email</th>

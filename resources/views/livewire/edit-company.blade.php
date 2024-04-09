@@ -2,7 +2,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/form_input.css') }}">
     <form wire:submit="updateCompany">
     @csrf
-    <label class="oe-input-label" for="company_name">Company name : </label>
+    <label class="oe-input-label" for="company_name">Name</label>
     <input class="oe-input" wire:model="name" name="company_name" id="" value={{ $oe_companies['company_name'] }}>
     <br>
     @error('name')

@@ -3,7 +3,7 @@
     <form wire:submit.prevent="updateUser">
         @csrf
         <input type="hidden" name="user_id" value={{$oe_users['user_id']}}>
-        <label class="oe-input-label" for="user_student_id" >Student Id</label>
+        <label class="oe-input-label" for="user_student_id" >Student ID</label>
         <input class="oe-input"  wire:model="student_id" type="text" name="user_student_id"   maxlength="8" value={{$oe_users['user_student_id']}} /></br>
 
         @error('student_id')

@@ -23,7 +23,7 @@
 </form>
 <form action={{url("/update-user-detail/".$oe_users['user_id']."/student-id")}} method="POST">
     @csrf
-    <p>Student Id :
+    <p>Student ID :
     <label id="txt-user-student-id">{{$oe_users['user_student_id']}}</label>
     <input type="text" value="{{$oe_users['user_student_id']}}" id="input-user-student-id" name="user_student_id" style="display: none">
     <button id="edit-student-id" onclick="edit('student-id')" type="button">edit</button>
