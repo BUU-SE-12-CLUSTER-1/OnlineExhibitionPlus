@@ -13,7 +13,7 @@ class EditCompany extends Component
 
     public function updateCompany(){
         $this->validate([
-            'name' => 'required|min:2|max:100'
+            'name' => 'required|min:2|max:100|unique:oe_companies,company_name,'.$this->company->company_id.',company_id'
         ]);
         $this->company->company_name = $this->name;
         $this->company->save();

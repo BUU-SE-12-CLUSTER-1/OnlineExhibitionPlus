@@ -7,7 +7,7 @@
         </a>
         <a href="#"><i class="fa-solid fa-pen-to-square" style="color: white" id="2"></i>
             &nbsp;</a>
-        <a href="{{ url('/toggle-project/' . $project->proj_id) }}" style="color:  rgba(255, 255, 255, 0)" x-on:click="$dispatch('open-modal', { name: '{{ $project->project_id }}' })">
+        <a href="{{ url('/toggle-project/' . $project->proj_id) }}" style="color:  rgba(255, 255, 255, 0)">
             @if ($project->proj_status == 1)
             <i class="fa-solid fa-eye" style="color : white" id="3"></i>
             @else

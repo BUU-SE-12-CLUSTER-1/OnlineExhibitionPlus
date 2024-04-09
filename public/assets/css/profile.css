@@ -223,7 +223,7 @@
     display: block;
     background: none;
 }
-#input-email,#input-phone,#input-student-id,#input-lname,#input-fname,#input-major{ 
+#input-email,#input-phone,#input-student-id,#input-lname,#input-fname,#input-major{
     width: 300px;
     height: 40px;
     border:none;
@@ -263,4 +263,11 @@
     justify-content: center;
     top: 150px;
     position: relative;
+}
+.oe-error {
+    margin-top: -2%;
+    font-size: 16px;
+    z-index: 99;
+    display: flex;
+    color: rgb(219, 0, 0)
 }

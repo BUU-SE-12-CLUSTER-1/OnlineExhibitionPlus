@@ -11,7 +11,7 @@ class EditTag extends Component
     public TagModel $tag;
     public function updateTag(){
         $this->validate([
-            'name'=>'required|min:2|max:40'
+            'name' => 'required|min:2|max:40|unique:oe_tags,tag_name,'.$this->tag->tag_id.',tag_id'
         ]);
 
         $this->tag->tag_name = $this->name;

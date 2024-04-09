@@ -59,24 +59,6 @@ class UserController extends Controller
         return view('user_list',['oe_users'=>$user_data, 'oe_majors'=>$major_data, 'oe_roles'=>$role_data]);
     }
     public function deleteUser($user_id){
-        $user_projects = UserProjectModel::all();
-        foreach($user_projects as $user_project){
-            if($user_project->userproj_user_id == $user_id){
-                $user_project->userproj_user_id = 1;
-            }
-        }
-        $user_liked_projects = UserLikedProjectModel::all();
-        foreach($user_liked_projects as $user_liked_project){
-            if($user_liked_project->ulp_user_id == $user_id){
-                $user_liked_project->delete();
-        }
-        }
-        $user_comments = CommentModel::all();
-        foreach($user_comments as $user_comment){
-            if($user_comment->comment_user_id == $user_id){
-                $user_comment->comment_user_id = 1;
-            }
-        }
         $user = UserModel::find($user_id);
         $user->delete();
         return Redirect::back();
@@ -151,24 +133,15 @@ class UserController extends Controller
     }
     */
     public function updateUserDetail($user_id, Request $request){
+        $request->validate([
+            'student_id' =>'required|min:8|max:8|unique:oe_users,user_student_id,'.$user_id.',user_id',
+            'first_name' =>'required|min:2|max:25',
+            'last_name' =>'required|min:2|max:25',
+            'email' =>'required|email|unique:oe_users,user_email,'.$user_id.',user_id',
+            'major' => 'required',
+            'phone_number' => 'nullable|regex:/(0)[0-9]{9}/'
+        ]);
         $user = UserModel::find($user_id);
-        /*
-        $image = $request->file("upload_image")->getRealPath();
-        $img_content = file_get_contents($image);
-        $base64 = base64_encode($img_content);
-        $user->user_profile_image = $base64;
-        if(isset($_FILES["upload-image"])&&$_FILES["upload-image"]["error"]== 0 ){
-            $image = $_FILES["upload-image"]["tmp_name"];
-            //$image = $request->file("upload-image")->getRealPath();
-            $img_content = file_get_contents($image);
-            $base64 = base64_encode($img_content);
-            $user->user_profile_image = $base64;
-            $user->save();
-            $_SESSION["success"] = "Image uploaded successfully";
-        }else{
-            $_SESSION["error"] = "Please select an image file to upload.";
-        }
-        */
         if( $request->hasFile('upload-image')){
             $image = $request->file('upload-image');
             $path = public_path(). '/users/img/';
@@ -176,12 +149,12 @@ class UserController extends Controller
             $image->move($path,$filename);
             $user->user_profile_image = '/users/img/'.$filename;
         }
-        $user->user_fname = request('user_fname');
-        $user->user_lname = request('user_lname');
-        $user->user_student_id = request('user_student_id');
-        $user->user_major_id = (int)$request->input('user_major_id');
-        $user->user_email = request('user_email');
-        $user->user_phone = request('user_phone');
+        $user->user_fname = request('first_name');
+        $user->user_lname = request('last_name');
+        $user->user_student_id = request('student_id');
+        $user->user_major_id = (int)$request->input('major');
+        $user->user_email = request('email');
+        $user->user_phone = request('phone_number');
         $user->save();
         return redirect('/user-profile/'.$user_id);
     }
@@ -205,5 +178,16 @@ class UserController extends Controller
         return redirect('/user-profile/'.$user->user_id);
         //return back();
 
+    }
+    public function toggleVisible($user_id){
+        $user = UserModel::find($user_id);
+        $status = $user->user_status;
+        if($status == 0){
+            $user->user_status = 1;
+        }else{
+            $user->user_status = 0;
+        }
+        $user->save();
+        return back();
     }
 }

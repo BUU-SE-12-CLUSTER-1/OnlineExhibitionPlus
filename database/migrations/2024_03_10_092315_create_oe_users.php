@@ -23,6 +23,7 @@ return new class extends Migration
                 `user_profile_image` VARCHAR(255) NOT NULL,
                 `user_role_id` INT NOT NULL,
                 `user_major_id` INT NOT NULL,
+                `user_status` TINYINT NOT NULL DEFAULT '1',
                 PRIMARY KEY (`user_id`),
                 INDEX `fk_users_roles1_idx` (`user_role_id` ASC) ,
                 INDEX `fk_users_majors1_idx` (`user_major_id` ASC) ,
@@ -39,7 +40,6 @@ return new class extends Migration
                   ON DELETE NO ACTION
                   ON UPDATE NO ACTION)
               ENGINE = InnoDB;");
-              DB::statement('INSERT INTO oe_users (user_id, user_student_id, user_fname, user_lname, user_email, user_password, user_phone, user_profile_image, user_role_id, user_major_id) VALUES ("1", "Unknown", "Unknown", "Unknown", "Unknown", "YouChooseTheWrongWayPleaseGoBack", NULL, "/assets/img/users/img_user_icon.png", "2", "1");');
     }
 
     /**

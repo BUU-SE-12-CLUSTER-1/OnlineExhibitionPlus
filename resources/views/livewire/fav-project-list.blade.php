@@ -44,7 +44,7 @@
     @foreach ($oe_user_liked_project as $user_liked_project)
         @if($user_liked_project->ulp_proj_id == $project->proj_id  && $user_id == $user_liked_project->ulp_user_id)
 
-    @if ($td_count<5)
+    @if ($td_count<4)
     <td>
         <livewire:project-view-box :project="$project" :key="$project['proj_id']" />
     </td>
