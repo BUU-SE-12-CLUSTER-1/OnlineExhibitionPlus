@@ -9,7 +9,7 @@
             <input class="oe-input" wire:model="name" type="text" name="tag_name">
             <br>
             @error('name')
-            <span>{{ $message }}</span>
+            <span class="oe-error">{{ $message }}</span>
             @enderror
             </br>
         </div>
