@@ -55,6 +55,12 @@ class ProjectController extends Controller
             $project_user->delete();
         }
         }
+        $user_liked_projects = UserLikedProjectModel::all();
+        foreach($user_liked_projects as $user_liked_project){
+            if($user_liked_project->ulp_proj_id == $proj_id){
+                $user_liked_project->delete();
+        }
+        }
         $project->delete();
 
         return back();

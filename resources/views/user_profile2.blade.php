@@ -29,25 +29,35 @@
             </label>
         </div>
         <div class="detail">
-            
+
             <?php
             //echo '<img id="img-user-image" src="data:image/png;base64,' . $oe_users['user_profile_image'] . '" style="width: 100px; height: 100px; object-fit: cover;"/>';
             ?>
             <div class="none">
             </div>
             <div id="user">
+                <p>Student Id&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <label id="txt-student-id">{{$oe_users['user_student_id']}}</label>
+                    <input type="text" maxlength="8" value="{{$oe_users['user_student_id']}}" id="input-student-id" name="student_id" style="display: none">
+                </p>
+                @error('student_id')
+                    <div class="oe-error" style="color: rgb(219, 0, 0)" id="error1">{{ $message }}</div>
+                @enderror
                 <p>Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <label id="txt-fname">{{$oe_users['user_fname']}}</label>
-                    <input type="text" maxlength="25" value="{{$oe_users['user_fname']}}" id="input-fname" name="user_fname" style="display: none">
+                    <input type="text" maxlength="25" value="{{$oe_users['user_fname']}}" id="input-fname" name="first_name" style="display: none">
                 </p>
-                <p>Surname&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                @error('first_name')
+                    <div class="oe-error" style="color: rgb(219, 0, 0)" id="error2">{{ $message }}</div>
+                @enderror
+                <p>Surname&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <label id="txt-lname">{{$oe_users['user_lname']}}</label>
-                    <input type="text" maxlength="25" value="{{$oe_users['user_lname']}}" id="input-lname" name="user_lname" style="display: none">
+                    <input type="text" maxlength="25" value="{{$oe_users['user_lname']}}" id="input-lname" name="last_name" style="display: none">
+
                 </p>
-                <p>Student Id&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    
-                    <label id="txt-student-id">{{$oe_users['user_student_id']}}</label>
-                    <input type="text" maxlength="8" value="{{$oe_users['user_student_id']}}" id="input-student-id" name="user_student_id" style="display: none">
-                </p>
+                @error('last_name')
+                <div class="oe-error" style="color: rgb(219, 0, 0)" id="error3">{{ $message }}</div>
+            @enderror
             <?php
             foreach ($oe_majors as $major) {
             if($oe_users['user_major_id']==$major['major_id']){
@@ -57,29 +67,38 @@
             ?>
                 <p>Major&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <label id="txt-major">{{$user_major}}</label>
-                    <select name="user_major_id" id="input-major" style="display: none">
+                    <select name="major" id="input-major" style="display: none">
                         <option value={{$oe_users['user_major_id']}}>{{$user_major}}</option>
                         @foreach($oe_majors as $major)
                         <option value={{$major['major_id']}}>{{$major['major_name']}}</option>
                         @endforeach
                     </select>
                 </p>
+                @error('major')
+                    <div class="oe-error" style="color: rgb(219, 0, 0)" id="error4">{{ $message }}</div>
+                @enderror
             </div>
-                
+
                 <p id="line">______________________________________________________________________</p>
             <h2 id="contact">Contact</h2>
                 <p id="email"><i class="fa-solid fa-envelope"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <label id="txt-email">{{$oe_users['user_email']}}</label>
-                    <input type="text" maxlength="55" value="{{$oe_users['user_email']}}" id="input-email" name="user_email" style="display: none">
+                    <input type="text" maxlength="55" value="{{$oe_users['user_email']}}" id="input-email" name="email" style="display: none">
                 </p>
+                @error('email')
+                    <div class="oe-error" style="color: rgb(219, 0, 0); margin-left:22%" id="error5">{{ $message }}</div>
+                @enderror
                 <p id="phone"><i class="fa-solid fa-phone"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <label id="txt-phone">{{$oe_users['user_phone']}}</label>
-                    <input type="text" maxlength="10" value="{{$oe_users['user_phone']}}" id="input-phone" name="user_phone" style="display: none">
+                    <input type="text" maxlength="10" value="{{$oe_users['user_phone']}}" id="input-phone" name="phone_number" style="display: none">
                 </p>
+                @error('phone_number')
+                    <div class="oe-error" style="color: rgb(219, 0, 0); margin-left:22%" id="error6">{{ $message }}</div>
+                @enderror
             <button id="save" style="display: none" type="submit">Save</button>
             <button id="cancel" onclick="window.location='{{url('/user-profile/'.$oe_users['user_id'])}}'" style="display: none" type="button" >Cancel</button>
             </form>
-            
+
         </div>
         </div>
         <div class="box_reset">
@@ -129,8 +148,13 @@
         });
 
         </script>
+        <script>
+            setTimeout(function() {
+    $('.oe-error').fadeOut('fast');
+}, 3000);
+        </script>
     </nav>
-    
+
 </body>
 
 @endsection

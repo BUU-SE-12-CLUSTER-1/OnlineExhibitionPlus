@@ -6,7 +6,7 @@
     <script src="https://kit.fontawesome.com/a87b92189d.js" crossorigin="anonymous"></script>
 
     <head>
-        <link rel="stylesheet" href="{{ asset('assets/css/favorite.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/myfavoritepj.css') }}">
         <link rel="stylesheet" href="{{ asset('assets/css/modal.css') }}">
     </head>
 
@@ -36,7 +36,7 @@
             @for ($i = 1; $i < 15; $i++)
                         <div class="project">
                             <div>
-                                <button type="button" class="star"><i class="fa-solid fa-star"></i></button>
+                                <button type="button" class="star" ><i class="fa-solid fa-star" ></i></button>
                             </div>
                             <div class="detail">
                                 <h2>System {{$i}}</h2>

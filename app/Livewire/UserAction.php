@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use App\Models\UserProjectModel;
 use Livewire\Component;
 use App\Models\UserModel;
 use App\Models\RoleModel;
@@ -24,8 +25,10 @@ class UserAction extends Component
     }
     public function render()
     {
+        $user_projects = UserProjectModel::all();
         return view('livewire.user-action',[
-            'user' => $this->user
+            'user' => $this->user,
+            'user_projects' => $user_projects,
         ]);
     }
 }
