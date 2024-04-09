@@ -9,13 +9,12 @@ use App\Models\UserProjectModel;
 class UserProjectList extends Component
 {
     public $user_id;
-    public $search = "";
     public function mount($user_id){
         $this->user_id = $user_id;
     }
       public function render()
     {
-        $search = $this->search ? $this->search :"";
+        /*
         $user_projects = UserProjectModel::all();
         $user_project_ids = array();
         foreach ($user_projects as $user_project){
@@ -26,6 +25,11 @@ class UserProjectList extends Component
         $projects = ProjectModel::whereIn('proj_id',$user_project_ids)->paginate(6);
         return view('livewire.user-project-list',[
             'oe_projects' => $projects
-]);
+    ]);
+*/      $projects = ProjectModel::paginate(12);
+        return view('livewire.user-project-list',[
+        'oe_projects' => $projects
+        ]);
+
     }
 }

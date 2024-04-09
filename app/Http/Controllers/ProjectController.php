@@ -39,7 +39,12 @@ class ProjectController extends Controller
             return redirect('/');
     }else{
     return view('search_project_list',['oe_projects'=> $project_data]);
+    }
 }
+public function tagSearch($tag_id){
+    $tag = TagModel::find($tag_id);
+    $project_data = ProjectModel::all();
+    return view('tag_project_list',['projects'=> $project_data, 'tag' => $tag]);
 }
     public function deleteProject($proj_id){
         $project = ProjectModel::find($proj_id);
@@ -102,5 +107,22 @@ class ProjectController extends Controller
 
     }
 
-
+    public function projectDetail($proj_id){
+        $project_data = ProjectModel::find($proj_id);
+        $company = CompanyModel::all();
+        $advisor = AdvisorModel::all();
+        $tag = TagModel::all();
+        $project_tag = ProjectTagModel::all();
+        $users = UserModel::all();
+        $project_users = UserProjectModel::all();
+        return view('detail_main',['project'=>$project_data,
+        'oe_companies' => $company,
+        'oe_advisors' => $advisor,
+        'oe_tags' => $tag,
+        'oe_project_tags' => $project_tag,
+        'oe_proj_id' => $proj_id,
+        'oe_users' => $users,
+        'oe_project_users' => $project_users,
+    ]);
+    }
 }

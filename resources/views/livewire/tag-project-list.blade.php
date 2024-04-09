@@ -7,44 +7,43 @@
             <i class="fa-solid fa-magnifying-glass"></i>
         </button>
     </div><br>
-<table>
-    <tr>
-        <div class="titleBlue" style="width: 1450px">
-            <div >
-                <h1 id="Favoriteproject">Favorite Project</h1>
-            </div>
-        </div>
-    </tr>
-    <?php
-    $td_count = 1;
-    $user_id = 1;
-        ?>
-    @foreach ($oe_projects as $project)
-    @foreach ($oe_user_liked_project as $user_liked_project)
-        @if($user_liked_project->ulp_proj_id == $project->proj_id  && $user_id == $user_liked_project->ulp_user_id)
+            <table>
+                <tr>
+                <div class="titleBlue" style="width: 1450px">
+                    <div >
+                        <h1 id="Favoriteproject">Tag Result</h1>
+                    </div>
+                </div>
+            </tr>
+                <?php
+                $td_count = 1;
+                    ?>
+                @foreach ($oe_projects as $project)
+                @if ($td_count < 4)
+                    <td>
+                        <livewire:project-manage-box :project="$project" :key="$project['proj_id']" />
+                    </td>
+                    <?php
+                        $td_count++;
+                    ?>
+                @else
+                    </tr>
 
-    @if ($td_count<4)
-    <td>
-        <livewire:project-view-box :project="$project" :key="$project['proj_id']" />
-    </td>
-    <?php
-    $td_count++;
-    ?>
-    @else
-    </tr>
-    <tr>
-        <td>
-            <livewire:project-view-box :project="$project" :key="$project['proj_id']" />
-        </td>
-    <?php
-    $td_count = 2;
-    ?>
-    @endif
-    @endif
-    @endforeach
-@endforeach
+                    <tr style="background-color: white">
+                        <td style="background-color: white">
+                            <livewire:project-manage-box :project="$project" :key="$project['proj_id']" />
+                        </td>
+                        <?php
+                            $td_count = 1;
+                        ?>
 
-</table>
+                @endif
+            @endforeach
+
+
+            </table>
+
+
 <span>
     {{$oe_projects->appends(request()->input())->links()}}
 </span>
@@ -52,3 +51,4 @@
 @livewireScripts
 <script></script>
 </div>
+

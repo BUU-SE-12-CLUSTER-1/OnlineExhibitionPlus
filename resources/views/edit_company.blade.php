@@ -4,7 +4,7 @@
         <tr>
             @csrf
             <td>
-                <label for="company_name">Name </label>
+                <label for="company_name">Name</label>
             </td>
             <td>
                 <input type="text" name="company_name" id="" value={{ $oe_companies['company_name'] }}>

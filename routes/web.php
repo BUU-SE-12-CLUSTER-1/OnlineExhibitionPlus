@@ -23,6 +23,10 @@ use App\Http\Controllers\ProjectController;
 |
 */
 
+Route::get('/', function (){
+    return view('home');
+});
+
 Route::get('/home', function (){
     return view('home');
 });
@@ -68,6 +72,10 @@ Route::post('/insert-tag', [TagController::class, 'insertTag']);
 
 Route::get('/insert-major', function(){
     return view('insert_major');
+});
+
+Route::get('/advanced-search-project' , function(){
+    return view('advanced_search_project');
 });
 
 Route::post('/insert-major',[MajorController::class, 'insertMajor']);
@@ -118,10 +126,16 @@ Route::get('/toggle-liked/{proj_id}/{user_id}',[ProjectController::class, 'toggl
 Route::get('/edit-project/{proj_id}',[ProjectController::class, 'editProject']);
 Route::post('update-project/{proj_id}',[ProjectController::class, 'updateProject']);
 Route::get('/fav-project',[ProjectController::class, 'favProjectList']);
+Route::get('/tag-search/{tag_id}',[ProjectController::class, 'tagSearch']);
+Route::get('/project-detail/{proj_id}',[ProjectController::class, 'projectDetail']);
+
 Route::get('/select-template2', function(){
     return view('template2');
 });
 Route::post('/search-project',[ProjectController::class,'searchProject']);
+
+
+
 
 Route::get('/input-template1', function(){
     return view('template1_form');

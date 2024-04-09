@@ -9,6 +9,7 @@
 <!doctype html>
 <html>
     <head>
+        
         <meta charset="utf-8">
         <title>Online Exhibition | Login</title>
         <link rel="stylesheet" href="{{ url('assets/css/login.css') }}">
@@ -18,6 +19,7 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet">
     </head>
     <body> 
+    
         <img src="assets/img/system/OE_LOGO1.png" class="logo">
         <p class="intro-text">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Welcome to our platform showcasing the exceptional talents of software engineering students! Explore a myriad of innovative projects and impressive works  created by our talented students in the field of software engineering.<br>
 
@@ -55,6 +57,7 @@
         </form>
     </div>
 
+        
     </body>
     <script>
         function onSignIn(googleUser) {
@@ -78,6 +81,75 @@
                 ? 'assets/img/users/eye_closed.svg' 
                 : 'assets/img/users/eye_open.svg'
         })
+        window.onload = function() {
+	
+	//Create canvas and initialize it's context
+	var canvas = document.getElementById("flying-bubbles");
+	var ctx = canvas.getContext("2d");
+	
+	//Set the dimensions of canvas equal to the window's dimensions
+	var W = window.innerWidth, H = window.innerHeight;
+	canvas.width = W;
+	canvas.height = H;
+	
+	//Create an array of circles
+	var circles = []; 
+	for(var i = 0; i < 20; i++ ){
+		circles.push(new create_circle());
+	}
+	
+	//Function to create circles with different positions and velocities
+	function create_circle() {
+		//Random Position
+		this.x = Math.random()*W;
+		this.y = Math.random()*H;
+		
+		//Random Velocities
+		this.vx = 0.1+Math.random()*1;
+		this.vy = -this.vx;
+		
+		//Random Radius
+		this.r = 10 + Math.random()*50;
+	}
+	
+	//Function to draw the background
+	function draw() {
+		//Create the gradient
+		var grad = ctx.createLinearGradient(0, 0, W, H);
+
+		
+		
+		//Fill the canvas with the gradient
+		ctx.globalCompositeOperation = "source-over";
+		ctx.fillStyle = grad;
+		ctx.fillRect(0,0,W,H);
+
+		//Fill the canvas with the circles
+		for(var j = 0; j < circles.length; j++) {
+			var c = circles[j];
+			
+			//Draw the circle and it with the blur grad
+			ctx.beginPath();
+			ctx.globalCompositeOperation = "lighter";		
+			ctx.fillStyle = grad;
+			ctx.arc(c.x, c.y, c.r, Math.PI*2, false);
+			ctx.fill();
+			
+			//Lets use the velocity now
+			c.x += c.vx;
+			c.y += c.vy;
+			
+			//To prevent the circles from moving out of the canvas
+			if(c.x < -50) c.x = W+50;
+			if(c.y < -50) c.y = H+50;
+			if(c.x > W+50) c.x = -50;
+			if(c.y > H+50) c.y = -50;
+		}
+	}
+	
+	setInterval(draw, 25);
+
+} 
     </script>
 
 </html>
