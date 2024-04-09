@@ -20,8 +20,8 @@
         <a href="#" x-data x-on:click="$dispatch('open-oe-alert', { name: 'delete-{{ $user->user_id }}' })"><i class="fa-solid fa-trash-can"></i></a>&nbsp;&nbsp;
         @endif
         @endif
-    <a href="#" x-data x-on:click="$dispatch('open-modal', { name: '{{ $user->user_id }}' })"><i class="fa-solid fa-pen-to-square"></i></a>
-    <a href="{{ url('/user-profile/' . $user->user_id) }}">Profile</a>
+    <a href="#" x-data x-on:click="$dispatch('open-modal', { name: '{{ $user->user_id }}' })"><i class="fa-solid fa-pen-to-square"></i></a>&nbsp;&nbsp;
+    <a href="{{ url('/user-profile/' . $user->user_id) }}"><i class="fa-solid fa-user"></i></a>
         </div>
 
     <x-modal name="{{ $user->user_id }}" title="Edit User" id="edit-box">
