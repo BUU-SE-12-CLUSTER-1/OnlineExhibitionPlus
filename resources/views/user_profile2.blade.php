@@ -35,7 +35,7 @@
             ?>
             <div class="none">
             </div>
-            <div id="user">
+            <div id="user" style="position: relative;">
                 <p>Student Id&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <label id="txt-student-id">{{$oe_users['user_student_id']}}</label>
                     <input type="text" maxlength="8" value="{{$oe_users['user_student_id']}}" id="input-student-id" name="student_id" style="display: none">
