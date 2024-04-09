@@ -36,7 +36,7 @@
             <div class="none">
             </div>
             <div id="user">
-                <p>Student Id&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <p>Student Id&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <label id="txt-student-id">{{$oe_users['user_student_id']}}</label>
                     <input type="text" maxlength="8" value="{{$oe_users['user_student_id']}}" id="input-student-id" name="student_id" style="display: none">
                 </p>
@@ -102,9 +102,13 @@
         </div>
         </div>
         <div class="box_reset">
-            <button id="resetpassword" style="display: none" type="button">Reset Password</button>
+            <a href="" id="resetpassword" style="display: none">Change Password</a>
+
         </div>
+        <div>
         <p id="txt_project">Project</p>
+        @livewire('user-project-list',['user_id'=>$oe_users['user_id']])
+    </div>
         <script>
             function edit(){
                 document.getElementById("txt-fname").style.display = "none";
@@ -151,7 +155,7 @@
         <script>
             setTimeout(function() {
     $('.oe-error').fadeOut('fast');
-}, 3000);
+}, 6000);
         </script>
     </nav>
 
