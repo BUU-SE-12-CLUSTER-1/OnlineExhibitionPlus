@@ -1,6 +1,6 @@
 
 <div>
-    <div style="margin-left:205px">
+    <div style="margin-left:205px ">
         <a href="{{ url('/delete-project/' . $project->proj_id) }}" style="color: rgba(255, 255, 255, 0)">
             <i class="fa-solid fa-trash-can" style="color: white" id="1"></i>
             &nbsp;
@@ -40,4 +40,5 @@
                 @livewire('edit-project', ['project' => $project])
             </x-slot>
         </x-modal> --}}
+
 </div>
