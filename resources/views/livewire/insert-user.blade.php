@@ -33,7 +33,7 @@
         <label class="oe-input-label" for="user_email">Email</label>
         <input class="oe-input" wire:model="email" type="text" name="user_email" maxlength="55"><br>
         @error('email')
-        <span class="oe-error">{{ $message }}</span>
+        <span class="text-danger-500">{{ $message }}</span>
         @enderror
         </br>
         <label class="oe-input-label" for="user_password">Password</label>
@@ -46,7 +46,7 @@
         @endforeach
         </select><br>
         @error('major_id')
-        <span class="oe-error">{{ $message }}</span>
+        <span class="text-danger-500">{{ $message }}</span>
         @enderror
         <br>
         <label class="oe-input-label" for="user_role_id">Role</label>
@@ -57,7 +57,7 @@
         @endforeach
         </select><br>
         @error('role_id')
-        <span class="oe-error">{{ $message }}</span>
+        <span class="text-danger-500">{{ $message }}</span>
         @enderror
         <br></br>
         <div wire:loading>
@@ -68,9 +68,4 @@
         <input wire:loading.attr="disabled" wire:loading.remove type="button" class="buttonAdd" value="Submit" wire:click="insertUser" >
         </form>
         @livewireScripts
-        <script>
-            setTimeout(function() {
-    $('.oe-error').fadeOut('fast');
-}, 6000);
-        </script>
 </div>

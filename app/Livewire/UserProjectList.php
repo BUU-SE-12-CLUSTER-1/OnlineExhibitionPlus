@@ -14,7 +14,7 @@ class UserProjectList extends Component
     }
       public function render()
     {
-        /*
+        
         $user_projects = UserProjectModel::all();
         $user_project_ids = array();
         foreach ($user_projects as $user_project){
@@ -26,10 +26,13 @@ class UserProjectList extends Component
         return view('livewire.user-project-list',[
             'oe_projects' => $projects
     ]);
-*/      $projects = ProjectModel::paginate(12);
+    
+/*      
+$projects = ProjectModel::paginate(12);
         return view('livewire.user-project-list',[
         'oe_projects' => $projects
         ]);
 
-    }
+    }*/
+}
 }

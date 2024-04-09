@@ -12,6 +12,7 @@ use App\Http\Controllers\AdvisorController;
 use App\Http\Controllers\TagController;
 use App\Models\RoleModel;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\MyAuth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,6 +23,10 @@ use App\Http\Controllers\ProjectController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+Route::get('/', function (){
+    return view('home');
+});
 
 Route::get('/home', function (){
     return view('home');
@@ -37,7 +42,7 @@ Route::get('/test', function(){
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
-
+Route::post('/login',[MyAuth::class, 'login_process']);
 Route::get('/insert-user',[UserController::class, 'insertUserPage']);
 Route::post('/insert-user',[UserController::class, 'insertUser']);
 Route::get('/user-list',[UserController::class, 'showUserList']);
@@ -55,6 +60,7 @@ Route::post('update-user-detail/{user_id}',[UserController::class,'updateUserDet
 Route::get('upload-user-image/{user_id}',[UserController::class,'uploadImage']);
 Route::post('upload-user-image/{user_id}',[UserController::class,'uploadImageProcess']);
 Route::get('/toggle-user/{user_id}',[UserController::class, 'toggleVisible']);
+Route::post('change-password/{user_id}',[UserController::class, 'changePassword']);
 
 Route::get('/insert-advisor' , function(){
     return view('insert_advisor');

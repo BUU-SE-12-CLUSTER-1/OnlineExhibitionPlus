@@ -14,15 +14,14 @@
 
 .oe-input {
     width: 401px;
-    height: 40px;
+    height: 28px;
     flex-shrink: 0;
     fill: rgba(255, 255, 255, 0.79);
     stroke-width: 1px;
-    border-radius: 15px;
+    border-radius: 20px;
     border: 1px solid rgba(0, 0, 0, 0.50);
     justify-self: center;
     align-self: center;
-    padding-left: 15px;
 }
 
 .buttonAdd {
@@ -42,8 +41,8 @@
     line-height: normal;
     margin-left: 10px;
     margin-top: 15px;
-    
-    
+
+
 }
 
 .buttonClear {
@@ -80,7 +79,7 @@
     font-style: normal;
     font-weight: 600;
     line-height: normal;
-    
+
 }
 .oe-choose-file {
     width: 550px;
@@ -112,5 +111,5 @@
     line-height: 40px;
     position: relative;
     color: rgb(219, 0, 0);
-    
+
 }

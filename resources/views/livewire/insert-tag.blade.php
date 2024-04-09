@@ -5,11 +5,11 @@
     <form wire:submit.prevent="insertTag">
         @csrf
         <div>
-            <label class="oe-input-label" for="tag_name">Name</label>
+            <label class="oe-input-name" for="tag_name">Tag name</label>
             <input class="oe-input" wire:model="name" type="text" name="tag_name">
             <br>
             @error('name')
-            <span class="oe-error">{{ $message }}</span>
+            <span>{{ $message }}</span>
             @enderror
             </br>
         </div>

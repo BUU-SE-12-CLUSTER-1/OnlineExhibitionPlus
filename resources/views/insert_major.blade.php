@@ -11,7 +11,7 @@
         <form action="{{ url('/insert-major') }}" method="POST">
             @csrf
             <div>
-                <label class="oe-input-label" for="major_name">Name</label>
+                <label class="oe-input-label" for="major_name">Major name</label>
             </div>
             <div>
                 <input class="oe-input" type="text" name="major_name">

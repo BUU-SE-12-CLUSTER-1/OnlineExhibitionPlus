@@ -1,6 +1,6 @@
 <div>
         <script src="https://kit.fontawesome.com/a87b92189d.js" crossorigin="anonymous"></script>
-            <link rel="stylesheet" href="{{ asset('assets/css/output_template1.css') }}">
+            <link rel="stylesheet" href="{{ asset('assets/css/all_output_template.css') }}">
             <table>
                 <tr>
                     <td>

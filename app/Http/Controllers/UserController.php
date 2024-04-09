@@ -112,9 +112,23 @@ class UserController extends Controller
     }
     public function showUserProfile($user_id){
         $user_data = UserModel::find($user_id);
+        $users = UserModel::all();
         $major_data = MajorModel::all();
         $role_data = RoleModel::all();
-        return view('user_profile2',['oe_users'=>$user_data, 'oe_majors'=>$major_data, 'oe_roles'=>$role_data]);
+        $tags = TagModel::all();
+        $proj_tag = ProjectTagModel::all();
+        $advisors = AdvisorModel::all();
+        $user_projects = UserProjectModel::all();
+        $user_project_ids = array();
+        foreach ($user_projects as $user_project){
+            if($user_project->userproj_user_id == $user_id){
+                array_push($user_project_ids,$user_project->userproj_proj_id);
+            }
+        }
+        $project_data = ProjectModel::whereIn('proj_id',$user_project_ids)->paginate(6);
+
+        return view('user_profile2',['user'=>$user_data, 'oe_users'=>$users, 'oe_majors'=>$major_data, 'oe_roles'=>$role_data
+     , 'oe_projects'=>$project_data, 'oe_user_projects'=>$user_projects, 'oe_tags'=>$tags, 'oe_project_tag'=>$proj_tag, 'oe_advisors'=>$advisors]);
     }
     public function getUserImage($user_id){
         $user_data = UserModel::find($user_id);
@@ -124,6 +138,26 @@ class UserController extends Controller
         $response->headers('Cache-Control','max-age=2592000');
         return $response;
     }
+    /*
+    public function updateUserDetail($user_id, $Detail_name, Request $request){
+        $user = UserModel::find($user_id);
+        if($Detail_name == "fname"){
+            $user->user_fname = request('user_fname');
+        }elseif($Detail_name == 'lname'){
+            $user->user_lname = request('user_lname');
+        }elseif($Detail_name == 'student-id'){
+            $user->user_student_id = request('user_student_id');
+        }elseif($Detail_name == 'major'){
+            $user->user_major_id = (int)$request->input('user_major_id');
+        }elseif($Detail_name == 'email'){
+            $user->user_email = request('user_email');
+        }elseif($Detail_name == 'phone'){
+            $user->user_phone = request('user_phone');
+        }
+        $user->save();
+        return redirect('/user-profile/'.$user_id);
+    }
+    */
     public function updateUserDetail($user_id, Request $request){
         $request->validate([
             'student_id' =>'required|min:8|max:8|unique:oe_users,user_student_id,'.$user_id.',user_id',
@@ -180,6 +214,13 @@ class UserController extends Controller
             $user->user_status = 0;
         }
         $user->save();
+        return back();
+    }
+    public function changePassword($user_id,Request $request){
+        $request->validate([
+            'password' => 'min:6|required_with:password_confirmation',
+            'password_confirmation' => 'min:6|same:password',
+        ]);
         return back();
     }
 }
