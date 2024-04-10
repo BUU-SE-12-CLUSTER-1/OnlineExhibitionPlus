@@ -15,18 +15,18 @@
         <input class="oe-input" wire:model="student_id" type="text" name="user_student_id" maxlength="8">
         <br>
         @error('student_id')
-        <span class="oe-error" style="margin-left: 50px">{{ $message }}</span>
-        @enderror
-        </br>
-        <label class="oe-input-label" for="user_fname" maxlength="25">Firstname</label>
-        <input class="oe-input" wire:model="first_name" type="text" name="user_fname" maxlength="25"><br>
-        @error('user_fname')
         <span class="oe-error">{{ $message }}</span>
         @enderror
         </br>
-        <label class="oe-input-label" for="user_lname">Lastname</label>
+        <label class="oe-input-label" for="user_fname" maxlength="25">First Name</label>
+        <input class="oe-input" wire:model="first_name" type="text" name="user_fname" maxlength="25"><br>
+        @error('first_name')
+        <span class="oe-error">{{ $message }}</span>
+        @enderror
+        </br>
+        <label class="oe-input-label" for="user_lname">Last Name</label>
         <input class="oe-input" wire:model="last_name" type="text" name="user_lname" maxlength="25"><br>
-        @error('user_lname')
+        @error('last_name')
         <span class="oe-error">{{ $message }}</span>
         @enderror
         </br>

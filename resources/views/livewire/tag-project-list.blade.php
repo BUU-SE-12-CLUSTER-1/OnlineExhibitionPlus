@@ -4,6 +4,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/table.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/homePage.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/button_home.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/project_list.css') }}">
     <div class="search-container" style="position:relative;margin-left:990px;margin-top:-50px;">
         <input wire:model.live="search" style="padding-left: 10px;" type="text" class="search" name="search_project" placeholder="Search Project">
         <button type="button" class="search-button" name="btn_search_project">

@@ -209,3 +209,6 @@ Route::get('/testmas', function (){
 });
 
 Route::post('/insert-comment/{proj_id}/{user_id}',[CommentController::class, 'insertComment']);
+Livewire::setUpdateRoute(function ($handle) {
+    return Route::post('/cluster1/livewire/update', $handle);
+});
