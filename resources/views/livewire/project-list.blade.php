@@ -1,7 +1,9 @@
 <div>
     @livewireStyles
     <link rel="stylesheet" href="{{ asset('assets/css/homePage.css') }}">
-    <div class="search-container" style="position:relative;margin-left:990px;margin-top:-50px;">
+    <link rel="stylesheet" href="{{ asset('assets/css/button_home.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/button.css') }}">
+    <div class="search-container" style="position:relative;margin-left:960px;margin-top:-50px;">
         <input wire:model.live="search" style="outline:none; padding-left: 10px;" type="text" class="search" name="search_project" placeholder="Search Project">
         <button type="button" class="search-button" name="btn_search_project">
             <i class="fa-solid fa-magnifying-glass"></i>

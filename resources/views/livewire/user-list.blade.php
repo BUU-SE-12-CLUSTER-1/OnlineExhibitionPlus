@@ -1,8 +1,9 @@
 <div>
     @livewireStyles
-    <div class="search-container" style="position:relative;margin-left:820px;margin-top:-50px;">
+    <link rel="stylesheet" href="{{ asset('assets/css/button.css') }}">
+    <div class="search-container" style="position:relative;margin-left:1080px;margin-top:-50px;">
         <input wire:model.live="search" style="padding-left: 10px;" type="text" class="search" name="search_user" placeholder="Search User">
-        <button type="button" class="search-button" name="btn_search_user">
+        <button type="button" class="search-button" name="btn_search_user" style="margin-left:20px">
             <i class="fa-solid fa-magnifying-glass"></i>
         </button>
     </div>

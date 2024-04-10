@@ -1,7 +1,7 @@
 <div>
 @livewireStyles
-
-<div class="search-container" style="position:relative;margin-left:1010px;margin-top:-50px;">
+<link rel="stylesheet" href="{{ asset('assets/css/button.css') }}">
+<div class="search-container" style="position:relative;margin-left:1230px;margin-top:-50px;">
         <input wire:model.live="search" style="padding-left: 10px; outline:none;" type="text" class="search" name="search_company" placeholder="Search Advisor">
         <button type="button" class="search-button" name="btn_search_advisor">
             <i class="fa-solid fa-magnifying-glass"></i>
@@ -18,10 +18,10 @@
          Title
     </th>
     <th>
-    FisrtName
+    First Name
     </th>
     <th>
-    LastName
+    Last Name
     </th>
     <th>
    Action

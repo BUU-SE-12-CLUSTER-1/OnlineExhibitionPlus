@@ -18,7 +18,7 @@
                     </div>
                 </td>
                 <td>
-                    <form action="{{url('/search-project')}}" method="POST">
+                    <form action="{{url('/search-project')}}" method="GET">
                         @csrf
                         <div class="search_container">
                         <input type="text" class="search" name="search_project" placeholder="Search project here">
