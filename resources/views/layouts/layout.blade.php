@@ -80,7 +80,7 @@
             </x-slot>
           </x-oe-alert>
         <footer id="web-footer">
-        <div class="web-footer">
+        <div class="web-footer" style="bottom: 0;width:100%">
             <label id="faculty">Faculty of Informatics, Burapha University</label>
             <label id="copyright">Copyright © 2018-2022 Faculty of Informatics, Burapha University. All rights reserved.</label>
             <i id="location-icon" class="fa-solid fa-location-dot"></i>

@@ -70,12 +70,36 @@
             </div>
             <div class="comment">
                 <h1>Comment</h1>
-                <div class="comment_container">
+                <?php $user_id = 9; ?>
+                <form action="{{url('/insert-comment/'.$project->proj_id.'/'.$user_id)}}" method="POST">
+                @csrf
+                    <div class="comment_container">
                         <input type="text" class="comment_project" name="comment" placeholder="Comment project here">
                         <button type="submit" class="comment_button" name="btn_comment_project">
                         <i class="fa-solid fa-paper-plane"></i>
                         </button>
+                        @error('comment')
+                            <span class="oe-error">{{ $message }}</span>
+                        @enderror
                 </div>
+            </form>
+            @foreach ($oe_comments as $comment)
+            @if($project->proj_id == $comment->comment_proj_id)
+            <div class="comment-section" style="background: #FFF">
+            <div class="commentHeader" style="background: rgb(78, 108, 239);padding:2%">
+                @foreach ($oe_users as $user)
+                    @if($user->user_id == $comment->comment_user_id)
+                    <a href="{{url('/user-profile/'.$user->user_id)}}"><h3 style="color: #FFF">{{$user->user_fname}} {{$user->user_lname}}</h3></a>
+                    @endif
+                @endforeach
+            </div>
+            <div class="commentBody" style="background: #FFF; padding:3%">
+                <p>{{$comment->comment_text}}</p>
+            </div>
+        </div>
+        @endif
+            @endforeach
+
             </div>
             <div class="member_head">
                 <h1>Member</h1>

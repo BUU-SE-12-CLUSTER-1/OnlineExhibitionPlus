@@ -47,7 +47,6 @@ class EditUser extends Component
          $this->user->user_role_id = $this->role_id;
          $this->user->user_major_id = $this->major_id;
          $this->user->save();
-        request()->session()->flash('success','User Added Successfully');
         $this->dispatch('close-modal');
 
     }

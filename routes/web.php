@@ -9,6 +9,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\CompanyController;
 use App\Models\MajorModel;
 use App\Http\Controllers\AdvisorController;
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\TagController;
 use App\Models\RoleModel;
 use App\Http\Controllers\ProjectController;
@@ -134,7 +135,7 @@ Route::get('/project-detail/{proj_id}',[ProjectController::class, 'projectDetail
 Route::get('/select-template2', function(){
     return view('template2');
 });
-Route::post('/search-project',[ProjectController::class,'searchProject']);
+Route::get('/search-project',[ProjectController::class,'searchProject'])->name('projects.search');
 
 
 
@@ -206,3 +207,5 @@ Route::get('/testTag02', function (){
 Route::get('/testmas', function (){
     return view('testmas');
 });
+
+Route::post('/insert-comment/{proj_id}/{user_id}',[CommentController::class, 'insertComment']);
