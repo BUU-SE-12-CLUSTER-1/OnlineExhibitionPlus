@@ -121,6 +121,8 @@ class ProjectController extends Controller
 
     }
 
+
+}
     public function projectDetail($proj_id){
         $project_data = ProjectModel::find($proj_id);
         $company = CompanyModel::all();
