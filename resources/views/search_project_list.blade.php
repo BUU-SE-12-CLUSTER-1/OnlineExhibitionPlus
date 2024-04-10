@@ -17,7 +17,7 @@
             </button>
         </div>
         </form>
-        <div style="width:100%;height:80%;padding:500px">
+        <div style="width:100%;height:80%;padding-bottom:500px">
         @foreach ($oe_projects as $project)
         <div style="display:flex;align-items: flex-start;">
         <div style=";border: 1px solid red; margin-right: 10px;">
