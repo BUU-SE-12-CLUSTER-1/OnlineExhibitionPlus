@@ -21,7 +21,7 @@
                     <form action="{{url('/search-project')}}" method="GET">
                         @csrf
                         <div class="search_container">
-                        <input type="text" class="search" name="search_project" placeholder="Search project here">
+                        <input type="text" class="search" name="search" placeholder="Search project here">
                         <button type="submit" class="search_button" name="btn_search_user">
                         <i class="fa-solid fa-magnifying-glass"></i>
                         </button>
