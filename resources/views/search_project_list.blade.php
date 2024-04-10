@@ -20,7 +20,7 @@
         <div style="width:100%;height:80%;padding-bottom:500px">
         @foreach ($oe_projects as $project)
         <div style="display:flex;align-items: flex-start;">
-        <div style=";border: 1px solid red; margin-right: 10px;">
+        <div style="border: 1px solid red; margin-right: 10px;">
         <div class="project pj_01" style="background-image: url('{{$project->proj_main_image}}') !important;white-space: nowrap; text-overflow: ellipsis;">
         </div>
             <div class="information_01" style="">
