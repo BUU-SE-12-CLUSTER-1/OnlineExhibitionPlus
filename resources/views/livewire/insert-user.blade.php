@@ -15,25 +15,25 @@
         <input class="oe-input" wire:model="student_id" type="text" name="user_student_id" maxlength="8">
         <br>
         @error('student_id')
-        <span class="oe-error">{{ $message }}</span>
+        <span class="oe-error" style="margin-left: 50px">{{ $message }}</span>
         @enderror
         </br>
         <label class="oe-input-label" for="user_fname" maxlength="25">Firstname</label>
         <input class="oe-input" wire:model="first_name" type="text" name="user_fname" maxlength="25"><br>
-        @error('first_name')
+        @error('user_fname')
         <span class="oe-error">{{ $message }}</span>
         @enderror
         </br>
         <label class="oe-input-label" for="user_lname">Lastname</label>
         <input class="oe-input" wire:model="last_name" type="text" name="user_lname" maxlength="25"><br>
-        @error('last_name')
+        @error('user_lname')
         <span class="oe-error">{{ $message }}</span>
         @enderror
         </br>
         <label class="oe-input-label" for="user_email">Email</label>
         <input class="oe-input" wire:model="email" type="text" name="user_email" maxlength="55"><br>
         @error('email')
-        <span class="text-danger-500">{{ $message }}</span>
+        <span class="oe-error">{{ $message }}</span>
         @enderror
         </br>
         <label class="oe-input-label" for="user_password">Password</label>
@@ -46,7 +46,7 @@
         @endforeach
         </select><br>
         @error('major_id')
-        <span class="text-danger-500">{{ $message }}</span>
+        <span class="oe-error">{{ $message }}</span>
         @enderror
         <br>
         <label class="oe-input-label" for="user_role_id">Role</label>
@@ -57,7 +57,7 @@
         @endforeach
         </select><br>
         @error('role_id')
-        <span class="text-danger-500">{{ $message }}</span>
+        <span class="oe-error">{{ $message }}</span>
         @enderror
         <br></br>
         <div wire:loading>

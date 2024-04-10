@@ -15,6 +15,11 @@
             </div>
             <div>
                 <input class="input_company_tag_major" type="text" name="tag_name">
+                <br>
+            @error('tag_name')
+            <span class="oe-error">{{ $message }}</span>
+            @enderror
+            </br>
             </div>
             <div>
             <button class="buttonClear" type="reset" value="reset">Clear</button>
