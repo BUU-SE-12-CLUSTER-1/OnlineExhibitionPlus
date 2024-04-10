@@ -29,10 +29,11 @@
         @enderror
         </br>
         <label class="oe-input-label" for="user_newpassword">New Password</label>
+
         <div class="password">
-            <input class="eye-icon-new oe-input"  wire:model="password" type="password" name="user_newpassword" maxlength="20">
+            <input class="oe-input"  wire:model="password" type="password" name="user_password_edit" maxlength="20">
             
-            <i class="eye-icon-new fa-solid fa-eye-slash pass-icon" id="eye-icon-new"  onclick="newtogglePasswordVisibility()"></i>
+            <i class="fa-solid fa-eye-slash pass-icon" id="eye-icon_edit"  onclick="editTogglePasswordVisibility()"></i>
         </div>
         <br></br>
         <label class="oe-input-label" for="user_major_id">Major</label>
@@ -64,17 +65,17 @@
             <input class="buttonClear"  x-data x-on:click="$dispatch('close-modal')" wire:loading.attr="disabled" wire:loading.remove type="button" class="oe-button" value="Cancel" style="margin-left: 368px ; margin-top: 10px">
             <input wire:loading.attr="disabled" wire:loading.remove type="submit" class="buttonAdd" value="Submit" wire:click="updateUser">
         </form>
+        
         <script>
-        function newtogglePasswordVisibility() {
-    var passwordInput_new = document.getElementsByClassName("user_newpassword")[0];
-    var eyeIcon_new = document.getElementsByClassName("eye-icon-new");
-
-    if (passwordInput_new.type === "password") {
-        passwordInput_new.type = "text";
-        eyeIcon_new.className = "fa-solid fa-eye"; 
+        function editTogglePasswordVisibility() {
+    var passwordInput = document.getElementsByName("user_password_edit")[0];
+    var eyeIcon = document.getElementById("eye-icon_edit");
+    if (passwordInput.type === "password") {
+        passwordInput.type = "text";
+        eyeIcon.className = "fa-solid fa-eye"; 
     } else {
-        passwordInput_new.type = "password";
-        eyeIcon_new.className = "fa-solid fa-eye-slash pass-icon"; 
+        passwordInput.type = "password";
+        eyeIcon.className = "fa-solid fa-eye-slash pass-icon"; 
     }
 }
 

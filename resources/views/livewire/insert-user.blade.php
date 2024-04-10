@@ -42,6 +42,8 @@
             <input class="oe-input"  wire:model="password" type="password" name="user_password" maxlength="20">
             
             <i class="fa-solid fa-eye-slash pass-icon" id="eye-icon"  onclick="togglePasswordVisibility()"></i>
+          
+           
         </div>
 		
     
