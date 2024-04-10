@@ -6,11 +6,11 @@
     <form wire:submit.prevent="insertCompany" action="">
         @csrf
         <div>
-            <label class="oe-input-name" for="company_name">Company name</label>
+            <label class="oe-input-label" for="company_name">Company</label>
             <input class="oe-input" wire:model="name" type="text" name="company_name" maxlength="100">
             <br>
             @error('name')
-            <span class="text-danger-500">{{ $message }}</span>
+            <span class="oe-error">{{ $message }}</span>
             @enderror
             </br>
         </div>

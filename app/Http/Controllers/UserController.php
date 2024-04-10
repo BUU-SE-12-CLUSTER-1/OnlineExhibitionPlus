@@ -164,7 +164,7 @@ class UserController extends Controller
             'first_name' =>'required|min:2|max:25',
             'last_name' =>'required|min:2|max:25',
             'email' =>'required|email|unique:oe_users,user_email,'.$user_id.',user_id',
-            'major' => 'required',
+            'major_id' => 'required',
             'phone_number' => 'nullable|regex:/(0)[0-9]{9}/'
         ]);
         $user = UserModel::find($user_id);
@@ -178,7 +178,7 @@ class UserController extends Controller
         $user->user_fname = request('first_name');
         $user->user_lname = request('last_name');
         $user->user_student_id = request('student_id');
-        $user->user_major_id = (int)$request->input('major');
+        $user->user_major_id = (int)$request->input('major_id');
         $user->user_email = request('email');
         $user->user_phone = request('phone_number');
         $user->save();

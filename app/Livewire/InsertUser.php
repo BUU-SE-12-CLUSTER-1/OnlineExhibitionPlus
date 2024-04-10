@@ -19,8 +19,8 @@ use Illuminate\Support\Facades\File;
 class InsertUser extends Component
 {
     public $student_id = '';
-    public $fname = '';
-    public $lname = '';
+    public $first_name = '';
+    public $last_name = '';
     public $email = '';
     public $password = '';
     public $profile_image = '/assets/img/users/img_user_icon.png';
@@ -30,8 +30,8 @@ class InsertUser extends Component
     public function insertUser(){
         $this->validate([
             'student_id' =>'required|min:8|max:8|unique:oe_users,user_student_id',
-            'fname' =>'required|min:2|max:25',
-            'lname' =>'required|min:2|max:25',
+            'first_name' =>'required|min:2|max:25',
+            'last_name' =>'required|min:2|max:25',
             'email' =>'required|email|unique:oe_users,user_email',
             'role_id' => 'required',
             'major_id' => 'required'
@@ -40,8 +40,8 @@ class InsertUser extends Component
         if($this->password != ''){
         UserModel::create([
             'user_student_id' => $this->student_id,
-            'user_fname' => $this->fname,
-            'user_lname' => $this->lname,
+            'user_fname' => $this->first_name,
+            'user_lname' => $this->last_name,
             'user_email' => $this->email,
             'user_password' => Hash::make($this->password),
             'user_profile_image' => $this->profile_image,
@@ -50,8 +50,8 @@ class InsertUser extends Component
         ]);}else{
             UserModel::create([
                 'user_student_id' => $this->student_id,
-                'user_fname' => $this->fname,
-                'user_lname' => $this->lname,
+                'user_fname' => $this->first_name,
+                'user_lname' => $this->last_name,
                 'user_email' => $this->email,
                 'user_profile_image' => $this->profile_image,
                 'user_role_id' => $this->role_id,

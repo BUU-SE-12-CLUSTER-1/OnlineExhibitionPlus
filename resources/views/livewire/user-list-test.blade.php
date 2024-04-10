@@ -1,6 +1,6 @@
 @extends('layouts.layout')
 @section('title')
-    user list | Online Exhibition+
+    User list | Online Exhibition+
 @endsection
 @section('content')
 @endsection
