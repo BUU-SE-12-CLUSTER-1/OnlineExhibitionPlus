@@ -4,11 +4,9 @@
 @endsection
     @section('content')
     @livewireStyles
-    <link rel="stylesheet" href="{{ asset('assets/css/myfavoritepj.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/table.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/homePage.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/button_home.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/project_list.css') }}">
         <script src="https://kit.fontawesome.com/a87b92189d.js" crossorigin="anonymous"></script>
         <form action="{{route('projects.search')}}" method="GET">
             @csrf
@@ -19,7 +17,7 @@
             </button>
         </div>
         </form>
-        <div style="width:100%;height:80%;padding:500px">
+        <div style="width:100%;height:80%;padding-bottom:500px">
         @foreach ($oe_projects as $project)
         <div style="display:flex;align-items: flex-start;">
         <div style=";border: 1px solid red; margin-right: 10px;">

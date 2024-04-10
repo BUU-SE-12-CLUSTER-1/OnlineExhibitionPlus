@@ -2,7 +2,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/homePage.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/project_list.css') }}">
     <div style="text-overflow: ellipsis;white-space: nowrap;">
-        <div class="project_pj_01" style="background-image: url('{{$project->proj_main_image}}') !important;white-space: nowrap; text-overflow: ellipsis ;">
+        <div class="project pj_01" style="background-image: url('{{$project->proj_main_image}}') !important;white-space: nowrap; text-overflow: ellipsis;">
         </div>
         <div class="information_01" >
 
