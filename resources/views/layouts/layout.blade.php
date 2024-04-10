@@ -104,12 +104,8 @@
                     </label>
             </div>
         </div>
-    </footer>
-        </body>
-
-        <footer>
-
         </footer>
+        </body>
 </html>
 <script>
     IsEnableHamberger_menu = false;

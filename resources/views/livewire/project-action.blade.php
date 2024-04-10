@@ -9,8 +9,11 @@
             <i class="fa-solid fa-eye-slash" style="color:#fff;"></i>
             @endif
         </a>
-        <a title="Delete this project!!" href="{{ url('/delete-project/' . $project->proj_id) }}" style="color: rgba(255, 255, 255, 0)">
-            <i class="fa-solid fa-trash-can" style="color: white; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); margin-left: 5px;" id="1"></i>
+        
+        <a href="{{ url('/delete-project/' . $project->proj_id) }}" style="color: inherit">
+        <a title="Delete this project!!" href="#" style="color: inherit" x-data x-on:click="$dispatch('open-oe-alert', { name: 'delete-{{ $project->proj_id }}' })"><i class="fa-solid fa-trash-can" style="color: white; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); margin-left: 5px;" id="1"></i></a
+        </a>
+            
         </a>
         <?php
         $user_id = 9;
@@ -35,12 +38,17 @@
         </a>
             @endif
 
-
         {{-- <x-modal name="{{ $project->project_id }}" title="Edit Project" id="edit-box">
             <x-slot name="body">
                 @livewire('edit-project', ['project' => $project])
             </x-slot>
         </x-modal> --}}
+
+        
+
+    </div>    
+
+
 
 </div>
 
