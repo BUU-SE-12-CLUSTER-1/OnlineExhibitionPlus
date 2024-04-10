@@ -9,9 +9,11 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\CompanyController;
 use App\Models\MajorModel;
 use App\Http\Controllers\AdvisorController;
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\TagController;
 use App\Models\RoleModel;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\MyAuth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,6 +24,10 @@ use App\Http\Controllers\ProjectController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+Route::get('/', function (){
+    return view('home');
+});
 
 Route::get('/home', function (){
     return view('home');
@@ -37,7 +43,7 @@ Route::get('/test', function(){
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
-
+Route::post('/login',[MyAuth::class, 'login_process']);
 Route::get('/insert-user',[UserController::class, 'insertUserPage']);
 Route::post('/insert-user',[UserController::class, 'insertUser']);
 Route::get('/user-list',[UserController::class, 'showUserList']);
@@ -55,6 +61,7 @@ Route::post('update-user-detail/{user_id}',[UserController::class,'updateUserDet
 Route::get('upload-user-image/{user_id}',[UserController::class,'uploadImage']);
 Route::post('upload-user-image/{user_id}',[UserController::class,'uploadImageProcess']);
 Route::get('/toggle-user/{user_id}',[UserController::class, 'toggleVisible']);
+Route::post('change-password/{user_id}',[UserController::class, 'changePassword']);
 
 Route::get('/insert-advisor' , function(){
     return view('insert_advisor');
@@ -68,6 +75,10 @@ Route::post('/insert-tag', [TagController::class, 'insertTag']);
 
 Route::get('/insert-major', function(){
     return view('insert_major');
+});
+
+Route::get('/advanced-search-project' , function(){
+    return view('advanced_search_project');
 });
 
 Route::post('/insert-major',[MajorController::class, 'insertMajor']);
@@ -118,10 +129,16 @@ Route::get('/toggle-liked/{proj_id}/{user_id}',[ProjectController::class, 'toggl
 Route::get('/edit-project/{proj_id}',[ProjectController::class, 'editProject']);
 Route::post('update-project/{proj_id}',[ProjectController::class, 'updateProject']);
 Route::get('/fav-project',[ProjectController::class, 'favProjectList']);
+Route::get('/tag-search/{tag_id}',[ProjectController::class, 'tagSearch']);
+Route::get('/project-detail/{proj_id}',[ProjectController::class, 'projectDetail']);
+
 Route::get('/select-template2', function(){
     return view('template2');
 });
-Route::post('/search-project',[ProjectController::class,'searchProject']);
+Route::get('/search-project',[ProjectController::class,'searchProject'])->name('projects.search');
+
+
+
 
 Route::get('/input-template1', function(){
     return view('template1_form');
@@ -186,3 +203,9 @@ Route::get('/testTag01', function (){
 Route::get('/testTag02', function (){
     return view('test_tag02');
 });
+
+Route::get('/testmas', function (){
+    return view('testmas');
+});
+
+Route::post('/insert-comment/{proj_id}/{user_id}',[CommentController::class, 'insertComment']);

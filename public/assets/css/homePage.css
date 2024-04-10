@@ -1,4 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Chonburi&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+*{
+    margin: 0 0;
+    padding: 0 0;
+    box-sizing: content-box;
+    max-width: 1920px;
+}
 .content_home {
     background-color: white;
     width: 1430px;
@@ -160,7 +166,7 @@ img{
     max-width: 319px;
     width: 100%;
     height: 449px;
-    cursor: pointer;    
+    cursor: pointer;
 }
 
 .detail{
@@ -228,7 +234,7 @@ img{
     top: 0;
     z-index: -1;
     transition:.4s;
-    
+
 }
 .tag1:hover{
     color: #FFF;
@@ -264,7 +270,7 @@ img{
     top: 0;
     z-index: -1;
     transition:.4s;
-    
+
 }
 .tag2:hover{
     color: #ffffff;

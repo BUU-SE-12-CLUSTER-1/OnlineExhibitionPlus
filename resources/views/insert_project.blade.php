@@ -4,6 +4,7 @@
 <link rel="stylesheet" href="{{asset('assets/css/tag_selector.css')}}">
 <link rel="stylesheet" href="{{asset('assets/css/member_selector.css')}}">
 <link rel="stylesheet" href="{{asset('assets/css/upload_box.css')}}">
+<link rel="stylesheet" href="{{asset('assets/css/template_selector.css')}}">
 <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/thinline.css">
 <script src="https://kit.fontawesome.com/a87b92189d.js" crossorigin="anonymous"></script>
 <h1>ADD Project</h1>
@@ -11,7 +12,7 @@
     return false;
 }" enctype="multipart/form-data">
 @csrf
-<div style="width:600px; border: 1px solid #000;display:inline-block">
+<div style="width:600px; border: 1px solid #000;display:inline-block;height:fit-content">
     <table border="0">
         <tr>
             <td colspan="2">
@@ -142,9 +143,10 @@
                 <label for="member" >Member</label>
             </td>
         </tr>
-    </table>
-    <div style="display:inline-flex;width: fit-content; height: 150px; border-radius: 25px; text-align: center; display: relative; border: 1px solid #000;">
-        <div class="select-user-box" name="proj_tag_id">
+        <tr>
+            <td colspan="3">
+    <div style="display:inline-block;width: fit-content; border-radius: 25px; text-align: center; display: relative; border: 1px solid #000;">
+        <div class="select-user-box" name="proj_user_id">
             <div class="select-user-option">
                 <div class="user-add">
                     <ul>
@@ -165,13 +167,40 @@
                 </ul>
             </div>
         </div>
-        <!--
-        for ($i = 0; $i < 6; $i++)
-        <div style=" height: 135px; width: 150px; border-radius:25px; margin:7px 12px; border:1px solid #000;">
-            test
+    </td>
+    </tr>
+    <tr>
+        <td>
+            <label for="template" >Template</label>
+        </td>
+    </tr>
+    <tr>
+        <td>
+        <div class="select-temp-box">
+            <div class="select-temp-option">
+                <div class="temp-add">
+                    <ul>
+                        <button type="button" class="add-temp-option">ADD MEMBER</button>
+                    </ul>
+                    <small style="color: #888"> Add template to your project</small>
+                </div>
+            </div>
+            <div class="temp-content">
+                <div class="temp-search">
+                <input type="text" id="tempOptionSearch" placeholder="Add a temp" name="">
+            </div>
+                <ul class="temp-options">
+                    <li value="1">Template1</li>
+                    <li value="2">Template2</li>
+                    <li value="2">Template3</li>
+                    <li value="2">Template4</li>
+
+                </ul>
+            </div>
         </div>
-        endfor
-        -->
+    </td>
+    </tr>
+    </table>
 </div>
 </form>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -463,7 +492,7 @@
             text = this.textContent;
             id = this.value;
             isDuplicate = false;
-            const ulUserList = document.querySelectorAll('.user-search ul li');
+            const ulUserList = document.querySelectorAll('.user-add ul li');
             ulUserList.forEach(user=>{
                 const ulUserName = user.textContent;
                 if(ulUserName == text){
@@ -486,7 +515,7 @@
             text = this.textContent;
             id = this.value.toString();
             isDuplicate = false;
-            const ulUserList = document.querySelectorAll('.user-search ul li');
+            const ulUserList = document.querySelectorAll('.user-add ul li');
             ulUserList.forEach(user=>{
                 const ulUserName = user.textContent;
                 if(ulUserName == text){
@@ -494,24 +523,7 @@
                 }
             });
             if(isDuplicate == false){
-                let newUser = `<div style=" height: 135px; width: 150px; border-radius:25px; margin:7px 12px; border:1px solid #000;">
-
-                    <?php
-                        $this_id = '${id}';
-                        $this_id = $this_id;
-                        echo $this_id;
-                    ?>
-                    @foreach ($oe_users as $user)
-                    <?php echo $user['user_id']."+".$this_id;?>
-                        @if($user['user_id'] == $this_id)
-                        <?php echo "Oh yeah";?>
-                        <li>{{$user['user_profile_image']}}<i class="uit uit-multiply" onclick="removeUser(this, '${text}')"></i></li>
-                        @endif
-                    @endforeach
-
-                    <li>${text}<i class="uit uit-multiply" onclick="removeUser(this, '${text}')"></i></li>
-            </div>
-                `;
+                let newUser = `<li>${text}<i class="uit uit-multiply" onclick="removeUser(this, '${text}')"></i></li>`;
                 userAdd.insertAdjacentHTML("beforebegin", newUser);
             selectUserBox.classList.remove('active');
             optionUserSearch.value = "";
@@ -524,7 +536,8 @@
             ulUserList.forEach(user=>{
                 const ulUserName = user.textContent;
                 if(ulUserName == userName){
-                    user.parentNode.remove();
+                    //user.parentNode.remove();
+                    user.remove();
                 }
             });
     }
@@ -542,6 +555,105 @@
 
 </script>
 
+<script>
+    const selectTempBox = document.querySelector('.select-temp-box');
+    const selectTempOption = document.querySelector('.select-temp-option');
+    const AddTempOption = document.querySelector('.add-temp-option');
+    const tempContent = document.querySelector('.temp-content');
+    const tempOptions = document.querySelector('.temp-options');
+    const optionTempSearch = document.getElementById('tempOptionSearch');
+    const tempValue = document.querySelector('#tempValue');
+    const optionTempList = document.querySelectorAll('.temp-options li');
+    const ulTemp = document.querySelector('.temp-search ul');
+    const tempSearch = document.querySelector('.temp-search input');
+    const tempAdd = document.querySelector('.temp-add button');
+
+    AddTempOption.addEventListener('click', function(){
+        selectTempBox.classList.toggle('active');
+    });
+    tempSearch.addEventListener('keyup', function(){
+        selectTempBox.classList.add('active');
+    });
+    tempSearch.addEventListener('keydown', deleteTempByKeyPress);
+    function deleteTempByKeyPress(e){
+        if(tempSearch.value === "" && e.key === 'Backspace' || e.key === 'Delete' ){
+            const ulTempList = document.querySelectorAll('.temp-search ul li');
+            lastTemp = "";
+            ulTempList.forEach(temp=>{
+                const ulTempName = temp.textContent;
+                lastTemp = temp;
+            });
+            if(lastTemp != ""){
+                lastTemp.remove();
+            }
+        }else if(e.key === 'Enter'){
+            optionTempList.forEach(function(optionTempListSingle){
+        optionTempListSingle.addEventListener('click', function(){
+            text = this.textContent;
+            id = this.value;
+            isDuplicate = false;
+            const ulTempList = document.querySelectorAll('.temp-add ul li');
+            ulTempList.forEach(temp=>{
+                const ulTempName = temp.textContent;
+                if(ulTempName == text){
+                    isDuplicate = true;
+                }
+            });
+            if(isDuplicate == false && ulTempList.length<2){
+                let newTemp = `<li><i class="uit uit-multiply" onclick="removeTemp(this, '${text}')"></i></li>`;
+                tempAdd.insertAdjacentHTML("beforebegin", newTemp);
+            selectTempBox.classList.remove('active');
+            optionTempSearch.value = "";
+        }
+
+        })
+    });
+        }
+    }
+    optionTempList.forEach(function(optionTempListSingle){
+        optionTempListSingle.addEventListener('click', function(){
+            text = this.textContent;
+            id = this.value.toString();
+            isDuplicate = false;
+            const ulTempList = document.querySelectorAll('.temp-add ul li');
+            ulTempList.forEach(temp=>{
+                const ulTempName = temp.textContent;
+                if(ulTempName == text){
+                    isDuplicate = true;
+                }
+            });
+            if(isDuplicate == false){
+                let newTemp = `<li>${text}<i class="uit uit-multiply" onclick="removeTemp(this, '${text}')"></i></li>`;
+                tempAdd.insertAdjacentHTML("beforebegin", newTemp);
+            selectTempBox.classList.remove('active');
+            optionTempSearch.value = "";
+            }
+
+        })
+    });
+    function removeTemp(element, tempName){
+        const ulTempList = document.querySelectorAll('.temp-add ul li');
+            ulTempList.forEach(temp=>{
+                const ulTempName = temp.textContent;
+                if(ulTempName == tempName){
+                    //temp.parentNode.remove();
+                    temp.remove();
+                }
+            });
+    }
+    optionTempSearch.addEventListener('keyup', function(){
+        const filter = optionTempSearch.value.toUpperCase();
+        optionTempList.forEach(option =>{
+            const tempName = option.textContent.toUpperCase();
+            if (tempName.includes(filter) || filter === ''){
+                option.style.display = 'block';
+            } else {
+                option.style.display = 'none';
+            }
+        });
+    });
+
+</script>
 <script>
     const dropArea = document.getElementById("drop-area");
 const inputFile = document.getElementById("input-user-image");

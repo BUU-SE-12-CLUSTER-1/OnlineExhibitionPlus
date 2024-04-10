@@ -8,8 +8,8 @@
     </div><br>
     <table style="margin-top:-10px" border="1">
     <tr>
-        <th>#</th>
-        <th>Tag</th>
+        <th>ID</th>
+        <th>Tag Name</th>
         <th>Action</th>
     </tr>
         @foreach ($oe_tags as $tag)

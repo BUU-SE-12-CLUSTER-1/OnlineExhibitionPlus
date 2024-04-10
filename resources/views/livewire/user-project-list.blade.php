@@ -1,10 +1,8 @@
 <div>
     @livewireStyles
-    <link rel="stylesheet" href="{{ asset('assets/css/project_list.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/project_userpf2.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/modal.css') }}">
             <table>
-                <tr>
-            </tr>
                 <?php
                 $td_count = 1;
                     ?>

@@ -33,11 +33,22 @@
         <label class="oe-input-label" for="user_email">Email</label>
         <input class="oe-input" wire:model="email" type="text" name="user_email" maxlength="55"><br>
         @error('email')
-        <span class="oe-error">{{ $message }}</span>
+        <span class="text-danger-500">{{ $message }}</span>
         @enderror
         </br>
         <label class="oe-input-label" for="user_password">Password</label>
-        <input class="oe-input" wire:model="password" type="password" name="user_password" maxlength="20"><br></br>
+
+        <div class="password">
+            <input class="oe-input"  wire:model="password" type="password" name="user_password" maxlength="20">
+
+            <i class="fa-solid fa-eye-slash pass-icon" id="eye-icon"  onclick="togglePasswordVisibility()"></i>
+        </div>
+
+
+
+        <br></br>
+
+
         <label class="oe-input-label" for="user_major_id">Major</label>
         <select class="oe-input" wire:model="major_id" name="user_major_id">
             <option value="">--</option>
@@ -46,7 +57,7 @@
         @endforeach
         </select><br>
         @error('major_id')
-        <span class="oe-error">{{ $message }}</span>
+        <span class="text-danger-500">{{ $message }}</span>
         @enderror
         <br>
         <label class="oe-input-label" for="user_role_id">Role</label>
@@ -57,7 +68,7 @@
         @endforeach
         </select><br>
         @error('role_id')
-        <span class="oe-error">{{ $message }}</span>
+        <span class="text-danger-500">{{ $message }}</span>
         @enderror
         <br></br>
         <div wire:loading>
@@ -69,8 +80,28 @@
         </form>
         @livewireScripts
         <script>
+            function togglePasswordVisibility() {
+    var passwordInput = document.getElementsByName("user_password")[0];
+    var eyeIcon = document.getElementById("eye-icon");
+
+    if (passwordInput.type === "password") {
+        passwordInput.type = "text";
+        eyeIcon.className = "fa-solid fa-eye";
+    } else {
+        passwordInput.type = "password";
+        eyeIcon.className = "fa-solid fa-eye-slash pass-icon";
+    }
+}
+
+
             setTimeout(function() {
     $('.oe-error').fadeOut('fast');
 }, 6000);
+
+
+
+
+
+
         </script>
 </div>

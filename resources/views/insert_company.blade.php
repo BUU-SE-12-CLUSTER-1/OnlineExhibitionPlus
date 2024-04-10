@@ -11,7 +11,7 @@
         <form action="{{ url('/insert-company') }}" method="POST">
             @csrf
             <div>
-                <label class="oe-input-name" for="company_name">Name</label>
+                <label class="oe-input-name" for="company_name">Company name</label>
             </div>
             <div>
                 <input class="oe-input" type="text" name="company_name">

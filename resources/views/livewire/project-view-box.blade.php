@@ -1,13 +1,11 @@
 <div style="margin-bottom: 200%;z-index:99;display:flex;white-space: nowrap;text-overflow: ellipsis;">
-    <link rel="stylesheet" href="{{ asset('assets/css/homePage.css') }}">
     <div style="text-overflow: ellipsis;white-space: nowrap;">
         <div class="project pj_01" style="background-image: url('{{$project->proj_main_image}}') !important;white-space: nowrap; text-overflow: ellipsis;">
         </div>
         <div class="information_01" >
             @livewire('project-action-user',['project'=>$project])
-
                     <div class="detail" >
-                        <h2>{{$project->proj_name}}</h2>
+                        <a style="color: #FFF" href={{url('/project-detail/'.$project->proj_id)}}><h2>{{$project->proj_name}}</h2></a>
                         <?php
                         $isHasOwner = false;
                         ?>
@@ -38,9 +36,9 @@
                                 <?php $firstTagId = $tag->tag_id;
                                         $tag_count++;
                                 ?>
-                                <button class="tag1">{{$tag->tag_name}}</button>
+                                <a href="{{url('/tag-search/'.$tag->tag_id)}}"><button class="tag1">{{$tag->tag_name}}</button></a>
                                 @elseif ($tag_count == 2 && $tag->tag_id != $firstTagId &&$project->proj_id == $proj_single_tag->projtag_proj_id && $tag->tag_id == $proj_single_tag->projtag_tag_id)
-                                <button class="tag2">{{$tag->tag_name}}</button>
+                                <a href="{{url('/tag-search/'.$tag->tag_id)}}"><button class="tag2">{{$tag->tag_name}}</button></a>
                                 <?php
                                 $tag_count++;
                                 ?>

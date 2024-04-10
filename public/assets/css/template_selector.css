@@ -1,0 +1,86 @@
+
+.select-temp-box{
+    width: 80%;
+
+    position: relative;
+
+}
+.select-temp-option{
+    position: relative;
+
+}
+.select-temp-option input{
+    width: 105%;
+    height: 5px;
+    background-color: #fff;
+    color: #000;
+    border-radius: 360px;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 5px 10px;
+    border: 1 !important;
+    outline: 1 !important;
+
+}
+
+.select-temp-option:after{
+    content: "";
+    border-top: 10px solid #000;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    position: absolute;
+    right: -15%;
+    top: 50%;
+    margin-top: -6px;
+}
+
+.temp-content{
+    background-color: #fff;
+    position: absolute;
+    color: #000;
+    border-radius: 360px;
+    margin-top: 15px;
+    width: 120%;
+    z-index: 999;
+    display: none;
+}
+.temp-search input{
+    width: 94%;
+    font-size: 14px;
+    padding: 5px;
+    outline: 0px;
+    border: 1px solid #b3b3b3;
+    border-radius: 360px;
+    height: 5px;
+}
+.temp-options{
+    margin-top: 10px;
+    max-height: 150px;
+    overflow-y: auto;
+    padding: 0px;
+}
+.temp-options li{
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+}
+.temp-options li:hover{
+    background-color: #f2f2f2;
+}
+
+.select-temp-box.active .temp-content{
+    display: block;
+}
+
+.select-temp-box.active .select-temp-option:after{
+    transform: rotate(-180deg);
+}
+
+.temp-options a{
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    /*margin-top: -50%;z*/
+}

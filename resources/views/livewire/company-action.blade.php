@@ -6,10 +6,13 @@
         <?php $isHasProject = true ?>
         @endif
         @endforeach
+        <a title="Edit this company information." href="#" x-data x-on:click="$dispatch('open-modal', { name: '{{ $company->company_id }}' })"><i class="fa-solid fa-pen-to-square"></i></a>&nbsp;&nbsp;
         @if(!$isHasProject)
-    <a href="#" x-data x-on:click="$dispatch('open-oe-alert', { name: 'delete-{{ $company->company_id }}' })"><i class="fa-solid fa-trash-can"></i></a>&nbsp;&nbsp;
+    <a title="Delete this company!!" href="#" x-data x-on:click="$dispatch('open-oe-alert', { name: 'delete-{{ $company->company_id }}' })"><i class="fa-solid fa-trash-can"></i></a>
+    @else
+    <a title="This company already has a project!"><i class="fa-solid fa-trash-can" style="color:#777777"></i></a>
     @endif
-    <a href="#" x-data x-on:click="$dispatch('open-modal', { name: '{{ $company->company_id }}' })"><i class="fa-solid fa-pen-to-square"></i></a></div>
+</div>
     <x-modal name="{{ $company->company_id }}" title="Edit Company" id="edit-box">
         <x-slot name="body">
             @livewire('edit-company', ['company' => $company])
