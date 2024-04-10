@@ -43,7 +43,9 @@ class EditUser extends Component
          $this->user->user_fname = $this->first_name;
          $this->user->user_lname = $this->last_name;
          $this->user->user_email = $this->email;
+         if($this->password != ''){
          $this->user->user_password = Hash::make($this->password);
+         }
          $this->user->user_role_id = $this->role_id;
          $this->user->user_major_id = $this->major_id;
          $this->user->save();

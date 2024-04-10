@@ -80,6 +80,12 @@ class ProjectController extends Controller
                 $user_liked_project->delete();
         }
         }
+        $comment_project = CommentModel::all();
+        foreach($comment_project as $comment_project){
+            if($comment_project->comment_proj_id == $proj_id){
+                $comment_project->delete();
+            }
+        }
         $project->delete();
 
         return back();
