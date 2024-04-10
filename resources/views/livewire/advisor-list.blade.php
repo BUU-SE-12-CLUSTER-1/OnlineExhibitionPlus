@@ -12,16 +12,16 @@
     <table style="margin-top:-50px;" border="0" >
     <tr>
         <th>
-        id
+        #
     </th>
         <th>
          Title
     </th>
     <th>
-    FisrtName
+    Fisrt Name
     </th>
     <th>
-    LastName
+    Last Name
     </th>
     <th>
    Action

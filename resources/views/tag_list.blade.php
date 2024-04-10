@@ -1,6 +1,6 @@
 @extends('layouts.layout')
 @section('title')
-    tag list | Online Exhibition+
+    Tag list | Online Exhibition+
 @endsection
     @section('content')
     @livewireStyles

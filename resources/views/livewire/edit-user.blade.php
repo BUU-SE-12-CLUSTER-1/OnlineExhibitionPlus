@@ -3,20 +3,19 @@
     <form wire:submit.prevent="updateUser">
         @csrf
         <input type="hidden" name="user_id" value={{$oe_users['user_id']}}>
-        <label class="oe-input-label" for="user_student_id" >Student Id</label>
+        <label class="oe-input-label" for="user_student_id" >Student ID</label>
         <input class="oe-input"  wire:model="student_id" type="text" name="user_student_id"   maxlength="8" value={{$oe_users['user_student_id']}} /></br>
-
         @error('student_id')
         <span class="oe-error">{{ $message }}</span>
         @enderror
         </br>
-        <label  class="oe-input-label"for="user_fname" >Firstname</label>
+        <label  class="oe-input-label"for="user_fname" >First Name</label>
         <input class="oe-input" wire:model="first_name" type="text" name="user_fname" maxlength="25" value={{$oe_users['user_fname']}}></br>
         @error('first_name')
         <span class="oe-error">{{ $message }}</span>
         @enderror
         </br>
-        <label class="oe-input-label" class="oe-input-label" for="user_lname">Lastname</label>
+        <label class="oe-input-label" class="oe-input-label" for="user_lname">Last Name</label>
         <input class="oe-input" wire:model="last_name" type="text" name="user_lname" maxlength="25" value={{$oe_users['user_lname']}}></br>
         @error('last_name')
         <span class="oe-error">{{ $message }}</span>
@@ -25,14 +24,14 @@
         <label class="oe-input-label" for="user_email">Email</label>
         <input class="oe-input" wire:model="email" type="text" name="user_email" maxlength="55"value={{$oe_users['user_email']}}></br>
         @error('email')
-        <span class="text-danger-500">{{ $message }}</span>
+        <span class="oe-error">{{ $message }}</span>
         @enderror
         </br>
         <label class="oe-input-label" for="user_newpassword">New Password</label>
         <div class="password">
-            <input class="eye-icon-new oe-input"  wire:model="password" type="password" name="user_newpassword" maxlength="20">
+            <input class="oe-input"  wire:model="password" type="password" id="user_password_edit" maxlength="20">
 
-            <i class="eye-icon-new fa-solid fa-eye-slash pass-icon" id="eye-icon-new"  onclick="newtogglePasswordVisibility()"></i>
+            <i class="fa-solid fa-eye-slash pass-icon" id="eye-icon-new" onclick="newtogglePasswordVisibility()"></i>
         </div>
         <br></br>
         <label class="oe-input-label" for="user_major_id">Major</label>
@@ -43,7 +42,7 @@
             @endforeach
             </select><br>
             @error('major_id')
-            <span class="text-danger-500">{{ $message }}</span>
+            <span class="oe-error">{{ $message }}</span>
             @enderror
             <br>
             <label class="oe-input-label" for="user_role_id">Role</label>
@@ -54,7 +53,7 @@
                 @endforeach
             </select><br>
             @error('role_id')
-            <span class="text-danger-500">{{ $message }}</span>
+            <span class="oe-error">{{ $message }}</span>
             @enderror
             <br></br>
             <div wire:loading>
@@ -66,8 +65,8 @@
         </form>
         <script>
         function newtogglePasswordVisibility() {
-    var passwordInput_new = document.getElementsByClassName("user_newpassword")[0];
-    var eyeIcon_new = document.getElementsByClassName("eye-icon-new");
+    var passwordInput_new = document.getElementById("user_password_edit");
+    var eyeIcon_new = document.getElementById("eye-icon-new");
 
     if (passwordInput_new.type === "password") {
         passwordInput_new.type = "text";
@@ -77,10 +76,10 @@
         eyeIcon_new.className = "fa-solid fa-eye-slash pass-icon";
     }
 }
-
             setTimeout(function() {
-    $('.oe-error').fadeOut('fast');
-}, 6000);
+                $('.oe-error').fadeOut('fast');
+            }, 6000);
+
     </script>
 
 
