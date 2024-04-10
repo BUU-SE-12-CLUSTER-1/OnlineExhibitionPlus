@@ -43,14 +43,14 @@
                 @error('student_id')
                     <div class="oe-error" style="color: rgb(219, 0, 0)" id="error1">{{ $message }}</div>
                 @enderror
-                <p>Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <p>Firstname&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <label id="txt-fname">{{$oe_users['user_fname']}}</label>
                     <input type="text" maxlength="25" value="{{$oe_users['user_fname']}}" id="input-fname" name="first_name" style="display: none">
                 </p>
                 @error('first_name')
                     <div class="oe-error" style="color: rgb(219, 0, 0)" id="error2">{{ $message }}</div>
                 @enderror
-                <p>Surname&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <p>Lastname&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <label id="txt-lname">{{$oe_users['user_lname']}}</label>
                     <input type="text" maxlength="25" value="{{$oe_users['user_lname']}}" id="input-lname" name="last_name" style="display: none">
 
