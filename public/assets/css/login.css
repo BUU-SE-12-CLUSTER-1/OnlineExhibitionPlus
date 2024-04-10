@@ -192,62 +192,28 @@ input:valid + .password_labelline{
 
 /* ปุ่ม Login */
 .login-button{
+    width: 100%;
+    height: 61px;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
     position: relative;
-    margin-left: 0;
-    width: 100%;
-    height: 61px;
+    background-color: #414eff;
     color: #FFF;
-    background-color: transparent;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 600;
     overflow: hidden;
-    border-radius: 20px;
-    box-shadow: 0px -0px 0px 0px rgba(113, 130, 255, 0.5),
-    0px 0px 0px 0px rgba(139, 200, 255, 0.5);
-}
-.login-button:hover{
-    transform: translate(0, -3px);
-    box-shadow: 5px -5px 15px 0px rgb(255, 121, 242),
-    -5px 5px 15px 0px rgba(79, 173, 255, 0.601);
-}
-.login-button:hover::after{
-    transform: rotate(150deg);
-}
-.login-button::after{
-    content: "";
-    width: 700px;
-    height: 700px;
-    position: absolute;
-    top: -100px;
-    left: -200px;
-    background-color: #ff71c2;
-    background-image: linear-gradient(225deg, #414eff 0%,
-    #4958ff 50%, #ff52dc 100%);
-    z-index: -1;
-    transition: all 0.25s ease;
-}
-/* .login-button{
-    margin-left: 0;
-    width: 100%;
-    height: 61px;
-    border-radius: 20px;
-    flex-shrink: 0;
-    background-color: #4E6CEF;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.60));
-    color: #FFF;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
     border: none;
+    border-radius: 20px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.60));
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: box-shadow, transform;
+    transition-property: box-shadow, transform;
 }
-.login-button:hover{
-    cursor: pointer;
+.login-button:hover, .login-button:focus, .login-button:active{
+    box-shadow: 0 0 20px rgba( 0, 0, 0, 0.1);
+    -webkit-transform:scale(1.05) ;
+    transform: scale(1.05);
 }
-.login-button:active{
-    background-color: #4e6bef50;
-} */
 
 #google-login-button{
     margin-top: 0%;
@@ -265,6 +231,10 @@ input:valid + .password_labelline{
     line-height: normal;
     border: none;
     text-align: center;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: box-shadow, transform;
+    transition-property: box-shadow, transform;
 }
 
 .btn_GOOGLE_entryarea{
@@ -273,13 +243,14 @@ input:valid + .password_labelline{
     line-height: 50px;
 }
 
-#google-login-button:hover{
-    cursor: pointer;
+#google-login-button:hover, #google-login-button:active 
+,#google-login-button:focus{
+    box-shadow: 0 0 20px rgba( 0, 0, 0, 0.1);
+    -webkit-transform:scale(1.05) ;
+    transform: scale(1.05);
 }
-#google-login-button:active{
-    background-color: #4e6bef50;
-}
-#google {
+
+/* #google {
     position: fixed;
     border-top: 10px solid #EA4335;
     border-right: 10px solid #4285F4;
@@ -315,7 +286,7 @@ input:valid + .password_labelline{
     right: -10px;
     width: 0;
     height: 0;
-  }
+  } */
 
   #google-login-button i {
     font-size: 24px;
@@ -340,69 +311,6 @@ input:valid + .password_labelline{
     line-height: normal;
     border: none;
     text-align: center;
-}
-
-input[type="text"],
-input[type="password"],
-button {
-	appearance: none;
-	outline: none;
-	border: none;
-	background: none;
-}
-
-input[type="text"],
-input[type="password"] {
-	display: block;
-	width: 50%;
-	padding-left: 10px;
-	border: 1px solid #bbb;
-    margin-top: 8%;
-    margin-left: 15%;
-    width: 310px;
-    height: 61px;
-    flex-shrink: 0;
-    fill: #FFF;
-    stroke-width: 1px;
-    stroke: #000;
-    border-radius: 20px;
-    text-align: left;
-    font-size: 20px;
-    padding-left: 3%;
-}
-
-input[type="text"]:focus,
-input[type="password"]:focus {
-	border-color: #2b2d2f;
-}
-
-.passwd-wrap {
-	position: relative;
-}
-
-#show-passwd {
-	position: absolute;
-	top: 50%;
-	right: 60px;
-	transform: translateY(-50%);
-	cursor: pointer;
-	width: 50px;
-	display: flex;
-	align-items: center;
-}
-
-#show-passwd img {
-	width: 50%;
-	height: auto;
-    padding-right: 20%;
-}
-#background-wrap {
-    bottom: 0;
-	left: 0;
-	position: fixed;
-	right: 0;
-	top: 0;
-	z-index: -1;
 }
 
 
@@ -631,3 +539,5 @@ input[type="password"]:focus {
 	position: absolute;
 	width: 180px;
 }
+
+

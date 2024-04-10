@@ -6,7 +6,7 @@
 <script src="https://kit.fontawesome.com/a87b92189d.js" crossorigin="anonymous"></script>
     <head>
         <link rel="stylesheet" href="{{ asset('assets/css/homePage.css') }}">
-        <link rel="stylesheet" href="{{ asset('assets/css/button_home.css') }}">
+        {{-- <link rel="stylesheet" href="{{ asset('assets/css/button_home.css') }}"> --}}
     </head>
     <body>
         <nav class="content_home">
@@ -18,10 +18,10 @@
                     </div>
                 </td>
                 <td>
-                    <form action="{{route('projects.search')}}" method="GET">
+                    <form action="{{url('/search-project')}}" method="POST">
                         @csrf
                         <div class="search_container">
-                        <input type="text" class="search" name="search" placeholder="Search project here">
+                        <input type="text" class="search" name="search_project" placeholder="Search project here">
                         <button type="submit" class="search_button" name="btn_search_user">
                         <i class="fa-solid fa-magnifying-glass"></i>
                         </button>
