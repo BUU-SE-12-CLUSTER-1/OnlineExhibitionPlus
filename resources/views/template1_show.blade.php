@@ -26,7 +26,7 @@
             <tr>
                 <td>
                     <div class="detail">
-                        สิงโต
+                        mix
                     </div>
                 </td>
             </tr>
