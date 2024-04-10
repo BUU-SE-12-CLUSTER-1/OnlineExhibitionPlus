@@ -13,7 +13,7 @@
 }
 
 .project {
-    background-image: url("https://i.pinimg.com/564x/06/a8/38/06a83820a113e86cdc82351c5092bccf.jpg");
+    background-image: url("https://accelerationeconomy.com/wp-content/uploads/2023/03/Multimodal-AI-Smart-Information.jpeg");
     background-position: center;
     background-size: cover;
     margin-left: 20px;
@@ -166,7 +166,7 @@ img{
     max-width: 319px;
     width: 100%;
     height: 449px;
-    cursor: pointer;    
+    cursor: pointer;
 }
 
 .detail{
@@ -233,7 +233,7 @@ img{
     top: 0;
     z-index: -1;
     transition:.4s;
-    
+
 }
 .tag1:hover{
     color: #FFF;
@@ -269,7 +269,7 @@ img{
     top: 0;
     z-index: -1;
     transition:.4s;
-    
+
 }
 .tag2:hover{
     color: #ffffff;
@@ -286,7 +286,7 @@ img{
     justify-content: center;
     align-items: center;
     font-size: 10rem;
-    font-weight: 700;   
+    font-weight: 700;
 }
 
 
@@ -328,7 +328,7 @@ img{
     margin-left: 430px;
     margin-top: 24px;
     z-index: 1;
-    
+
 }
 
 .years {
@@ -356,7 +356,7 @@ img{
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     margin-left: 10px;
     margin-top: 24px;
-    
+
 }
 
 .search {
