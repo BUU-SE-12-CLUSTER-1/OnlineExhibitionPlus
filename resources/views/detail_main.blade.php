@@ -15,7 +15,7 @@
             <div class="head_project">
                 <img class="img_project" src="{{ url($project->proj_main_image) }}" alt="">
                 <div class="haed_detail_project">
-                    <h1 style="width: 700px">{{ $project->proj_name }}</h1>
+                    <h1>{{ $project->proj_name }}</h1>
                     <?php
                     $company_name;
                     ?>
@@ -26,7 +26,7 @@
                             ?>
                         @endif
                     @endforeach
-                    <p style="width: 700px;font-weight: 700;" >Company&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp; {{ $company_name }}</p>
+                    <p>Company : {{ $company_name }}</p>
                     <?php
                     $advisor_name;
                     ?>
@@ -37,8 +37,8 @@
                             ?>
                         @endif
                     @endforeach
-                    <p style="width: 700px;font-weight: 700;">Advisor&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp; {{ $advisor_name }}</p>
-                    <p style="width: 700px;font-weight: 700;">Tag&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;
+                    <p>Advisor : {{ $advisor_name }}</p>
+                    <p>Tag :
                         <?php
                         $tag_count = 1;
                         $firstTagId = 0;
@@ -73,43 +73,50 @@
                     </div>
                 </div>
                 <div class="project_content">
-                    <x-template1_show />
-                    <x-template2_show />
-                    <x-template3_show />
+                    <div class="picture_1"></div>
+                    <div class="picture_2"></div>
+                    <div class="dt_box3_tem">
+                        <div>
+                            <p>Detail Project</p>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="comment">
                 <h1>Comment</h1>
                 <?php $user_id = 9; ?>
-                <form action="{{url('/insert-comment/'.$project->proj_id.'/'.$user_id)}}" method="POST">
-                @csrf
+                <form action="{{ url('/insert-comment/' . $project->proj_id . '/' . $user_id) }}" method="POST">
+                    @csrf
                     <div class="comment_container">
                         <input type="text" class="comment_project" name="comment" placeholder="Comment project here">
                         <button type="submit" class="comment_button" name="btn_comment_project">
-                        <i class="fa-solid fa-paper-plane"></i>
+                            <i class="fa-solid fa-paper-plane"></i>
                         </button>
                         @error('comment')
                             <span class="oe-error">{{ $message }}</span>
                         @enderror
-                </div>
-            </form>
-            @foreach ($oe_comments as $comment)
-            @if($project->proj_id == $comment->comment_proj_id)
-            <div class="comment-section" style="background: #FFF">
-            <div class="commentHeader" style="background: rgb(78, 108, 239);padding:2%">
-                @foreach ($oe_users as $user)
-                    @if($user->user_id == $comment->comment_user_id)
-                    <a href="{{url('/user-profile/'.$user->user_id)}}"><h3 style="color: #FFF">{{$user->user_fname}} {{$user->user_lname}}</h3></a>
+                    </div>
+                </form>
+                <div style="width:600px; padding-bottom:20px">
+                @foreach ($oe_comments as $comment)
+                    @if ($project->proj_id == $comment->comment_proj_id)
+                        <div class="comment-section" >
+                            <div class="commentHeader" >
+                                @foreach ($oe_users as $user)
+                                    @if ($user->user_id == $comment->comment_user_id)
+                                        <a href="{{ url('/user-profile/' . $user->user_id) }}">
+                                            <h3 style="color: #FFF">{{ $user->user_fname }} {{ $user->user_lname }}</h3>
+                                        </a>
+                                    @endif
+                                @endforeach
+                            </div>
+                            <div class="commentBody" style="background: #FFF; padding:3%;border-radius: 15px 15px 15px 15px; ">
+                                <p>{{ $comment->comment_text }}</p>
+                            </div>
+                        </div>
                     @endif
                 @endforeach
-            </div>
-            <div class="commentBody" style="background: #FFF; padding:3%">
-                <p>{{$comment->comment_text}}</p>
-            </div>
-        </div>
-        @endif
-            @endforeach
-
+                </div>
             </div>
             <div class="member_head">
                 <h1>Member</h1>
