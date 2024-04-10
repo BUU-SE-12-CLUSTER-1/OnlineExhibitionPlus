@@ -73,9 +73,13 @@
                     </div>
                 </div>
                 <div class="project_content">
-                    <x-template1_show />
-                    <x-template2_show />
-                    <x-template3_show />
+                    <div class="picture_1"></div>
+                    <div class="picture_2"></div>
+                    <div class="dt_box3_tem">
+                        <div>
+                            <p>Detail Project</p>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="comment">
