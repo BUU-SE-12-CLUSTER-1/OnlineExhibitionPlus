@@ -8,9 +8,10 @@
     <link rel="stylesheet" href="{{ asset('assets/css/modal.css') }}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="{{ asset('assets/css/profile.css') }}">
-    
+    <link rel="stylesheet" href="{{ asset('assets/css/project_list.css') }}">
 
-        <div class="profile_user">
+
+        <div class="profile_user" >
 
             <div class="titleBlue1">
                 <div>
@@ -116,15 +117,18 @@
             <div class="box_reset">
                 <a href="#" x-data x-on:click="$dispatch('open-modal', { name: 'change-password' })" id="resetpassword" style="display: none">Change Password</a>
             </div>
-            @foreach ($oe_projects as $project)
 
 
-        <div>
+
+
         <p id="txt_project">Project</p>
-        <div class="project pj_01" style="background-image: url('{{$project->proj_main_image}}') !important;white-space: nowrap; text-overflow: ellipsis;">
-        </div>
-        <div class="information_01" >
 
+        @foreach ($oe_projects as $project)
+        <div style="display:flex;align-items: flex-start;"></div>
+        <div style=";border: 1px solid red; margin-right: 10px;"></div>
+            <div class="project pj_01" style="background-image: url('{{$project->proj_main_image}}') !important;white-space: nowrap; text-overflow: ellipsis;">
+            </div>
+            <div class="information_01" ></div>
             @livewire('project-action',['project'=>$project])
                     {{-- <button type="button" class="star"></i></button> --}}
                     <div class="detail" >
@@ -172,7 +176,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+    </div>
         @endforeach
     </div>
 

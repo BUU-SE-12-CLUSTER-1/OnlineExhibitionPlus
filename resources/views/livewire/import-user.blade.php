@@ -1,6 +1,6 @@
 <div style="height: 170px;">
-    <link rel="stylesheet" href="{{ asset('assets/css/form_input.css') }}">
-    <a class="excelbtn" href="assets/document/template-add.xlsx"download> dowload example file</a>
+<link rel="stylesheet" href="{{ asset('assets/css/form_input.css') }}">
+<a class="excelbtn" href="assets/document/template-add.xlsx"download> download example file</a>
 
 
     <form class="oe-input-label" wire:submit="saveImportedExcel" enctype="multipart/form-data" style="padding-bottom: 80px  " >

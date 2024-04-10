@@ -58,7 +58,6 @@ class InsertUser extends Component
                 'user_major_id' => $this->major_id,
             ]);}
         $this->reset();
-        request()->session()->flash('success','User Added Successfully');
         $this->dispatch('close-modal');
 
 
