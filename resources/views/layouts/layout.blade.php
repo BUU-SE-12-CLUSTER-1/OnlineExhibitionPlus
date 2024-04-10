@@ -36,7 +36,7 @@
         <div class="side-navbar" id="side-navbar">
             <button class="oe-button" style="font-weight: 900;margin-bottom:44px;margin-top:18px;">Add Project</button>
             <div class="side-nav-menu">
-            <a href="{{url('/')}}" class="side-nav-menu" style="margin-left: -15px;margin-top: 10px;">HOME</a>
+            <a href="{{url('/')}}" class="side-nav-menu" style="margin-left: -20px;margin-top: 10px;">HOME</a>
             </div>
             <button class="dropdown-btn side-nav-menu" >Project
                 <i class="fa-solid fa-chevron-down"></i>
@@ -80,7 +80,7 @@
             </x-slot>
           </x-oe-alert>
         <footer id="web-footer">
-        <div class="web-footer">
+        <div class="web-footer" style="bottom: 0;width:100%">
             <label id="faculty">Faculty of Informatics, Burapha University</label>
             <label id="copyright">Copyright © 2018-2022 Faculty of Informatics, Burapha University. All rights reserved.</label>
             <i id="location-icon" class="fa-solid fa-location-dot"></i>

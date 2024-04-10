@@ -5,7 +5,7 @@
         <div class="information_01" >
             @livewire('project-action-user',['project'=>$project])
                     <div class="detail" >
-                        <h2>{{$project->proj_name}}</h2>
+                        <a style="color: #FFF" href={{url('/project-detail/'.$project->proj_id)}}><h2>{{$project->proj_name}}</h2></a>
                         <?php
                         $isHasOwner = false;
                         ?>

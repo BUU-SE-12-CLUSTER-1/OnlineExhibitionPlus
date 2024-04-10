@@ -9,8 +9,11 @@ use App\Models\ProjectModel;
 use App\Models\CompanyModel;
 use App\Models\AdvisorModel;
 use App\Models\TagModel;
+use App\Models\User;
 use App\Models\UserModel;
 use App\Models\UserLikedProjectModel;
+use App\Models\CommentModel;
+
 class ProjectController extends Controller
 {
     //
@@ -32,16 +35,27 @@ class ProjectController extends Controller
         $project_data = ProjectModel::all();
         return view('project_list',['oe_projects' => $project_data]);
     }
-    public function searchProject(Request $request){
-        $search_data = request('search_project');
-        $project_data = ProjectModel::where('proj_name','LIKE','%'.$search_data.'%');
+    public function searchProject(){
+        $search_data = $_GET['search'];
+        $project_data = ProjectModel::where('proj_name','LIKE','%'.$search_data.'%')->get();
+        //dd($project_data);
+        $user_projects = UserProjectModel::all();
+        $tags = TagModel::all();
+        $users = UserModel::all();
+        $proj_tag = ProjectTagModel::all();
+        $advisors = AdvisorModel::all();
         if(!$project_data || !$project_data->count() ||$search_data == ''){
-            return redirect('/');
+            return redirect('/home');
     }else{
-    return view('search_project_list',['oe_projects'=> $project_data]);
+    return view('search_project_list',['oe_projects'=> $project_data,
+    'oe_user_projects' => $user_projects,
+    'oe_tags' => $tags,
+    'oe_users' => $users,
+    'oe_project_tag' => $proj_tag,
+    'oe_advisors' => $advisors]);
     }
 }
-public function tagSearch($tag_id){
+    public function tagSearch($tag_id){
     $tag = TagModel::find($tag_id);
     $project_data = ProjectModel::all();
     return view('tag_project_list',['projects'=> $project_data, 'tag' => $tag]);
@@ -107,6 +121,8 @@ public function tagSearch($tag_id){
 
     }
 
+
+
     public function projectDetail($proj_id){
         $project_data = ProjectModel::find($proj_id);
         $company = CompanyModel::all();
@@ -115,6 +131,7 @@ public function tagSearch($tag_id){
         $project_tag = ProjectTagModel::all();
         $users = UserModel::all();
         $project_users = UserProjectModel::all();
+        $comments = CommentModel::all();
         return view('detail_main',['project'=>$project_data,
         'oe_companies' => $company,
         'oe_advisors' => $advisor,
@@ -123,6 +140,6 @@ public function tagSearch($tag_id){
         'oe_proj_id' => $proj_id,
         'oe_users' => $users,
         'oe_project_users' => $project_users,
-    ]);
+        'oe_comments' => $comments]);
     }
 }

@@ -30,10 +30,21 @@
 
             <br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;From cutting-edge applications to robust system solutions, our site is a hub of creativity and technical expertise.</p>
             <div class="login-container">
-                <form action="{{ url('/login')}}" method="post">
-                @csrf<!-- LOGO -->
-                <img src="assets/img/system/OE_ICON.png" class="icon" alt="" style="width: 199px; height: 199px"><br>
-                <img src="assets/img/system/LOGO_TEXT.png" class="icon-text" alt="" style="width: 230px; height: 28px;">
+            <form action="{{ url('/login')}}" method="post">
+                @csrf
+            <!-- LOGO -->
+            <img src="assets/img/system/OE_ICON.png" class="icon" alt="" style="width: 199px; height: 199px"><br>
+            <img src="assets/img/system/LOGO_TEXT.png" class="icon-text" alt="" style="width: 230px; height: 28px;">
+            <input type="text" name="email" placeholder="Email" id="username-textbox" style="margin-top: 36%;"/>
+            <label>
+				<div class="passwd-wrap">
+					<input type="password" id="password" placeholder="Password" />
+					<button  type="button" id="show-passwd">
+                        <!-- <i class="fa fa-eye" aria-hidden="true"></i> -->
+						<img src="assets/img/users/eye_closed.svg" alt="Show Password" />
+					</button>
+				</div>
+			</label>
 
 {{-- Email นะครับ--}}
                 <div class="box_container">
