@@ -2,7 +2,6 @@
     @livewireStyles
     <link rel="stylesheet" href="{{ asset('assets/css/homePage.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/button_home.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/project_list.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/button.css') }}">
 
     <div class="search-container" style="position:relative;margin-left:990px;margin-top:-50px;">
