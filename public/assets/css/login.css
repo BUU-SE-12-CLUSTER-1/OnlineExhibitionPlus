@@ -383,7 +383,7 @@ input[type="password"]:focus {
 #show-passwd {
 	position: absolute;
 	top: 50%;
-	right: 70px;
+	right: 60px;
 	transform: translateY(-50%);
 	cursor: pointer;
 	width: 50px;
@@ -392,7 +392,7 @@ input[type="password"]:focus {
 }
 
 #show-passwd img {
-	width: 100%;
+	width: 50%;
 	height: auto;
     padding-right: 20%;
 }
@@ -405,7 +405,6 @@ input[type="password"]:focus {
 	z-index: -1;
 }
 
-/* KEYFRAMES */
 
 @-webkit-keyframes animateBubble {
     0% {
@@ -461,7 +460,7 @@ input[type="password"]:focus {
     }
 }
 
-/* ANIMATIONS */
+
 
 .x1 {
     -webkit-animation: animateBubble 25s linear infinite, sideWays 2s ease-in-out infinite alternate;
@@ -593,7 +592,7 @@ input[type="password"]:focus {
 	transform: scale(0.3);
 }
 
-/* OBJECTS */
+
 
 .bubble {
     -webkit-border-radius: 50%;
