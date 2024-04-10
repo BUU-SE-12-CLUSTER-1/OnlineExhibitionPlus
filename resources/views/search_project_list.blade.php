@@ -4,9 +4,11 @@
 @endsection
     @section('content')
     @livewireStyles
+    <link rel="stylesheet" href="{{ asset('assets/css/myfavoritepj.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/table.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/homePage.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/button_home.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/project_list.css') }}">
         <script src="https://kit.fontawesome.com/a87b92189d.js" crossorigin="anonymous"></script>
         <form action="{{route('projects.search')}}" method="GET">
             @csrf
