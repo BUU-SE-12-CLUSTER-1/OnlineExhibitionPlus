@@ -9,7 +9,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="{{ asset('assets/css/profile.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/project_list.css') }}">
-
+    <link rel="stylesheet" href="{{ asset('assets/css/output_user_project.css') }}">
 
         <div class="profile_user" >
 
@@ -106,6 +106,9 @@
                         <button id="cancel"
                             onclick="window.location='{{ url('/user-profile/' . $user['user_id']) }}'"
                             style="display: none" type="button">Cancel</button>
+                            <div class="box_reset">
+                <a href="#" x-data x-on:click="$dispatch('open-modal', { name: 'change-password' })" id="resetpassword" style="display: none; margin-left: 100px;">Change Password</a>
+            </div>
                     </div>
                 </form>
             </div>
@@ -114,16 +117,31 @@
                    @livewire('change-password',['user_id' => $user['user_id']])
                 </x-slot>
             </x-modal>
-            <div class="box_reset">
-                <a href="#" x-data x-on:click="$dispatch('open-modal', { name: 'change-password' })" id="resetpassword" style="display: none">Change Password</a>
-            </div>
+            <!-- <div class="box_reset">
+                <a href="#" x-data x-on:click="$dispatch('open-modal', { name: 'change-password' })" id="resetpassword" style="display: none; margin-left: 100px;">Change Password</a>
+            </div> -->
 
 
 
 
         <p id="txt_project">Project</p>
+        <div class="container">
+    @for($i=0; $i<4; $i++)
+    <div class="img_user_project1">
+        <div class="detail">
+            <h2>Dragon Ball</h2>
+            <p>Author : Palasin Pinijaksorn</p>
+            <p>Dr.Athita Aonaue</p>
+        </div>
+        <div>
+            <button class="tag1">Action</button>
+            <button class="tag2">Adventure</button>
+        </div>
+    </div>
+    @endfor
+</div>
 
-        @foreach ($oe_projects as $project)
+        <!-- @foreach ($oe_projects as $project)
         <div style="display:flex;align-items: flex-start;"></div>
         <div style=";border: 1px solid red; margin-right: 10px;"></div>
             <div class="project pj_01" style="background-image: url('{{$project->proj_main_image}}') !important;white-space: nowrap; text-overflow: ellipsis;">
@@ -177,7 +195,7 @@
                 </div>
             </div>
     </div>
-        @endforeach
+        @endforeach -->
     </div>
 
         <script>

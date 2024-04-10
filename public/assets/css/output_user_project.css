@@ -1,0 +1,79 @@
+
+
+.img_user_project1 {
+    width: 319px;
+    height: 449px;
+    background-image: url('https://th.bing.com/th/id/OIP.hcYWNs0p6pLy-xz1CcP80AHaL2?rs=1&pid=ImgDetMain');
+    border-radius: 15px;
+    object-fit: cover;
+    background-position: center;
+    margin-top: 20px;
+    margin-left: -10px;
+    display: inline-block;
+    margin-bottom: 10px;
+    margin-right: 10px; /* Add right margin to create space between elements */
+}
+
+.author_user_project1 {
+    width: 319px;
+    height: 200px;
+    
+    border-radius: 15px;
+    object-fit: cover;
+    background-position: center;
+}
+
+.tag1 {
+    margin-left: 48px;
+    width: 81px;
+    height: 36px;
+    flex-shrink: 0;
+    border-radius: 15px;
+    border: 3px solid #FFF;
+    background: #FBC2EB;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+
+}
+
+
+.tag2 {
+    margin-left: 20px;
+    width: 81px;
+    height: 36px;
+    flex-shrink: 0;
+    border-radius: 15px;
+    border: 3px solid #FFF;
+    background: #A57DFC;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+
+}
+.detail {
+    color: #ffffff;
+    font-style: normal;
+    line-height: normal;
+    margin-left: -70px;
+    margin-top: 221px;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.detail h2 {
+    font-size: 36px;
+    font-weight: 700;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.detail p {
+    font-size: 24px;
+    font-weight: 400;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
