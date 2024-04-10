@@ -15,7 +15,7 @@
         <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="{{asset('assets/css/new_navbar.css')}}">
-        <link rel="stylesheet" href="{{ asset('/assets/css/button.css') }}">
+        {{-- <link rel="stylesheet" href="{{ asset('/assets/css/button.css') }}"> --}}
         <link rel="stylesheet" href="{{ asset('/assets/css/form_input.css') }}">
         <script src="https://kit.fontawesome.com/a87b92189d.js" crossorigin="anonymous"></script>
         @livewireStyles
@@ -32,15 +32,16 @@
             <a href="#"><img id="web-logo" src="{{asset('assets/img/system/OE_LOGO.png')}}" alt=""></a>
             <a href="#"><img id="web-icon" src="{{asset('assets/img/system/OE_ICON.png')}}" alt=""></a>
         </div>
-
+{{-- Navbar --}}
         <div class="side-navbar" id="side-navbar">
-            <button class="oe-button" style="font-weight: 900;margin-bottom:44px;margin-top:18px;">Add Project</button>
+            <button class="oe-button">Add Project</button>
+            {{-- <button class="oe-button" style="font-weight: 900;margin-bottom:44px;margin-top:18px;">Add Project</button> --}}
             <div class="side-nav-menu">
-            <a href="{{url('/')}}" class="side-nav-menu">HOME</a>
+                <a href="{{url('/')}}">HOME</a>
             </div>
-            <button class="dropdown-btn side-nav-menu">Project
+            <button class="dropdown-btn dropdown-btn-menu ">Project
                 <i class="fa-solid fa-chevron-down"></i>
-              </button>
+            </button>
             <div class="dropdown-container" style="display: none;">
                 <a href="{{url('/project-list')}}">My Project</a>
                 <a href="{{url('/project-list')}}">Manage Project</a>
@@ -49,7 +50,8 @@
                 <a href="{{url('/company-list')}}">Manage Company</a>
                 <a href="{{url('/tag-list')}}">Manage Tags</a>
             </div>
-            <button class="dropdown-btn side-nav-menu">User
+            {{-- User --}}
+            <button class="dropdown-btn dropdown-btn-menu ">User
                 <i class="fa-solid fa-chevron-down"></i>
               </button>
             <div class="dropdown-container">
@@ -59,7 +61,9 @@
 
             <!--<button class="btn-logout" >LOG OUT</button>-->
             <div class="btn-logout">
-                <a href="#" x-data x-on:click="$dispatch('open-oe-alert', { name: '{{url('/')}}' })" style="font-weight: 900;margin-left:-5px;color:#4E6CEF; margin-top:5px">Log out</a>
+                <div>
+                    <a href="#" x-data x-on:click="$dispatch('open-oe-alert', { name: '{{url('/')}}' })" style="font-weight: 900;margin-left:-5px;color:#4E6CEF; margin-top:5px">Log out</a>
+                </div>
             </div>
 
 
